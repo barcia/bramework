@@ -1,0 +1,104 @@
+/*------------------------------------*\
+  #BUTTONS
+\*------------------------------------*/
+
+$button-height       : 40px;
+$button-min-width    : 64px;
+$button-padding-hz   : 18px;
+$button-border-radius: 0;
+
+$button-height-small     : 32px;
+$button-padding-hz-small : 10px;
+
+$button-height-big     : 56px;
+$button-padding-hz-big : 32px;
+
+
+// Base
+/**
+ *  Use this base class in <button>, <a> or <input type=button> elements.
+ */
+.Button {
+  @include void-link;
+  @include link-states(background-color, $link-alpha-hover, $link-alpha-active);
+  @include transition((background-color, box-shadow), $transition-time-fast);
+  @include inline-flex-center;
+  min-width: $button-min-width;
+  height: $button-height;
+  padding: 0 $button-padding-hz;
+  border: 0;
+  border-radius: $button-border-radius;
+  outline: 0;
+  background-color: transparent;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  &.has-icon {
+    .icon:first-child {
+      margin-right: ($button-padding-hz) / 3;
+    }
+  }
+
+  &.is-icon {
+    @include size($button-height);
+    min-width: 0;
+    padding: 0;
+  }
+
+  .icon {
+    fill: $font-color;
+  }
+
+  &:disabled {
+    @include link-states(background-color, inherit);
+    color: $font-color-lighter;
+    .icon {fill: $font-color-lighter;}
+  }
+}
+
+
+// Modifiers
+.Button--rounded {
+  border-radius: 50%;
+}
+
+.Button--line {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.Button--fill {
+  @include link-states(background-color, color-hover($brand-color), color-active($brand-color));
+  @include link-states(color, $font-color-light);
+  background-color: $brand-color;
+  .icon {fill: $font-color-light;}
+  &:disabled {
+    @include link-states(background-color, lighter($brand-color, 10%));
+    @include link-states(color, $font-color-light);
+    .icon {fill: $font-color-light;}
+  }
+}
+
+.Button--raised {
+  @include shadow(1);
+  @include hover-focus-active {
+    @include shadow(2);
+  }
+}
+
+.Button--small {
+  height: $button-height-small;
+  padding: 0 $button-padding-hz-small;
+  font-size: .95em;
+}
+
+.Button--big {
+  height: $button-height-big;
+  padding: 0 $button-padding-hz-big;
+  font-size: 1.1em;
+  &.is-icon {@include size($button-height-big);}
+}
+
+.Button--block {
+  width: 100%;
+}

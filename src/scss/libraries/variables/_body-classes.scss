@@ -1,0 +1,24 @@
+/// Body class for when the page is scroll down
+/// @group body-class
+/// @type string
+$body-class-scroll-down    : 'site-scroll-down' !default;
+/// Body class for when the page is scroll up
+/// @group body-class
+/// @type string
+$body-class-scroll-up      : 'site-scroll-up' !default;
+/// Body class for when the page is scrolled
+/// @group body-class
+/// @type string
+$body-class-scrolled       : 'site-scrolled' !default;
+/// Body class for when is a touchdevie
+/// @group body-class
+/// @type string
+$body-class-touchdevice    : 'site-touchdevice' !default;
+/// Body class for when isn't a touchdevice
+/// @group body-class
+/// @type string
+$body-class-not-touchdevice: 'site-not-touchdevice' !default;
+/// Body class for when is night
+/// @group body-class
+/// @type string
+$body-class-night          : 'site-night' !default;

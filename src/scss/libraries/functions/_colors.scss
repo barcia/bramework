@@ -1,0 +1,35 @@
+// scss-lint:disable ColorKeyword, ColorVariable
+
+/// Slightly lighten a color
+/// @group colors
+/// @param {Color} $color - color to tint in hex
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function lighter($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @group colors
+/// @param {Color} $color - color to shade in hex
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function darker($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+/// The :hover (and :focus) color variant for a base color
+/// @group colors
+/// @param {Color} $color - base color
+/// @return {Color}
+@function color-hover($color) {
+  @return darker($color, $link-color-hover-pct);
+}
+
+/// The :active color variant for a base color
+/// @group colors
+/// @param {Color} $color - base color
+/// @return {Color}
+@function color-active($color) {
+  @return darker($color, $link-color-active-pct);
+}

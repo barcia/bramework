@@ -1,0 +1,32 @@
+/*------------------------------------*\
+  #TAGS
+\*------------------------------------*/
+
+$tag-height    : 24px;
+$tag-padding-hz: 6px;
+$tag-border-radius: 4px;
+$tag-font-size: .9rem;
+$tag-icon-margin-right: $tag-padding-hz;
+
+
+.Tag {
+  @include padding-hz($tag-padding-hz);
+  @include link-states(color, $white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $tag-height;
+  background-color: $brand-color;
+  color: $white;
+  font-size: $tag-font-size;
+  vertical-align: middle;
+
+  @include self-hover-focus-active {
+    text-decoration: none;
+  }
+
+  .icon {
+    margin-right: $tag-icon-margin-right;
+    fill: $white;
+  }
+}

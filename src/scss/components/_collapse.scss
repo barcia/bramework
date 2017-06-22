@@ -1,0 +1,12 @@
+/*------------------------------------*\
+  #COLLAPSE
+\*------------------------------------*/
+
+.Collapse {
+  &:not(.is-active) {
+    .Collapse-content,
+    .Collapse-close {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+/// Full width in small screens
+/// @group layout
+/// @param {units} $margin - Margin px of the parent element
+@mixin oversize($margin) {
+  @include breackpoint(small) {
+    position: relative;
+    left: 50%;
+    width: calc(100% + (#{$margin} * 2));
+    transform: translateX(-50%);
+    border-radius: 0;
+  }
+}

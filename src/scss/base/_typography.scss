@@ -1,0 +1,134 @@
+/*------------------------------------*\
+  #TYPOGRAPHY
+\*------------------------------------*/
+
+body {
+  color: $font-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+}
+
+
+// Headers
+h1, .h1,
+h3, .h2,
+h4, .h3,
+h2, .h4,
+h5, .h5,
+h6, .h6, {
+  margin-top: $margin-top-headings;
+  margin-bottom: $margin-bottom-headings;
+  font-family: $font-family-base;
+  line-height: $line-height-headings;
+  text-rendering: optimizeLegibility;
+
+  @include breakpoint(small) {
+    letter-spacing: -.03em;
+    line-height: $line-height-headings * .9;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1,.h1 {
+  font-size: $font-size-h1;
+  font-weight: $font-weight-h1;
+
+  @include breakpoint(small) {
+    font-size: $font-size-h1 * .75;
+  }
+}
+
+h2, .h2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-h2;
+
+  @include breakpoint(small) {
+    font-size: $font-size-h2 * .8;
+  }
+}
+
+h3, .h3 {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-h3;
+
+  @include breakpoint(small) {
+    font-size: $font-size-h3 * .85;
+  }
+}
+
+h4, .h4 {
+  font-size: $font-size-h4;
+  font-weight: $font-weight-h4;
+}
+
+h5, .h5 {
+  font-size: $font-size-h5;
+  font-weight: $font-weight-h5;
+}
+
+h6, .h6 {
+  font-size: $font-size-h6;
+  font-weight: $font-weight-h6;
+}
+
+
+// Inline text elements
+
+// Text layout
+p, .paragraph,
+ul, ol, dl,
+table,
+form,
+figure,
+blockquote {
+  @include margin-bottom(base);
+}
+
+p, .paragraph {
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  text-align: left;
+ }
+
+
+// Links
+a {
+  color: $link-color;
+  @include link-states(color, $link-color-hover, $link-color-active);
+  text-decoration: underline;
+}
+
+
+abbr {
+  text-transform: uppercase;
+}
+
+
+del {
+  color: $red;
+}
+
+ins {
+  color: $green;
+}
+
+mark {
+  background-color: $yellow;
+}
+
+
+q {
+  &::before {content: '«';}
+  &::after {content: '»';}
+}
+
+
+small,
+.small {
+  color: $font-color-lighter;
+  font-size: $font-size-small;
+  font-weight: $font-weight-base;
+}

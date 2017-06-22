@@ -1,0 +1,20 @@
+////
+/// @group images
+////
+
+/// Add background images
+/// @param {string} $image-url - The image url. Local or external.
+/// @example scss - Usage with local image
+///   .foo {
+///     @include background-image('img/image.jpg');
+///   }
+/// @example scss - Usage with external image
+///   .foo {
+///     @include background-image('https://source.unsplash.com/random/1600x200');
+///   }
+@mixin background-image($image-url) {
+  background-image: url($image-url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

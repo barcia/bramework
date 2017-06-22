@@ -1,0 +1,148 @@
+/*------------------------------------*\
+  #CARDS
+\*------------------------------------*/
+
+// Cards
+$card-bg-color               : $white;
+$card-border-radius          : 5px;
+$card-width                  : 400px;
+$card-font-size-text         : .9em;
+$card-font-size-title        : 1.6em;
+$card-font-size-title-avatar : 1.2em;
+$card-sections-margin-hz     : 16px;
+$card-sections-margin-vt     : 16px;
+$card-padding-vt             : 8px;
+$card-transition-time        : $transition-time;
+$card-avatar-size            : 50px;
+$card-avatar-margin-right    : $card-sections-margin-hz;
+
+// Base
+.Card {
+  @include padding-vt($card-padding-vt);
+  display: inline-block;
+  width: $card-width;
+  border-radius: $card-border-radius;
+  background-color: $card-bg-color;
+
+  @include breakpoint(small) {
+    width: 100%;
+  }
+
+  &.has-shadow {
+    @include shadow(2);
+  }
+}
+
+// Base for link cards
+.Card.is-link {
+  @include void-link;
+
+  // Modifier for link card with shadow
+  &.has-shadow {
+    @include transition(box-shadow, $card-transition-time);
+    @include hover-focus-active {
+      @include shadow(3);
+    }
+  }
+}
+
+.Card-header,
+.Card-content {
+  @include margin-hz($card-sections-margin-hz);
+  @include margin-vt($card-sections-margin-vt);
+}
+
+
+// Headers
+.Card-title,
+.Card-subtitle {
+  margin: 0;
+}
+
+.Card-title {
+  font-size: $card-font-size-title;
+  .Card-header.has-avatar & {font-size: $card-font-size-title-avatar;}
+}
+
+.Card-subtitle {
+  color: $font-color-lighter;
+}
+
+.Card-text,
+.Card-subtitle {
+  font-size: $card-font-size-text;
+}
+
+
+// Header with avatar
+.Card-header {
+  &.has-avatar {
+    display: flex;
+  }
+}
+
+/**
+ *  1. For use directly background-image instead <img> child. Bad for a11y
+ */
+.Card-header-avatar {
+  @include circle($card-avatar-size);
+  margin-right: $card-avatar-margin-right;
+  background-repeat: no-repeat; /* 1 */
+  background-position: center; /* 1 */
+  background-size: cover; /* 1 */
+}
+
+.Card-header-text {
+  flex: 1;
+}
+
+.Card-avatar {
+  @include circle($card-avatar-size);
+  object-fit: cover;
+}
+
+
+// Media
+.Card-media {
+  position: relative;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  // For preserve the aspect ratio
+  // http://nicolasgallagher.com/flexible-css-cover-images
+  &::before {
+    display: block;
+    padding-bottom: 56.25%; // 16:9 by default
+    content: '';
+  }
+
+  & .Card-header {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px $card-sections-margin-hz;
+    margin: 0;
+    color: $white;
+
+    &.has-shadow--gradient {
+      background-image: linear-gradient(to top, $alpha-800, $alpha-700, $alpha);
+    }
+
+    &.has-shadow--flat {
+      background-color: $alpha-500;
+    }
+  }
+
+  & .Card-title {color: $font-color-light;}
+  & .Card-subtitle {color: $font-color-light-darker;}
+
+  // Modifiers
+  &.is-2by1::before {padding-bottom: percentage(1 / 2);} // 2:1
+  &.is-21by9::before {padding-bottom: percentage(9 / 21);} // 21:9
+  &.is-16by9::before {padding-bottom: percentage(9 / 16);} // 16:9
+  &.is-5by3::before {padding-bottom: percentage(3 / 5);} // 5:3
+  &.is-4by3::before {padding-bottom: percentage(3 / 4);} // 4:3
+  &.is-1by1::before {padding-bottom: percentage(1 / 1);} // 1:1
+}

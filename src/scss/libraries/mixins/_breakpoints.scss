@@ -1,0 +1,41 @@
+////
+/// @group breakpoint
+////
+
+/// Breakpoint manager
+/// @require $breakpoints
+/// @link https://www.sitepoint.com/managing-responsive-breakpoints-sass/
+/// @param {string} $small [450px] - Mobile portrait
+/// @param {string} $medium [800px] - Tablet portrait and mobile landscape
+/// @param {string} $large [1024px] - Tablet landscape
+/// @param {string} $extra-large [1366px] - Desktop
+/// @example scss - Usage
+///   .foo {
+///     width: 300px;
+///     @include breackpoint(small) {
+///       width: 100px;
+///     }
+///   }
+/// @example css - Output
+///   .foo {
+///     width: 300px;
+///   }
+///   @media (max-width:800px){
+///     .foo {
+///       width: 100px;
+///     }
+///   }
+/// @TODO Create other breakpoint mixin with min-width.
+@mixin breakpoint($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint) !global;
+
+  // If the key exists in the map
+  @if $value != null {
+    // Prints a media query based on the value
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else { // If the key doesn't exist in the map
+      @error 'No value could be retrieved from `#{$breakpoint}`. Make sure it is defined in `$breakpoints` map.';
+  }
+}

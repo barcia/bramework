@@ -1,0 +1,15 @@
+////
+/// @group colors
+////
+
+/// Mixin for create simple gradients
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient Mozilla Developer Network
+/// @param {degrees | string} $direction - An angle of direction for the gradient
+/// @param {string} $colors - Put the colors that will form the gradient
+/// @example scss - Usage
+///   .foo {
+///     @include gradient(30deg, (blue, red, yellow));
+///   }
+@mixin gradient($direction, $colors) {
+  background: linear-gradient($direction, $colors);
+}

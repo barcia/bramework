@@ -1,0 +1,48 @@
+////
+/// @group box-model
+////
+
+/// Horizontal margin
+/// @param {Units} $px - The margin in px.
+@mixin margin-hz($px) {
+  margin-left: $px;
+  margin-right: $px;
+}
+
+/// Vertical margin
+/// @param {Units} $px - The margin in px.
+@mixin margin-vt($px) {
+  margin-top: $px;
+  margin-bottom: $px;
+}
+
+/// Horizontal padding
+/// @param {Units} $px - The margin in px.
+@mixin padding-hz($px) {
+  padding-left: $px;
+  padding-right: $px;
+}
+
+/// Vertical padding
+/// @param {Units} $px - The margin in px.
+@mixin padding-vt($px) {
+  padding-top: $px;
+  padding-bottom: $px;
+}
+
+
+/// Margin bottom except in last item
+/// @param {string} $size [base] - The size of the margin: `small`, `base` or `large`.
+@mixin margin-bottom($size: base) {
+  @if $size == small {
+    margin-bottom: $margin-bottom-small;
+  } @else if $size == base {
+    margin-bottom: $margin-bottom-base;
+  } @else if $size == large {
+    margin-bottom: $margin-bottom-large;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,39 @@
+////
+/// @group positioning
+////
+
+/// Completly center items in a `flex` container
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/// Completly center items in a `inline-flex` container
+@mixin inline-flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/// Vertical center absolute item
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/// Horizontal center absolute item
+@mixin horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/// Completly center absolute item
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

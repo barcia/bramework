@@ -1,0 +1,46 @@
+/*------------------------------------*\
+  #FORMS
+\*------------------------------------*/
+
+$input-padding-hz: 10px;
+$input-padding-vt: 7px;
+$input-border-width: 1px;
+$input-border-radius: 2px;
+$input-border-color: $grey-200;
+$input-border-color-focus: $brand-color;
+$input-placeholder-color: $alpha-300;
+
+
+.Form-group {
+  display: flex;
+  align-items: center;
+  width: 100%
+}
+
+.Form-label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.Form-input {
+  @include transition(border-color, $transition-time-fast);
+  padding: $input-padding-vt $input-padding-hz;
+  border: $input-border-width solid $input-border-color;
+  border-radius: $input-border-radius;
+  color: $font-color;
+  flex: 1;
+
+  &:focus {
+    border-color: $input-border-color-focus;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $alpha-100;
+    color: $font-color-lighter;
+  }
+
+  &::placeholder {
+    color: $input-placeholder-color;
+  }
+}

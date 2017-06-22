@@ -1,0 +1,110 @@
+// scss-lint:disable ImportantRule
+/*------------------------------------*\
+  #HELPERS
+\*------------------------------------*/
+
+// LAYOUT
+// Hide an element
+.h-hidden {display: none !important;}
+
+// Not show it, but maintain the layout
+.h-invisible {visibility: hidden !important;}
+
+// Hidden in small
+@include breakpoint(small) {.h-sm-hidden {display: none !important;}}
+
+// Hidden from medium to below
+@include breakpoint(medium) {.h-md-hidden {display: none !important;}}
+
+
+// FLEXBOX
+.h-display-flex {display: flex;}
+
+.h-order-first {order: -1 !important;}
+.h-order-last {order: 1 !important;}
+
+.h-justify-content-start {justify-content: flex-start !important;}
+.h-justify-content-end {justify-content: flex-end !important;}
+.h-justify-content-center {justify-content: center !important;}
+.h-justify-content-between {justify-content: space-between !important;}
+.h-justify-content-around {justify-content: space-around !important;}
+
+.h-align-items-baseline {align-items: baseline !important;}
+.h-align-items-center {align-items: center !important;}
+.h-align-items-end {align-items: flex-end !important;}
+.h-align-items-start {align-items: flex-start !important;}
+.h-align-items-stretch {align-items: stretch !important;}
+
+.h-align-self-auto {align-self: auto !important;}
+.h-align-self-baseline {align-self: baseline !important;}
+.h-align-self-center {align-self: center !important;}
+.h-align-self-end {align-self: flex-end !important;}
+.h-align-self-start {align-self: flex-start !important;}
+.h-align-self-stretch {align-self: stretch !important;}
+
+
+// A11Y
+.h-screen-reader {@include screen-reader;}
+
+
+// ALIGN
+.vertical-align-baseline {vertical-align: baseline !important;}
+.vertical-align-top {vertical-align: top !important;}
+.vertical-align-middle {vertical-align: middle !important;}
+.vertical-align-bottom {vertical-align: bottom !important;}
+.vertical-align-text-bottom {vertical-align: text-bottom !important;}
+.vertical-align-text-top {vertical-align: text-top !important;}
+
+
+// POSITIONING
+.h-float-right {float: right !important;}
+.h-float-left {float: left !important;}
+
+
+// BORDER
+.h-rounded { @include rounded;}
+
+
+// LINKS
+.h-void-link {@include void-link;}
+
+// Display links when the <a> element has no text value but the href
+.h-show-link::before {content: attr(href);}
+
+
+// SIZE
+.h-full-width {width: 100%;}
+
+.h-size-18 {@include size(18px);}
+.h-size-24 {@include size(24px);}
+.h-size-36 {@include size(36px);}
+.h-size-48 {@include size(48px);}
+
+
+// TEXT
+.h-uppercase {text-transform: uppercase !important;}
+.h-capitalize {text-transform: capitalize !important;}
+
+.h-text-align-right {text-align: right !important;}
+.h-text-align-left {text-align: left !important;}
+.h-text-align-center {text-align: center !important;}
+.h-text-align-justify {text-align: justify !important;}
+
+// In HTML5, tags with pure stylistic purposes are deprecated, I recommend
+// use the clasess below into a '<span>' element.
+.h-bold {font-weight: bold !important;}
+.h-italic {font-weight: italic !important;}
+.h-underline {text-decoration: underline !important;}
+.h-overline {text-decoration: overline !important;}
+.h-strikethrough {text-decoration: line-through !important;}
+.h-monospace {font-family: $font-family-monospace !important;}
+
+.h-unselectable {user-select: none;}
+
+
+// PRINT
+@media print {
+  .h-no-print {
+    display: none !important;
+  }
+}

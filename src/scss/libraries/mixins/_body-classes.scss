@@ -1,0 +1,50 @@
+////
+/// @group body-class
+////
+
+/// Styles for the item when is in a touchdevice
+@mixin touchdevice {
+  .#{$body-class-touchdevice} & {
+    @content;
+  }
+}
+
+
+/// Styles for the item when isn't in a touchdevice
+@mixin not-touchdevice {
+  .#{$body-class-not-touchdevice} & {
+    @content;
+  }
+}
+
+
+/// Styles for the item when the page is scroll down
+@mixin scroll-down {
+  .#{$body-class-scroll-down} & {
+    @content;
+  }
+}
+
+
+/// Styles for the item when the page is scroll up
+@mixin scroll-up {
+  .#{$body-class-scroll-up} & {
+    @content;
+  }
+}
+
+
+/// Styles for the item when page is scrolle
+@mixin scrolled {
+  .#{$body-class-scrolled} & {
+    @content;
+  }
+}
+
+
+/// Styles for the item when is night
+@mixin night {
+  .#{$body-class-night} & {
+    @content;
+  }
+}

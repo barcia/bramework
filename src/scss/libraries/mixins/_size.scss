@@ -1,0 +1,29 @@
+/// Specify the element size. Is only put one, the element is square
+/// @group properties
+/// @param {units} $width - The width
+/// @param {units} $height [$width] - The height
+/// @example scss - Usage
+///   .foo {
+///     @include size(30px, 50px);
+///   }
+/// @example scss - Usage to square element
+///   .foo {
+///     @include size(30px);
+///   }
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+/// Makes a circular element (with possibilities to expand in one axis)
+/// @group properties
+/// @param {units} $size - The element size
+/// @example scss - Usage
+///   .foo {
+///     @include circle(30px);
+///   }
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size;
+}

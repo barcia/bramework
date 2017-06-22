@@ -1,0 +1,18 @@
+/// Gives a card depth effect
+/// @group shadows
+/// @param {Number} $depth - depth level (between 1 and 5)
+/// @requires {function} md-shadow-top
+/// @requires {function} md-shadow-bottom
+/// @author Hugo Giraudel
+/// @link https://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
+/// @link https://css-tricks.com/snippets/sass/material-shadows-mixin/ CSS Tricks
+/// @link https://codepen.io/HugoGiraudel/pen/yyaGaP CodePen
+@mixin shadow($depth: 0) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+      @warn "Invalid $depth `#{$depth}` for mixin `md-shadow`.";
+  } @else {
+    box-shadow: shadow-bottom($depth), shadow-top($depth);
+  }
+}

@@ -1,0 +1,13 @@
+/// Breakpoints map
+/// @group breackpoints
+/// @type Map
+/// @prop {Number} small- 450px. Mobile portrait
+/// @prop {Number} medium- 800px. Tablet portrait and mobile landscape
+/// @prop {Number} large- 1024px. Tablet landscape
+/// @prop {Number} extra-large- 1366px. Desktop
+$breakpoints: (
+  'small': 450px,
+  'medium': 800px,
+  'large': 1024px,
+  'extra-large': 1366px,
+) !default;
