@@ -10,11 +10,14 @@
 // Not show it, but maintain the layout
 .h-invisible {visibility: hidden !important;}
 
-// Hidden in small
+// Always hide except in small
 @include breakpoint(small) {.h-sm-hidden {display: none !important;}}
 
-// Hidden from medium to below
+// Hidden from medium to high
 @include breakpoint(medium) {.h-md-hidden {display: none !important;}}
+
+// Hidden from large to high
+@include breakpoint(large) {.h-lg-hidden {display: none !important;}}
 
 
 // FLEXBOX

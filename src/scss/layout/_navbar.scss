@@ -76,7 +76,7 @@ $navbar-tabs-maxwidth              : 200px;
   overflow-x: auto;
 
 
-  @include breakpoint(medium) {
+  @include breakpoint-down(medium) {
     height: $navbar-toolbar-height-medium;
   }
 }
@@ -93,7 +93,7 @@ $navbar-tabs-maxwidth              : 200px;
 .Navbar-toolbar-left {
   margin-left: $navbar-toolbar-margin-hz;
 
-  @include breakpoint(small) {
+  @include breakpoint-down(small) {
     margin-left: $navbar-toolbar-margin-hz-small;
   }
 }
@@ -101,7 +101,7 @@ $navbar-tabs-maxwidth              : 200px;
 .Navbar-toolbar-right {
   margin-right: $navbar-toolbar-margin-hz;
 
-  @include breakpoint(small) {
+  @include breakpoint-down(small) {
     margin-right: $navbar-toolbar-margin-hz-small;
   }
 }
@@ -110,11 +110,11 @@ $navbar-tabs-maxwidth              : 200px;
   @include margin-hz($navbar-toolbar-margin-hz * 2);
   flex: 1;
 
-  @include breakpoint(small) {
+  @include breakpoint-down(small) {
     @include margin-hz($navbar-toolbar-margin-hz-small * 2);
   }
 
-  // @include breakpoint(small) {
+  // @include breakpoint-down(small) {
   //   justify-content: center;
   // }
 }
@@ -133,7 +133,7 @@ $navbar-tabs-maxwidth              : 200px;
     display: inline-flex;
     align-items: center;
     height: 100%;
-    @include breakpoint(small) {
+    @include breakpoint-down(small) {
       @include margin-hz($navbar-menu-item-margin-hz-small);
     }
   }
@@ -153,7 +153,7 @@ $navbar-tabs-maxwidth              : 200px;
     height: $navbar-link-height;
     color: inherit;
 
-    @include breakpoint(small) {
+    @include breakpoint-down(small) {
       @include padding-hz($navbar-link-padding-hz-small);
     }
   }
@@ -224,7 +224,7 @@ $navbar-tabs-maxwidth              : 200px;
   margin: 0;
   font-size: 20px;
 
-  @include breakpoint(small) {
+  @include breakpoint-down(small) {
     letter-spacing: $word-spacing-narrow;
   }
 }
@@ -257,7 +257,7 @@ $navbar-tabs-maxwidth              : 200px;
   @include scroll-down {
     transform: translateY(-$navbar-toolbar-height);
 
-    @include breakpoint(medium) {
+    @include breakpoint-down(medium) {
       transform: translateY(-$navbar-toolbar-height-medium);
     }
   }
@@ -286,7 +286,7 @@ $navbar-tabs-maxwidth              : 200px;
     flex: 1;
     max-width: $navbar-tabs-maxwidth;
 
-    @include breakpoint(small) {
+    @include breakpoint-down(small) {
       max-width: none;
     }
   }

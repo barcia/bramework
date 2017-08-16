@@ -33,21 +33,3 @@
 @import 'assets/helpers';
 @import 'assets/icons';
 @import 'assets/print';
-
-// .ivi {
-//   display: block;
-//   width: 500px;
-//   height: 500px;
-//   @include gradient(30deg, (blue, red, yellow));
-//   color: $font-color-light-darker;
-//
-//   @include shadow(1);
-//
-//   @include breakpoint(medium) {
-//     // background-color: blue;
-//   }
-// }
-
-// body {
-//   background-color: grey;
-// }

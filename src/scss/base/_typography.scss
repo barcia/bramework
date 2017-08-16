@@ -22,7 +22,7 @@ h6, .h6, {
   line-height: $line-height-headings;
   text-rendering: optimizeLegibility;
 
-  @include breakpoint(small) {
+  @include breakpoint-down(small) {
     letter-spacing: -.03em;
     line-height: $line-height-headings * .9;
   }
@@ -36,7 +36,7 @@ h1,.h1 {
   font-size: $font-size-h1;
   font-weight: $font-weight-h1;
 
-  @include breakpoint(small) {
+  @include breakpoint-down(small) {
     font-size: $font-size-h1 * .75;
   }
 }
@@ -45,7 +45,7 @@ h2, .h2 {
   font-size: $font-size-h2;
   font-weight: $font-weight-h2;
 
-  @include breakpoint(small) {
+  @include breakpoint-down(small) {
     font-size: $font-size-h2 * .8;
   }
 }
@@ -54,7 +54,7 @@ h3, .h3 {
   font-size: $font-size-h3;
   font-weight: $font-weight-h3;
 
-  @include breakpoint(small) {
+  @include breakpoint-down(small) {
     font-size: $font-size-h3 * .85;
   }
 }

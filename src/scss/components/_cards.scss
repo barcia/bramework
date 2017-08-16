@@ -20,12 +20,12 @@ $card-avatar-margin-right    : $card-sections-margin-hz;
 .Card {
   @include padding-vt($card-padding-vt);
   display: inline-block;
-  width: $card-width;
+  width: 100%;
   border-radius: $card-border-radius;
   background-color: $card-bg-color;
 
   @include breakpoint(small) {
-    width: 100%;
+    width: $card-width;
   }
 
   &.has-shadow {
