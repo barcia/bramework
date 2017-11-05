@@ -1,7 +1,8 @@
-// scss-lint:disable QualifyingElement, DuplicateProperty, VendorPrefix, ColorVariable, ImportantRule
+// sass-lint:disable no-vendor-prefixes, no-universal-selectors
+
 /**
  * standarize.css - https://github.com/barcia/standarize
- * v0.1.6
+ * v0.2.0
  * Iván Barcia (@bartzia) - https://barcia.cc
  * MIT License
  */
@@ -12,10 +13,10 @@
  * 3. Prevent the highlight that appears over a link while it's being tapped
  */
 :root {
+  cursor: default;
   box-sizing: border-box; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
-  cursor: default;
   -webkit-tap-highlight-color: hsla(0, 0%, 0%, 0); /* 3 */
 }
 

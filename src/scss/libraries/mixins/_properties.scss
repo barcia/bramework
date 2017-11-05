@@ -1,6 +1,35 @@
 ////
-/// @group border-radius
+/// @group properties
 ////
+
+/// Specify the element size. Is only put one, the element is square
+/// @param {units} $width - The width
+/// @param {units} $height [$width] - The height
+/// @example scss - Usage
+///   .foo {
+///     @include size(30px, 50px);
+///   }
+/// @example scss - Usage to square element
+///   .foo {
+///     @include size(30px);
+///   }
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+/// Makes a circular element (with possibilities to expand in one axis)
+/// @param {units} $size - The element size
+/// @example scss - Usage
+///   .foo {
+///     @include circle(30px);
+///   }
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size;
+}
+
 
 /// Makes circular an element
 /// @example scss - Usage
@@ -18,8 +47,8 @@
 ///     @include border-top-radius(3px);
 ///   }
 @mixin border-top-radius($radius: $border-radius) {
-  border-top-left-radius: $radius;
   border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
 }
 
 /// Border bottom radius
@@ -29,8 +58,8 @@
 ///     @include border-bottom-radius(3px);
 ///   }
 @mixin border-bottom-radius($radius: $border-radius) {
-  border-bottom-left-radius: $radius;
   border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
 }
 
 /// Border left radius
@@ -40,8 +69,8 @@
 ///     @include border-left-radius(3px);
 ///   }
 @mixin border-left-radius($radius: $border-radius) {
-  border-top-left-radius: $radius;
   border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
 }
 
 /// Border right radius

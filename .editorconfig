@@ -1,7 +1,4 @@
 # editorconfig.org
-# File to maintain consistent coding styles
-# https://gist.github.com/barcia/ae9a98077e7def47e7946e573bdcecdc
-
 
 root = true
 
@@ -15,7 +12,7 @@ trim_trailing_whitespace = true
 [*.{html,php,xml,css,scss,sass,less,js}]
 indent_size = 2
 
-[*.{json,yaml}]
+[*.{json,yaml,yml}]
 indent_size = 4
 
 [*.{txt,md,markdown}]
@@ -25,5 +22,5 @@ trim_trailing_whitespace = false
 [*.py]
 indent_size = 4
 
-[*.{sh,bash}]
+[*.{sh,bash,zsh}]
 indent_size = 4

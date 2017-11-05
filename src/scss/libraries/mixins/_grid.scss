@@ -8,8 +8,8 @@
 ///   }
 @mixin grid($columns, $gap) {
   display: grid;
+  grid-gap: $gap;
   grid-template-columns: repeat($columns, auto);
   grid-template-rows: auto;
-  grid-gap: $gap;
   justify-items: center;
 }

@@ -6,7 +6,7 @@
     position: relative;
     left: 50%;
     width: calc(100% + (#{$margin} * 2));
-    transform: translateX(-50%);
     border-radius: 0;
+    transform: translateX(-50%);
   }
 }

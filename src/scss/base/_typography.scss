@@ -1,15 +1,15 @@
-/*------------------------------------*\
-  #TYPOGRAPHY
-\*------------------------------------*/
+//sass-lint:disable single-line-per-selector
+/* #TYPOGRAPHY*/
 
+// Body
 body {
-  color: $font-color;
   font-family: $font-family-base;
   font-size: $font-size-base;
+  color: $font-color-dark;
 }
 
 
-// Headers
+// Headings
 h1, .h1,
 h3, .h2,
 h4, .h3,
@@ -22,22 +22,22 @@ h6, .h6, {
   line-height: $line-height-headings;
   text-rendering: optimizeLegibility;
 
-  @include breakpoint-down(small) {
-    letter-spacing: -.03em;
-    line-height: $line-height-headings * .9;
-  }
-
   &:first-child {
     margin-top: 0;
   }
+
+  @include breakpoint-down(small) {
+    line-height: $line-height-headings * 0.9;
+    letter-spacing: -0.03em;
+  }
 }
 
-h1,.h1 {
+h1, .h1 {
   font-size: $font-size-h1;
   font-weight: $font-weight-h1;
 
   @include breakpoint-down(small) {
-    font-size: $font-size-h1 * .75;
+    font-size: $font-size-h1 * 0.75;
   }
 }
 
@@ -46,7 +46,7 @@ h2, .h2 {
   font-weight: $font-weight-h2;
 
   @include breakpoint-down(small) {
-    font-size: $font-size-h2 * .8;
+    font-size: $font-size-h2 * 0.8;
   }
 }
 
@@ -55,7 +55,7 @@ h3, .h3 {
   font-weight: $font-weight-h3;
 
   @include breakpoint-down(small) {
-    font-size: $font-size-h3 * .85;
+    font-size: $font-size-h3 * 0.85;
   }
 }
 
@@ -75,8 +75,6 @@ h6, .h6 {
 }
 
 
-// Inline text elements
-
 // Text layout
 p, .paragraph,
 ul, ol, dl,
@@ -87,18 +85,18 @@ blockquote {
   @include margin-bottom(base);
 }
 
-p, .paragraph {
+p {
   font-weight: $font-weight-base;
   line-height: $line-height-base;
   text-align: left;
  }
 
 
-// Links
+// Inline elements
 a {
   color: $link-color;
-  @include link-states(color, $link-color-hover, $link-color-active);
   text-decoration: underline;
+  @include link-states(color, $link-color-hover, $link-color-active);
 }
 
 
@@ -119,16 +117,14 @@ mark {
   background-color: $yellow;
 }
 
-
-q {
-  &::before {content: '«';}
-  &::after {content: '»';}
+kbd {
+  background-color: $white;
+  box-shadow: 0 2px $grey-150;
 }
-
 
 small,
 .small {
-  color: $font-color-lighter;
   font-size: $font-size-small;
   font-weight: $font-weight-base;
+  color: $font-color-dark-soft;
 }

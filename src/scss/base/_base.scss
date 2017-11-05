@@ -1,86 +1,33 @@
-/*------------------------------------*\
-  #BASE
-\*------------------------------------*/
+/* #BASE */
 
 // Body
 body {
-  background-color: $color-bg;
+  background-color: $color-bg-light;
 }
 
 
-// Content grouping
-ul, ol {
+// Lists
+ul,
+ol {
   padding-left: 0;
 
   & & {
     padding-left: 30px;
   }
-
-  &.is-unbulleted {
-    list-style-type: none;
-  }
-}
-
-dt::after {
-  content: ':';
 }
 
 
+// Media
 figcaption {
-  @extend small;
-  &:first-child {margin-bottom: .5em;}
-  &:last-child {margin-top: .5em;}
+  font-size: $font-size-small;
+  font-weight: $font-weight-base;
+  color: $font-color-dark-soft;
+  &:first-child {margin-bottom: 0.5em;}
+  &:last-child {margin-top: 0.5em;}
 }
 
 
-summary {
-  display: flex;
-  align-items: center;
-  // &::-webkit-details-marker {
-  //   display: none;
-  // }
-}
-
-
-// Code
-:not(pre) > code,
-kbd {
-  display: inline-block;
-  padding: 1px 5px;
-  border-radius: 2px;
-  background-color: $grey-50;
-  font-size: $code-font-size;
-}
-
-:not(pre) > code {
-  &.is-dark {
-    background-color: $grey-700;
-    color: $white;
-  }
-
-  &.is-green {
-    background-color: $grey-700;
-    color: $md-lightgreen-a400;
-  }
-
-  &.is-red {
-    background-color: $alizarin-50;
-    color: $razzmatazz;
-  }
-
-  &.is-blue {
-    background-color: $belize-hole-50;
-    color: $belize-hole-700;
-  }
-
-  &.is-brown {
-    background-color: $carrot-50;
-    color: $carrot-700;
-  }
-}
-
-
-kbd {
-  background-color: $white;
-  box-shadow: 0 2px $grey-150;
+// Forms
+input:disabled {
+  color: $font-color-dark-soft;
 }

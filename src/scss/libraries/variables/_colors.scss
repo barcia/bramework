@@ -1,37 +1,38 @@
+// sass-lint:disable space-before-colon
+
 $color-bg-light: $white !default;
-$color-bg-dark: $md-bluegrey-800 !default;
+$color-bg-dark: $oc-gray-8 !default;
 
-$color-bg: $color-bg-light !default;
-
-$font-color: $grey-700 !default;
-
+// Font colors
 $font-color-modifier-pct: 25% !default;
 
-$font-color-lighter: lighter($font-color, $font-color-modifier-pct) !default;
-$font-color-darker : darker($font-color, $font-color-modifier-pct) !default;
+$font-color-dark: $grey-700 !default;
+$font-color-dark-soft: font-color-soft($font-color-dark);
+// $font-color-dark-lighter: lighter($font-color-dark, $font-color-modifier-pct) !default;
+// $font-color-dark-darker : darker($font-color-dark, $font-color-modifier-pct) !default;
 $font-color-alpha  : $alpha-400 !default;
 
 $font-color-light       : $white !default;
-$font-color-light-darker: darker($font-color-light, $font-color-modifier-pct) !default;
+$font-color-light-soft: font-color-soft($font-color-light);
+// $font-color-light-darker: darker($font-color-light, $font-color-modifier-pct) !default;
 $font-color-walpha      : $walpha-400 !default;
 
 // Branding colors
-$brand-color      : $royal-blue !default;
-$brand-color-c    : complement($brand-color) !default;
-$brand-color-alt  : $sunglo !default;
-$brand-color-alt-c: complement($brand-color-alt) !default;
-
 $brand-color-modifier-pct: 15%;
 
+$brand-color        : $royal-blue !default;
 $brand-color-darker : darker($brand-color, $brand-color-modifier-pct) !default;
 $brand-color-lighter: lighter($brand-color, $brand-color-modifier-pct) !default;
 
+$brand-color-c        : complement($brand-color) !default;
 $brand-color-c-darker : darker($brand-color-c, $brand-color-modifier-pct) !default;
 $brand-color-c-lighter: lighter($brand-color-c, $brand-color-modifier-pct) !default;
 
+$brand-color-alt        : $sunglo !default;
 $brand-color-alt-darker : darker($brand-color-alt, $brand-color-modifier-pct) !default;
 $brand-color-alt-lighter: lighter($brand-color-alt, $brand-color-modifier-pct) !default;
 
+$brand-color-alt-c        : complement($brand-color-alt) !default;
 $brand-color-alt-c-darker : darker($brand-color-alt-c, $brand-color-modifier-pct) !default;
 $brand-color-alt-c-lighter: lighter($brand-color-alt-c, $brand-color-modifier-pct) !default;
 
@@ -45,9 +46,9 @@ $yellow : $sandstorm !default;
 
 
 // Link colors
-$link-color           : $brand-color-alt !default;
 $link-color-hover-pct : 10% !default;
 $link-color-active-pct: 20% !default;
+$link-color           : $brand-color-alt !default;
 $link-color-hover     : color-hover($link-color) !default;
 $link-color-active    : color-active($link-color) !default;
 $link-alpha-hover     : color-hover($alpha) !default;

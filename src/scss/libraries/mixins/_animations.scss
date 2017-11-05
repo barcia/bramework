@@ -31,14 +31,14 @@
 ///     100% {transform: rotate(359deg);};
 ///   }
 @mixin animation($name, $duration, $function: ease-in-out, $delay: 0s, $count: infinite, $direction: alternate, $mode: fordwards, $play-state: running) {
-  animation-name: $name;
-  animation-duration: $duration;
-  animation-timing-function: $function; //(http://goo.gl/2rbYlE  |  http://goo.gl/3btZHf)
   animation-delay: $delay;
+  animation-duration: $duration;
   animation-iteration-count: $count;
-  animation-direction: $direction;
-  animation-fill-mode: $mode;
+  animation-name: $name;
   animation-play-state: $play-state;
+  animation-timing-function: $function; //(http://goo.gl/2rbYlE  |  http://goo.gl/3btZHf)
+  animation-fill-mode: $mode;
+  animation-direction: $direction;
 }
 
 

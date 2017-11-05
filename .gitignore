@@ -1,9 +1,8 @@
 # Production
 dist/
 
-# Docs
-ref/
-docs/
+# Config
+package-lock.json
 
 # CSS
 *.css.map
@@ -11,17 +10,16 @@ docs/
 # Sass
 .sass-cache/
 
-# Gulp
+# Node
 node_modules/
+
+# Gulp
 .gulp-scss-cache/
 
 # Temp files
 .temp/
-temp.html
-temp.css
-temp.js
-
-
+temp.*
+test.*
 
 # OS and Editors
 .directory

@@ -2,6 +2,7 @@
   #LISTS
 \*------------------------------------*/
 
+// sass-lint:disable space-before-colon
 $list-padding-vt         : 8px;
 $list-bg-color           : $color-bg-light;
 $list-font-size          : $font-size-base;
@@ -19,15 +20,15 @@ $list-item-padding-hz-small    : 8px;
 $list-avatar-size-small        : 34px;
 $list-avatar-margin-right-small: $list-item-padding-hz-small;
 $list-icon-margin-right-small  : $list-avatar-margin-right-small + ($list-avatar-size-small - $list-icon-size);
-
+// sass-lint:enable space-before-colon
 
 // Base
 .List {
   @include padding-vt($list-padding-vt);
   margin: 0;
-  background-color: $list-bg-color;
   font-size: $list-font-size;
   list-style-type: none;
+  background-color: $list-bg-color;
 
   &:not(:last-child) {
     border-bottom: 1px solid $list-border-bottom-color;
@@ -65,7 +66,7 @@ $list-icon-margin-right-small  : $list-avatar-margin-right-small + ($list-avatar
 
   &[data-badge]::after {
     flex: 1;
-    color: $font-color-lighter;
+    color: $font-color-dark-soft;
     text-align: right;
     content: attr(data-badge);
   }
@@ -76,7 +77,7 @@ $list-icon-margin-right-small  : $list-avatar-margin-right-small + ($list-avatar
 .icon {
   .List & {
     @include size($list-icon-size);
-    fill: $font-color-lighter;
+    fill: $font-color-dark-soft;
   }
 
   .List-item & {
@@ -89,8 +90,8 @@ $list-icon-margin-right-small  : $list-avatar-margin-right-small + ($list-avatar
     @include circle($list-avatar-size);
     display: inline-block;
     margin-right: $list-avatar-margin-right;
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
   }
 }

@@ -5,8 +5,8 @@
 /// Horizontal margin
 /// @param {Units} $px - The margin in px.
 @mixin margin-hz($px) {
-  margin-left: $px;
   margin-right: $px;
+  margin-left: $px;
 }
 
 /// Vertical margin
@@ -19,8 +19,8 @@
 /// Horizontal padding
 /// @param {Units} $px - The margin in px.
 @mixin padding-hz($px) {
-  padding-left: $px;
   padding-right: $px;
+  padding-left: $px;
 }
 
 /// Vertical padding
@@ -32,14 +32,13 @@
 
 
 /// Margin bottom except in last item
-/// @param {string} $size [base] - The size of the margin: `small`, `base` or `large`.
+/// @param {Units} $size [base] - The size of the margin in px.
 @mixin margin-bottom($size: base) {
-  @if $size == small {
-    margin-bottom: $margin-bottom-small;
-  } @else if $size == base {
+  @if $size == base {
     margin-bottom: $margin-bottom-base;
-  } @else if $size == large {
-    margin-bottom: $margin-bottom-large;
+  }
+  @else {
+    margin-bottom: $size;
   }
 
   &:last-child {

@@ -1,5 +1,3 @@
-// scss-lint:disable ColorKeyword, ColorVariable
-
 /// Slightly lighten a color
 /// @group colors
 /// @param {Color} $color - color to tint in hex
@@ -21,15 +19,39 @@
 /// The :hover (and :focus) color variant for a base color
 /// @group colors
 /// @param {Color} $color - base color
+/// @param {Number} $percentage
 /// @return {Color}
-@function color-hover($color) {
-  @return darker($color, $link-color-hover-pct);
+@function color-hover($color, $percentage: $link-color-hover-pct) {
+  @return darker($color, $percentage);
 }
 
 /// The :active color variant for a base color
 /// @group colors
 /// @param {Color} $color - base color
+/// @param {Number} $percentage
 /// @return {Color}
-@function color-active($color) {
-  @return darker($color, $link-color-active-pct);
+@function color-active($color, $percentage: $link-color-active-pct) {
+  @return darker($color, $percentage);
+}
+
+/// Return the text color depending of background color
+/// @group colors
+/// @param {Color} $color - Background color
+/// @return {Color} - Return dark or light text color
+@function contrast-color($color) {
+  @if (lightness($color) > 50) {
+    @return dark; // Lighter backgorund, return dark color
+  }
+  @else {
+    @return light; // Darker background, return light color
+  }
+}
+
+@function font-color-soft($color, $percentage: $font-color-modifier-pct) {
+  @if contrast-color($color) == dark {
+    @return darker($color, $percentage);
+  }
+  @else {
+    @return lighter($color, $percentage);
+  }
 }

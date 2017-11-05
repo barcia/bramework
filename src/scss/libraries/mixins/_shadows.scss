@@ -10,9 +10,11 @@
 @mixin shadow($depth: 0) {
   @if $depth < 1 {
     box-shadow: none;
-  } @else if $depth > 5 {
-      @warn "Invalid $depth `#{$depth}` for mixin `md-shadow`.";
-  } @else {
+  }
+  @else if $depth > 5 {
+    @warn 'Invalid $depth `#{$depth}` for mixin `shadow`.'; //sass-lint:disable-line no-warn
+  }
+  @else {
     box-shadow: shadow-bottom($depth), shadow-top($depth);
   }
 }

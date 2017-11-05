@@ -1,7 +1,7 @@
 // Dependencies
 var gulp         = require('gulp');
 var rename       = require('gulp-rename');
-var notify       = require("gulp-notify");
+var notify       = require('gulp-notify');
 var plumber      = require('gulp-plumber');
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
@@ -18,7 +18,7 @@ var svgmin       = require('gulp-svgmin');
 // Paths
 var sourcePath = './src/';
 var distPath   = './dist/';
-var docsPath   = './ref/';
+var docsPath   = './docs/';
 
 // Tasks
 var cssTask         = 'css';
@@ -52,18 +52,19 @@ gulp.task(cssTask, function () {
       sourcemap: false
     })
   ];
+
   var sassOptions = {};
 
   return gulp.src(sourcePath+'scss/style.scss')
-  .pipe(plumber({ errorHandle: onError }))
-  .pipe(sourcemaps.init())
-  .pipe(sass(sassOptions).on('error', onError))
-  .pipe(postcss(postcssPlugins))
-  .pipe(rename({
-    suffix: '.min'
-  }))
-  .pipe(sourcemaps.write('./'))
-  .pipe(gulp.dest(distPath));
+    .pipe(plumber({ errorHandle: onError }))
+    .pipe(sourcemaps.init())
+    .pipe(sass(sassOptions).on('error', onError))
+    .pipe(postcss(postcssPlugins))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(distPath));
 });
 
 
@@ -71,12 +72,12 @@ gulp.task(cssTask, function () {
 // Concatenate and minify JS files
 gulp.task(jsTask, function() {
   return gulp.src(sourcePath+'js/**/*.js')
-  .pipe(concat('script.js'))
-  .pipe(uglify())
-  .pipe(rename({
-    suffix: '.min'
-  }))
-  .pipe(gulp.dest(distPath));
+    .pipe(concat('script.js'))
+    .pipe(uglify())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest(distPath));
 });
 
 
@@ -84,14 +85,14 @@ gulp.task(jsTask, function() {
 // SVG
 gulp.task(svgTask, function() {
   return gulp.src(sourcePath+'svg/**/*.svg')
-  .pipe(svgmin())
-  .pipe(svgstore())
-  .pipe(rename({
-    basename: 'icons',
-    suffix: '.min',
-    extname: '.svg'
-  }))
-  .pipe(gulp.dest(distPath));
+    .pipe(svgmin())
+    .pipe(svgstore())
+    .pipe(rename({
+      basename: 'icons',
+      suffix: '.min',
+      extname: '.svg'
+    }))
+    .pipe(gulp.dest(distPath));
 });
 
 
@@ -118,16 +119,16 @@ gulp.task('default', function () {
 
 // Browser Sync
 gulp.task(browserSyncTask, function() {
-    browserSync.init({
-        server: {
-            baseDir: './'
-        }
-    });
+  browserSync.init({
+    server: {
+      baseDir: './'
+    }
+  });
 
-    gulp.watch(distPath+'style.min.css').on('change', browserSync.reload);
-    gulp.watch(distPath+'script.min.js').on('change', browserSync.reload);
-    gulp.watch(distPath+'icons.min.svg').on('change', browserSync.reload);
-    gulp.watch('*.html').on('change', browserSync.reload);
+  gulp.watch(distPath+'style.min.css').on('change', browserSync.reload);
+  gulp.watch(distPath+'script.min.js').on('change', browserSync.reload);
+  gulp.watch(distPath+'icons.min.svg').on('change', browserSync.reload);
+  gulp.watch('*.html').on('change', browserSync.reload);
 });
 
 

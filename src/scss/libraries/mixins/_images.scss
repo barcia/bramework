@@ -14,7 +14,7 @@
 ///   }
 @mixin background-image($image-url) {
   background-image: url($image-url);
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

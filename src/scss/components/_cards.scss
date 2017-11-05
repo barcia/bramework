@@ -2,11 +2,11 @@
   #CARDS
 \*------------------------------------*/
 
-// Cards
+// sass-lint:disable space-before-colon
 $card-bg-color               : $white;
 $card-border-radius          : 5px;
 $card-width                  : 400px;
-$card-font-size-text         : .9em;
+$card-font-size-text         : 0.9em;
 $card-font-size-title        : 1.6em;
 $card-font-size-title-avatar : 1.2em;
 $card-sections-margin-hz     : 16px;
@@ -15,14 +15,15 @@ $card-padding-vt             : 8px;
 $card-transition-time        : $transition-time;
 $card-avatar-size            : 50px;
 $card-avatar-margin-right    : $card-sections-margin-hz;
+// sass-lint:enable space-before-colon
 
 // Base
 .Card {
   @include padding-vt($card-padding-vt);
   display: inline-block;
   width: 100%;
-  border-radius: $card-border-radius;
   background-color: $card-bg-color;
+  border-radius: $card-border-radius;
 
   @include breakpoint(small) {
     width: $card-width;
@@ -65,7 +66,7 @@ $card-avatar-margin-right    : $card-sections-margin-hz;
 }
 
 .Card-subtitle {
-  color: $font-color-lighter;
+  color: $font-color-dark-soft;
 }
 
 .Card-text,
@@ -87,8 +88,8 @@ $card-avatar-margin-right    : $card-sections-margin-hz;
 .Card-header-avatar {
   @include circle($card-avatar-size);
   margin-right: $card-avatar-margin-right;
-  background-repeat: no-repeat; /* 1 */
   background-position: center; /* 1 */
+  background-repeat: no-repeat; /* 1 */
   background-size: cover; /* 1 */
 }
 
@@ -106,8 +107,8 @@ $card-avatar-margin-right    : $card-sections-margin-hz;
 .Card-media {
   position: relative;
   margin: 0 auto;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 
   // For preserve the aspect ratio
@@ -136,7 +137,7 @@ $card-avatar-margin-right    : $card-sections-margin-hz;
   }
 
   & .Card-title {color: $font-color-light;}
-  & .Card-subtitle {color: $font-color-light-darker;}
+  & .Card-subtitle {color: $font-color-light-soft;}
 
   // Modifiers
   &.is-2by1::before {padding-bottom: percentage(1 / 2);} // 2:1

@@ -1,25 +1,27 @@
-// Font
-$font-family-sans-serif: 'Open Sans', Roboto, 'Helvetica Neue', sans-serif !default;
-$font-family-serif     : Georgia, 'Times New Roman', serif !default;
-$font-family-monospace : Inconsolata, Consolas, Menlo, Monaco monospace !default;
+// sass-lint:disable space-before-colon
 
-$font-family-base     : $font-family-sans-serif !default;
+// Font
+$font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Roboto, sans-serif !default;
+$font-family-serif: Georgia, serif !default;
+$font-family-monospace: hack, Inconsolata, Menlo, monospace !default;
+
+$font-family-base: $font-family-sans-serif !default;
 
 // Font-size
 $font-size-base : 1rem !default; //~16px
 $font-size-large: 1.2rem !default; //~19px
-$font-size-small: .8rem !default; //~13px
+$font-size-small: 0.8rem !default; //~13px
 
 $font-size-h1: 2.3rem !default;
 $font-size-h2: 2rem !default;
 $font-size-h3: 1.7rem !default;
 $font-size-h4: 1.3rem !default;
 $font-size-h5: 1rem !default;
-$font-size-h6: .9rem !default;
+$font-size-h6: 0.9rem !default;
 
 // Font-weight
 $font-weight-base: normal !default;
-$font-weight-bold  : bold !default;
+$font-weight-bold: bold !default;
 
 $font-weight-h1: $font-weight-base !default;
 $font-weight-h2: $font-weight-base !default;
@@ -33,12 +35,12 @@ $line-height-headings  : 1.4em !default;
 $line-height-base      : 1.5em !default;
 
 // Letter spacing
-$letter-spacing-narrow: -.05em !default;
-$letter-spacing-wide  : .05em !default;
+$letter-spacing-narrow: -0.05em !default;
+$letter-spacing-wide  : 0.05em !default;
 
 // Word spacing
-$word-spacing-narrow: -.05em !default;
-$word-spacing-wide  : .05em !default;
+$word-spacing-narrow: -0.05em !default;
+$word-spacing-wide  : 0.05em !default;
 
 // Code
-$code-font-size: $font-size-base * 000000.9 !default;
+$code-font-size: $font-size-base * 0.9 !default;

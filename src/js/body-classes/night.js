@@ -19,4 +19,4 @@ function nightMode(bodyClassNight) {
 /**
  *  Execute the main function
  */
-nightMode('site-nighted');
+nightMode('site-night');

@@ -1,0 +1,39 @@
+/* #CODE */
+
+// Code
+:not(pre) > code,
+kbd {
+  display: inline-block;
+  padding: 1px 5px;
+  font-family: $font-family-monospace;
+  font-size: $font-size-small;
+  background-color: $grey-50;
+  border-radius: 2px;
+}
+
+code {
+  &.is-dark {
+    color: $white;
+    background-color: $grey-700;
+  }
+
+  &.is-green {
+    color: $md-lightgreen-a400;
+    background-color: $grey-700;
+  }
+
+  &.is-red {
+    color: $razzmatazz;
+    background-color: $alizarin-50;
+  }
+
+  &.is-blue {
+    color: $belize-hole-700;
+    background-color: $belize-hole-50;
+  }
+
+  &.is-brown {
+    color: $carrot-700;
+    background-color: $carrot-50;
+  }
+}

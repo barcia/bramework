@@ -1,104 +1,82 @@
-/*------------------------------------*\
-  #BUTTONS
-\*------------------------------------*/
+/* #BUTTONS */
 
-$button-height       : 40px;
-$button-min-width    : 64px;
-$button-padding-hz   : 18px;
-$button-border-radius: 0;
-
-$button-height-small     : 32px;
-$button-padding-hz-small : 10px;
-
-$button-height-big     : 56px;
-$button-padding-hz-big : 32px;
+// sass-lint:disable space-before-colon
+$button-height-base     : 40px;
+$button-min-width-ratio : 24px;
+$button-padding-hz-ratio: 22px; // This number is subtracted from the height
+$button-transition-time: $transition-time-fast;
+// sass-lint:enable space-before-colon
 
 
-// Base
-/**
- *  Use this base class in <button>, <a> or <input type=button> elements.
- */
-.Button {
+@mixin button($background-color, $height: base, $text-color: $font-color-dark, $raised: 0) {
+  // Basic
   @include void-link;
-  @include link-states(background-color, $link-alpha-hover, $link-alpha-active);
-  @include transition((background-color, box-shadow), $transition-time-fast);
   @include inline-flex-center;
-  min-width: $button-min-width;
-  height: $button-height;
-  padding: 0 $button-padding-hz;
-  border: 0;
-  border-radius: $button-border-radius;
-  outline: 0;
-  background-color: transparent;
+  @include transition((background-color, box-shadow), $button-transition-time);
   white-space: nowrap;
   vertical-align: middle;
+  outline: 0;
+  border: 0;
 
-  &.has-icon {
-    .icon:first-child {
-      margin-right: ($button-padding-hz) / 3;
+  // Background color
+  @include link-states(background-color, color-hover($background-color), color-active($background-color));
+  background-color: $background-color;
+
+  &:disabled {
+    @include hover-focus-active {
+      background-color: $background-color;
     }
   }
 
-  &.is-icon {
-    @include size($button-height);
-    min-width: 0;
-    padding: 0;
+  // Button size
+  @if $height == base {
+    height: $button-height-base;
+    min-width: $button-height-base + $button-min-width-ratio;
+    padding: 0 $button-height-base - $button-padding-hz-ratio;
+  }
+  @else {
+    height: $height;
+    min-width: $height + $button-min-width-ratio;
+    padding: 0 $height - $button-padding-hz-ratio;
   }
 
-  .icon {
-    fill: $font-color;
+  // Text color
+  @include self-hover-focus-active {
+    color: $text-color;
+
+    &:disabled {
+      color: font-color-soft($text-color);
+
+      & .icon {
+        fill: font-color-soft($text-color);
+      }
+    }
+
+    & .icon {
+      fill: $text-color;
+    }
   }
 
-  &:disabled {
-    @include link-states(background-color, inherit);
-    color: $font-color-lighter;
-    .icon {fill: $font-color-lighter;}
+  // Raised
+  @if $raised > 0 {
+    @include shadow($raised);
+    @include hover-focus {
+      @include shadow($raised + 1);
+    }
+
+    &:disabled {
+      @include hover-focus {
+        @include shadow($raised);
+      }
+    }
   }
-}
-
-
-// Modifiers
-.Button--rounded {
-  border-radius: 50%;
-}
-
-.Button--line {
-  border-width: 1px;
-  border-style: solid;
-}
-
-.Button--fill {
-  @include link-states(background-color, color-hover($brand-color), color-active($brand-color));
-  @include link-states(color, $font-color-light);
-  background-color: $brand-color;
-  .icon {fill: $font-color-light;}
-  &:disabled {
-    @include link-states(background-color, lighter($brand-color, 10%));
-    @include link-states(color, $font-color-light);
-    .icon {fill: $font-color-light;}
-  }
-}
-
-.Button--raised {
-  @include shadow(1);
-  @include hover-focus-active {
-    @include shadow(2);
+  @else if $raised > 4 {
+    @error 'Invalid $raised, put a number between 0 and 4';
   }
 }
 
-.Button--small {
-  height: $button-height-small;
-  padding: 0 $button-padding-hz-small;
-  font-size: .95em;
-}
 
-.Button--big {
-  height: $button-height-big;
-  padding: 0 $button-padding-hz-big;
-  font-size: 1.1em;
-  &.is-icon {@include size($button-height-big);}
-}
 
-.Button--block {
-  width: 100%;
+.Button {
+  @include button($brand-color-alt, base, $font-color-light, 1);
 }
