@@ -1,9 +1,6 @@
 # Production
 dist/
 
-# Config
-package-lock.json
-
 # CSS
 *.css.map
 
@@ -12,6 +9,7 @@ package-lock.json
 
 # Node
 node_modules/
+package-lock.json
 
 # Gulp
 .gulp-scss-cache/
