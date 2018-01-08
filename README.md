@@ -1,7 +1,5 @@
 # Bramework
-v.0.3.0
-
-A simple Scss framework
+A Scss framework
 
 
 ## Table of contents
@@ -13,9 +11,6 @@ A simple Scss framework
 - [Usage](#usage)
   - [Gulp commands](#gulp-commands)
 - [Support](#support)
-- [Contributing](#contributing)
-	- [Code of conduct](#code-of-conduct)
-- [Changelog](#changelog)
 - [Credits](#credits)
 - [License](#license)
 
@@ -62,11 +57,6 @@ In web development I always try to use the lastest web standards, that's why I c
 
 ## Support
 Visit the project [issues](https://github.com/barcia/bramework/issues)
-
-
-
-## Changelog
-See [CHANGELOG.md](https://github.com/barcia/bramework/blob/master/CHANGELOG.md) for more info.
 
 
 
