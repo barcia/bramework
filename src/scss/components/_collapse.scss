@@ -1,12 +1,12 @@
 /*------------------------------------*\
-  #COLLAPSE
+	#COLLAPSE
 \*------------------------------------*/
 
 .Collapse {
-  &:not(.is-active) {
-    .Collapse-content,
-    .Collapse-close {
-      display: none;
-    }
-  }
+	&:not(.is-active) {
+		.Collapse-content,
+		.Collapse-close {
+			display: none;
+		}
+	}
 }

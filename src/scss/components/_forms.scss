@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #FORMS
+	#FORMS
 \*------------------------------------*/
 
 $input-padding-hz: 10px;
@@ -12,35 +12,35 @@ $input-placeholder-color: $alpha-300;
 
 
 .Form-group {
-  display: flex;
-  align-items: center;
-  width: 100%;
+	display: flex;
+	align-items: center;
+	width: 100%;
 }
 
 .Form-label {
-  display: inline-flex;
-  align-items: center;
+	display: inline-flex;
+	align-items: center;
 }
 
 .Form-input {
-  @include transition(border-color, $transition-time-fast);
-  flex: 1;
-  padding: $input-padding-vt $input-padding-hz;
-  color: $font-color-dark;
-  border: $input-border-width solid $input-border-color;
-  border-radius: $input-border-radius;
+	@include transition(border-color, $transition-time-fast);
+	flex: 1;
+	padding: $input-padding-vt $input-padding-hz;
+	color: $font-color-dark;
+	border: $input-border-width solid $input-border-color;
+	border-radius: $input-border-radius;
 
-  &:focus {
-    border-color: $input-border-color-focus;
-    outline: none;
-  }
+	&:focus {
+		border-color: $input-border-color-focus;
+		outline: none;
+	}
 
-  &:disabled {
-    color: $font-color-dark-soft;
-    background-color: $alpha-100;
-  }
+	&:disabled {
+		color: $font-color-dark-soft;
+		background-color: $alpha-100;
+	}
 
-  &::placeholder {
-    color: $input-placeholder-color;
-  }
+	&::placeholder {
+		color: $input-placeholder-color;
+	}
 }

@@ -14,31 +14,31 @@
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation Mozilla Developer Network
 ///
 /// @example scss - Usage
-///   .foo {
-///     @include animation(beat);
-///   }
+///	 .foo {
+///		 @include animation(beat);
+///	 }
 /// @example scss - Usage changing the duration
-///   .foo {
-///     @include animation(beat, 400ms);
-///   }
+///	 .foo {
+///		 @include animation(beat, 400ms);
+///	 }
 /// @example scss - Keyframes declaration
-///   @keyframes $beat {
-///     from {transform: scale(1);}
-///     to {transform: scale(1.15);}
-///   }
-///   @keyframes $spin {
-///     0% {transform: rotate(0deg);};
-///     100% {transform: rotate(359deg);};
-///   }
+///	 @keyframes $beat {
+///		 from {transform: scale(1);}
+///		 to {transform: scale(1.15);}
+///	 }
+///	 @keyframes $spin {
+///		 0% {transform: rotate(0deg);};
+///		 100% {transform: rotate(359deg);};
+///	 }
 @mixin animation($name, $duration, $function: ease-in-out, $delay: 0s, $count: infinite, $direction: alternate, $mode: fordwards, $play-state: running) {
-  animation-delay: $delay;
-  animation-duration: $duration;
-  animation-iteration-count: $count;
-  animation-name: $name;
-  animation-play-state: $play-state;
-  animation-timing-function: $function; //(http://goo.gl/2rbYlE  |  http://goo.gl/3btZHf)
-  animation-fill-mode: $mode;
-  animation-direction: $direction;
+	animation-delay: $delay;
+	animation-duration: $duration;
+	animation-iteration-count: $count;
+	animation-name: $name;
+	animation-play-state: $play-state;
+	animation-timing-function: $function; //(http://goo.gl/2rbYlE	|	http://goo.gl/3btZHf)
+	animation-fill-mode: $mode;
+	animation-direction: $direction;
 }
 
 
@@ -47,20 +47,21 @@
 /// @param {string} $duration [$transition-time] - The number of seconds or milliseconds a transition animation should take to complete
 /// @param {string} $timing-function [transition-timing-function] - How the intermediate values of the CSS properties being affected. Use `ease`, `linear`, `step-end`, `steps(4, end)`, etc. View the [docs](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function) or an [example](http://css3.bradshawenterprises.com/transitions/)
 /// @example scss - Simple usage
-///   .foo {
-///     @include transition(width);
-///   }
+///	 .foo {
+///		 @include transition(width);
+///	 }
 /// @example scss - More than one property
-///   .foo {
-///     @include transition([width, height]);
-///   }
+///	 .foo {
+///		 @include transition([width, height]);
+///	 }
 /// @example scss - More than one property and change duration
-///   .foo {
-///     @include transition([width, height], 5s);
-///   }
+///	 .foo {
+///		 @include transition([width, height], 5s);
+///	 }
 @mixin transition($property, $duration: $transition-time, $timing-function: $transition-timing-function) {
-  transition-delay: 0s;
-  transition-duration: $duration;
-  transition-property: $property;
-  transition-timing-function: $timing-function; //timing-function ('ease', 'linear', 'step-end', 'steps(4, end)') (http://goo.gl/2rbYlE  | http://goo.gl/3btZHf)
+	transition-delay: 0s;
+	transition-duration: $duration;
+
+	transition-property: $property;
+	transition-timing-function: $timing-function; //timing-function ('ease', 'linear', 'step-end', 'steps(4, end)') (http://goo.gl/2rbYlE	| http://goo.gl/3btZHf)
 }

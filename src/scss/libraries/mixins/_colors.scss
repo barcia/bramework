@@ -11,5 +11,5 @@
 ///     @include gradient(30deg, (blue, red, yellow));
 ///   }
 @mixin gradient($direction, $colors) {
-  background: linear-gradient($direction, $colors);
+	background: linear-gradient($direction, $colors);
 }

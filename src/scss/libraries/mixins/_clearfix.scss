@@ -3,9 +3,9 @@
 /// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix
 /// @group positioning
 @mixin clearfix {
-  &::after {
-    display: table;
-    clear: both;
-    content: '';
-  }
+	&::after {
+		display: table;
+		clear: both;
+		content: '';
+	}
 }

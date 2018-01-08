@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #DROPDOWN
+	#DROPDOWN
 \*------------------------------------*/
 // TODO: Improve this component, is not accesible
 
@@ -8,35 +8,35 @@ $dropdown-shadow-depth: 5;
 
 
 .Dropdown {
-  position: relative;
+	position: relative;
 
-  @include hover-focus {
-    outline: 0;
-  }
+	@include hover-focus {
+		outline: 0;
+	}
 }
 
 .Dropdown-content {
-  position: absolute;
-  display: none;
-  min-width: $dropdowm-min-width;
-  @include shadow($dropdown-shadow-depth);
+	position: absolute;
+	display: none;
+	min-width: $dropdowm-min-width;
+	@include shadow($dropdown-shadow-depth);
 
-  // overflow: hidden;
-  // opacity: 0;
-  // visibility: hidden;
-  // transition: visibility 0.5s;
+	// overflow: hidden;
+	// opacity: 0;
+	// visibility: hidden;
+	// transition: visibility 0.5s;
 
-  // .Dropdown:hover &,
-  .Dropdown:focus & {
-    display: block;
+	// .Dropdown:hover &,
+	.Dropdown:focus & {
+		display: block;
 
-    // opacity: 1;
-    // visibility: visible;
-    // transition: width 5s;
-  }
+		// opacity: 1;
+		// visibility: visible;
+		// transition: width 5s;
+	}
 }
 
 
 .Dropdown-content--right {
-  right: 0;
+	right: 0;
 }

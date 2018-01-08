@@ -6,11 +6,11 @@
 /// @link https://css-tricks.com/snippets/sass/material-shadows-mixin/ CSS Tricks
 /// @link https://codepen.io/HugoGiraudel/pen/yyaGaP CodePen
 @function shadow-top($depth) {
-  $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
-  $blur: nth(1.5 3 10 14 19, $depth) * 4px;
-  $color: rgba(black, nth(0.12 0.16 0.19 0.25 0.3, $depth));
+	$primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+	$blur: nth(1.5 3 10 14 19, $depth) * 4px;
+	$color: rgba($black, nth(0.12 0.16 0.19 0.25 0.3, $depth));
 
-  @return 0 $primary-offset $blur $color;
+	@return 0 $primary-offset $blur $color;
 }
 
 /// Computes a md-shadow-bottom for a card effect
@@ -21,9 +21,11 @@
 /// @link https://css-tricks.com/snippets/sass/material-shadows-mixin/ CSS Tricks
 /// @link https://codepen.io/HugoGiraudel/pen/yyaGaP CodePen
 @function shadow-bottom($depth) {
-  $primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
-  $blur: nth(1 3 3 5 6, $depth) * 4px;
-  $color: rgba(black, nth(0.24 0.23 0.23 0.22 0.22, $depth));
+	$primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+	$blur: nth(1 3 3 5 6, $depth) * 4px;
+	$color: rgba($black, nth(0.24 0.23 0.23 0.22 0.22, $depth));
 
-  @return 0 $primary-offset $blur $color;
+	@return 0 $primary-offset $blur $color;
 }
+
+// TODO: Build lateral shadows

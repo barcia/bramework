@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #NAVBAR
+	#NAVBAR
 \*------------------------------------*/
 
 $navbar-font-color                : $font-color-dark;
@@ -39,194 +39,194 @@ $navbar-tabs-maxwidth              : 200px;
  *    transform: For navbar--hidden variant
  */
 .Navbar {
-  @include transition((box-shadow, transform), $transition-time); /* 2 */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  color: $white;
-  // color: $navbar-font-color;
-  z-index: $navbar-zindex;
+	@include transition((box-shadow, transform), $transition-time); /* 2 */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: $white;
+	// color: $navbar-font-color;
+	z-index: $navbar-zindex;
 
-  background-color: $md-indigo-500;
-  @include shadow(1);
-  @include scrolled {
-    @include shadow(3);
-  }
+	background-color: $md-indigo-500;
+	@include shadow(1);
+	@include scrolled {
+		@include shadow(3);
+	}
 
-  a {
-    @include void-link;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
+	a {
+		@include void-link;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-  .icon {
-    @include size($navbar-icon-svg-size);
-    fill: $white;
-  }
+	.icon {
+		@include size($navbar-icon-svg-size);
+		fill: $white;
+	}
 }
 
 
 .Navbar-toolbar {
-  display: flex;
-  align-items: stretch;
-  height: $navbar-toolbar-height;
-  white-space: nowrap;
-  overflow-x: auto;
+	display: flex;
+	align-items: stretch;
+	height: $navbar-toolbar-height;
+	white-space: nowrap;
+	overflow-x: auto;
 
 
-  @include breakpoint-down(medium) {
-    height: $navbar-toolbar-height-medium;
-  }
+	@include breakpoint-down(medium) {
+		height: $navbar-toolbar-height-medium;
+	}
 }
 
 
 .Navbar-toolbar-left,
 .Navbar-toolbar-center,
 .Navbar-toolbar-right {
-  display: inline-flex;
-  align-items: center;
+	display: inline-flex;
+	align-items: center;
 
 }
 
 .Navbar-toolbar-left {
-  margin-left: $navbar-toolbar-margin-hz;
+	margin-left: $navbar-toolbar-margin-hz;
 
-  @include breakpoint-down(small) {
-    margin-left: $navbar-toolbar-margin-hz-small;
-  }
+	@include breakpoint-down(small) {
+		margin-left: $navbar-toolbar-margin-hz-small;
+	}
 }
 
 .Navbar-toolbar-right {
-  margin-right: $navbar-toolbar-margin-hz;
+	margin-right: $navbar-toolbar-margin-hz;
 
-  @include breakpoint-down(small) {
-    margin-right: $navbar-toolbar-margin-hz-small;
-  }
+	@include breakpoint-down(small) {
+		margin-right: $navbar-toolbar-margin-hz-small;
+	}
 }
 
 .Navbar-toolbar-center {
-  @include margin-hz($navbar-toolbar-margin-hz * 2);
-  flex: 1;
+	@include margin-hz($navbar-toolbar-margin-hz * 2);
+	flex: 1;
 
-  @include breakpoint-down(small) {
-    @include margin-hz($navbar-toolbar-margin-hz-small * 2);
-  }
+	@include breakpoint-down(small) {
+		@include margin-hz($navbar-toolbar-margin-hz-small * 2);
+	}
 
-  // @include breakpoint-down(small) {
-  //   justify-content: center;
-  // }
+	// @include breakpoint-down(small) {
+	//   justify-content: center;
+	// }
 }
 
 
 // Menus
 %Navbar-menu-list {
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
-  margin: 0;
-  list-style-type: none;
+	display: inline-flex;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+	list-style-type: none;
 
-  li {
-    @include margin-hz($navbar-menu-item-margin-hz);
-    display: inline-flex;
-    align-items: center;
-    height: 100%;
-    @include breakpoint-down(small) {
-      @include margin-hz($navbar-menu-item-margin-hz-small);
-    }
-  }
+	li {
+		@include margin-hz($navbar-menu-item-margin-hz);
+		display: inline-flex;
+		align-items: center;
+		height: 100%;
+		@include breakpoint-down(small) {
+			@include margin-hz($navbar-menu-item-margin-hz-small);
+		}
+	}
 }
 
 .Navbar-menu--links,
 .Navbar-menu--buttons,
 .Navbar-menu--icons {
-  @extend %Navbar-menu-list;
+	@extend %Navbar-menu-list;
 }
 
 .Navbar-menu--links,
 .Navbar-menu--buttons {
-  a,
-  .Button {
-    @include padding-hz($navbar-link-padding-hz);
-    height: $navbar-link-height;
-    color: inherit;
+	a,
+	.Button {
+		@include padding-hz($navbar-link-padding-hz);
+		height: $navbar-link-height;
+		color: inherit;
 
-    @include breakpoint-down(small) {
-      @include padding-hz($navbar-link-padding-hz-small);
-    }
-  }
+		@include breakpoint-down(small) {
+			@include padding-hz($navbar-link-padding-hz-small);
+		}
+	}
 }
 
 
 .Navbar-menu--links {
-  a,
-  .Button {
-    @include transition(color, $navbar-transition-time);
-    @include hover-focus-active {
-      color: $navbar-link-color-states;
-      .icon {fill: $navbar-link-color-states;}
-    }
-  }
+	a,
+	.Button {
+		@include transition(color, $navbar-transition-time);
+		@include hover-focus-active {
+			color: $navbar-link-color-states;
+			.icon {fill: $navbar-link-color-states;}
+		}
+	}
 
-  li.is-active a,
-  li.is-active .Button {
-    color: $navbar-link-color-states;
-    .icon {fill: $navbar-link-color-states;}
-  }
+	li.is-active a,
+	li.is-active .Button {
+		color: $navbar-link-color-states;
+		.icon {fill: $navbar-link-color-states;}
+	}
 }
 
 
 .Navbar-menu--buttons,
 .Navbar-menu--icons {
-  a,
-  .Button {
-    @include link-states(background-color, $link-alpha-hover, $link-alpha-active);
-    @include transition(background-color, $navbar-transition-time);
-    will-change: background-color;
-  }
+	a,
+	.Button {
+		@include link-states(background-color, $link-alpha-hover, $link-alpha-active);
+		@include transition(background-color, $navbar-transition-time);
+		will-change: background-color;
+	}
 
-  li.is-active a,
-  li.is-active .Button {
-    background-color: $link-alpha-active;
-  }
+	li.is-active a,
+	li.is-active .Button {
+		background-color: $link-alpha-active;
+	}
 }
 
 
 .Navbar-menu--icons {
-  a,
-  .Button {
-    @include circle($navbar-icon-size);
-    position: relative; /* Good positioning of data-badge */
-    min-width: 0;
-    padding: 0;
+	a,
+	.Button {
+		@include circle($navbar-icon-size);
+		position: relative; /* Good positioning of data-badge */
+		min-width: 0;
+		padding: 0;
 
-    &[data-badge]::after {
-      @include circle($navbar-databadge-size);
-      display: inline-flex;
-      position: absolute;
-      top: ($navbar-databadge-size - $navbar-databadge-font-size) / 2;
-      right: ($navbar-databadge-size - $navbar-databadge-font-size) / 2;
-      align-items: center;
-      justify-content: center;
-      background-color: $navbar-databadge-background-color;
-      color: $navbar-databadge-color;
-      font-size: $navbar-databadge-font-size;
-      content: attr(data-badge);
-    }
+		&[data-badge]::after {
+			@include circle($navbar-databadge-size);
+			display: inline-flex;
+			position: absolute;
+			top: ($navbar-databadge-size - $navbar-databadge-font-size) / 2;
+			right: ($navbar-databadge-size - $navbar-databadge-font-size) / 2;
+			align-items: center;
+			justify-content: center;
+			background-color: $navbar-databadge-background-color;
+			color: $navbar-databadge-color;
+			font-size: $navbar-databadge-font-size;
+			content: attr(data-badge);
+		}
 
-  }
+	}
 }
 
 
 .Navbar-title {
-  margin: 0;
-  font-size: 20px;
+	margin: 0;
+	font-size: 20px;
 
-  @include breakpoint-down(small) {
-    letter-spacing: $word-spacing-narrow;
-  }
+	@include breakpoint-down(small) {
+		letter-spacing: $word-spacing-narrow;
+	}
 }
 
 
@@ -240,8 +240,8 @@ $navbar-tabs-maxwidth              : 200px;
  *    layout/_wrapper.scss
  */
 .Navbar--fixed {
-  position: fixed; /* 1 */
-  will-change: box-shadow;
+	position: fixed; /* 1 */
+	will-change: box-shadow;
 }
 
 
@@ -250,17 +250,17 @@ $navbar-tabs-maxwidth              : 200px;
  * Maintain the navbar always on top, but it show and hide if scroll down or up
  */
 .Navbar--fixed--hidden {
-  position: fixed;
-  will-change: box-shadow, transform;
-  // transform-origin: top left;
+	position: fixed;
+	will-change: box-shadow, transform;
+	// transform-origin: top left;
 
-  @include scroll-down {
-    transform: translateY(-$navbar-toolbar-height);
+	@include scroll-down {
+		transform: translateY(-$navbar-toolbar-height);
 
-    @include breakpoint-down(medium) {
-      transform: translateY(-$navbar-toolbar-height-medium);
-    }
-  }
+		@include breakpoint-down(medium) {
+			transform: translateY(-$navbar-toolbar-height-medium);
+		}
+	}
 }
 
 
@@ -268,52 +268,52 @@ $navbar-tabs-maxwidth              : 200px;
 // TABS
 // BUG: When the screem is overflow, the first item is moved to left. Browser or Flexbox bug?
 .Navbar-tabs {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  height: $navbar-tabs-height;
-  overflow-x: auto;
-  white-space: nowrap;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	height: $navbar-tabs-height;
+	overflow-x: auto;
+	white-space: nowrap;
 }
 
 .Navbar-tabs-list {
-  display: inline-flex;
-  justify-content: center;
-  width: 100%;
-  list-style-type: none;
+	display: inline-flex;
+	justify-content: center;
+	width: 100%;
+	list-style-type: none;
 
-  li {
-    flex: 1;
-    max-width: $navbar-tabs-maxwidth;
+	li {
+		flex: 1;
+		max-width: $navbar-tabs-maxwidth;
 
-    @include breakpoint-down(small) {
-      max-width: none;
-    }
-  }
+		@include breakpoint-down(small) {
+			max-width: none;
+		}
+	}
 
-  a,
-  span {
-    @include link-states(background-color, $link-alpha-hover, $link-alpha-active);
-    @include transition((background-color, border-bottom-color, opacity), $navbar-transition-time);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 0 12px;
-    border-bottom: 2px solid $alpha;
-    opacity: .6;
+	a,
+	span {
+		@include link-states(background-color, $link-alpha-hover, $link-alpha-active);
+		@include transition((background-color, border-bottom-color, opacity), $navbar-transition-time);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		padding: 0 12px;
+		border-bottom: 2px solid $alpha;
+		opacity: .6;
 
-    @include hover-focus-active {
-      border-bottom-color: $brand-color;
-      cursor: pointer;
-      opacity: 1;
-    }
-  }
+		@include hover-focus-active {
+			border-bottom-color: $brand-color;
+			cursor: pointer;
+			opacity: 1;
+		}
+	}
 
-  li.is-active a,
-  li.is-active .Button {
-    border-bottom-color: $brand-color;
-    opacity: 1;
-  }
+	li.is-active a,
+	li.is-active .Button {
+		border-bottom-color: $brand-color;
+		opacity: 1;
+	}
 }

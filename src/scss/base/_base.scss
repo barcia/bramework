@@ -1,33 +1,33 @@
-/* #BASE */
+/*#BASE*/
 
-// Body
+//Body
 body {
-  background-color: $color-bg-light;
+	background-color: $color-bg-light;
 }
 
 
-// Lists
+//Lists
 ul,
 ol {
-  padding-left: 0;
+	padding-left: 0;
 
-  & & {
-    padding-left: 30px;
-  }
+	& & {
+		padding-left: 30px;
+	}
 }
 
 
-// Media
+//Media
 figcaption {
-  font-size: $font-size-small;
-  font-weight: $font-weight-base;
-    color: $font-color-dark-soft;
-  &:first-child {margin-bottom: 0.5em;}
-  &:last-child {margin-top: 0.5em;}
+	font-size: $font-size-small;
+	font-weight: $font-weight-base;
+	color: $font-color-dark-soft;
+	&:first-child {margin-bottom: 0.5em;}
+	&:last-child {margin-top: 0.5em;}
 }
 
 
-// Forms
+//Forms
 input:disabled {
-  color: $font-color-dark-soft;
+	color: $font-color-dark-soft;
 }

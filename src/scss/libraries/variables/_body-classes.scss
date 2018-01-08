@@ -10,10 +10,10 @@
 /// @prop {string} not-touchdevice - Body class for when isn't a touchdevice
 /// @prop {string} night - Body class for when is night
 $body-class: (
-  'scroll-down': 'site-scroll-down',
-  'scroll-up': 'site-scroll-up',
-  'scrolled': 'site-scrolled',
-  'touchdevice': 'site-touchdevice',
-  'not-touchdevice': 'site-not-touchdevice',
-  'night': 'site-night',
+	'scroll-down': 'site-scroll-down',
+	'scroll-up': 'site-scroll-up',
+	'scrolled': 'site-scrolled',
+	'touchdevice': 'site-touchdevice',
+	'not-touchdevice': 'site-not-touchdevice',
+	'night': 'site-night',
 ) !default;

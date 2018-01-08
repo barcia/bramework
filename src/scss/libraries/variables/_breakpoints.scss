@@ -6,8 +6,8 @@
 /// @prop {Number} large - 1024px. Tablet landscape
 /// @prop {Number} extra-large - 1366px. Desktop
 $breakpoints: (
-  'small': 450px,
-  'medium': 800px,
-  'large': 1024px,
-  'extra-large': 1920px,
+	'small': 450px,
+	'medium': 800px,
+	'large': 1024px,
+	'extra-large': 1920px,
 ) !default;

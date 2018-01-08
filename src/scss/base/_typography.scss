@@ -3,9 +3,9 @@
 
 // Body
 body {
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  color: $font-color-dark;
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	color: $font-color-dark;
 }
 
 
@@ -16,62 +16,62 @@ h4, .h3,
 h2, .h4,
 h5, .h5,
 h6, .h6, {
-  margin-top: $margin-top-headings;
-  margin-bottom: $margin-bottom-headings;
-  font-family: $font-family-base;
-  line-height: $line-height-headings;
-  text-rendering: optimizeLegibility;
+	margin-top: $margin-top-headings;
+	margin-bottom: $margin-bottom-headings;
+	font-family: $font-family-base;
+	line-height: $line-height-headings;
+	text-rendering: optimizeLegibility;
 
-  &:first-child {
-    margin-top: 0;
-  }
+	&:first-child {
+		margin-top: 0;
+	}
 
-  @include breakpoint-down(small) {
-    line-height: $line-height-headings * 0.9;
-    letter-spacing: -0.03em;
-  }
+	@include breakpoint-down(small) {
+		line-height: $line-height-headings * 0.9;
+		letter-spacing: -0.03em;
+	}
 }
 
 h1, .h1 {
-  font-size: $font-size-h1;
-  font-weight: $font-weight-h1;
+	font-size: $font-size-h1;
+	font-weight: $font-weight-h1;
 
-  @include breakpoint-down(small) {
-    font-size: $font-size-h1 * 0.75;
-  }
+	@include breakpoint-down(small) {
+		font-size: $font-size-h1 * 0.75;
+	}
 }
 
 h2, .h2 {
-  font-size: $font-size-h2;
-  font-weight: $font-weight-h2;
+	font-size: $font-size-h2;
+	font-weight: $font-weight-h2;
 
-  @include breakpoint-down(small) {
-    font-size: $font-size-h2 * 0.8;
-  }
+	@include breakpoint-down(small) {
+		font-size: $font-size-h2 * 0.8;
+	}
 }
 
 h3, .h3 {
-  font-size: $font-size-h3;
-  font-weight: $font-weight-h3;
+	font-size: $font-size-h3;
+	font-weight: $font-weight-h3;
 
-  @include breakpoint-down(small) {
-    font-size: $font-size-h3 * 0.85;
-  }
+	@include breakpoint-down(small) {
+		font-size: $font-size-h3 * 0.85;
+	}
 }
 
 h4, .h4 {
-  font-size: $font-size-h4;
-  font-weight: $font-weight-h4;
+	font-size: $font-size-h4;
+	font-weight: $font-weight-h4;
 }
 
 h5, .h5 {
-  font-size: $font-size-h5;
-  font-weight: $font-weight-h5;
+	font-size: $font-size-h5;
+	font-weight: $font-weight-h5;
 }
 
 h6, .h6 {
-  font-size: $font-size-h6;
-  font-weight: $font-weight-h6;
+	font-size: $font-size-h6;
+	font-weight: $font-weight-h6;
 }
 
 
@@ -82,49 +82,49 @@ table,
 form,
 figure,
 blockquote {
-  @include margin-bottom(base);
+	@include margin-bottom(base);
 }
 
 p {
-  font-weight: $font-weight-base;
-  line-height: $line-height-base;
-  text-align: left;
+	font-weight: $font-weight-base;
+	line-height: $line-height-base;
+	text-align: left;
  }
 
 
 // Inline elements
 a {
-  color: $link-color;
-  text-decoration: underline;
-  @include link-states(color, $link-color-hover, $link-color-active);
+	color: $link-color;
+	text-decoration: underline;
+	@include link-states(color, $link-color-hover, $link-color-active);
 }
 
 
 abbr {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 
 del {
-  color: $red;
+	color: $red;
 }
 
 ins {
-  color: $green;
+	color: $green;
 }
 
 mark {
-  background-color: $yellow;
+	background-color: $yellow;
 }
 
 kbd {
-  background-color: $white;
-  box-shadow: 0 2px $grey-150;
+	background-color: $white;
+	box-shadow: 0 2px $grey-150;
 }
 
 small,
 .small {
-  font-size: $font-size-small;
-  font-weight: $font-weight-base;
-  color: $font-color-dark-soft;
+	font-size: $font-size-small;
+	font-weight: $font-weight-base;
+	color: $font-color-dark-soft;
 }

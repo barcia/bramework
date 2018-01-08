@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #TAGS
+	#TAGS
 \*------------------------------------*/
 
 // sass-lint:disable space-before-colon
@@ -11,23 +11,23 @@ $tag-icon-margin-right: $tag-padding-hz;
 // sass-lint:enable space-before-colon
 
 .Tag {
-  @include padding-hz($tag-padding-hz);
-  @include link-states(color, $white);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: $tag-height;
-  font-size: $tag-font-size;
-  color: $white;
-  vertical-align: middle;
-  background-color: $brand-color;
+	@include padding-hz($tag-padding-hz);
+	@include link-states(color, $white);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: $tag-height;
+	font-size: $tag-font-size;
+	color: $white;
+	vertical-align: middle;
+	background-color: $brand-color;
 
-  @include self-hover-focus-active {
-    text-decoration: none;
-  }
+	@include self-hover-focus-active {
+		text-decoration: none;
+	}
 
-  .icon {
-    margin-right: $tag-icon-margin-right;
-    fill: $white;
-  }
+	.icon {
+		margin-right: $tag-icon-margin-right;
+		fill: $white;
+	}
 }

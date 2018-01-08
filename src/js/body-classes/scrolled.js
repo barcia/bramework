@@ -11,86 +11,86 @@
  *  after or until the class will be added
  */
 function scrolled(mainElement, variant, theClass, position) {
-  'use strict';
+	'use strict';
 
-  var _mainElement;
-  var _variant;
-  var _position;
-
-
-
-  // Search the element
-  if (mainElement === 'body') {
-    _mainElement = document.body;
-  }
-  else {
-    _mainElement = document.getElementById(mainElement);
-  }
-
-
-  // Establishes the variant (after(default) / until)
-  if(variant === 'until') {
-    _variant = 'until';
-  }
-  else {
-    _variant = 'after'; // Default value
-  }
-
-
-  // Establishes the point after or until the class will be added
-  if(position) {
-    _position = position;
-  }
-  else {
-    _position = 1; // Default value
-  }
+	var _mainElement;
+	var _variant;
+	var _position;
 
 
 
-  /**
-   *  If the variant is until, add the class on load
-   */
-  function addScrolledClassUntil() {
-    if(_mainElement) {
-      _mainElement.classList.add(theClass);
-    }
-  }
-
-  if (_variant === 'until') {
-    window.addEventListener('load', addScrolledClassUntil);
-  }
+	// Search the element
+	if (mainElement === 'body') {
+		_mainElement = document.body;
+	}
+	else {
+		_mainElement = document.getElementById(mainElement);
+	}
 
 
-
-  /**
-   *  Add class when scrolling
-   */
-  function addScrolledClass() {
-    if(_mainElement) {
-
-      if (_variant === 'until') {
-        if (window.scrollY < _position) {
-          _mainElement.classList.add(theClass);
-        }
-        else {
-          _mainElement.classList.remove(theClass);
-        }
-      }
+	// Establishes the variant (after(default) / until)
+	if(variant === 'until') {
+		_variant = 'until';
+	}
+	else {
+		_variant = 'after'; // Default value
+	}
 
 
-      if (_variant === 'after') {
-        if (window.scrollY < _position) {
-          _mainElement.classList.remove(theClass);
-        }
-        else {
-          _mainElement.classList.add(theClass);
-        }
-      }
+	// Establishes the point after or until the class will be added
+	if(position) {
+		_position = position;
+	}
+	else {
+		_position = 1; // Default value
+	}
 
-    }
-  }
 
-  window.addEventListener('scroll', addScrolledClass);
+
+	/**
+	 *  If the variant is until, add the class on load
+	 */
+	function addScrolledClassUntil() {
+		if(_mainElement) {
+			_mainElement.classList.add(theClass);
+		}
+	}
+
+	if (_variant === 'until') {
+		window.addEventListener('load', addScrolledClassUntil);
+	}
+
+
+
+	/**
+	 *  Add class when scrolling
+	 */
+	function addScrolledClass() {
+		if(_mainElement) {
+
+			if (_variant === 'until') {
+				if (window.scrollY < _position) {
+					_mainElement.classList.add(theClass);
+				}
+				else {
+					_mainElement.classList.remove(theClass);
+				}
+			}
+
+
+			if (_variant === 'after') {
+				if (window.scrollY < _position) {
+					_mainElement.classList.remove(theClass);
+				}
+				else {
+					_mainElement.classList.add(theClass);
+				}
+			}
+
+		}
+	}
+
+	window.addEventListener('scroll', addScrolledClass);
 
 }
 

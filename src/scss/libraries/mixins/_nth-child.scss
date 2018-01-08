@@ -5,88 +5,88 @@
 /// The *n* child from first
 /// @param {number} $number - The *n* child whose will be affected
 @mixin child($number) {
-  &:nth-child(#{$number}) {
-    @content;
-  }
+	&:nth-child(#{$number}) {
+		@content;
+	}
 }
 
 /// The *n* child from last
 /// @param {number} $number - The *n* child whose will be affected, beginning from last
 @mixin child-inv($number) {
-  &:nth-last-child(#{$number}) {
-    @content;
-  }
+	&:nth-last-child(#{$number}) {
+		@content;
+	}
 }
 
 /// All except *n*
 /// @param {number} $number - The *n* child whose will not be affected
 @mixin except-child($number) {
-  &:not(:nth-child(#{$number})) {
-    @content;
-  }
+	&:not(:nth-child(#{$number})) {
+		@content;
+	}
 }
 
 /// All except *n* form last
 /// @param {number} $number - The *n* child whose will not be affected, beginning from last
 @mixin except-child-inv($number) {
-  &:not(:nth-last-child(#{$number})) {
-    @content;
-  }
+	&:not(:nth-last-child(#{$number})) {
+		@content;
+	}
 }
 
 /// Even
 @mixin even {
-  &:nth-child(even) {
-    @content;
-  }
+	&:nth-child(even) {
+		@content;
+	}
 }
 
 /// Odd
 @mixin odd {
-  &:nth-child(odd) {
-    @content;
-  }
+	&:nth-child(odd) {
+		@content;
+	}
 }
 
 /// Each $number
 /// @param {number} $number - It will be affected one of *n*
 @mixin each($number) {
-  &:nth-child(#{$number}n) {
-    @content;
-  }
+	&:nth-child(#{$number}n) {
+		@content;
+	}
 }
 
 /// All from first to $number
 /// @param {number} $number - The number whose put the limit
 @mixin first-to($number) {
-  &:nth-child(-n + #{$number}) {
-    @content;
-  }
+	&:nth-child(-n + #{$number}) {
+		@content;
+	}
 }
 
 /// All from the last to $number
 /// @param {number} $number - The number whose put the limit, beginning from last
 @mixin last-to($num) {
-  &:nth-last-child(-n + #{$num}) {
-    @content;
-  }
+	&:nth-last-child(-n + #{$num}) {
+		@content;
+	}
 }
 
 
 /// All from de $number to forward
 /// @param {number} $number - The number that marks the beginning
 @mixin since($number) {
-  &:nth-child(n + #{$number + 1}) {
-    @content;
-  }
+	&:nth-child(n + #{$number + 1}) {
+		@content;
+	}
 }
 
 /// Beginning at last, all from the $number to forward
 /// @param {number} $number - The number that marks the beginning, beginning from last
 @mixin since-inv($number) {
-  &:nth-last-child(n + #{$number + 1}) {
-    @content;
-  }
+	&:nth-last-child(n + #{$number + 1}) {
+		@content;
+	}
 }
 
 
@@ -94,16 +94,16 @@
 /// @param {number} $first - The number that marks the beginning
 /// @param {number} $last - The number that marks the ending
 @mixin between($first, $last) {
-  &:nth-child(n + #{$first}):nth-child(-n + #{$last}) {  //sass-lint:disable-line force-pseudo-nesting
-    @content;
-  }
+	&:nth-child(n + #{$first}):nth-child(-n + #{$last}) {  //sass-lint:disable-line force-pseudo-nesting
+		@content;
+	}
 }
 
 /// Child z-index
 @mixin child-zindex($items, $zindex: 0) {
-  @for $i from 1 through $items {
-    &:nth-child(#{$i}) {
-      z-index: $i;
-    }
-  }
+	@for $i from 1 through $items {
+		&:nth-child(#{$i}) {
+			z-index: $i;
+		}
+	}
 }

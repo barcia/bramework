@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #CARDS
+	#CARDS
 \*------------------------------------*/
 
 // sass-lint:disable space-before-colon
@@ -19,131 +19,131 @@ $card-avatar-margin-right    : $card-sections-margin-hz;
 
 // Base
 .Card {
-  @include padding-vt($card-padding-vt);
-  display: inline-block;
-  width: 100%;
-  background-color: $card-bg-color;
-  border-radius: $card-border-radius;
+	@include padding-vt($card-padding-vt);
+	display: inline-block;
+	width: 100%;
+	background-color: $card-bg-color;
+	border-radius: $card-border-radius;
 
-  @include breakpoint(small) {
-    width: $card-width;
-  }
+	@include breakpoint(small) {
+		width: $card-width;
+	}
 
-  &.has-shadow {
-    @include shadow(2);
-  }
+	&.has-shadow {
+		@include shadow(2);
+	}
 }
 
 // Base for link cards
 .Card.is-link {
-  @include void-link;
+	@include void-link;
 
-  // Modifier for link card with shadow
-  &.has-shadow {
-    @include transition(box-shadow, $card-transition-time);
-    @include hover-focus-active {
-      @include shadow(3);
-    }
-  }
+	// Modifier for link card with shadow
+	&.has-shadow {
+		@include transition(box-shadow, $card-transition-time);
+		@include hover-focus-active {
+			@include shadow(3);
+		}
+	}
 }
 
 .Card-header,
 .Card-content {
-  @include margin-hz($card-sections-margin-hz);
-  @include margin-vt($card-sections-margin-vt);
+	@include margin-hz($card-sections-margin-hz);
+	@include margin-vt($card-sections-margin-vt);
 }
 
 
 // Headers
 .Card-title,
 .Card-subtitle {
-  margin: 0;
+	margin: 0;
 }
 
 .Card-title {
-  font-size: $card-font-size-title;
-  .Card-header.has-avatar & {font-size: $card-font-size-title-avatar;}
+	font-size: $card-font-size-title;
+	.Card-header.has-avatar & {font-size: $card-font-size-title-avatar;}
 }
 
 .Card-subtitle {
-  color: $font-color-dark-soft;
+	color: $font-color-dark-soft;
 }
 
 .Card-text,
 .Card-subtitle {
-  font-size: $card-font-size-text;
+	font-size: $card-font-size-text;
 }
 
 
 // Header with avatar
 .Card-header {
-  &.has-avatar {
-    display: flex;
-  }
+	&.has-avatar {
+		display: flex;
+	}
 }
 
 /**
  *  1. For use directly background-image instead <img> child. Bad for a11y
  */
 .Card-header-avatar {
-  @include circle($card-avatar-size);
-  margin-right: $card-avatar-margin-right;
-  background-position: center; /* 1 */
-  background-repeat: no-repeat; /* 1 */
-  background-size: cover; /* 1 */
+	@include circle($card-avatar-size);
+	margin-right: $card-avatar-margin-right;
+	background-position: center; /* 1 */
+	background-repeat: no-repeat; /* 1 */
+	background-size: cover; /* 1 */
 }
 
 .Card-header-text {
-  flex: 1;
+	flex: 1;
 }
 
 .Card-avatar {
-  @include circle($card-avatar-size);
-  object-fit: cover;
+	@include circle($card-avatar-size);
+	object-fit: cover;
 }
 
 
 // Media
 .Card-media {
-  position: relative;
-  margin: 0 auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+	position: relative;
+	margin: 0 auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 
-  // For preserve the aspect ratio
-  // http://nicolasgallagher.com/flexible-css-cover-images
-  &::before {
-    display: block;
-    padding-bottom: 56.25%; // 16:9 by default
-    content: '';
-  }
+	// For preserve the aspect ratio
+	// http://nicolasgallagher.com/flexible-css-cover-images
+	&::before {
+		display: block;
+		padding-bottom: 56.25%; // 16:9 by default
+		content: '';
+	}
 
-  & .Card-header {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 10px $card-sections-margin-hz;
-    margin: 0;
-    color: $white;
+	& .Card-header {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: 10px $card-sections-margin-hz;
+		margin: 0;
+		color: $white;
 
-    &.has-shadow--gradient {
-      background-image: linear-gradient(to top, $alpha-800, $alpha-700, $alpha);
-    }
+		&.has-shadow--gradient {
+			background-image: linear-gradient(to top, $alpha-800, $alpha-700, $alpha);
+		}
 
-    &.has-shadow--flat {
-      background-color: $alpha-500;
-    }
-  }
+		&.has-shadow--flat {
+			background-color: $alpha-500;
+		}
+	}
 
-  & .Card-title {color: $font-color-light;}
-  & .Card-subtitle {color: $font-color-light-soft;}
+	& .Card-title {color: $font-color-light;}
+	& .Card-subtitle {color: $font-color-light-soft;}
 
-  // Modifiers
-  &.is-2by1::before {padding-bottom: percentage(1 / 2);} // 2:1
-  &.is-21by9::before {padding-bottom: percentage(9 / 21);} // 21:9
-  &.is-16by9::before {padding-bottom: percentage(9 / 16);} // 16:9
-  &.is-5by3::before {padding-bottom: percentage(3 / 5);} // 5:3
-  &.is-4by3::before {padding-bottom: percentage(3 / 4);} // 4:3
-  &.is-1by1::before {padding-bottom: percentage(1 / 1);} // 1:1
+	// Modifiers
+	&.is-2by1::before {padding-bottom: percentage(1 / 2);} // 2:1
+	&.is-21by9::before {padding-bottom: percentage(9 / 21);} // 21:9
+	&.is-16by9::before {padding-bottom: percentage(9 / 16);} // 16:9
+	&.is-5by3::before {padding-bottom: percentage(3 / 5);} // 5:3
+	&.is-4by3::before {padding-bottom: percentage(3 / 4);} // 4:3
+	&.is-1by1::before {padding-bottom: percentage(1 / 1);} // 1:1
 }

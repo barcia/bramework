@@ -26,31 +26,31 @@
 ///     }
 ///   }
 @mixin breakpoint($breakpoint) {
-  $value: map-get($breakpoints, $breakpoint) !global;
+	$value: map-get($breakpoints, $breakpoint) !global;
 
-  // If the key exists in the map
-  @if $value != null {
-    // Prints a media query based on the value
-    @media (min-width: $value) {
-      @content;
-    }
-  }
-  @else { // If the key doesn't exist in the map
-    @error 'No value could be retrieved from `#{$breakpoint}`. Make sure it is defined in `$breakpoints` map.';
-  }
+	// If the key exists in the map
+	@if $value != null {
+		// Prints a media query based on the value
+		@media (min-width: $value) {
+			@content;
+		}
+	}
+	@else { // If the key doesn't exist in the map
+		@error 'No value could be retrieved from `#{$breakpoint}`. Make sure it is defined in `$breakpoints` map.';
+	}
 }
 
 @mixin breakpoint-down($breakpoint) {
-  $value: map-get($breakpoints, $breakpoint) !global;
+	$value: map-get($breakpoints, $breakpoint) !global;
 
-  // If the key exists in the map
-  @if $value != null {
-    // Prints a media query based on the value
-    @media (max-width: $value) {
-      @content;
-    }
-  }
-  @else { // If the key doesn't exist in the map
-    @error 'No value could be retrieved from `#{$breakpoint}`. Make sure it is defined in `$breakpoints` map.';
-  }
+	// If the key exists in the map
+	@if $value != null {
+		// Prints a media query based on the value
+		@media (max-width: $value) {
+			@content;
+		}
+	}
+	@else { // If the key doesn't exist in the map
+		@error 'No value could be retrieved from `#{$breakpoint}`. Make sure it is defined in `$breakpoints` map.';
+	}
 }

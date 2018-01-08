@@ -1,5 +1,5 @@
 /*------------------------------------*\
-  #LISTS
+	#LISTS
 \*------------------------------------*/
 
 // sass-lint:disable space-before-colon
@@ -24,21 +24,21 @@ $list-icon-margin-right-small  : $list-avatar-margin-right-small + ($list-avatar
 
 // Base
 .List {
-  @include padding-vt($list-padding-vt);
-  margin: 0;
-  font-size: $list-font-size;
-  list-style-type: none;
-  background-color: $list-bg-color;
+	@include padding-vt($list-padding-vt);
+	margin: 0;
+	font-size: $list-font-size;
+	list-style-type: none;
+	background-color: $list-bg-color;
 
-  &:not(:last-child) {
-    border-bottom: 1px solid $list-border-bottom-color;
-  }
+	&:not(:last-child) {
+		border-bottom: 1px solid $list-border-bottom-color;
+	}
 
-  li {
-    display: flex;
-    align-items: center;
-    height: $list-item-height;
-  }
+	li {
+		display: flex;
+		align-items: center;
+		height: $list-item-height;
+	}
 }
 
 
@@ -46,103 +46,103 @@ $list-icon-margin-right-small  : $list-avatar-margin-right-small + ($list-avatar
 .List-item,
 .List-icon,
 .List-aside {
-  display: inline-flex;
-  align-items: center;
-  line-height: $list-item-height;
+	display: inline-flex;
+	align-items: center;
+	line-height: $list-item-height;
 }
 
 .List-item,
 .List-icon, {
-  @at-root a#{&} {
-    @include void-link;
-    @include link-states(background-color, $link-alpha-hover, $link-alpha-active);
-  }
+	@at-root a#{&} {
+		@include void-link;
+		@include link-states(background-color, $link-alpha-hover, $link-alpha-active);
+	}
 }
 
 .List-item {
-  @include padding-hz($list-item-padding-hz);
-  flex: 1;
-  margin: 0; // Fallback for <p>
+	@include padding-hz($list-item-padding-hz);
+	flex: 1;
+	margin: 0; // Fallback for <p>
 
-  &[data-badge]::after {
-    flex: 1;
-    color: $font-color-dark-soft;
-    text-align: right;
-    content: attr(data-badge);
-  }
+	&[data-badge]::after {
+		flex: 1;
+		color: $font-color-dark-soft;
+		text-align: right;
+		content: attr(data-badge);
+	}
 }
 
 
 // Extras
 .icon {
-  .List & {
-    @include size($list-icon-size);
-    fill: $font-color-dark-soft;
-  }
+	.List & {
+		@include size($list-icon-size);
+		fill: $font-color-dark-soft;
+	}
 
-  .List-item & {
-    margin-right: $list-icon-margin-right;
-  }
+	.List-item & {
+		margin-right: $list-icon-margin-right;
+	}
 }
 
 .avatar {
-  .List-item & {
-    @include circle($list-avatar-size);
-    display: inline-block;
-    margin-right: $list-avatar-margin-right;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+	.List-item & {
+		@include circle($list-avatar-size);
+		display: inline-block;
+		margin-right: $list-avatar-margin-right;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 }
 
 
 // Addons
 .List-icon {
-  @include size($list-item-height);
-  justify-content: center;
+	@include size($list-item-height);
+	justify-content: center;
 
 }
 
 .List-aside {
-  @include padding-hz($list-item-padding-hz);
+	@include padding-hz($list-item-padding-hz);
 }
 
 
 // Small variant
 // scss-lint:disable MergeableSelector
 .List.is-small {
-  @include padding-vt($list-padding-vt-small);
+	@include padding-vt($list-padding-vt-small);
 
-  li {
-    height: $list-item-height-small;
-  }
+	li {
+		height: $list-item-height-small;
+	}
 
-  .List-item,
-  .List-icon,
-  .List-aside {
-    line-height: $list-item-height-small;
-  }
+	.List-item,
+	.List-icon,
+	.List-aside {
+		line-height: $list-item-height-small;
+	}
 
-  .List-item {
-    @include padding-hz($list-item-padding-hz-small);
+	.List-item {
+		@include padding-hz($list-item-padding-hz-small);
 
-    .icon {
-      margin-right: $list-icon-margin-right-small;
-    }
+		.icon {
+			margin-right: $list-icon-margin-right-small;
+		}
 
-    .avatar {
-      @include circle($list-avatar-size-small);
-      margin-right: $list-avatar-margin-right-small;
-    }
-  }
+		.avatar {
+			@include circle($list-avatar-size-small);
+			margin-right: $list-avatar-margin-right-small;
+		}
+	}
 
-  .List-icon {
-    @include size($list-item-height-small);
+	.List-icon {
+		@include size($list-item-height-small);
 
-  }
+	}
 
-  .List-aside {
-    @include padding-hz($list-item-padding-hz-small);
-  }
+	.List-aside {
+		@include padding-hz($list-item-padding-hz-small);
+	}
 }

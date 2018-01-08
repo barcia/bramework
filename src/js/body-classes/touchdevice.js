@@ -7,26 +7,26 @@
  */
 
 function touchDevice(touchDeviceClass, notTouchDeviceClass) {
-  'use strict';
+	'use strict';
 
-  /**
-   *  Evaluate if is or not a touch device, and add the suitable class
-   */
-  function addClassTouchDevice() {
+	/**
+	 *  Evaluate if is or not a touch device, and add the suitable class
+	 */
+	function addClassTouchDevice() {
 
-    // If one option is true, the variable value will be true
-    var touchdevice = ('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch);
+		// If one option is true, the variable value will be true
+		var touchdevice = ('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch);
 
-    // Add the suitable class
-    if (touchdevice === true) {
-      document.body.classList.add(touchDeviceClass);
-    } else {
-      document.body.classList.add(notTouchDeviceClass);
-    }
-  }
+		// Add the suitable class
+		if (touchdevice === true) {
+			document.body.classList.add(touchDeviceClass);
+		} else {
+			document.body.classList.add(notTouchDeviceClass);
+		}
+	}
 
-  // Execute the function when the window loaded
-  window.addEventListener('load', addClassTouchDevice);
+	// Execute the function when the window loaded
+	window.addEventListener('load', addClassTouchDevice);
 }
 
 

@@ -14,8 +14,8 @@
 ///     @include size(30px);
 ///   }
 @mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
+	width: $width;
+	height: $height;
 }
 
 /// Makes a circular element (with possibilities to expand in one axis)
@@ -25,9 +25,9 @@
 ///     @include circle(30px);
 ///   }
 @mixin circle($size) {
-  width: $size;
-  height: $size;
-  border-radius: $size;
+	width: $size;
+	height: $size;
+	border-radius: $size;
 }
 
 
@@ -37,7 +37,7 @@
 ///     @include rounded;
 ///   }
 @mixin rounded {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 /// Border top radius
@@ -47,8 +47,8 @@
 ///     @include border-top-radius(3px);
 ///   }
 @mixin border-top-radius($radius: $border-radius) {
-  border-top-right-radius: $radius;
-  border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
 }
 
 /// Border bottom radius
@@ -58,8 +58,8 @@
 ///     @include border-bottom-radius(3px);
 ///   }
 @mixin border-bottom-radius($radius: $border-radius) {
-  border-bottom-right-radius: $radius;
-  border-bottom-left-radius: $radius;
+	border-bottom-right-radius: $radius;
+	border-bottom-left-radius: $radius;
 }
 
 /// Border left radius
@@ -69,8 +69,8 @@
 ///     @include border-left-radius(3px);
 ///   }
 @mixin border-left-radius($radius: $border-radius) {
-  border-bottom-left-radius: $radius;
-  border-top-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;
 }
 
 /// Border right radius
@@ -80,6 +80,6 @@
 ///     @include border-right-radius(3px);
 ///   }
 @mixin border-right-radius($radius: $border-radius) {
-  border-top-right-radius: $radius;
-  border-bottom-right-radius: $radius;
+	border-top-right-radius: $radius;
+	border-bottom-right-radius: $radius;
 }

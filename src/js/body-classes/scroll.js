@@ -10,82 +10,82 @@
  *  in case that you are using the 'double' direction
  */
 function scroll(mainElement, direction, theClass, theSecondClass) {
-  'use strict';
+	'use strict';
 
-  var _mainElement;
-  var _direction;
-  var currentScroll  = 0;
-  var previousScroll = 0;
-
-
-  // Search the main element
-  if (mainElement === 'body') {
-    _mainElement = document.body;
-  }
-  else {
-    _mainElement = document.getElementById(mainElement);
-  }
+	var _mainElement;
+	var _direction;
+	var currentScroll  = 0;
+	var previousScroll = 0;
 
 
-  // Establishes the direction (down / up / double)
-  if (direction === 'up') {
-    _direction = 'up';
-  }
-  else if (direction === 'double') {
-    _direction = 'double';
-  }
-  else {
-    _direction = 'down'; // Default value
-  }
+	// Search the main element
+	if (mainElement === 'body') {
+		_mainElement = document.body;
+	}
+	else {
+		_mainElement = document.getElementById(mainElement);
+	}
 
 
-  /**
-   *  Add the suitable classes
-   */
-  function addScrollClass() {
-
-    if(_mainElement) {
-
-      if (_direction === 'down') {
-        if (currentScroll > previousScroll) {
-          _mainElement.classList.add(theClass);
-        }
-        else if (currentScroll < previousScroll) {
-          _mainElement.classList.remove(theClass);
-        }
-      }
+	// Establishes the direction (down / up / double)
+	if (direction === 'up') {
+		_direction = 'up';
+	}
+	else if (direction === 'double') {
+		_direction = 'double';
+	}
+	else {
+		_direction = 'down'; // Default value
+	}
 
 
-      if (_direction === 'up') {
-        if (currentScroll > previousScroll) {
-          _mainElement.classList.remove(theClass);
-        }
-        else if (currentScroll < previousScroll) {
-          _mainElement.classList.add(theClass);
-        }
-      }
+	/**
+	 *  Add the suitable classes
+	 */
+	function addScrollClass() {
+
+		if(_mainElement) {
+
+			if (_direction === 'down') {
+				if (currentScroll > previousScroll) {
+					_mainElement.classList.add(theClass);
+				}
+				else if (currentScroll < previousScroll) {
+					_mainElement.classList.remove(theClass);
+				}
+			}
 
 
-      if (_direction === 'double') {
-        if (currentScroll > previousScroll) {
-          _mainElement.classList.add(theClass);
-          _mainElement.classList.remove(theSecondClass);
-        }
-        else if (currentScroll < previousScroll) {
-          _mainElement.classList.remove(theClass);
-          _mainElement.classList.add(theSecondClass);
-        }
-      }
+			if (_direction === 'up') {
+				if (currentScroll > previousScroll) {
+					_mainElement.classList.remove(theClass);
+				}
+				else if (currentScroll < previousScroll) {
+					_mainElement.classList.add(theClass);
+				}
+			}
 
-    }
 
-    // Update the position variables
-    previousScroll = currentScroll;
-    currentScroll = window.scrollY;
-  }
+			if (_direction === 'double') {
+				if (currentScroll > previousScroll) {
+					_mainElement.classList.add(theClass);
+					_mainElement.classList.remove(theSecondClass);
+				}
+				else if (currentScroll < previousScroll) {
+					_mainElement.classList.remove(theClass);
+					_mainElement.classList.add(theSecondClass);
+				}
+			}
 
-  // Execute the function when the window scroll
-  window.addEventListener('scroll', addScrollClass);
+		}
+
+		// Update the position variables
+		previousScroll = currentScroll;
+		currentScroll = window.scrollY;
+	}
+
+	// Execute the function when the window scroll
+	window.addEventListener('scroll', addScrollClass);
 }
 
 

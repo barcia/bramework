@@ -4,37 +4,37 @@
 
 /// Mixin to styles in :hover and :focus pseudo-classes
 @mixin hover-focus {
-  &:hover,
-  &:focus {
-    @content;
-  }
+	&:hover,
+	&:focus {
+		@content;
+	}
 }
 
 /// Mixin to styles in :hover, :focus and :active pseudo-classes
 @mixin hover-focus-active {
-  &:hover,
-  &:focus,
-  &:active {
-    @content;
-  }
+	&:hover,
+	&:focus,
+	&:active {
+		@content;
+	}
 }
 
 /// Mixin to styles in :hover, :focus and :active pseudo-classes **and the element itself**
 @mixin self-hover-focus-active {
-  &,
-  &:hover,
-  &:focus,
-  &:active {
-    @content;
-  }
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		@content;
+	}
 }
 
 /// Mixin to remove the link classes and its pseudo-classes
 @mixin void-link {
-  @include self-hover-focus-active {
-    color: inherit;
-    text-decoration: none;
-  }
+	@include self-hover-focus-active {
+		color: inherit;
+		text-decoration: none;
+	}
 }
 
 /// Mixin to add the styles to selector pseudo classes
@@ -42,11 +42,11 @@
 /// @param {string} $value1 [$value1] - The value for :hover and :focus status, and for :active if $value2 is not passed
 /// @param {string} $value2 [$value1] - Value for :active status
 @mixin link-states($property, $value1, $value2: $value1) {
-  @include hover-focus {
-    #{$property}: $value1;
-  }
+	@include hover-focus {
+		#{$property}: $value1;
+	}
 
-  &:active {
-    #{$property}: $value2;
-  }
+	&:active {
+		#{$property}: $value2;
+	}
 }

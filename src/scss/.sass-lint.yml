@@ -11,8 +11,8 @@ rules:
 
     # Mixins
     mixins-before-declarations:
-      - 1
-      - exclude: ['breakpoint', 'breakpoint-down', 'link-states']
+        - 1
+        - exclude: ['breakpoint', 'breakpoint-down', 'link-states']
 
     # Line Spacing
     empty-line-between-blocks:
@@ -106,7 +106,7 @@ rules:
         - style: 'lowercase'
     indentation:
         - 1
-        - size: 2
+        - size: tab
     leading-zero:
         - 1
         - include: true

@@ -8,13 +8,13 @@
 /// @link https://css-tricks.com/snippets/sass/material-shadows-mixin/ CSS Tricks
 /// @link https://codepen.io/HugoGiraudel/pen/yyaGaP CodePen
 @mixin shadow($depth: 0) {
-  @if $depth < 1 {
-    box-shadow: none;
-  }
-  @else if $depth > 5 {
-    @warn 'Invalid $depth `#{$depth}` for mixin `shadow`.'; //sass-lint:disable-line no-warn
-  }
-  @else {
-    box-shadow: shadow-bottom($depth), shadow-top($depth);
-  }
+	@if $depth < 1 {
+		box-shadow: none;
+	}
+	@else if $depth > 5 {
+		@warn 'Invalid $depth `#{$depth}` for mixin `shadow`.'; //sass-lint:disable-line no-warn
+	}
+	@else {
+		box-shadow: shadow-bottom($depth), shadow-top($depth);
+	}
 }

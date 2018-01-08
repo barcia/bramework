@@ -13,8 +13,8 @@
 ///     @include background-image('https://source.unsplash.com/random/1600x200');
 ///   }
 @mixin background-image($image-url) {
-  background-image: url($image-url);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+	background-image: url($image-url);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }

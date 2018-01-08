@@ -3,15 +3,15 @@
  *  @param {string} bodyClassNight The class name who will be added to body
  */
 function nightMode(bodyClassNight) {
-  'use strict';
+	'use strict';
 
-  var date = new Date();
-  var hour = date.getHours();
+	var date = new Date();
+	var hour = date.getHours();
 
-  if (hour > 22 || hour < 7) {
-    document.body.classList.add(bodyClassNight);
-  }
-  return;
+	if (hour > 22 || hour < 7) {
+		document.body.classList.add(bodyClassNight);
+	}
+	return;
 }
 
 

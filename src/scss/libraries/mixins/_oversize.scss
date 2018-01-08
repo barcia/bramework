@@ -2,11 +2,11 @@
 /// @group layout
 /// @param {units} $margin - Margin px of the parent element
 @mixin oversize($margin) {
-  @include breackpoint(small) {
-    position: relative;
-    left: 50%;
-    width: calc(100% + (#{$margin} * 2));
-    border-radius: 0;
-    transform: translateX(-50%);
-  }
+	@include breackpoint(small) {
+		position: relative;
+		left: 50%;
+		width: calc(100% + (#{$margin} * 2));
+		border-radius: 0;
+		transform: translateX(-50%);
+	}
 }
