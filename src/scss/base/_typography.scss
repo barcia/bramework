@@ -1,5 +1,7 @@
 //sass-lint:disable single-line-per-selector
-/* #TYPOGRAPHY*/
+/*------------------------------------*\
+	#TYPOGRAPHY
+\*------------------------------------*/
 
 // Body
 body {
@@ -76,7 +78,7 @@ h6, .h6 {
 
 
 // Text layout
-p, .paragraph,
+p,
 ul, ol, dl,
 table,
 form,
@@ -122,8 +124,7 @@ kbd {
 	box-shadow: 0 2px $grey-150;
 }
 
-small,
-.small {
+small {
 	font-size: $font-size-small;
 	font-weight: $font-weight-base;
 	color: $font-color-dark-soft;

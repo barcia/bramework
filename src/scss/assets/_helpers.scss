@@ -1,5 +1,7 @@
 // sass-lint:disable no-important
-/* #HELPERS */
+/*------------------------------------*\
+	#HELPERS
+\*------------------------------------*/
 
 // LAYOUT
 // Hide an element
@@ -20,51 +22,18 @@
 
 // FLEXBOX
 .h-display-flex {display: flex;}
-
 .h-order-first {order: -1 !important;}
 .h-order-last {order: 1 !important;}
 
-.h-justify-content-start {justify-content: flex-start !important;}
-.h-justify-content-end {justify-content: flex-end !important;}
-.h-justify-content-center {justify-content: center !important;}
-.h-justify-content-between {justify-content: space-between !important;}
-.h-justify-content-around {justify-content: space-around !important;}
-
-.h-align-items-baseline {align-items: baseline !important;}
-.h-align-items-center {align-items: center !important;}
-.h-align-items-end {align-items: flex-end !important;}
-.h-align-items-start {align-items: flex-start !important;}
-.h-align-items-stretch {align-items: stretch !important;}
-
-.h-align-self-auto {align-self: auto !important;}
-.h-align-self-baseline {align-self: baseline !important;}
-.h-align-self-center {align-self: center !important;}
-.h-align-self-end {align-self: flex-end !important;}
-.h-align-self-start {align-self: flex-start !important;}
-.h-align-self-stretch {align-self: stretch !important;}
-
-
 // A11Y
 .h-screen-reader {@include screen-reader;}
-
-
-// ALIGN
-.vertical-align-baseline {vertical-align: baseline !important;}
-.vertical-align-top {vertical-align: top !important;}
-.vertical-align-middle {vertical-align: middle !important;}
-.vertical-align-bottom {vertical-align: bottom !important;}
-.vertical-align-text-bottom {vertical-align: text-bottom !important;}
-.vertical-align-text-top {vertical-align: text-top !important;}
-
 
 // POSITIONING
 .h-float-right {float: right !important;}
 .h-float-left {float: left !important;}
 
-
 // BORDER
 .h-rounded { @include rounded;}
-
 
 // LINKS
 .h-void-link {@include void-link;}
@@ -104,6 +73,7 @@
 
 
 // PRINT
+// No print the element
 @media print {
 	.h-no-print {
 		display: none !important;
