@@ -16,8 +16,8 @@ h4, .h3,
 h2, .h4,
 h5, .h5,
 h6, .h6, {
-	margin-top: $margin-top-headings;
-	margin-bottom: $margin-bottom-headings;
+	margin-top: $margin-headings-top;
+	margin-bottom: $margin-headings-bottom;
 	font-family: $font-family-base;
 	line-height: $line-height-headings;
 	text-rendering: optimizeLegibility;

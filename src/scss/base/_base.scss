@@ -1,8 +1,22 @@
 /*#BASE*/
 
+
+
+.testing {
+	display: block;
+	@include size(500px);
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+
+
+
+
 //Body
 body {
-	background-color: $color-bg-light;
+	background-color: $bg-color-light;
+	height: 1000px;
 }
 
 

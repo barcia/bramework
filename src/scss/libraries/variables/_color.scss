@@ -1,23 +1,11 @@
 // sass-lint:disable space-before-colon
 
-$color-bg-light: $white !default;
-$color-bg-dark: $oc-gray-8 !default;
+// Background colors
+$bg-color-light: $white !default;
+$bg-color-dark : $oc-gray-8 !default;
 
-// Font colors
-$font-color-modifier-pct: 25% !default;
 
-$font-color-dark: $grey-700 !default;
-$font-color-dark-soft: font-color-soft($font-color-dark);
-// $font-color-dark-lighter: lighter($font-color-dark, $font-color-modifier-pct) !default;
-// $font-color-dark-darker : darker($font-color-dark, $font-color-modifier-pct) !default;
-$font-color-alpha  : $alpha-400 !default;
-
-$font-color-light       : $white !default;
-$font-color-light-soft: font-color-soft($font-color-light);
-// $font-color-light-darker: darker($font-color-light, $font-color-modifier-pct) !default;
-$font-color-walpha      : $walpha-400 !default;
-
-// Branding colors
+// Brand colors
 $brand-color-modifier-pct: 15%;
 
 $brand-color        : $royal-blue !default;
@@ -45,11 +33,28 @@ $red    : $pure-crimson !default;
 $yellow : $sandstorm !default;
 
 
+// Font colors
+$font-color-soft-pct: 25% !default;
+
+$font-color-dark     : $grey-700 !default;
+$font-color-dark-soft: font-color-soft($font-color-dark) !default;
+
+$font-color-light     : $white !default;
+$font-color-light-soft: font-color-soft($font-color-light) !default;
+
+$font-color-alpha-b: $alpha-b-400 !default;
+$font-color-alpha-w: $alpha-w-400 !default;
+
+
 // Link colors
 $link-color-hover-pct : 10% !default;
 $link-color-active-pct: 20% !default;
-$link-color           : $brand-color-alt !default;
-$link-color-hover     : color-hover($link-color) !default;
-$link-color-active    : color-active($link-color) !default;
-$link-alpha-hover     : color-hover($alpha) !default;
-$link-alpha-active    : color-active($alpha) !default;
+
+$link-color       : $brand-color-alt !default;
+$link-color-hover : darker($link-color, $link-color-hover-pct) !default;
+$link-color-active: darker($link-color, $link-color-active-pct) !default;
+
+$alpha-b-hover : darker($alpha, $link-color-hover-pct) !default;
+$alpha-b-active: darker($alpha, $link-color-active-pct) !default;
+$alpha-w-hover : lighter($alpha, $link-color-hover-pct) !default;
+$alpha-w-active: lighter($alpha, $link-color-active-pct) !default;

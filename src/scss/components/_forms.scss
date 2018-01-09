@@ -8,7 +8,7 @@ $input-border-width: 1px;
 $input-border-radius: 2px;
 $input-border-color: $grey-200;
 $input-border-color-focus: $brand-color;
-$input-placeholder-color: $alpha-300;
+$input-placeholder-color: $alpha-d300;
 
 
 .Form-group {
@@ -37,7 +37,7 @@ $input-placeholder-color: $alpha-300;
 
 	&:disabled {
 		color: $font-color-dark-soft;
-		background-color: $alpha-100;
+		background-color: $alpha-d100;
 	}
 
 	&::placeholder {

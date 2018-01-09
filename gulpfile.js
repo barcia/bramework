@@ -100,7 +100,7 @@ gulp.task(svgTask, function() {
 // Docs
 gulp.task(docsTask, function () {
   var options = {
-    dest: docsPath,
+    dest: docsPath+'reference/',
   };
   return gulp.src(sourcePath+'scss/**/*.scss')
     .pipe(sassdoc(options));

@@ -4,9 +4,9 @@
 
 // sass-lint:disable space-before-colon
 $list-padding-vt         : 8px;
-$list-bg-color           : $color-bg-light;
+$list-bg-color           : $bg-color-light;
 $list-font-size          : $font-size-base;
-$list-border-bottom-color: $alpha-100;
+$list-border-bottom-color: $alpha-d100;
 $list-item-height        : 48px;
 $list-item-padding-hz    : 16px;
 $list-avatar-size        : 40px;
@@ -55,7 +55,7 @@ $list-icon-margin-right-small  : $list-avatar-margin-right-small + ($list-avatar
 .List-icon, {
 	@at-root a#{&} {
 		@include void-link;
-		@include link-states(background-color, $link-alpha-hover, $link-alpha-active);
+		@include link-states(background-color, $alpha-b-hover, $alpha-b-active);
 	}
 }
 

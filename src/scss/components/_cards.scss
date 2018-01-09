@@ -128,11 +128,11 @@ $card-avatar-margin-right    : $card-sections-margin-hz;
 		color: $white;
 
 		&.has-shadow--gradient {
-			background-image: linear-gradient(to top, $alpha-800, $alpha-700, $alpha);
+			background-image: linear-gradient(to top, $alpha-d800, $alpha-d700, $alpha);
 		}
 
 		&.has-shadow--flat {
-			background-color: $alpha-500;
+			background-color: $alpha-d500;
 		}
 	}
 

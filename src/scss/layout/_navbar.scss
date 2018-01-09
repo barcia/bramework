@@ -182,14 +182,14 @@ $navbar-tabs-maxwidth              : 200px;
 .Navbar-menu--icons {
 	a,
 	.Button {
-		@include link-states(background-color, $link-alpha-hover, $link-alpha-active);
+		@include link-states(background-color, $alpha-b-hover, $alpha-b-active);
 		@include transition(background-color, $navbar-transition-time);
 		will-change: background-color;
 	}
 
 	li.is-active a,
 	li.is-active .Button {
-		background-color: $link-alpha-active;
+		background-color: $alpha-b-active;
 	}
 }
 
@@ -293,7 +293,7 @@ $navbar-tabs-maxwidth              : 200px;
 
 	a,
 	span {
-		@include link-states(background-color, $link-alpha-hover, $link-alpha-active);
+		@include link-states(background-color, $alpha-b-hover, $alpha-b-active);
 		@include transition((background-color, border-bottom-color, opacity), $navbar-transition-time);
 		display: inline-flex;
 		align-items: center;

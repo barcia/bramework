@@ -61,7 +61,6 @@
 @mixin transition($property, $duration: $transition-time, $timing-function: $transition-timing-function) {
 	transition-delay: 0s;
 	transition-duration: $duration;
-
 	transition-property: $property;
 	transition-timing-function: $timing-function; //timing-function ('ease', 'linear', 'step-end', 'steps(4, end)') (http://goo.gl/2rbYlE	| http://goo.gl/3btZHf)
 }

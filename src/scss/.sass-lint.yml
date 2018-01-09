@@ -77,7 +77,7 @@ rules:
         - allow-leading-underscore: 0
         - convention: 'hyphenatedlowercase'
     variable-name-format:
-        - 1
+        - 0
         - allow-leading-underscore: 0
         - convention: 'hyphenatedlowercase'
 

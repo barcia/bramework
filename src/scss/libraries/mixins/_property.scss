@@ -83,3 +83,53 @@
 	border-top-right-radius: $radius;
 	border-bottom-right-radius: $radius;
 }
+
+
+
+
+
+
+
+/// Horizontal margin
+/// @param {Units} $px - The margin in px.
+@mixin margin-hz($px) {
+	margin-right: $px;
+	margin-left: $px;
+}
+
+/// Vertical margin
+/// @param {Units} $px - The margin in px.
+@mixin margin-vt($px) {
+	margin-top: $px;
+	margin-bottom: $px;
+}
+
+/// Horizontal padding
+/// @param {Units} $px - The margin in px.
+@mixin padding-hz($px) {
+	padding-right: $px;
+	padding-left: $px;
+}
+
+/// Vertical padding
+/// @param {Units} $px - The margin in px.
+@mixin padding-vt($px) {
+	padding-top: $px;
+	padding-bottom: $px;
+}
+
+
+/// Margin bottom except in last item
+/// @param {Units} $size [base] - The size of the margin in px.
+@mixin margin-bottom($size: base) {
+	@if $size == base {
+		margin-bottom: $margin-base-bottom;
+	}
+	@else {
+		margin-bottom: $size;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

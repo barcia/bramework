@@ -3,16 +3,15 @@
 ////
 
 /// Breakpoint manager
-/// @require $breakpoints
+/// @param {String} $breakpoint - Put the size to do the breakpoint. Accepted
+/// strings [small|medium|large|extra-large]. Remember that this breakpoint
+/// mixin ir **mobile first**.
+/// @see $breakpoints
 /// @link https://www.sitepoint.com/managing-responsive-breakpoints-sass/
-/// @param {string} $small [450px] - Mobile portrait
-/// @param {string} $medium [800px] - Tablet portrait and mobile landscape
-/// @param {string} $large [1024px] - Tablet landscape
-/// @param {string} $extra-large [1366px] - Desktop
 /// @example scss - Usage
 ///   .foo {
 ///     width: 300px;
-///     @include breackpoint(small) {
+///     @include breackpoint(medium) {
 ///       width: 100px;
 ///     }
 ///   }
@@ -40,6 +39,27 @@
 	}
 }
 
+/// Inverted reakpoint manager
+/// @param {String} $breakpoint - Put the size to do the breakpoint. Accepted
+/// strings [small|medium|large|extra-large].
+/// @see $breakpoints
+/// @link https://www.sitepoint.com/managing-responsive-breakpoints-sass/
+/// @example scss - Usage
+///   .foo {
+///     width: 300px;
+///     @include breackpoint-down(medium) {
+///       width: 100px;
+///     }
+///   }
+/// @example css - Output
+///   .foo {
+///     width: 300px;
+///   }
+///   @media (max-width:800px){
+///     .foo {
+///       width: 100px;
+///     }
+///   }
 @mixin breakpoint-down($breakpoint) {
 	$value: map-get($breakpoints, $breakpoint) !global;
 

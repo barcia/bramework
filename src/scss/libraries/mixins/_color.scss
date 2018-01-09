@@ -1,0 +1,38 @@
+////
+/// @group colors
+////
+
+/// Mixin for create simple gradients
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient Mozilla Developer Network
+/// @param {string} $colors - Put the colors that will form the gradient
+/// @param {degrees | string} $direction [90deg] - An angle of direction for
+/// the gradient. Bu default it has 90 degrees.
+/// @example scss - Usage
+///   .foo {
+///     @include gradient((blue, red, yellow), 30deg);
+///   }
+@mixin gradient($colors, $direction: 90deg) {
+	background: linear-gradient($direction, $colors);
+}
+
+
+/// Mixin for create animated gradients
+/// @group animation
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient Mozilla Developer Network
+/// @param {string} $colors - Put the colors that will form the gradient
+/// @param {seconds} $time [20s] - The seconds of a complete cicle of the animation
+/// @example scss - Usage
+///   .foo {
+///     @include gradient-animated((blue, red, yellow), 10s);
+///   }
+@mixin gradient-animated($colors, $time: 20s) {
+	background: linear-gradient(90deg, $colors);
+	background-size: 400% 400%;
+	animation: GradientAnimation $time ease-in-out infinite;
+}
+
+@keyframes GradientAnimation {
+	0%{background-position: left}
+	50%{background-position: right}
+	100%{background-position: left}
+}

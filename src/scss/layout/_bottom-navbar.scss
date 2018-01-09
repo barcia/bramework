@@ -1,0 +1,54 @@
+/*------------------------------------*\
+	#BOTTOM-NAVBAR
+\*------------------------------------*/
+
+$BottomNavbar-height: 56px;
+$BottomNavbar-item-maxWidth: 150px;
+$BottomNavbar-activeColor: $link-color;
+
+.BottomNavbar {
+	@include shadow(2, top);
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: $BottomNavbar-height;
+}
+
+.BottomNavbar--scrollSensitive {
+	@include transition(bottom);
+	@include scroll-down {
+		bottom: -$BottomNavbar-height;
+	}
+}
+
+
+.BottomNavbar-item {
+	@include void-link;
+	display: flex;
+	align-items: center;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+	max-width: $BottomNavbar-item-maxWidth;
+	padding: 5px 12px 8px;
+	font-size: 0.9rem;
+	@include link-states(background-color, $alpha-b-hover, $alpha-b-active);
+}
+
+
+.BottomNavbar-icon {
+	.BottomNavbar-item:hover &,
+	.BottomNavbar-item.is-active & {
+		fill: $BottomNavbar-activeColor;
+	}
+}
+
+
+.BottomNavbar-label {
+	.BottomNavbar-item:hover &,
+	.BottomNavbar-item.is-active & {
+		color: $BottomNavbar-activeColor;
+	}
+}

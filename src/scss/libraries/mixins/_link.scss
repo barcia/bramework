@@ -1,0 +1,106 @@
+////
+/// @group links
+////
+
+/// Mixin to styles in :hover and :focus pseudo-classes
+/// @example scss - Usage
+///   .foo {
+///     @include hover-focus {
+///   		background-color: red;
+///   	}
+///   }
+/// @example css - Output
+///   .foo:hover,
+///   .foo:focus {
+///   		background-color: red;
+///   }
+@mixin hover-focus {
+	&:hover,
+	&:focus {
+		@content;
+	}
+}
+
+/// Mixin to styles in :hover, :focus and :active pseudo-classes
+/// @example scss - Usage
+///   .foo {
+///     @include hover-focus-active {
+///   		background-color: red;
+///   	}
+///   }
+/// @example css - Output
+///   .foo:hover,
+///   .foo:focus,
+///   .foo:active {
+///   		background-color: red;
+///   }
+@mixin hover-focus-active {
+	&:hover,
+	&:focus,
+	&:active {
+		@content;
+	}
+}
+
+/// Mixin to styles in :hover, :focus and :active pseudo-classes **and the element itself**
+/// @example scss - Usage
+///   .foo {
+///     @include self-hover-focus-active {
+///   		background-color: red;
+///   	}
+///   }
+/// @example css - Output
+///   .foo,
+///   .foo:hover,
+///   .foo:focus,
+///   .foo:active {
+///   		background-color: red;
+///   }
+@mixin self-hover-focus-active {
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		@content;
+	}
+}
+
+/// Mixin to remove the link classes and its pseudo-classes
+/// @example scss
+///   .link {
+///   	@include void-link;
+///   }
+@mixin void-link {
+	@include self-hover-focus-active {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+
+/// Mixin to add the styles to selector pseudo classes
+/// @param {string} $property - The property who will be modified
+/// @param {string} $value1 - The value for :hover and :focus status, and for
+/// :active if $value2 is not passed
+/// @param {string} $value2 [$value1] - Value for :active status
+/// @example scss - Usage
+///   .link {
+///   	@include link-states(color, red, blue);
+///   }
+/// @example css - Output
+///   .link:hover,
+///   .link:focus {
+///   	color: red
+///   }
+///
+///   .link:active {
+///   	color:blue;
+///   }
+@mixin link-states($property, $value1, $value2: $value1) {
+	@include hover-focus {
+		#{$property}: $value1;
+	}
+
+	&:active {
+		#{$property}: $value2;
+	}
+}

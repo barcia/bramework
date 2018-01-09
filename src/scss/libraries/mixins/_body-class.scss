@@ -4,7 +4,7 @@
 
 /// Styles for the item when is in a touchdevice
 @mixin touchdevice {
-	&.#{map-get($body-class, touchdevice)} {
+	.#{map-get($body-class, touchdevice)} & {
 		@content;
 	}
 }
@@ -12,7 +12,7 @@
 
 /// Styles for the item when isn't in a touchdevice
 @mixin not-touchdevice {
-	&.#{map-get($body-class, not-touchdevice)} {
+	.#{map-get($body-class, not-touchdevice)} & {
 		@content;
 	}
 }
@@ -20,7 +20,7 @@
 
 /// Styles for the item when the page is scroll down
 @mixin scroll-down {
-	&.#{map-get($body-class, scroll-down)} {
+	.#{map-get($body-class, scroll-down)} & {
 		@content;
 	}
 }
@@ -28,7 +28,7 @@
 
 /// Styles for the item when the page is scroll up
 @mixin scroll-up {
-	&.#{map-get($body-class, scroll-up)} {
+	.#{map-get($body-class, scroll-up)} & {
 		@content;
 	}
 }
@@ -36,7 +36,7 @@
 
 /// Styles for the item when page is scrolled
 @mixin scrolled {
-	&.#{map-get($body-class, scrolled)} {
+	.#{map-get($body-class, scrolled)} & {
 		@content;
 	}
 }
@@ -44,7 +44,7 @@
 
 /// Styles for the item when is night
 @mixin night {
-	&.#{map-get($body-class, night)} {
+	.#{map-get($body-class, night)} & {
 		@content;
 	}
 }

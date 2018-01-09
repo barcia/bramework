@@ -1,0 +1,63 @@
+/// Lighten a color
+/// @group colors
+/// @param {Color} $color - Main color
+/// @param {Percentage} $percentage - Percentage to lighten the main color.
+/// Between 0% (No change the main color) and 100% (Convert the main color in
+/// white)
+/// @return {Color} - The lighted main color
+/// @example scss
+///   .foo {
+///   	background-color: lighter(#9f2773, 50%);
+///   }
+@function lighter($color, $percentage) {
+	@return mix(white, $color, $percentage);
+}
+
+
+/// Darken a color
+/// @group colors
+/// @param {Color} $color - Main color
+/// @param {Percentage} $percentage - Percentage to darken the main color.
+/// Between 0% (No change the main color) and 100% (Convert the main color in
+/// black)
+/// @return {Color} - The darked main color
+/// @example scss
+///   .foo {
+///   	background-color: darker(#9f2773, 50%);
+///   }
+@function darker($color, $percentage) {
+	@return mix(black, $color, $percentage);
+}
+
+
+/// Check the lightness of a color and return a String in consecuence
+/// @group colors
+/// @param {Color} $color - Main color to check his lightness
+/// @return {String} - Return 'dark' or 'light' if the main color has more or
+/// less tha 50% of lightness.
+@function contrast-color($color) {
+	@if (lightness($color) > 50) {
+		@return dark; // The main color is dark
+	}
+	@else {
+		@return light; // The main color is light
+	}
+}
+
+
+/// Create the 'soft' version of a color depending of his lightness. If the
+/// color is dark, the soft version is lighter, and for light colors, the soft
+/// version is darker.
+/// @group colors
+/// @param {Color} $color - Main color on which the soft version is based
+/// @param {Percentage} $percentage [$font-color-soft-pct] - Percentage that
+/// will change the main color to create the soft version.
+/// @return {Color} - Return the soft version of the main color.
+@function font-color-soft($color, $percentage: $font-color-soft-pct) {
+	@if contrast-color($color) == dark {
+		@return lighter($color, $percentage);
+	}
+	@else {
+		@return darker($color, $percentage);
+	}
+}
