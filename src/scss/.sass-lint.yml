@@ -12,7 +12,7 @@ rules:
     # Mixins
     mixins-before-declarations:
         - 1
-        - exclude: ['breakpoint', 'breakpoint-down', 'link-states']
+        - exclude: ['breakpoint', 'breakpoint-down', 'hover-focus', 'hover-focus-active', 'self-hover-focus-active']
 
     # Line Spacing
     empty-line-between-blocks:
@@ -69,11 +69,11 @@ rules:
         - allow-leading-underscore: 0
         - convention: 'hyphenatedlowercase'
     mixin-name-format:
-        - 1
+        - 0
         - allow-leading-underscore: 0
         - convention: 'hyphenatedlowercase'
     placeholder-name-format:
-        - 1
+        - 0
         - allow-leading-underscore: 0
         - convention: 'hyphenatedlowercase'
     variable-name-format:

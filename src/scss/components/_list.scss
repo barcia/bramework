@@ -1,0 +1,130 @@
+/*------------------------------------*\
+	#LIST
+\*------------------------------------*/
+
+$List-item-minHeight: 48px;
+$List-item-vtPadding: 4px;
+$List-elements-margin: 16px;
+$List-avatar-size: 40px;
+$List-icon-size: 24px;
+
+
+// Base
+.List {
+	@include padding-vt(8px);
+	margin: 0;
+	font-size: $font-size-base;
+	list-style-type: none;
+	background-color: $bg-color-light;
+
+	&:not(:last-child) {
+		border-bottom: 1px solid $alpha-b-100;
+	}
+
+	li {
+		display: flex;
+	}
+}
+
+
+
+// Element containers
+.List-item,
+.List-aside {
+	display: inline-flex;
+	align-items: center;
+	min-height: $List-item-minHeight;
+	padding: $List-item-vtPadding $List-elements-margin;
+	@at-root a#{&} {
+		@include void-link;
+		@include link-states(background-color, $alpha-b-hover, $alpha-b-active);
+	}
+}
+
+
+.List-item {
+	flex: 1;
+
+	&.is-centered {
+		justify-content: center;
+	}
+}
+
+
+.List-aside {
+	min-width: $List-item-minHeight;
+}
+
+
+
+// Singular elements
+.List-icon {
+	@include size($List-icon-size);
+	fill: $font-color-dark-soft;
+
+	&:not(:last-child) {
+		margin-right: $List-elements-margin;
+	}
+}
+
+
+.List-avatar {
+	@include circle($List-avatar-size);
+	object-fit: cover;
+
+	&:not(:last-child) {
+		margin-right: $List-elements-margin;
+	}
+}
+
+
+.List-text {
+	flex: 1;
+}
+
+
+.List-data {
+	margin-left: $List-elements-margin;
+	color: $font-color-dark-soft;
+}
+
+
+
+
+// Small variant
+$List-small-item-minHeight: 40px;
+$List-small-item-vtPadding: 2px;
+$List-small-elements-margin: 8px;
+$List-small-avatar-size: 34px;
+
+.List.is-small {
+	@include padding-vt(4px);
+
+	.List-item,
+	.List-aside {
+		min-height: $List-small-item-minHeight;
+		padding: $List-small-item-vtPadding $List-small-elements-margin;
+	}
+
+	.List-aside {
+		min-width: $List-small-item-minHeight;
+	}
+
+	.List-icon {
+		&:not(:last-child) {
+			margin-right: $List-small-elements-margin;
+		}
+	}
+
+	.List-avatar {
+		@include circle($List-small-avatar-size);
+
+		&:not(:last-child) {
+			margin-right: $List-small-elements-margin;
+		}
+	}
+
+	.List-data {
+		margin-left: $List-small-elements-margin;
+	}
+}

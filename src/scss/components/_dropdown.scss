@@ -1,14 +1,10 @@
 /*------------------------------------*\
 	#DROPDOWN
 \*------------------------------------*/
-// TODO: Improve this component, is not accesible
-
-$dropdowm-min-width: 150px;
-$dropdown-shadow-depth: 5;
-
 
 .Dropdown {
 	position: relative;
+	cursor: pointer;
 
 	@include hover-focus {
 		outline: 0;
@@ -16,27 +12,15 @@ $dropdown-shadow-depth: 5;
 }
 
 .Dropdown-content {
+	@include shadow(3);
 	position: absolute;
+	// right: 0;
 	display: none;
-	min-width: $dropdowm-min-width;
-	@include shadow($dropdown-shadow-depth);
+	min-width: 150px;
+	list-style-type: none;
 
-	// overflow: hidden;
-	// opacity: 0;
-	// visibility: hidden;
-	// transition: visibility 0.5s;
-
-	// .Dropdown:hover &,
+	.Dropdown:hover &,
 	.Dropdown:focus & {
 		display: block;
-
-		// opacity: 1;
-		// visibility: visible;
-		// transition: width 5s;
 	}
-}
-
-
-.Dropdown-content--right {
-	right: 0;
 }

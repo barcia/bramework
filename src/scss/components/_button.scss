@@ -1,0 +1,25 @@
+/*------------------------------------*\
+	#BUTTON
+\*------------------------------------*/
+
+@mixin Button-base {
+	@include void-link;
+	@include inline-flex-center;
+	white-space: nowrap;
+	vertical-align: middle;
+	outline: 0;
+}
+
+
+.Button {
+	@include Button-base;
+	color: $font-color-dark;
+	border: 0;
+
+	&:disabled {
+		color: $font-color-dark-soft;
+		& .icon {fill: $font-color-dark-soft;}
+	}
+
+	& .icon {fill: $font-color-dark;}
+}

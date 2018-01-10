@@ -37,10 +37,10 @@
 /// less tha 50% of lightness.
 @function contrast-color($color) {
 	@if (lightness($color) > 50) {
-		@return dark; // The main color is dark
+		@return light; // The main color is light
 	}
 	@else {
-		@return light; // The main color is light
+		@return dark; // The main color is dark
 	}
 }
 

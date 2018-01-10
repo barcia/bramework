@@ -1,0 +1,9 @@
+/*------------------------------------*\
+	#TAG
+\*------------------------------------*/
+
+@mixin Tag-base {
+	@include inline-flex-center;
+	display: inline-flex;
+	vertical-align: middle;
+}
