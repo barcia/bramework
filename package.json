@@ -31,7 +31,7 @@
 		"gulp-sourcemaps": "^2.6.0",
 		"gulp-svgmin": "^1.2.3",
 		"gulp-svgstore": "^6.1.0",
-		"gulp-uglify": "^3.0.0",
+		"gulp-uglify-es": "^0.2.0",
 		"sassdoc": "^2.2.2"
 	}
 }
