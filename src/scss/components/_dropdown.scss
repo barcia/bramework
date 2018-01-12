@@ -14,7 +14,7 @@
 .Dropdown-content {
 	@include shadow(3);
 	position: absolute;
-	// right: 0;
+	right: 0;
 	display: none;
 	min-width: 150px;
 	list-style-type: none;

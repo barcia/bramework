@@ -11,7 +11,7 @@ rules:
 
     # Mixins
     mixins-before-declarations:
-        - 1
+        - 0
         - exclude: ['breakpoint', 'breakpoint-down', 'hover-focus', 'hover-focus-active', 'self-hover-focus-active']
 
     # Line Spacing

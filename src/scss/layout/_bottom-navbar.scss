@@ -10,10 +10,12 @@ $BottomNavbar-activeColor: $link-color;
 	@include shadow(2, top);
 	position: fixed;
 	bottom: 0;
+	z-index: index($index, bottomNavbar);
 	display: flex;
 	justify-content: center;
 	width: 100%;
 	height: $BottomNavbar-height;
+	border: 1px solid $grey-100;
 }
 
 .BottomNavbar--scrollSensitive {
