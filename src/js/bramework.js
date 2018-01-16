@@ -1,5 +1,6 @@
 const bramework = {
 
+
 	config: {
 		distPath: '/dist/',
 		scrolledClass: 'site-scrolled',
@@ -10,6 +11,7 @@ const bramework = {
 		nightClass: 'site-night'
 	},
 
+
 	load() {
 		bramework.elements.get();
 		bramework.icons.load('icons.min.svg');
@@ -18,6 +20,15 @@ const bramework = {
 		bramework.time.load();
 		bramework.user.load();
 	},
+
+
+	elements: {
+		get() {
+			bramework.document = document.documentElement;
+			bramework.body = document.body;
+		}
+	},
+
 
 	icons: {
 		load(fileName) {
@@ -33,6 +44,7 @@ const bramework = {
 		}
 	},
 
+
 	scroll: {
 		load() {
 			window.addEventListener('scroll', bramework.scroll.addClass);
@@ -45,6 +57,7 @@ const bramework = {
 				bramework.body.classList.add(bramework.config.scrolledClass);
 			} else {
 				bramework.body.classList.remove(bramework.config.scrolledClass);
+				bramework.body.classList.remove(bramework.config.scrollUpClass);
 			};
 
 			if (this.currentScroll > this.previousScroll) {
@@ -60,17 +73,19 @@ const bramework = {
 		}
 	},
 
+
 	touch : {
 		load() {
-			var device = ('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch);
+			this.device = ('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch);
 
-			if (device === true) {
+			if (this.device === true) {
 				bramework.body.classList.add(bramework.config.touchDeviceClass);
 			} else {
 				bramework.body.classList.add(bramework.config.notTouchDeviceClass);
 			}
 		}
 	},
+
 
 	time: {
 		load() {
@@ -83,6 +98,7 @@ const bramework = {
 			}
 		}
 	},
+
 
 	user: {
 		load() {
@@ -106,15 +122,6 @@ const bramework = {
 		lastVisit() {
 			this.timeAgo = bramework.time.now - this.userLastVisit;
 			localStorage.setItem( (window.location.host) + '_lastVisit', bramework.time.now);
-		}
-	},
-
-	elements: {
-		get() {
-			bramework.document = document.documentElement;
-			bramework.body = document.body;
-			// swibe.menuElement = document.getElementById(swibe.config.menuId);
-			// swibe.triggerElement = document.getElementById(swibe.config.triggerId);
 		}
 	}
 }

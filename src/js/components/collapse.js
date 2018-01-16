@@ -1,3 +1,7 @@
+const collapse = {
+
+}
+
 
 // const collapse = {
 //
@@ -41,4 +45,4 @@
 
 
 // Execute the main function
-collapse();
+// collapse();
