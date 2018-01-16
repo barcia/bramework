@@ -6,7 +6,6 @@
 /// @param {String} $breakpoint - Put the size to do the breakpoint. Accepted
 /// strings [small|medium|large|extra-large]. Remember that this breakpoint
 /// mixin ir **mobile first**.
-/// @see $breakpoints
 /// @link https://www.sitepoint.com/managing-responsive-breakpoints-sass/
 /// @example scss - Usage
 ///   .foo {
@@ -42,7 +41,6 @@
 /// Inverted reakpoint manager
 /// @param {String} $breakpoint - Put the size to do the breakpoint. Accepted
 /// strings [small|medium|large|extra-large].
-/// @see $breakpoints
 /// @link https://www.sitepoint.com/managing-responsive-breakpoints-sass/
 /// @example scss - Usage
 ///   .foo {

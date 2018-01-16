@@ -21,9 +21,6 @@ A Scss framework
 * Project site: [bramework.barcia.cc](https://bramework.barcia.cc)
 * Download: [.zip](https://github.com/barcia/bramework/archive/master.zip)
 * Code: [github.com/barcia/bramework](https://github.com/barcia/bramework)
-* Docs: [README.md](https://github.com/barcia/swibe/blob/master/README.md)
-  * Components: [github.com/barcia/bramework/wiki](https://github.com/barcia/bramework/wiki)
-  * Scss reference: [bramework.barcia.cc/reference](https://bramework.barcia.cc/reference)
 * Issues: [github.com/barcia/bramework/issues](https://github.com/barcia/bramework/issues)
 
 *Bramework* is a simple, extensible and general-purpose **Scss framework** that I build and use to make websites. The main objective is to have a minimal but powerful base that is easily extensible.
@@ -61,7 +58,7 @@ Visit the project [issues](https://github.com/barcia/bramework/issues)
 
 
 ## Credits
-Developed with ❤ by Iván Barcia in Galiza, SPAIN.   
+Developed by Iván Barcia in Galiza, SPAIN.   
 [Web](https://barcia.cc) · [Email](mailto:ivan@barcia.cc) · [Twitter](http://www.twitter.com/bartzia) · [GitHub](http://www.github.com/barcia) · [Google+](https://plus.google.com/+IvanBarcia)
 
 

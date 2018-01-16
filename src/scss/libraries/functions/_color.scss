@@ -1,5 +1,8 @@
+////
+/// @group property
+////
+
 /// Lighten a color
-/// @group colors
 /// @param {Color} $color - Main color
 /// @param {Percentage} $percentage - Percentage to lighten the main color.
 /// Between 0% (No change the main color) and 100% (Convert the main color in
@@ -15,7 +18,6 @@
 
 
 /// Darken a color
-/// @group colors
 /// @param {Color} $color - Main color
 /// @param {Percentage} $percentage - Percentage to darken the main color.
 /// Between 0% (No change the main color) and 100% (Convert the main color in
@@ -31,7 +33,6 @@
 
 
 /// Check the lightness of a color and return a String in consecuence
-/// @group colors
 /// @param {Color} $color - Main color to check his lightness
 /// @return {String} - Return 'dark' or 'light' if the main color has more or
 /// less tha 50% of lightness.
@@ -48,7 +49,6 @@
 /// Create the 'soft' version of a color depending of his lightness. If the
 /// color is dark, the soft version is lighter, and for light colors, the soft
 /// version is darker.
-/// @group colors
 /// @param {Color} $color - Main color on which the soft version is based
 /// @param {Percentage} $percentage [$font-color-soft-pct] - Percentage that
 /// will change the main color to create the soft version.
