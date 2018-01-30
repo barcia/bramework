@@ -2,7 +2,7 @@ const bramework = {
 
 
 	config: {
-		distPath: '/dist/',
+		distPath: '/assets/',
 		scrolledClass: 'site-scrolled',
 		scrollDownClass: 'site-scroll-down',
 		scrollUpClass: 'site-scroll-up',
