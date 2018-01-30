@@ -1,6 +1,6 @@
 {
 	"name": "bramework",
-	"version": "0.3.0",
+	"version": "1.0.0",
 	"description": "Iván Barcia's web starter kit",
 	"main": "gulpfile.js",
 	"sasslintConfig": "/src/scss/.sass-lint.yml",
@@ -26,6 +26,7 @@
 		"gulp-notify": "^3.0.0",
 		"gulp-plumber": "^1.1.0",
 		"gulp-postcss": "^7.0.0",
+		"gulp-pug": "^3.3.0",
 		"gulp-rename": "^1.2.2",
 		"gulp-sass": "^3.1.0",
 		"gulp-sourcemaps": "^2.6.0",
