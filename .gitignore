@@ -1,38 +1,41 @@
+https://gist.github.com/barcia/20d806bdb1d0730fcc8344c8d63cb531
+
 # Production
 dist/
+build/
 
-# CSS
-*.css.map
-
-# Sass
-.sass-cache/
-
-# Node
-node_modules/
-package-lock.json
-
-# Gulp
-.gulp-scss-cache/
-
-# Temp files
-.temp/
+# Temporary and testing files
+temp/
 temp.*
+test/
 test.*
 
-# OS and Editors
+# Dependency directories
+node_modules/
+bower_components/
+
+# Cache
+.cache
+.sass-cache/
+.eslintcache
+.npm
+.env
+
+# OS
 .directory
 .Trash-*
 .nfs*
-.cache
 .DS_Store
-.idea
-.project
-.settings
-.tmproj
-*.esproj
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editors
 *.sublime-project
 *.sublime-workspace
-nbproject
+.vscode/*
+
+# Thumbnails
+._*
 Thumbs.db
 
 # Numerous always-ignore extensions
@@ -41,8 +44,6 @@ Thumbs.db
 *.log
 *.orig
 *.rej
-*.swo
-*.swp
 *.vi
 *.zip
 *~
