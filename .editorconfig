@@ -1,3 +1,4 @@
+# https://gist.github.com/barcia/ae9a98077e7def47e7946e573bdcecdc
 # editorconfig.org
 
 root = true
@@ -9,7 +10,7 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{html,php,xml,css,scss,sass,less,js}]
+[*.{html,pug,php,xml,css,scss,sass,less,js}]
 indent_size = 2
 
 [*.{json}]
