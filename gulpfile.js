@@ -14,6 +14,7 @@ var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify-es').default;
 var svgstore     = require('gulp-svgstore');
 var svgmin       = require('gulp-svgmin');
+var sassdoc      = require('sassdoc')
 
 
 // Global paths
@@ -47,6 +48,7 @@ const config = {
 		source: [
 			path.source + 'pug/**/*.pug',
 			'!' + path.source + 'pug/**/_*.pug',
+			'!' + path.source + 'pug/docs',
 		],
 		sourceAll: path.source + 'pug/**/*.pug',
 		dist: path.dist,
@@ -114,6 +116,17 @@ const config = {
 				extname: '.svg'
 			}
 		}
+	},
+
+	// DOCS
+	docs: {
+		task: 'docs',
+		source: path.source + 'scss/**/*.scss',
+		plugin: {
+			sassdoc: {
+				dest: path.docs + 'reference/'
+			}
+		}
 	}
 };
 
@@ -177,6 +190,14 @@ gulp.task(config.svg.task, function() {
 
 
 
+// DOCS
+gulp.task(config.docs.task, function () {
+  return gulp.src(config.docs.source)
+    .pipe(sassdoc(config.docs.plugin.sassdoc));
+});
+
+
+
 // ERROR
 var reportError = function (error) {
 	notify({
@@ -193,7 +214,7 @@ var reportError = function (error) {
 
 
 // DEFAULT
-gulp.task('default', function () {
+gulp.task('default', [config.html.task, config.css.task, config.js.task, config.svg.task], function () {
 
 	// Browser sync
 	browserSync.init(config.browsersync);
