@@ -1,0 +1,16 @@
+- var title = "Bottom Navbar";
+
+doctype html
+
+html
+
+	include parts/head
+
+	body
+
+		nav.BottomNavbar.BottomNavbar--scrollSensitive
+			- for (var x = 0; x < 5; x++)
+				a.BottomNavbar-item(href='#')
+					svg.icon.BottomNavbar-icon
+						<use xlink:href="#menu">
+					span.BottomNavbar-label Item

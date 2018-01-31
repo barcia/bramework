@@ -1,0 +1,16 @@
+- var title = "Dropdown";
+
+doctype html
+
+html
+
+	include parts/head
+
+	body
+
+		div.Dropdown
+			span Menu
+			ul.Dropdown-content.List.is-small
+				- for (var x = 0; x < 4; x++)
+					li
+						a.List-item(href="#") Link

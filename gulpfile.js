@@ -38,7 +38,6 @@ const config = {
 	browsersync: {
 		server: path.dist,
 		// startPath: "index.html",
-		// host: "192.168.0.199",
 		browser: 'google chrome'
 	},
 
@@ -47,8 +46,8 @@ const config = {
 		task: 'html',
 		source: [
 			path.source + 'pug/**/*.pug',
-			'!' + path.source + 'pug/**/_*.pug',
-			'!' + path.source + 'pug/docs',
+			'!' + path.source + 'pug/docs/**/*.pug',
+			'!' + path.source + 'pug/parts/**/*.pug'
 		],
 		sourceAll: path.source + 'pug/**/*.pug',
 		dist: path.dist,
@@ -56,6 +55,14 @@ const config = {
 			pug: {
 				pretty: true
 			}
+		},
+		docs: {
+			task: 'htmldocs',
+			source: [
+				path.source + 'pug/docs/**/*.pug',
+				'!' + path.source + 'pug/docs/parts/**/*.pug',
+			],
+			dist: path.docs
 		}
 	},
 
@@ -81,6 +88,15 @@ const config = {
 					sourcemap: false
 				})
 			]
+		},
+		docs: {
+			task: 'cssdocs',
+			source: path.source + 'scss/**/*.scss',
+			plugin: {
+				sassdoc: {
+					dest: path.docs + 'reference/'
+				}
+			}
 		}
 	},
 
@@ -117,17 +133,6 @@ const config = {
 			}
 		}
 	},
-
-	// DOCS
-	docs: {
-		task: 'docs',
-		source: path.source + 'scss/**/*.scss',
-		plugin: {
-			sassdoc: {
-				dest: path.docs + 'reference/'
-			}
-		}
-	}
 };
 
 
@@ -139,6 +144,16 @@ gulp.task(config.html.task, function () {
 		.pipe(pug(config.html.plugin.pug))
 	.pipe(plumber.stop())
 	.pipe(gulp.dest(config.html.dist))
+	.pipe(browserSync.stream());
+});
+
+// HTML Docs
+gulp.task(config.html.docs.task, function () {
+	return gulp.src(config.html.docs.source)
+	.pipe(plumber({errorHandler: reportError}))
+		.pipe(pug(config.html.plugin.pug))
+	.pipe(plumber.stop())
+	.pipe(gulp.dest(config.html.docs.dist))
 	.pipe(browserSync.stream());
 });
 
@@ -156,6 +171,13 @@ gulp.task(config.css.task, function () {
 	.pipe(plumber.stop())
 	.pipe(gulp.dest(config.css.dist))
 	.pipe(browserSync.stream());
+});
+
+
+// CSS Docs
+gulp.task(config.css.docs.task, function () {
+  return gulp.src(config.css.docs.source)
+    .pipe(sassdoc(config.css.docs.plugin.sassdoc));
 });
 
 
@@ -190,14 +212,6 @@ gulp.task(config.svg.task, function() {
 
 
 
-// DOCS
-gulp.task(config.docs.task, function () {
-  return gulp.src(config.docs.source)
-    .pipe(sassdoc(config.docs.plugin.sassdoc));
-});
-
-
-
 // ERROR
 var reportError = function (error) {
 	notify({
@@ -224,8 +238,12 @@ gulp.task('default', [config.html.task, config.css.task, config.js.task, config.
 	gulp.watch(config.css.source, [config.css.task]);
 	gulp.watch(config.js.source, [config.js.task]);
 	gulp.watch(config.svg.source, [config.svg.task]);
+
+	gulp.watch(config.html.docs.source, [config.html.docs.task]);
+	gulp.watch(config.css.docs.source, [config.css.docs.task]);
 });
 
 
 // All tasks
-gulp.task('all', [config.html.task, config.css.task, config.js.task, config.svg.task]);
+gulp.task('all', [config.html.task, config.css.task, config.js.task, config.svg.task, 'docs']);
+gulp.task('docs', [config.html.docs.task, config.css.docs.task]);

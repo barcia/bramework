@@ -1,0 +1,25 @@
+- var title = "Buttons";
+
+doctype html
+
+html
+
+	include parts/head
+
+	body
+
+		input.Button(type='button' value='Button')
+
+		button.Button Button
+
+		a.Button(href='#') Button
+
+		button.Button
+			svg.icon
+				<use xlink:href="#menu">
+			| Button
+
+		a.Button(href='#')
+			svg.icon
+				<use xlink:href="#menu">
+			| Button
