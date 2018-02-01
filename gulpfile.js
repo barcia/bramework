@@ -36,8 +36,8 @@ const config = {
 
 	// Browser Sync
 	browsersync: {
-		server: path.dist,
-		// startPath: "index.html",
+		server: './',
+		startPath: "/dist/index.html",
 		browser: 'google chrome'
 	},
 
