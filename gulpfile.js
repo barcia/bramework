@@ -80,7 +80,7 @@ const config = {
 			},
 			postcss: [
 				autoprefixer({
-					browsers: ['last 2 version']
+					browsers: ['> 5%']
 				}),
 				cssnano({
 					autoprefixer: false,
