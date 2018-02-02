@@ -10,40 +10,45 @@
 // Not show it, but maintain the layout
 .h-invisible {visibility: hidden !important;}
 
-// Always hide except in small
-@include breakpoint(small) {.h-sm-hidden {display: none !important;}}
-
 // Hidden from medium to high
 @include breakpoint(medium) {.h-md-hidden {display: none !important;}}
 
 // Hidden from large to high
 @include breakpoint(large) {.h-lg-hidden {display: none !important;}}
 
+// Hidden from extra-large to high
+@include breakpoint(extra-large) {.h-xl-hidden {display: none !important;}}
+
+// Show from medium to high
+@include breakpoint-down(medium) {.h-md-show {display: none !important;}}
+
+// Show from large to high
+@include breakpoint-down(large) {.h-lg-show {display: none !important;}}
+
+// Show from extra-large to high
+@include breakpoint-down(extra-large) {.h-xl-show {display: none !important;}}
+
 
 // FLEXBOX
-.h-display-flex {display: flex;}
-.h-order-first {order: -1 !important;}
-.h-order-last {order: 1 !important;}
+.h-orderFirst {order: -1 !important;}
+.h-orderLast {order: 1 !important;}
 
 // A11Y
-.h-screen-reader {@include screen-reader;}
+.h-screenReader {@include screen-reader;}
 
 // POSITIONING
-.h-float-right {float: right !important;}
-.h-float-left {float: left !important;}
-
-// BORDER
-.h-rounded { @include rounded;}
+.h-floatRight {float: right !important;}
+.h-floatLeft {float: left !important;}
 
 // LINKS
-.h-void-link {@include void-link;}
+.h-voidLink {@include void-link;}
 
 // Display links when the <a> element has no text value but the href
-.h-show-link::before {content: attr(href);}
+.h-showLink::before {content: attr(href);}
 
 
 // SIZE
-.h-full-width {width: 100%;}
+.h-fullWidth {width: 100% !important;}
 
 .h-size-18 {@include size(18px);}
 .h-size-24 {@include size(24px);}
@@ -69,7 +74,7 @@
 .h-strikethrough {text-decoration: line-through !important;}
 .h-monospace {font-family: $font-family-monospace !important;}
 
-.h-unselectable {user-select: none;}
+.h-unselectable {user-select: none !important;}
 
 
 // PRINT

@@ -5,13 +5,14 @@
 .icon {
 	@include size(24px);
 	vertical-align: middle;
+	stroke: $font-color;
 	fill: $font-color;
 
 	// Themes
-	// &.icon--light {fill: $font-color-light;} // TODO: reparar
-	&.is-inactive {fill: $font-color-alpha-b;}
-	&.icon--light.is-inactive {fill: $font-color-alpha-w;}
-
+	&.icon--light {
+		stroke: $white;
+		fill: $white;
+	}
 
 	// Animations
 	&.icon--animation-laught {

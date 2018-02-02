@@ -4,7 +4,7 @@
 
 /// Breakpoint manager
 /// @param {String} $breakpoint - Put the size to do the breakpoint. Accepted
-/// strings [small|medium|large|extra-large]. Remember that this breakpoint
+/// strings [medium|large|extra-large]. Remember that this breakpoint
 /// mixin ir **mobile first**.
 /// @link https://www.sitepoint.com/managing-responsive-breakpoints-sass/
 /// @example scss - Usage
@@ -18,7 +18,7 @@
 ///   .foo {
 ///     width: 300px;
 ///   }
-///   @media (min-width:800px){
+///   @media (min-width:450px){
 ///     .foo {
 ///       width: 100px;
 ///     }
@@ -40,12 +40,12 @@
 
 /// Inverted reakpoint manager
 /// @param {String} $breakpoint - Put the size to do the breakpoint. Accepted
-/// strings [small|medium|large|extra-large].
+/// strings [medium|large|extra-large].
 /// @link https://www.sitepoint.com/managing-responsive-breakpoints-sass/
 /// @example scss - Usage
 ///   .foo {
 ///     width: 300px;
-///     @include breackpoint-down(medium) {
+///     @include breackpoint-down(large) {
 ///       width: 100px;
 ///     }
 ///   }
@@ -53,7 +53,7 @@
 ///   .foo {
 ///     width: 300px;
 ///   }
-///   @media (max-width:800px){
+///   @media (max-width:1024px){
 ///     .foo {
 ///       width: 100px;
 ///     }

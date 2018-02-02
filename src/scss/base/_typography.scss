@@ -23,10 +23,11 @@ h1, h3, h4, h2, h5, h6 {
 		margin-top: 0;
 	}
 
-	@include breakpoint-down(small) {
-		line-height: $line-height-headings * 0.9;
-		letter-spacing: -0.03em;
-	}
+// FIXME: Change breakpoints
+	// @include breakpoint-down(small) {
+	// 	line-height: $line-height-headings * 0.9;
+	// 	letter-spacing: -0.03em;
+	// }
 }
 
 h1 {font-size: $font-size-h1;}
