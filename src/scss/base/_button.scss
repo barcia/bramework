@@ -2,24 +2,21 @@
 	#BUTTON
 \*------------------------------------*/
 
-@mixin Button-base {
-	@include void-link;
+button,
+.Button {
 	@include inline-flex-center;
 	white-space: nowrap;
 	vertical-align: middle;
 	outline: 0;
-}
-
-
-.Button {
-	@include Button-base;
-	color: $font-color;
 	border: 0;
+	color: $font-color;
 
 	&:disabled {
 		color: $font-color-light;
 		& .icon {fill: $font-color-light;}
 	}
+}
 
-	& .icon {fill: $font-color;}
+.Button {
+	text-decoration: none;
 }
