@@ -2,7 +2,7 @@
 
 // Background colors
 $bg-color-light: $white !default;
-$bg-color-dark : $oc-gray-8 !default;
+$bg-color-dark : $oc-grey-800 !default;
 
 
 // Brand colors
@@ -34,13 +34,12 @@ $yellow : $sandstorm !default;
 
 
 // Font colors
-$font-color-soft-pct: 25% !default;
+// $font-color-light-pct: 25% !default;
 
-$font-color-dark     : $grey-700 !default;
-$font-color-dark-soft: font-color-soft($font-color-dark) !default;
+$font-color        : $grey-700 !default;
+$font-color-light  : $grey-500 !default;
+$font-color-lighter: $grey-300 !default;
 
-$font-color-light     : $white !default;
-$font-color-light-soft: font-color-soft($font-color-light) !default;
 
 $font-color-alpha-b: $alpha-b-400 !default;
 $font-color-alpha-w: $alpha-w-400 !default;
@@ -50,7 +49,7 @@ $font-color-alpha-w: $alpha-w-400 !default;
 $link-color-hover-pct : 10% !default;
 $link-color-active-pct: 20% !default;
 
-$link-color       : $brand-color-alt !default;
+$link-color       : $brand-color !default;
 $link-color-hover : darker($link-color, $link-color-hover-pct) !default;
 $link-color-active: darker($link-color, $link-color-active-pct) !default;
 

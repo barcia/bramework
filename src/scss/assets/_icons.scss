@@ -5,10 +5,10 @@
 .icon {
 	@include size(24px);
 	vertical-align: middle;
-	fill: $font-color-dark;
+	fill: $font-color;
 
 	// Themes
-	&.icon--light {fill: $font-color-light;}
+	// &.icon--light {fill: $font-color-light;} // TODO: reparar
 	&.is-inactive {fill: $font-color-alpha-b;}
 	&.icon--light.is-inactive {fill: $font-color-alpha-w;}
 

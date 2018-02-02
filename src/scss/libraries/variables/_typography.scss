@@ -2,8 +2,8 @@
 
 // Font
 $font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Roboto, sans-serif !default;
-$font-family-serif: Georgia, serif !default;
-$font-family-monospace: hack, Inconsolata, Menlo, monospace !default;
+$font-family-serif: serif !default;
+$font-family-monospace: Hack, Inconsolata, Menlo, monospace !default;
 
 $font-family-base: $font-family-sans-serif !default;
 
@@ -22,13 +22,6 @@ $font-size-h6: 0.9rem !default;
 // Font-weight
 $font-weight-base: normal !default;
 $font-weight-bold: bold !default;
-
-$font-weight-h1: $font-weight-base !default;
-$font-weight-h2: $font-weight-base !default;
-$font-weight-h3: $font-weight-base !default;
-$font-weight-h4: $font-weight-base !default;
-$font-weight-h5: $font-weight-bold !default;
-$font-weight-h6: $font-weight-bold !default;
 
 // Line height
 $line-height-headings  : 1.4em !default;

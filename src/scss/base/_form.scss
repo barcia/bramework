@@ -1,0 +1,40 @@
+/*------------------------------------*\
+	#FORM
+\*------------------------------------*/
+
+
+
+
+input,
+select {
+	outline: none;
+
+	&:disabled {
+		color: $font-color-light;
+	}
+}
+
+
+
+
+#{$input-text} {
+	@include transition(border-color, $transition-time-fast);
+	padding: $input-text-padding-vt $input-text-padding-hz;
+	color: $font-color;
+	background-color: transparent;
+	border: $input-text-border-width solid $input-text-border-color;
+	border-radius: $input-text-border-radius;
+	outline: none;
+
+	&:focus {
+		border-color: $input-text-border-color-focus;
+	}
+
+	&:disabled {
+		background-color: $alpha-b-50;
+	}
+
+	&::placeholder {
+		color: $font-color-lighter;
+	}
+}

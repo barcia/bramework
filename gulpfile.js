@@ -1,11 +1,12 @@
-// Dependencies
+// DEPENDENCIES
 var gulp         = require('gulp');
 var rename       = require('gulp-rename');
+var copy         = require('gulp-copy');
+var run          = require('gulp-run');
 var plumber      = require('gulp-plumber');
 var notify       = require('gulp-notify');
 var sourcemaps   = require('gulp-sourcemaps');
 var browserSync  = require('browser-sync').create();
-var pug          = require('gulp-pug');
 var sass         = require('gulp-sass');
 var postcss      = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -17,7 +18,8 @@ var svgmin       = require('gulp-svgmin');
 var sassdoc      = require('sassdoc')
 
 
-// Global paths
+
+// PATHS
 const path = {
 	source: 'src/',
 	build: 'build/',
@@ -26,13 +28,16 @@ const path = {
 };
 
 
-// Config
+
+// CONFIG
 const config = {
 
-	// Sourcemap
+
+	// Sourcemaps
 	sourcemap: {
 		build: '../../' + path.build + 'sourcemap'
 	},
+
 
 	// Browser Sync
 	browsersync: {
@@ -41,30 +46,25 @@ const config = {
 		browser: 'google chrome'
 	},
 
+
 	// HTML
 	html: {
 		task: 'html',
-		source: [
-			path.source + 'pug/**/*.pug',
-			'!' + path.source + 'pug/docs/**/*.pug',
-			'!' + path.source + 'pug/parts/**/*.pug'
-		],
-		sourceAll: path.source + 'pug/**/*.pug',
+		source: [path.source + 'html/**/*.html',
+						 path.source + 'html/_config.yml'],
+		build: path.dist + '**/*.html',
 		dist: path.dist,
-		plugin: {
-			pug: {
-				pretty: true
-			}
-		},
-		docs: {
-			task: 'htmldocs',
-			source: [
-				path.source + 'pug/docs/**/*.pug',
-				'!' + path.source + 'pug/docs/parts/**/*.pug',
-			],
-			dist: path.docs
-		}
+		shellCommand: 'jekyll build --source src/html --destination dist/'
 	},
+
+
+	// PHP
+	php: {
+		task: 'php',
+		source: path.source + 'php/**/*.php',
+		dist: path.dist
+	},
+
 
 	// CSS
 	css: {
@@ -75,9 +75,8 @@ const config = {
 			rename: {
 				suffix: '.min'
 			},
-			sass: {
-
-			},
+			sass: {},
+			// PostCSS
 			postcss: [
 				autoprefixer({
 					browsers: ['> 5%']
@@ -90,7 +89,7 @@ const config = {
 			]
 		},
 		docs: {
-			task: 'cssdocs',
+			task: 'css:docs',
 			source: path.source + 'scss/**/*.scss',
 			plugin: {
 				sassdoc: {
@@ -99,6 +98,7 @@ const config = {
 			}
 		}
 	},
+
 
 	// JS
 	js: {
@@ -109,14 +109,13 @@ const config = {
 			concat: {
 				path: 'script.js'
 			},
-			uglify: {
-
-			},
+			uglify: {},
 			rename: {
 				suffix: '.min'
 			}
 		}
 	},
+
 
   // SVG
 	svg: {
@@ -137,24 +136,30 @@ const config = {
 
 
 
+// ALL TASKS
+const tasks = [config.html.task, config.php.task, config.css.task, config.js.task, config.svg.task];
+
+gulp.task('build', tasks);
+gulp.task('docs', [config.css.docs.task]);
+
+
+
 // HTML
-gulp.task(config.html.task, function () {
-	return gulp.src(config.html.source)
+gulp.task(config.html.task, function() {
+	return gulp.src('')
 	.pipe(plumber({errorHandler: reportError}))
-		.pipe(pug(config.html.plugin.pug))
-	.pipe(plumber.stop())
-	.pipe(gulp.dest(config.html.dist))
-	.pipe(browserSync.stream());
+		.pipe(run(config.html.shellCommand))
+	.pipe(plumber.stop());
 });
 
-// HTML Docs
-gulp.task(config.html.docs.task, function () {
-	return gulp.src(config.html.docs.source)
+
+
+// PHP (Only copy the PHP files in )
+gulp.task(config.php.task, function () {
+	return gulp.src(config.php.source)
 	.pipe(plumber({errorHandler: reportError}))
-		.pipe(pug(config.html.plugin.pug))
 	.pipe(plumber.stop())
-	.pipe(gulp.dest(config.html.docs.dist))
-	.pipe(browserSync.stream());
+	.pipe(gulp.dest(config.php.dist))
 });
 
 
@@ -228,22 +233,18 @@ var reportError = function (error) {
 
 
 // DEFAULT
-gulp.task('default', [config.html.task, config.css.task, config.js.task, config.svg.task], function () {
+gulp.task('default', tasks, function () {
 
 	// Browser sync
 	browserSync.init(config.browsersync);
 
 	// Watch
-	gulp.watch(config.html.sourceAll, [config.html.task]);
+	gulp.watch(config.html.source, [config.html.task]);
+	gulp.watch(config.html.build).on('change', browserSync.reload);
+	gulp.watch(config.php.source, [config.php.task]);
 	gulp.watch(config.css.source, [config.css.task]);
 	gulp.watch(config.js.source, [config.js.task]);
 	gulp.watch(config.svg.source, [config.svg.task]);
 
-	gulp.watch(config.html.docs.source, [config.html.docs.task]);
 	gulp.watch(config.css.docs.source, [config.css.docs.task]);
 });
-
-
-// All tasks
-gulp.task('all', [config.html.task, config.css.task, config.js.task, config.svg.task, 'docs']);
-gulp.task('docs', [config.html.docs.task, config.css.docs.task]);

@@ -13,13 +13,13 @@
 
 .Button {
 	@include Button-base;
-	color: $font-color-dark;
+	color: $font-color;
 	border: 0;
 
 	&:disabled {
-		color: $font-color-dark-soft;
-		& .icon {fill: $font-color-dark-soft;}
+		color: $font-color-light;
+		& .icon {fill: $font-color-light;}
 	}
 
-	& .icon {fill: $font-color-dark;}
+	& .icon {fill: $font-color;}
 }

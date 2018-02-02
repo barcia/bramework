@@ -60,7 +60,7 @@ $List-icon-size: 24px;
 // Singular elements
 .List-icon {
 	@include size($List-icon-size);
-	fill: $font-color-dark-soft;
+	fill: $font-color-light;
 
 	&:not(:last-child) {
 		margin-right: $List-elements-margin;
@@ -85,7 +85,7 @@ $List-icon-size: 24px;
 
 .List-data {
 	margin-left: $List-elements-margin;
-	color: $font-color-dark-soft;
+	color: $font-color-light;
 }
 
 

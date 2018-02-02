@@ -1,0 +1,24 @@
+
+$input-text-padding-hz: 10px;
+$input-text-padding-vt: 5px;
+$input-text-border-width: 1px;
+$input-text-border-radius: 0;
+$input-text-border-color: $grey-200;
+$input-text-border-color-focus: $brand-color;
+
+
+$input-text: 'textarea',
+'input[type=email]',
+'input[type=password]',
+'input[type=search]',
+'input[type=tel]',
+'input[type=text]',
+'input[type=url]',
+'input[type=number]',
+'input[type=datetime]',
+'input[type=datetime-local]',
+'input[type=date]',
+'input[type=month]',
+'input[type=week]',
+'input[type=time]',
+'input[list]';
