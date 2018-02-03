@@ -1,13 +1,13 @@
+// sass-lint:disable space-before-colon
 
-$input-text-padding-hz: 10px;
-$input-text-padding-vt: 5px;
-$input-text-border-width: 1px;
-$input-text-border-radius: 0;
-$input-text-border-color: $grey-200;
-$input-text-border-color-focus: $brand-color;
+$InputText-paddingHz        : 10px;
+$InputText-paddingVt        : 5px;
+$InputText-borderWidth       : 1px;
+$InputText-borderRadius      : 0;
+$InputText-borderColor       : $grey-200;
+$InputText-borderColor--focus: $brand-color;
 
-
-$input-text: 'textarea',
+$InputText: 'textarea',
 'input[type=email]',
 'input[type=password]',
 'input[type=search]',

@@ -6,7 +6,7 @@
 	position: relative;
 	cursor: pointer;
 
-	@include hover-focus {
+	@include hoverFocus {
 		outline: 0;
 	}
 }

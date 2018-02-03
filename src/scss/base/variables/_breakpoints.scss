@@ -3,9 +3,9 @@
 /// @type Map
 /// @prop {Number} medium - 450px.
 /// @prop {Number} large - 1024px.
-/// @prop {Number} extra-large - 1920px.
+/// @prop {Number} extraLarge - 1920px.
 $breakpoints: (
 	'medium': 450px,
 	'large': 1024px,
-	'extra-large': 1920px,
+	'extraLarge': 1920px,
 ) !default;

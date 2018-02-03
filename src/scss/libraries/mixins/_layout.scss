@@ -3,35 +3,35 @@
 ////
 
 /// Completly center items in a `flex` container
-@mixin flex-center {
+@mixin flexCenter {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 /// Completly center items in a `inline-flex` container
-@mixin inline-flex-center {
+@mixin inlineFlexCenter {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 }
 
 /// Vertical center absolute item
-@mixin vertical-center {
+@mixin verticalCenter {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
 /// Horizontal center absolute item
-@mixin horizontal-center {
+@mixin horizontalCenter {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
 }
 
 /// Completly center absolute item
-@mixin absolute-center {
+@mixin absoluteCenter {
 	position: absolute;
 	top: 50%;
 	left: 50%;

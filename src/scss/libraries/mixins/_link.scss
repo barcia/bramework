@@ -5,7 +5,7 @@
 /// Mixin to styles in :hover and :focus pseudo-classes
 /// @example scss - Usage
 ///   .foo {
-///     @include hover-focus {
+///     @include hoverFocus {
 ///   		background-color: red;
 ///   	}
 ///   }
@@ -14,7 +14,7 @@
 ///   .foo:focus {
 ///   		background-color: red;
 ///   }
-@mixin hover-focus {
+@mixin hoverFocus {
 	&:hover,
 	&:focus {
 		@content;
@@ -24,7 +24,7 @@
 /// Mixin to styles in :hover, :focus and :active pseudo-classes
 /// @example scss - Usage
 ///   .foo {
-///     @include hover-focus-active {
+///     @include hoverFocusActive {
 ///   		background-color: red;
 ///   	}
 ///   }
@@ -34,7 +34,7 @@
 ///   .foo:active {
 ///   		background-color: red;
 ///   }
-@mixin hover-focus-active {
+@mixin hoverFocusActive {
 	&:hover,
 	&:focus,
 	&:active {
@@ -45,7 +45,7 @@
 /// Mixin to styles in :hover, :focus and :active pseudo-classes **and the element itself**
 /// @example scss - Usage
 ///   .foo {
-///     @include self-hover-focus-active {
+///     @include selfHoverFocusActive{
 ///   		background-color: red;
 ///   	}
 ///   }
@@ -56,7 +56,7 @@
 ///   .foo:active {
 ///   		background-color: red;
 ///   }
-@mixin self-hover-focus-active {
+@mixin selfHoverFocusActive{
 	&,
 	&:hover,
 	&:focus,
@@ -68,10 +68,10 @@
 /// Mixin to remove the link classes and its pseudo-classes
 /// @example scss
 ///   .link {
-///   	@include void-link;
+///   	@include voidLink;
 ///   }
-@mixin void-link {
-	@include self-hover-focus-active {
+@mixin voidLink {
+	@include selfHoverFocusActive{
 		color: inherit;
 		text-decoration: none;
 	}
@@ -84,7 +84,7 @@
 /// @param {string} $value2 [$value1] - Value for :active status
 /// @example scss - Usage
 ///   .link {
-///   	@include link-states(color, red, blue);
+///   	@include linkStates(color, red, blue);
 ///   }
 /// @example css - Output
 ///   .link:hover,
@@ -95,8 +95,8 @@
 ///   .link:active {
 ///   	color:blue;
 ///   }
-@mixin link-states($property, $value1, $value2: $value1) {
-	@include hover-focus {
+@mixin linkStates($property, $value1, $value2: $value1) {
+	@include hoverFocus {
 		#{$property}: $value1;
 	}
 

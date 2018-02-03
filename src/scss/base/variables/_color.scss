@@ -1,59 +1,46 @@
 // sass-lint:disable space-before-colon
 
 // Background colors
-$bg-color-light: $white !default;
-$bg-color-dark : $oc-grey-800 !default;
+$bgColor--dark : $oc-grey-800 !default;
+$bgColor--light: $white !default;
 
 
 // Brand colors
 $brand-color-modifier-pct: 15%;
 
-$brand-color        : $royal-blue !default;
-$brand-color-darker : darker($brand-color, $brand-color-modifier-pct) !default;
-$brand-color-lighter: lighter($brand-color, $brand-color-modifier-pct) !default;
+$brand-color       : $royal-blue !default;
+$brand-color--c    : complement($brand-color) !default;
+$brand-color-sec   : $sunglo !default;
+$brand-color-sec--c: complement($brand-color-sec) !default;
 
-$brand-color-c        : complement($brand-color) !default;
-$brand-color-c-darker : darker($brand-color-c, $brand-color-modifier-pct) !default;
-$brand-color-c-lighter: lighter($brand-color-c, $brand-color-modifier-pct) !default;
-
-$brand-color-alt        : $sunglo !default;
-$brand-color-alt-darker : darker($brand-color-alt, $brand-color-modifier-pct) !default;
-$brand-color-alt-lighter: lighter($brand-color-alt, $brand-color-modifier-pct) !default;
-
-$brand-color-alt-c        : complement($brand-color-alt) !default;
-$brand-color-alt-c-darker : darker($brand-color-alt-c, $brand-color-modifier-pct) !default;
-$brand-color-alt-c-lighter: lighter($brand-color-alt-c, $brand-color-modifier-pct) !default;
-
-$blue   : $royal-blue !default;
-$green  : $nephritis !default;
-$orange : $carrot-500 !default;
-$pink   : $peach-colored !default;
-$purple : $bellflower !default;
-$red    : $pure-crimson !default;
-$yellow : $sandstorm !default;
+$brand-blue   : $royal-blue !default;
+$brand-green  : $nephritis !default;
+$brand-orange : $carrot-500 !default;
+$brand-pink   : $peach-colored !default;
+$brand-purple : $bellflower !default;
+$brand-red    : $pure-crimson !default;
+$brand-yellow : $sandstorm !default;
 
 
 // Font colors
-// $font-color-light-pct: 25% !default;
-
-$font-color        : $grey-700 !default;
-$font-color-light  : $grey-500 !default;
-$font-color-lighter: $grey-300 !default;
+$fontColor         : $grey-700 !default;
+$fontColor--light  : $grey-500 !default;
+$fontColor--lighter: $grey-300 !default;
 
 
-$font-color-alpha-b: $alpha-b-400 !default;
-$font-color-alpha-w: $alpha-w-400 !default;
+$fontColor-alpha-b: $alpha-b-400 !default;
+$fontColor-alpha-w: $alpha-w-400 !default;
 
 
 // Link colors
-$link-color-hover-pct : 10% !default;
-$link-color-active-pct: 20% !default;
+$link-fontColor--hover-pct : 10% !default;
+$link-fontColor--active-pct: 20% !default;
 
-$link-color       : $brand-color !default;
-$link-color-hover : darker($link-color, $link-color-hover-pct) !default;
-$link-color-active: darker($link-color, $link-color-active-pct) !default;
+$link-fontColor        : $brand-color !default;
+$link-fontColor--hover : darker($link-fontColor, $link-fontColor--hover-pct) !default;
+$link-fontColor--active: darker($link-fontColor, $link-fontColor--active-pct) !default;
 
-$alpha-b-hover : darker($alpha, $link-color-hover-pct) !default;
-$alpha-b-active: darker($alpha, $link-color-active-pct) !default;
-$alpha-w-hover : lighter($alpha, $link-color-hover-pct) !default;
-$alpha-w-active: lighter($alpha, $link-color-active-pct) !default;
+$link-fontColor-alpha-b--hover : darker($alpha, $link-fontColor--hover-pct) !default;
+$link-fontColor-alpha-b--active: darker($alpha, $link-fontColor--active-pct) !default;
+$link-fontColor-alpha-w--hover : lighter($alpha, $link-fontColor--hover-pct) !default;
+$link-fontColor-alpha-w--active: lighter($alpha, $link-fontColor--active-pct) !default;

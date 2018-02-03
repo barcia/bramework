@@ -2,20 +2,20 @@
 	#LIST
 \*------------------------------------*/
 
-$List-item-minHeight: 48px;
-$List-item-vtPadding: 4px;
-$List-elements-margin: 16px;
-$List-avatar-size: 40px;
-$List-icon-size: 24px;
+$ListItem-minHeight: 48px;
+$ListItem-paddingVertical: 4px;
+$ListElements-margin: 16px;
+$ListAvatar-size: 40px;
+$ListIcon-size: 24px;
 
 
 // Base
 .List {
-	@include padding-vt(8px);
+	@include paddingVt(8px);
 	margin: 0;
-	font-size: $font-size-base;
+	font-size: $fontSize;
 	list-style-type: none;
-	background-color: $bg-color-light;
+	background-color: $bgColor--light;
 
 	&:not(:last-child) {
 		border-bottom: 1px solid $alpha-b-100;
@@ -33,11 +33,11 @@ $List-icon-size: 24px;
 .List-aside {
 	display: inline-flex;
 	align-items: center;
-	min-height: $List-item-minHeight;
-	padding: $List-item-vtPadding $List-elements-margin;
+	min-height: $ListItem-minHeight;
+	padding: $ListItem-paddingVertical $ListElements-margin;
 	@at-root a#{&} {
-		@include void-link;
-		@include link-states(background-color, $alpha-b-hover, $alpha-b-active);
+		@include voidLink;
+		@include linkStates(background-color, $link-fontColor-alpha-b--hover, $link-fontColor-alpha-b--active);
 	}
 }
 
@@ -52,28 +52,28 @@ $List-icon-size: 24px;
 
 
 .List-aside {
-	min-width: $List-item-minHeight;
+	min-width: $ListItem-minHeight;
 }
 
 
 
 // Singular elements
 .List-icon {
-	@include size($List-icon-size);
-	fill: $font-color-light;
+	@include size($ListIcon-size);
+	fill: $fontColor--light;
 
 	&:not(:last-child) {
-		margin-right: $List-elements-margin;
+		margin-right: $ListElements-margin;
 	}
 }
 
 
 .List-avatar {
-	@include circle($List-avatar-size);
+	@include circle($ListAvatar-size);
 	object-fit: cover;
 
 	&:not(:last-child) {
-		margin-right: $List-elements-margin;
+		margin-right: $ListElements-margin;
 	}
 }
 
@@ -84,8 +84,8 @@ $List-icon-size: 24px;
 
 
 .List-data {
-	margin-left: $List-elements-margin;
-	color: $font-color-light;
+	margin-left: $ListElements-margin;
+	color: $fontColor--light;
 }
 
 
@@ -98,7 +98,7 @@ $List-small-elements-margin: 8px;
 $List-small-avatar-size: 34px;
 
 .List.is-small {
-	@include padding-vt(4px);
+	@include paddingVt(4px);
 
 	.List-item,
 	.List-aside {

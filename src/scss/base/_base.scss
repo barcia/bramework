@@ -4,7 +4,7 @@
 
 //Body
 body {
-	background-color: $bg-color-light;
+	background-color: $bgColor--light;
 }
 
 
@@ -21,17 +21,17 @@ ol {
 
 //Media
 figcaption {
-	font-size: $font-size-small;
-	font-weight: $font-weight-base;
-	color: $font-color-light;
+	font-size: $fontSize--small;
+	color: $fontColor--light;
 	&:first-child {margin-bottom: 0.5em;}
 	&:last-child {margin-top: 0.5em;}
 }
 
 
+// Dialog
 dialog {
-	@include horizontal-center;
-	border: 0;
+	@include horizontalCenter;
 	@include shadow(4);
 	width: 70vw;
+	border: 0;
 }

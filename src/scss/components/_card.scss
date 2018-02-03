@@ -3,12 +3,12 @@
 \*------------------------------------*/
 
 @mixin Card-link {
-	@include void-link;
+	@include voidLink;
 	cursor: pointer;
 }
 
 .Card {
-	@include padding-vt(8px);
+	@include paddingVt(8px);
 	@include shadow(2);
 	display: inline-block;
 	width: 100%;
@@ -33,7 +33,7 @@
 
 .Card-subtitle {
 	margin: 0;
-	color: $font-color-light;
+	color: $fontColor--light;
 }
 
 .Card-text,

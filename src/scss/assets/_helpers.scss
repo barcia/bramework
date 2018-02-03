@@ -16,17 +16,17 @@
 // Hidden from large to high
 @include breakpoint(large) {.h-lg-hidden {display: none !important;}}
 
-// Hidden from extra-large to high
-@include breakpoint(extra-large) {.h-xl-hidden {display: none !important;}}
+// Hidden from extraLarge to high
+@include breakpoint(extraLarge) {.h-xl-hidden {display: none !important;}}
 
 // Show from medium to high
-@include breakpoint-down(medium) {.h-md-show {display: none !important;}}
+@include breakpointDown(medium) {.h-md-show {display: none !important;}}
 
 // Show from large to high
-@include breakpoint-down(large) {.h-lg-show {display: none !important;}}
+@include breakpointDown(large) {.h-lg-show {display: none !important;}}
 
-// Show from extra-large to high
-@include breakpoint-down(extra-large) {.h-xl-show {display: none !important;}}
+// Show from extraLarge to high
+@include breakpointDown(extraLarge) {.h-xl-show {display: none !important;}}
 
 
 // FLEXBOX
@@ -34,14 +34,14 @@
 .h-orderLast {order: 1 !important;}
 
 // A11Y
-.h-screenReader {@include screen-reader;}
+.h-screenReader {@include screenReader;}
 
 // POSITIONING
 .h-floatRight {float: right !important;}
 .h-floatLeft {float: left !important;}
 
 // LINKS
-.h-voidLink {@include void-link;}
+.h-voidLink {@include voidLink;}
 
 // Display links when the <a> element has no text value but the href
 .h-showLink::before {content: attr(href);}
@@ -72,7 +72,7 @@
 .h-underline {text-decoration: underline !important;}
 .h-overline {text-decoration: overline !important;}
 .h-strikethrough {text-decoration: line-through !important;}
-.h-monospace {font-family: $font-family-monospace !important;}
+.h-monospace {font-family: $fontFamily-monospace !important;}
 
 .h-unselectable {user-select: none !important;}
 

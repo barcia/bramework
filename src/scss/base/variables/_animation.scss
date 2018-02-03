@@ -1,7 +1,7 @@
 // sass-lint:disable space-before-colon
 
 // Transitions
-$transition-time-fast      : 100ms !default;
-$transition-time           : 200ms !default;
-$transition-time-slow      : 300ms !default;
-$transition-timing-function: ease-in-out !default;
+$transitionTime--fast    : 100ms !default;
+$transitionTime          : 200ms !default;
+$transitionTime--slow    : 300ms !default;
+$transitionTimingFunction: ease-in-out !default;

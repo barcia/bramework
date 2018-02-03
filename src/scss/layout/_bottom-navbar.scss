@@ -3,8 +3,8 @@
 \*------------------------------------*/
 
 $BottomNavbar-height: 56px;
-$BottomNavbar-item-maxWidth: 150px;
-$BottomNavbar-activeColor: $link-color;
+$BottomNavbarItem-maxWidth: 150px;
+$BottomNavbarItem-color--active: $link-fontColor;
 
 .BottomNavbar {
 	@include shadow(2, top);
@@ -20,30 +20,30 @@ $BottomNavbar-activeColor: $link-color;
 
 .BottomNavbar--scrollSensitive {
 	@include transition(bottom);
-	@include scroll-down {
+	@include scrollDown {
 		bottom: -$BottomNavbar-height;
 	}
 }
 
 
 .BottomNavbar-item {
-	@include void-link;
+	@include voidLink;
 	display: flex;
 	align-items: center;
 	flex: 1;
 	flex-direction: column;
 	justify-content: center;
-	max-width: $BottomNavbar-item-maxWidth;
+	max-width: $BottomNavbarItem-maxWidth;
 	padding: 5px 12px 8px;
 	font-size: 0.9rem;
-	@include link-states(background-color, $alpha-b-hover, $alpha-b-active);
+	@include linkStates(background-color, $link-fontColor-alpha-b--hover, $link-fontColor-alpha-b--active);
 }
 
 
 .BottomNavbar-icon {
 	.BottomNavbar-item:hover &,
 	.BottomNavbar-item.is-active & {
-		fill: $BottomNavbar-activeColor;
+		fill: $BottomNavbarItem-color--active;
 	}
 }
 
@@ -51,6 +51,6 @@ $BottomNavbar-activeColor: $link-color;
 .BottomNavbar-label {
 	.BottomNavbar-item:hover &,
 	.BottomNavbar-item.is-active & {
-		color: $BottomNavbar-activeColor;
+		color: $BottomNavbarItem-color--active;
 	}
 }

@@ -36,7 +36,7 @@
 /// @param {Color} $color - Main color to check his lightness
 /// @return {String} - Return 'dark' or 'light' if the main color has more or
 /// less tha 50% of lightness.
-@function contrast-color($color) {
+@function contrastColor($color) {
 	@if (lightness($color) > 50) {
 		@return light; // The main color is light
 	}
@@ -50,11 +50,11 @@
 /// color is dark, the soft version is lighter, and for light colors, the soft
 /// version is darker.
 /// @param {Color} $color - Main color on which the soft version is based
-/// @param {Percentage} $percentage [$font-color-light-pct] - Percentage that
+/// @param {Percentage} $percentage - Percentage that
 /// will change the main color to create the soft version.
 /// @return {Color} - Return the soft version of the main color.
-@function font-color-soft($color, $percentage: $font-color-light-pct) {
-	@if contrast-color($color) == dark {
+@function fontColor-soft($color, $percentage) {
+	@if contrastColor($color) == dark {
 		@return lighter($color, $percentage);
 	}
 	@else {

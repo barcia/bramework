@@ -2,39 +2,34 @@
 	#FORM
 \*------------------------------------*/
 
-
-
-
 input,
 select {
 	outline: none;
 
 	&:disabled {
-		color: $font-color-light;
+		color: $fontColor--light;
 	}
 }
 
 
-
-
-#{$input-text} {
-	@include transition(border-color, $transition-time-fast);
-	padding: $input-text-padding-vt $input-text-padding-hz;
-	color: $font-color;
+#{$InputText} {
+	@include transition(border-color, $transitionTime--fast);
+	padding: $InputText-paddingVt $InputText-paddingHz;
+	color: $fontColor;
 	background-color: transparent;
-	border: $input-text-border-width solid $input-text-border-color;
-	border-radius: $input-text-border-radius;
+	border: $InputText-borderWidth solid $InputText-borderColor;
+	border-radius: $InputText-borderRadius;
 	outline: none;
 
+	&::placeholder {
+		color: $fontColor--lighter;
+	}
+
 	&:focus {
-		border-color: $input-text-border-color-focus;
+		border-color: $InputText-borderColor--focus;
 	}
 
 	&:disabled {
 		background-color: $alpha-b-50;
-	}
-
-	&::placeholder {
-		color: $font-color-lighter;
 	}
 }

@@ -4,7 +4,7 @@
 
 /// Breakpoint manager
 /// @param {String} $breakpoint - Put the size to do the breakpoint. Accepted
-/// strings [medium|large|extra-large]. Remember that this breakpoint
+/// strings [medium|large|extraLarge]. Remember that this breakpoint
 /// mixin ir **mobile first**.
 /// @link https://www.sitepoint.com/managing-responsive-breakpoints-sass/
 /// @example scss - Usage
@@ -40,12 +40,12 @@
 
 /// Inverted reakpoint manager
 /// @param {String} $breakpoint - Put the size to do the breakpoint. Accepted
-/// strings [medium|large|extra-large].
+/// strings [medium|large|extraLarge].
 /// @link https://www.sitepoint.com/managing-responsive-breakpoints-sass/
 /// @example scss - Usage
 ///   .foo {
 ///     width: 300px;
-///     @include breackpoint-down(large) {
+///     @include breackpointDown(large) {
 ///       width: 100px;
 ///     }
 ///   }
@@ -58,7 +58,7 @@
 ///       width: 100px;
 ///     }
 ///   }
-@mixin breakpoint-down($breakpoint) {
+@mixin breakpointDown($breakpoint) {
 	$value: map-get($breakpoints, $breakpoint) !global;
 
 	// If the key exists in the map

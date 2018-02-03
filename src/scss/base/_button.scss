@@ -4,16 +4,16 @@
 
 button,
 .Button {
-	@include inline-flex-center;
+	@include inlineFlexCenter;
+	color: $fontColor;
 	white-space: nowrap;
 	vertical-align: middle;
-	outline: 0;
 	border: 0;
-	color: $font-color;
+	outline: 0;
 
 	&:disabled {
-		color: $font-color-light;
-		& .icon {fill: $font-color-light;}
+		color: $fontColor--light;
+		& .icon {fill: $fontColor--light;}
 	}
 }
 

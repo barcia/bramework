@@ -5,8 +5,8 @@
 .icon {
 	@include size(24px);
 	vertical-align: middle;
-	stroke: $font-color;
-	fill: $font-color;
+	stroke: $fontColor;
+	fill: $fontColor;
 
 	// Themes
 	&.icon--light {

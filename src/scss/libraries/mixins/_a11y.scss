@@ -6,7 +6,7 @@
 /// @author [Bootstrap](https://github.com/twbs/bootstrap/blob/v4-dev/scss/mixins/_screen-reader.scss)
 /// @link http://a11yproject.com/posts/how-to-hide-content
 /// @link http://hugogiraudel.com/2016/10/13/css-hide-and-seek
-@mixin screen-reader {
+@mixin screenReader {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -19,7 +19,7 @@
 }
 
 /// Mixin for make something hidden (some screen reader show a item with "display: none")
-@mixin more-hidden {
+@mixin moreHidden {
 	display: none;
 	visibility: hidden;
 }

@@ -6,13 +6,13 @@
 /// @param {string} $image-url - The image url. Local or external.
 /// @example scss - Usage with local image
 ///   .foo {
-///     @include background-image('img/image.jpg');
+///     @include backgroundImage('img/image.jpg');
 ///   }
 /// @example scss - Usage with external image
 ///   .foo {
-///     @include background-image('https://source.unsplash.com/random/1600x200');
+///     @include backgroundImage('https://source.unsplash.com/random/1600x200');
 ///   }
-@mixin background-image($image-url) {
+@mixin backgroundImage($image-url) {
 	background-image: url($image-url);
 	background-position: center center;
 	background-repeat: no-repeat;

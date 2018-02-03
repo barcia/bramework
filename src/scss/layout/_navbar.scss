@@ -15,7 +15,7 @@ $Navbar--large-section-margin: 15px;
  *    transform: For navbar--scrollSensitive variant
  */
 .Navbar {
-	@include transition((box-shadow, transform), $transition-time); /* 2 */
+	@include transition((box-shadow, transform), $transitionTime); /* 2 */
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -49,7 +49,7 @@ $Navbar--large-section-margin: 15px;
 }
 
 .Navbar-center {
-	@include horizontal-center;
+	@include horizontalCenter;
 }
 
 .Navbar-right {
@@ -70,29 +70,29 @@ $Navbar--large-section-margin: 15px;
 
 /* Elements */
 .Navbar-link {
-	@include inline-flex-center;
+	@include inlineFlexCenter;
 	padding: 5px;
-	color: $link-color;
-	.icon { fill: $link-color; }
+	color: $link-fontColor;
+	.icon { fill: $link-fontColor; }
 
 	@include breakpoint(large) {
 		padding: 5px 15px;
 	}
 
-	@include hover-focus {
-		color: $link-color-hover;
-		.icon { fill: $link-color-hover; }
+	@include hoverFocus {
+		color: $link-fontColor--hover;
+		.icon { fill: $link-fontColor--hover; }
 	}
 
-	@include self-hover-focus-active {
+	@include selfHoverFocusActive {
 		text-decoration: none;
 	}
 }
 
 .Navbar-icon {
 	@include circle(48px);
-	@include inline-flex-center;
-	@include link-states(background-color, $alpha-b-hover, $alpha-b-active);
+	@include inlineFlexCenter;
+	@include linkStates(background-color, $link-fontColor-alpha-b--hover, $link-fontColor-alpha-b--active);
 	cursor: pointer;
 }
 
@@ -129,7 +129,7 @@ $Navbar--large-section-margin: 15px;
 		@include shadow(3);
 	}
 
-	@include scroll-down {
+	@include scrollDown {
 		transform: translateY(-$Navbar-height);
 
 		@include breakpoint(large) {

@@ -1,45 +1,44 @@
 // sass-lint:disable space-before-colon
 
 // Font
-$font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Roboto, sans-serif !default;
-$font-family-serif: serif !default;
-$font-family-monospace: Hack, Inconsolata, Menlo, monospace !default;
+$fontFamily-sans-serif: 'Open Sans', 'Helvetica Neue', Roboto, sans-serif !default;
+$fontFamily-serif: serif !default;
+$fontFamily-monospace: Hack, Inconsolata, Menlo, monospace !default;
 
-$font-family-base: $font-family-sans-serif !default;
+$fontFamily: $fontFamily-sans-serif !default;
 
 // Font-size
-$font-size-base : 1rem !default; //~16px
-$font-size-large: 1.2rem !default; //~19px
-$font-size-small: 0.8rem !default; //~13px
+$fontSize : 1rem !default; //~16px
+$fontSize--large: 1.2rem !default; //~19px
+$fontSize--small: 0.8rem !default; //~13px
 
-$font-size-h1: 2.3rem !default;
-$font-size-h2: 2rem !default;
-$font-size-h3: 1.7rem !default;
-$font-size-h4: 1.3rem !default;
-$font-size-h5: 1rem !default;
-$font-size-h6: 0.9rem !default;
+$fontSize-h1: 2.3rem !default;
+$fontSize-h2: 2rem !default;
+$fontSize-h3: 1.7rem !default;
+$fontSize-h4: 1.3rem !default;
+$fontSize-h5: 1rem !default;
+$fontSize-h6: 0.9rem !default;
 
 // Font-weight
-$font-weight-base: normal !default;
-$font-weight-bold: bold !default;
+$fontWeight--bold: bold !default;
 
 // Line height
-$line-height-headings  : 1.4em !default;
-$line-height-base      : 1.5em !default;
+$lineHeight           : 1.5em !default;
+$lineHeight-headings  : 1.4em !default;
 
 // Letter spacing
-$letter-spacing-narrow: -0.05em !default;
-$letter-spacing-wide  : 0.05em !default;
+$letterSpacing--narrow: -0.05em !default;
+$letterSpacing--wide  : 0.05em !default;
 
 // Word spacing
-$word-spacing-narrow: -0.05em !default;
-$word-spacing-wide  : 0.05em !default;
+$wordSpacing--narrow: -0.05em !default;
+$wordSpacing--wide  : 0.05em !default;
 
 // Code
-$code-font-size: $font-size-base * 0.9 !default;
+$code-fontSize: $fontSize * 0.9 !default;
 
 // Margins
-$margin-base-bottom   : 1.7em !default;
+$marginBottom: 1.7em !default;
 
-$margin-headings-top   : 1.1em !default;
-$margin-headings-bottom: 0.5em !default;
+$marginTop-headings   : 1.1em !default;
+$marginBottom-headings: 0.5em !default;

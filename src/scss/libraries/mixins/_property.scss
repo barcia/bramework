@@ -44,9 +44,9 @@
 /// @param {Units} $radius [$border-radius] - The border radius in px.
 /// @example scss - Usage
 ///   .foo {
-///     @include border-top-radius(3px);
+///     @include borderTopRadius(3px);
 ///   }
-@mixin border-top-radius($radius: $border-radius) {
+@mixin borderTopRadius($radius: $border-radius) {
 	border-top-right-radius: $radius;
 	border-top-left-radius: $radius;
 }
@@ -55,9 +55,9 @@
 /// @param {Units} $radius [$border-radius] - The border radius in px.
 /// @example scss - Usage
 ///   .foo {
-///     @include border-bottom-radius(3px);
+///     @include borderBottomRadius(3px);
 ///   }
-@mixin border-bottom-radius($radius: $border-radius) {
+@mixin borderBottomRadius($radius: $border-radius) {
 	border-bottom-right-radius: $radius;
 	border-bottom-left-radius: $radius;
 }
@@ -66,9 +66,9 @@
 /// @param {Units} $radius [$border-radius] - The border radius in px.
 /// @example scss - Usage
 ///   .foo {
-///     @include border-left-radius(3px);
+///     @include borderLeftRadius(3px);
 ///   }
-@mixin border-left-radius($radius: $border-radius) {
+@mixin borderLeftRadius($radius: $border-radius) {
 	border-bottom-left-radius: $radius;
 	border-top-left-radius: $radius;
 }
@@ -77,43 +77,38 @@
 /// @param {Units} $radius [$border-radius] - The border radius in px.
 /// @example scss - Usage
 ///   .foo {
-///     @include border-right-radius(3px);
+///     @include borderRightRadius(3px);
 ///   }
-@mixin border-right-radius($radius: $border-radius) {
+@mixin borderRightRadius($radius: $border-radius) {
 	border-top-right-radius: $radius;
 	border-bottom-right-radius: $radius;
 }
 
 
-
-
-
-
-
 /// Horizontal margin
 /// @param {Units} $px - The margin in px.
-@mixin margin-hz($px) {
+@mixin marginHz($px) {
 	margin-right: $px;
 	margin-left: $px;
 }
 
 /// Vertical margin
 /// @param {Units} $px - The margin in px.
-@mixin margin-vt($px) {
+@mixin marginVt($px) {
 	margin-top: $px;
 	margin-bottom: $px;
 }
 
 /// Horizontal padding
 /// @param {Units} $px - The margin in px.
-@mixin padding-hz($px) {
+@mixin paddingHz($px) {
 	padding-right: $px;
 	padding-left: $px;
 }
 
 /// Vertical padding
 /// @param {Units} $px - The margin in px.
-@mixin padding-vt($px) {
+@mixin paddingVt($px) {
 	padding-top: $px;
 	padding-bottom: $px;
 }
@@ -121,9 +116,9 @@
 
 /// Margin bottom except in last item
 /// @param {Units} $size [base] - The size of the margin in px.
-@mixin margin-bottom($size: base) {
+@mixin marginBottom($size: base) {
 	@if $size == base {
-		margin-bottom: $margin-base-bottom;
+		margin-bottom: $marginBottom;
 	}
 	@else {
 		margin-bottom: $size;

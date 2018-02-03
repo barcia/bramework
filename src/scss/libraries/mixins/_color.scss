@@ -23,9 +23,9 @@
 /// @param {seconds} $time [20s] - The seconds of a complete cicle of the animation
 /// @example scss - Usage
 ///   .foo {
-///     @include gradient-animated((blue, red, yellow), 10s);
+///     @include gradientAnimated((blue, red, yellow), 10s);
 ///   }
-@mixin gradient-animated($colors, $time: 20s) {
+@mixin gradientAnimated($colors, $time: 20s) {
 	background: linear-gradient(90deg, $colors);
 	background-size: 400% 400%;
 	animation: GradientAnimation $time ease-in-out infinite;

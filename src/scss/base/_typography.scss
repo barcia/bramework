@@ -5,18 +5,18 @@
 
 // Body
 body {
-	font-family: $font-family-base;
-	font-size: $font-size-base;
-	color: $font-color;
+	font-family: $fontFamily;
+	font-size: $fontSize;
+	color: $fontColor;
 }
 
 
 // Headings
 h1, h3, h4, h2, h5, h6 {
-	margin-top: $margin-headings-top;
-	margin-bottom: $margin-headings-bottom;
-	font-family: $font-family-base;
-	line-height: $line-height-headings;
+	margin-top: $marginTop-headings;
+	margin-bottom: $marginBottom-headings;
+	font-family: $fontFamily;
+	line-height: $lineHeight-headings;
 	text-rendering: optimizeLegibility;
 
 	&:first-child {
@@ -24,18 +24,18 @@ h1, h3, h4, h2, h5, h6 {
 	}
 
 // FIXME: Change breakpoints
-	// @include breakpoint-down(small) {
-	// 	line-height: $line-height-headings * 0.9;
+	// @include breakpointDown(small) {
+	// 	line-height: $lineHeight-headings * 0.9;
 	// 	letter-spacing: -0.03em;
 	// }
 }
 
-h1 {font-size: $font-size-h1;}
-h2 {font-size: $font-size-h2;}
-h3 {font-size: $font-size-h3;}
-h4 {font-size: $font-size-h4;}
-h5 {font-size: $font-size-h5;}
-h6 {font-size: $font-size-h6;}
+h1 {font-size: $fontSize-h1;}
+h2 {font-size: $fontSize-h2;}
+h3 {font-size: $fontSize-h3;}
+h4 {font-size: $fontSize-h4;}
+h5 {font-size: $fontSize-h5;}
+h6 {font-size: $fontSize-h6;}
 
 
 // Text layout
@@ -45,21 +45,20 @@ table,
 form,
 figure,
 blockquote {
-	@include margin-bottom(base);
+	@include marginBottom(base);
 }
 
 p {
-	font-weight: $font-weight-base;
-	line-height: $line-height-base;
+	line-height: $lineHeight;
 	text-align: left;
  }
 
 
 // Inline elements
 a {
-	color: $link-color;
+	color: $link-fontColor;
 	text-decoration: underline;
-	@include link-states(color, $link-color-hover, $link-color-active);
+	@include linkStates(color, $link-fontColor--hover, $link-fontColor--active);
 }
 
 
@@ -69,15 +68,15 @@ abbr {
 
 
 del {
-	color: $red;
+	color: $brand-red;
 }
 
 ins {
-	color: $green;
+	color: $brand-green;
 }
 
 mark {
-	background-color: $yellow;
+	background-color: $brand-yellow;
 }
 
 kbd {
@@ -86,7 +85,6 @@ kbd {
 }
 
 small {
-	font-size: $font-size-small;
-	font-weight: $font-weight-base;
-	color: $font-color-light;
+	font-size: $fontSize--small;
+	color: $fontColor--light;
 }

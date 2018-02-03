@@ -44,7 +44,7 @@
 
 /// Transitions
 /// @param {string} $property - The property who will be transitioned
-/// @param {string} $duration [$transition-time] - The number of seconds or milliseconds a transition animation should take to complete
+/// @param {string} $duration [$transitionTime] - The number of seconds or milliseconds a transition animation should take to complete
 /// @param {string} $timing-function [transition-timing-function] - How the intermediate values of the CSS properties being affected. Use `ease`, `linear`, `step-end`, `steps(4, end)`, etc. View the [docs](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function) or an [example](http://css3.bradshawenterprises.com/transitions/)
 /// @example scss - Simple usage
 ///	 .foo {
@@ -58,7 +58,7 @@
 ///	 .foo {
 ///		 @include transition([width, height], 5s);
 ///	 }
-@mixin transition($property, $duration: $transition-time, $timing-function: $transition-timing-function) {
+@mixin transition($property, $duration: $transitionTime, $timing-function: $transitionTimingFunction) {
 	transition-delay: 0s;
 	transition-duration: $duration;
 	transition-property: $property;

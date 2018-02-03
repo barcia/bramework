@@ -4,10 +4,10 @@ const bramework = {
 	config: {
 		distPath: '/assets/',
 		scrolledClass: 'site-scrolled',
-		scrollDownClass: 'site-scroll-down',
-		scrollUpClass: 'site-scroll-up',
-		touchDeviceClass: 'site-touchdevice',
-		notTouchDeviceClass: 'site-not-touchdevice',
+		scrollDownClass: 'site-scrollDown',
+		scrollUpClass: 'site-scrollUp',
+		touchDeviceClass: 'site-touchDevice',
+		nottouchDeviceClass: 'site-notTouchDevice',
 		nightClass: 'site-night'
 	},
 
@@ -81,7 +81,7 @@ const bramework = {
 			if (this.device === true) {
 				bramework.body.classList.add(bramework.config.touchDeviceClass);
 			} else {
-				bramework.body.classList.add(bramework.config.notTouchDeviceClass);
+				bramework.body.classList.add(bramework.config.nottouchDeviceClass);
 			}
 		}
 	},

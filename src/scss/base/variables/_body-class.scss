@@ -3,17 +3,17 @@
 /// Body classess map
 /// @group body-class
 /// @type Map
-/// @prop {string} scroll-down - Body class for when the page is scroll down
-/// @prop {string} scroll-up - Body class for when the page is scroll up
+/// @prop {string} scrollDown - Body class for when the page is scroll down
+/// @prop {string} scrollUp - Body class for when the page is scroll up
 /// @prop {string} scrolled - Body class for when the page is scrolled
-/// @prop {string} touchdevice - Body class for when is a touchdevice
-/// @prop {string} not-touchdevice - Body class for when isn't a touchdevice
+/// @prop {string} touchDevice - Body class for when is a touchDevice
+/// @prop {string} notTouchDevice - Body class for when isn't a touchDevice
 /// @prop {string} night - Body class for when is night
-$body-class: (
-	'scroll-down': 'site-scroll-down',
-	'scroll-up': 'site-scroll-up',
+$bodyClass: (
+	'scrollDown': 'site-scrollDown',
+	'scrollUp': 'site-scrollUp',
 	'scrolled': 'site-scrolled',
-	'touchdevice': 'site-touchdevice',
-	'not-touchdevice': 'site-not-touchdevice',
+	'touchDevice': 'site-touchDevice',
+	'notTouchDevice': 'site-notTouchDevice',
 	'night': 'site-night',
 ) !default;
