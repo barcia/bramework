@@ -121,7 +121,7 @@ const config = {
 const tasks = [config.html.task, config.php.task, config.css.task, config.js.task];
 
 gulp.task('build', tasks);
-gulp.task('docs', [config.css.docs.task]);
+gulp.task('build:docs', [config.css.docs.task]);
 
 
 
@@ -135,7 +135,7 @@ gulp.task(config.html.task, function() {
 
 
 
-// PHP (Only copy the PHP files in )
+// PHP (Only copy the PHP files in dist/)
 gulp.task(config.php.task, function () {
 	return gulp.src(config.php.source)
 	.pipe(plumber({errorHandler: reportError}))
@@ -212,19 +212,5 @@ gulp.task('default', tasks, function () {
 	gulp.watch(config.css.source, [config.css.task]);
 	gulp.watch(config.js.source, [config.js.task]);
 
-	gulp.watch(config.css.docs.source, [config.css.docs.task]);
-});
-
-
-
-// DEFAULT
-gulp.task('servedocs', tasks, function () {
-
-	// Browser sync
-	browserSync.init({
-		server: './',
-		// startPath: "index.html",
-		browser: 'google chrome'
-	});
-
+	// gulp.watch(config.css.docs.source, [config.css.docs.task]);
 });
