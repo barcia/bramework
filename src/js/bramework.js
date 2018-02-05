@@ -2,7 +2,7 @@ const bramework = {
 
 
 	config: {
-		distPath: '/assets/',
+		assetsPath: '/assets/',
 		scrolledClass: 'site-scrolled',
 		scrollDownClass: 'site-scrollDown',
 		scrollUpClass: 'site-scrollUp',
@@ -33,7 +33,7 @@ const bramework = {
 	icons: {
 		load(fileName) {
 			var svgIcons = new XMLHttpRequest();
-			svgIcons.open('GET', bramework.config.distPath+fileName, true);
+			svgIcons.open('GET', bramework.config.assetsPath+fileName, true);
 			svgIcons.send();
 			svgIcons.onload = function() {
 				var svgIconsContainer = document.createElement('div');

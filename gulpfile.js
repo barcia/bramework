@@ -41,8 +41,8 @@ const config = {
 
 	// Browser Sync
 	browsersync: {
-		server: './',
-		startPath: "/dist/index.html",
+		server: 'dist/',
+		// startPath: "index.html",
 		browser: 'google chrome'
 	},
 
@@ -247,4 +247,18 @@ gulp.task('default', tasks, function () {
 	gulp.watch(config.svg.source, [config.svg.task]);
 
 	gulp.watch(config.css.docs.source, [config.css.docs.task]);
+});
+
+
+
+// DEFAULT
+gulp.task('servedocs', tasks, function () {
+
+	// Browser sync
+	browserSync.init({
+		server: './',
+		// startPath: "index.html",
+		browser: 'google chrome'
+	});
+
 });
