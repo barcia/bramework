@@ -7,13 +7,15 @@ button,
 	@include inlineFlexCenter;
 	color: $fontColor;
 	white-space: nowrap;
-	vertical-align: middle;
+	vertical-align: bottom;
 	border: 0;
 	outline: 0;
+	height: 30px;
+	min-width: 60px;
+	padding: 1px 7px;
 
 	&:disabled {
 		color: $fontColor--light;
-		& .icon {fill: $fontColor--light;}
 	}
 }
 

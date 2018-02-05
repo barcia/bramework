@@ -73,7 +73,6 @@ $Navbar--large-section-margin: 15px;
 	@include inlineFlexCenter;
 	padding: 5px;
 	color: $link-fontColor;
-	.icon { fill: $link-fontColor; }
 
 	@include breakpoint(large) {
 		padding: 5px 15px;
@@ -81,7 +80,6 @@ $Navbar--large-section-margin: 15px;
 
 	@include hoverFocus {
 		color: $link-fontColor--hover;
-		.icon { fill: $link-fontColor--hover; }
 	}
 
 	@include selfHoverFocusActive {

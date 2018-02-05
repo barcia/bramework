@@ -15,7 +15,6 @@ $BottomNavbarItem-color--active: $link-fontColor;
 	justify-content: center;
 	width: 100%;
 	height: $BottomNavbar-height;
-	border: 1px solid $grey-100;
 }
 
 .BottomNavbar--scrollSensitive {
@@ -27,7 +26,6 @@ $BottomNavbarItem-color--active: $link-fontColor;
 
 
 .BottomNavbar-item {
-	@include voidLink;
 	display: flex;
 	align-items: center;
 	flex: 1;
@@ -37,20 +35,4 @@ $BottomNavbarItem-color--active: $link-fontColor;
 	padding: 5px 12px 8px;
 	font-size: 0.9rem;
 	@include linkStates(background-color, $link-fontColor-alpha-b--hover, $link-fontColor-alpha-b--active);
-}
-
-
-.BottomNavbar-icon {
-	.BottomNavbar-item:hover &,
-	.BottomNavbar-item.is-active & {
-		fill: $BottomNavbarItem-color--active;
-	}
-}
-
-
-.BottomNavbar-label {
-	.BottomNavbar-item:hover &,
-	.BottomNavbar-item.is-active & {
-		color: $BottomNavbarItem-color--active;
-	}
 }

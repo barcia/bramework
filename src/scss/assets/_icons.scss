@@ -3,16 +3,16 @@
 \*------------------------------------*/
 
 .icon {
-	@include size(24px);
-	vertical-align: middle;
-	stroke: $fontColor;
-	fill: $fontColor;
-
-	// Themes
-	&.icon--light {
-		stroke: $white;
-		fill: $white;
-	}
+	// @include size(24px);
+	// vertical-align: middle;
+	// stroke: currentColor;
+	// fill: currentColor;
+  //
+	// // Themes
+	// &.icon--light {
+	// 	stroke: $white;
+	// 	fill: $white;
+	// }
 
 	// Animations
 	&.icon--animation-laught {

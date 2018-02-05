@@ -60,7 +60,6 @@ $ListIcon-size: 24px;
 // Singular elements
 .List-icon {
 	@include size($ListIcon-size);
-	fill: $fontColor--light;
 
 	&:not(:last-child) {
 		margin-right: $ListElements-margin;
