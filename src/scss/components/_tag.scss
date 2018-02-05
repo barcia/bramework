@@ -2,8 +2,8 @@
 	#TAG
 \*------------------------------------*/
 
-@mixin Tag-base {
-	@include inline-flex-center;
+.Tag {
+	@include inlineFlexCenter;
 	display: inline-flex;
 	vertical-align: middle;
 }

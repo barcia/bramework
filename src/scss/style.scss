@@ -15,6 +15,7 @@
 @import 'base/typography';
 @import 'base/code';
 @import 'base/form';
+@import 'base/img';
 
 @import 'components/card';
 @import 'components/dropdown';
@@ -26,7 +27,5 @@
 @import 'layout/bottom-navbar';
 
 // ASSETS
-@import 'assets/icons';
 @import 'assets/helpers';
-@import 'assets/icons';
 @import 'assets/print';

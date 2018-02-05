@@ -29,10 +29,6 @@
 @include breakpointDown(extraLarge) {.h-xl-show {display: none !important;}}
 
 
-// FLEXBOX
-.h-orderFirst {order: -1 !important;}
-.h-orderLast {order: 1 !important;}
-
 // A11Y
 .h-screenReader {@include screenReader;}
 
@@ -60,10 +56,10 @@
 .h-uppercase {text-transform: uppercase !important;}
 .h-capitalize {text-transform: capitalize !important;}
 
-.h-text-align-right {text-align: right !important;}
-.h-text-align-left {text-align: left !important;}
-.h-text-align-center {text-align: center !important;}
-.h-text-align-justify {text-align: justify !important;}
+.h-textAlign-right {text-align: right !important;}
+.h-textAlign-left {text-align: left !important;}
+.h-textAlign-center {text-align: center !important;}
+.h-textAlign-justify {text-align: justify !important;}
 
 // In HTML5, tags with pure stylistic purposes are deprecated, I recommend
 // use the clasess below into a '<span>' element.
@@ -80,7 +76,7 @@
 // PRINT
 // No print the element
 @media print {
-	.h-no-print {
+	.h-noPrint {
 		display: none !important;
 	}
 }

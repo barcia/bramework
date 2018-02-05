@@ -28,10 +28,10 @@
 @mixin backgroundGradient--animated($colors, $time: 20s) {
 	background: linear-gradient(90deg, $colors);
 	background-size: 400% 400%;
-	animation: GradientAnimation $time ease-in-out infinite;
+	animation: gradientAnimation $time ease-in-out infinite;
 }
 
-@keyframes GradientAnimation {
+@keyframes gradientAnimation {
 	0% {background-position: left}
 	50% {background-position: right}
 	100% {background-position: left}

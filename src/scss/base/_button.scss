@@ -3,16 +3,19 @@
 \*------------------------------------*/
 
 button,
-.Button {
+.Button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
 	@include inlineFlexCenter;
+	height: 30px;
+	min-width: 60px;
+	padding: 1px 7px;
 	color: $fontColor;
 	white-space: nowrap;
 	vertical-align: bottom;
 	border: 0;
 	outline: 0;
-	height: 30px;
-	min-width: 60px;
-	padding: 1px 7px;
 
 	&:disabled {
 		color: $fontColor--light;
