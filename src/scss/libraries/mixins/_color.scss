@@ -11,7 +11,7 @@
 ///   .foo {
 ///     @include gradient((blue, red, yellow), 30deg);
 ///   }
-@mixin gradient($colors, $direction: 90deg) {
+@mixin backgroundGradient($colors, $direction: 90deg) {
 	background: linear-gradient($direction, $colors);
 }
 
@@ -25,14 +25,14 @@
 ///   .foo {
 ///     @include gradientAnimated((blue, red, yellow), 10s);
 ///   }
-@mixin gradientAnimated($colors, $time: 20s) {
+@mixin backgroundGradient--animated($colors, $time: 20s) {
 	background: linear-gradient(90deg, $colors);
 	background-size: 400% 400%;
 	animation: GradientAnimation $time ease-in-out infinite;
 }
 
 @keyframes GradientAnimation {
-	0%{background-position: left}
-	50%{background-position: right}
-	100%{background-position: left}
+	0% {background-position: left}
+	50% {background-position: right}
+	100% {background-position: left}
 }
