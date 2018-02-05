@@ -13,8 +13,6 @@ var autoprefixer = require('autoprefixer');
 var cssnano      = require('cssnano');
 var concat       = require('gulp-concat');
 var uglify       = require('gulp-uglify-es').default;
-var svgstore     = require('gulp-svgstore');
-var svgmin       = require('gulp-svgmin');
 var sassdoc      = require('sassdoc')
 
 
@@ -115,29 +113,12 @@ const config = {
 			}
 		}
 	},
-
-
-  // SVG
-	svg: {
-		task: 'svg',
-		source: path.source + 'svg/**/*.svg',
-		dist: path.dist + 'assets/',
-		plugin: {
-			svgmin: {},
-			svgstore: {},
-			rename: {
-				basename: 'icons',
-				suffix: '.min',
-				extname: '.svg'
-			}
-		}
-	},
 };
 
 
 
 // ALL TASKS
-const tasks = [config.html.task, config.php.task, config.css.task, config.js.task, config.svg.task];
+const tasks = [config.html.task, config.php.task, config.css.task, config.js.task];
 
 gulp.task('build', tasks);
 gulp.task('docs', [config.css.docs.task]);
@@ -203,20 +184,6 @@ gulp.task(config.js.task, function() {
 
 
 
-// SVG
-gulp.task(config.svg.task, function() {
-	return gulp.src(config.svg.source)
-	.pipe(plumber({errorHandler: reportError}))
-		.pipe(svgmin(config.svg.plugin.svgmin))
-		.pipe(svgstore(config.svg.plugin.svgstore))
-		.pipe(rename(config.svg.plugin.rename))
-	.pipe(plumber.stop())
-	.pipe(gulp.dest(config.svg.dist))
-	.pipe(browserSync.stream());
-});
-
-
-
 // ERROR
 var reportError = function (error) {
 	notify({
@@ -244,7 +211,6 @@ gulp.task('default', tasks, function () {
 	gulp.watch(config.php.source, [config.php.task]);
 	gulp.watch(config.css.source, [config.css.task]);
 	gulp.watch(config.js.source, [config.js.task]);
-	gulp.watch(config.svg.source, [config.svg.task]);
 
 	gulp.watch(config.css.docs.source, [config.css.docs.task]);
 });

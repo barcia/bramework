@@ -2,7 +2,6 @@ const bramework = {
 
 
 	config: {
-		assetsPath: '/assets/',
 		scrolledClass: 'site-scrolled',
 		scrollDownClass: 'site-scrollDown',
 		scrollUpClass: 'site-scrollUp',
@@ -14,7 +13,6 @@ const bramework = {
 
 	load() {
 		bramework.elements.get();
-		bramework.icons.load('icons.min.svg');
 		bramework.scroll.load();
 		bramework.touch.load();
 		bramework.time.load();
@@ -26,21 +24,6 @@ const bramework = {
 		get() {
 			bramework.document = document.documentElement;
 			bramework.body = document.body;
-		}
-	},
-
-
-	icons: {
-		load(fileName) {
-			var svgIcons = new XMLHttpRequest();
-			svgIcons.open('GET', bramework.config.assetsPath+fileName, true);
-			svgIcons.send();
-			svgIcons.onload = function() {
-				var svgIconsContainer = document.createElement('div');
-				svgIconsContainer.style.display='none';
-				svgIconsContainer.innerHTML = svgIcons.response;
-				bramework.body.appendChild(svgIconsContainer);
-			}
 		}
 	},
 
