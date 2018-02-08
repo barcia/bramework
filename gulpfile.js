@@ -45,6 +45,14 @@ const config = {
 	},
 
 
+	// Files
+	files: {
+		task: 'files',
+		source: path.source + 'files/**/*',
+		dist: path.dist
+	},
+
+
 	// HTML
 	html: {
 		task: 'html',
@@ -118,7 +126,7 @@ const config = {
 
 
 // ALL TASKS
-const tasks = [config.html.task, config.php.task, config.css.task, config.js.task];
+const tasks = [config.html.task, config.php.task, config.css.task, config.js.task, config.files.task];
 
 gulp.task('build', tasks);
 gulp.task('build:docs', [config.css.docs.task]);
@@ -184,6 +192,16 @@ gulp.task(config.js.task, function() {
 
 
 
+// Files (Only copy all the files in dist)
+gulp.task(config.files.task, function () {
+	return gulp.src(config.files.source)
+	.pipe(plumber({errorHandler: reportError}))
+	.pipe(plumber.stop())
+	.pipe(gulp.dest(config.files.dist))
+});
+
+
+
 // ERROR
 var reportError = function (error) {
 	notify({
@@ -211,6 +229,7 @@ gulp.task('default', tasks, function () {
 	gulp.watch(config.php.source, [config.php.task]);
 	gulp.watch(config.css.source, [config.css.task]);
 	gulp.watch(config.js.source, [config.js.task]);
+	gulp.watch(config.files.source, [config.files.task]);
 
 	// gulp.watch(config.css.docs.source, [config.css.docs.task]);
 });
