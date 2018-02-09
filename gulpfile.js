@@ -1,7 +1,6 @@
 // DEPENDENCIES
 var gulp         = require('gulp');
 var rename       = require('gulp-rename');
-var copy         = require('gulp-copy');
 var run          = require('gulp-run');
 var plumber      = require('gulp-plumber');
 var notify       = require('gulp-notify');
@@ -29,7 +28,6 @@ const path = {
 
 // CONFIG
 const config = {
-
 
 	// Sourcemaps
 	sourcemap: {
