@@ -1,7 +1,7 @@
 {
 	"name": "bramework",
 	"version": "1.0.0",
-	"description": "Iván Barcia's web starter kit",
+	"description": "A web starter kit",
 	"main": "gulpfile.js",
 	"sasslintConfig": "/src/scss/.sass-lint.yml",
 	"scripts": {
