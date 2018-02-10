@@ -1,69 +1,103 @@
 # Bramework
-A Scss framework
+A web starter kit
 
 
-## Table of contents
-<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+## ℹ️ About
+- Repository: https://github.com/barcia/bramework
+- Support: https://barcia.cc/contacto
 
-- [Table of contents](#table-of-contents)
-- [About](#about)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-  - [Gulp commands](#gulp-commands)
-- [Support](#support)
-- [Credits](#credits)
-- [License](#license)
-
-<!-- /TOC -->
-
-## About
-
-* Project site: [bramework.barcia.cc](https://bramework.barcia.cc)
-* Download: [.zip](https://github.com/barcia/bramework/archive/master.zip)
-* Code: [github.com/barcia/bramework](https://github.com/barcia/bramework)
-* Issues: [github.com/barcia/bramework/issues](https://github.com/barcia/bramework/issues)
-
-*Bramework* is a simple, extensible and general-purpose **Scss framework** that I build and use to make websites. The main objective is to have a minimal but powerful base that is easily extensible.
-
-In web development I always try to use the lastest web standards, that's why I can't guarantee that framework property works in old and obsolete browsers.
+Bramework is a web starter kit that offers a set of tools and basic files for a quick start of a web development project. It is more oriented to develop with [Sass](http://sass-lang.com), but also offers a basic HTML template system with [Jekyll](https://jekyllrb.com) and facilities to create [WordPress](https://wordpress.org) themes with PHP.
 
 
+## 🛫 Getting Started
 
-## Getting Started
-
-1. [Download it](https://github.com/barcia/bramework/archive/master.zip)
-2. Install all dependencies with `npm install`
+1. [Download the last release](https://github.com/barcia/bramework/archive/master.zip) or clone the project
+2. Install all development dependencies with `npm install`
 3. Put *gulp* to *watch* with `gulp` command
-4. Write Scss :sunglasses:
+4. Write your code
+
+All source code must go in`/src/` and all tasks put the distributable code in `/dist/`.
+
+
+## 💻 Developing
+
+### Prerequisites
+You must have installed [Node](https://nodejs.org/en/download/), [NPM](https://www.npmjs.com/get-npm) and [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
+
+### Setting up development environment
+Normally, you only must have Gulp *watching* with the `gulp` command, and write your code in all files inside */src/*
+
+**Main directory tree:**
+```
+bramework/
+├── dist/     All processed files are here
+├── docs/     Documentation
+└── src/
+    ├── files/    All files here are literally copied to /dist/
+    ├── html/     Put here your HTML files with Jekyll (if you want). All files inside html/includes/ are not processed.
+    ├── js/       Put here all you JavaScript files
+    ├── php/      Put here all your PHP files. They are literally copied to /dist/
+    ├── scss/     Put here all your Sass code.
+    └── svg/      Files here are not processed. Only save here your SVG to copy them and put it inline.
+```
+
+### Style Guide
+This project use the guidelines indicated by [Suit CSS](https://suitcss.github.io) with some very small changes.
+
+Examples of the **naming convention** applied to **selectors** and **mixins**:
+- ComponentName
+- ComponentName--modifierName
+- ComponentName-descendentName
+- namespace-ComponentName
+- ComponentName.is-state
+- ComponentName.has-state
+- h-helperName
+
+**Variables**:
+- ComponentName[-descendant|--modifier][-onState]-(cssProperty|variableName)
+
+
+### Building
+This project use [Gulp](https://gulpjs.com) as task runner.
+
+**Development tasks:**
+- `gulp` - The default task. Create a light web server, put in *watch* all source files and reload de browser with any change.
+
+- `gulp build` - Execute all this tasks: *gulp css*, *gulp js*, *gulp html*, *gulp files*, *gulp php*.
+
+- `gulp css` - Process all *.scss* files in */src/scss/* and apply the PostCSS plugins creating *style.min.css* in */dist/assets/*.
+
+- `gulp js` - Process and concatenate all *.js* files in */src/js/* creating *script.min.css* in */dist/assets/*.
+
+- `gulp html` - Execute the *jekyll build* shell command to process all *.html* files in */src/html/* creating the correspondent files in */dist/*.
+
+- `gulp files` - Simply copy all files in */src/files/* to */dist/*. Is useful to save with the source code things like images, *manifest.json*, etc.
+
+- `gulp php` - Really, this is exactly the same as *gulp files*. But copy all *.php* files in */src/php/* to */dist/*. Is useful to build WordPress themes.
+
+**Docs related tasks:**
+- `gulp docs` - Execute all this tasks: *gulp css-docs*.
+
+- `gulp docs-watch` - Put in *watch* all source files that can build docs.
+
+- `gulp css-docs` - Build the CSS docs in */docs/sass/*.
+
+
+### Deploying
+You only need copy the content of */dist/* folder to your server root path.
+
+> Remember save the source code for deploy for build your project again in the future.
+
+### Built With
+- [Standarize](https://github.com/barcia/standarize)
 
 
 
-## Usage
-
-### Gulp commands
-
-* **`gulp`** - Default command. Active gulp *watch* and when any `.scss` or `.js` file changes, execute the following tasks: `gulp css`, `gulp js`, `gulp svg`
-* **`gulp sync`** - Create a local server for sync and test files in many devices in real time.
-* **`gulp css`** - Process the `style.scss` and the PostCSS tasks creating `style.min.css` in `dist/` path
-* **`gulp js`** - Join and minify all `.js` files in one file creating `script.min.js` in `dist/` path
-* **`gulp svg`** - Join and minify all `.svg` files in one file creating `icons.min.svg` in `dist/` path
-* **`gulp all`** - Execute `gulp css`, `gulp js` and `gulp svg` tasks
-* **`gulp docs`** - Create the Scss reference in `ref` path
+## 🤓 Credits
+Developed by Iván Barcia  
+[Web](https://barcia.cc) · [Email](mailto:ivan@barcia.cc) · [Twitter](http://www.twitter.com/bartzia) · [GitHub](http://www.github.com/barcia)
 
 
 
-## Support
-Visit the project [issues](https://github.com/barcia/bramework/issues)
-
-
-
-## Credits
-Developed by Iván Barcia in Galiza, SPAIN.   
-[Web](https://barcia.cc) · [Email](mailto:ivan@barcia.cc) · [Twitter](http://www.twitter.com/bartzia) · [GitHub](http://www.github.com/barcia) · [Google+](https://plus.google.com/+IvanBarcia)
-
-
-
-## License
-Under **MIT License**. See [LICENSE](https://github.com/barcia/bramework/blob/master/LICENSE) for more info.
-
-If this project has **third party libraries** or code parts, probably they have their own license. Explore about it before use this code.
+## 📄 License
+This project is under [MIT License](https://github.com/barcia/bramework/blob/master/LICENSE)

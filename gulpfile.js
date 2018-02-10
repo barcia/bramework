@@ -119,7 +119,7 @@ const config = {
 			source: path.source + 'scss/**/*.scss',
 			plugin: {
 				sassdoc: {
-					dest: path.docs + 'reference/'
+					dest: path.docs + 'sass/'
 				}
 			}
 		}
