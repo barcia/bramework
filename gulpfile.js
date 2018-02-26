@@ -44,7 +44,8 @@ const config = {
 	// Browser Sync
 	browsersync: {
 		server: 'dist/',
-		browser: 'google chrome'
+		browser: 'google chrome',
+		//proxy: 'localhost:8080' //Remove 'server' before activate this
 	},
 
 
