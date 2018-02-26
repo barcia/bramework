@@ -43,7 +43,7 @@ const bramework = {
 				bramework.body.classList.remove(bramework.config.scrollUpClass);
 			};
 
-			if (this.currentScroll > this.previousScroll) {
+			if (this.currentScroll > this.previousScroll && window.scrollY > 1) {
 				bramework.body.classList.add(bramework.config.scrollDownClass);
 				bramework.body.classList.remove(bramework.config.scrollUpClass);
 			} else if (this.currentScroll < this.previousScroll) {
