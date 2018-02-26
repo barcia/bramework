@@ -2,6 +2,11 @@
 	#CODE
 \*------------------------------------*/
 
+// Preformatted
+pre {
+	tab-size: 4;
+}
+
 // Code
 :not(pre) > code,
 kbd {
@@ -9,8 +14,10 @@ kbd {
 	padding: 1px 5px;
 	font-family: $fontFamily-monospace;
 	font-size: $fontSize--small;
+	vertical-align: center;
 	background-color: $grey-50;
 	border-radius: 2px;
+	user-select: all;
 }
 
 // Code themes
