@@ -41,8 +41,9 @@ h6 {font-size: $fontSize-h6;}
 // Text layout
 p,
 ul, ol, dl,
-table,
+pre,
 form,
+table,
 figure,
 blockquote {
 	@include marginBottom(base);
