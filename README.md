@@ -33,11 +33,11 @@ bramework/
 ├── dist/     All processed files are here
 ├── docs/     Documentation
 └── src/
-    ├── files/    All files here are literally copied to /dist/
     ├── html/     Put here your HTML files with Jekyll (if you want). All files inside html/includes/ are not processed.
     ├── js/       Put here all you JavaScript files
     ├── php/      Put here all your PHP files. They are literally copied to /dist/
     ├── scss/     Put here all your Sass code.
+    ├── stuff/    All files here are literally copied to /dist/
     └── svg/      Files here are not processed. Only save here your SVG to copy them and put it inline.
 ```
 
@@ -61,26 +61,25 @@ Examples of the **naming convention** applied to **selectors** and **mixins**:
 This project use [Gulp](https://gulpjs.com) as task runner.
 
 **Development tasks:**
-- `gulp` - The default task. Create a light web server, put in *watch* all source files and reload de browser with any change.
+- `gulp` - The default task. Build all, create a light web server, put in *watch* all source files and reload de browser with any change.
 
-- `gulp build` - Execute all this tasks: *gulp css*, *gulp js*, *gulp html*, *gulp files*, *gulp php*.
+- `gulp build` - Execute all this tasks: *gulp css*, *gulp js*, *gulp html*, *gulp stuff*, *gulp php*.
+
+- `gulp html` - Execute the *jekyll build* shell command to process all *.html* files in */src/html/* creating the correspondent files in */dist/*.
+
+- `gulp php` - Really, this is exactly the same as *gulp stuff*. But copy all *.php* files in */src/php/* to */dist/*. Is useful to build WordPress themes.
 
 - `gulp css` - Process all *.scss* files in */src/scss/* and apply the PostCSS plugins creating *style.min.css* in */dist/assets/*.
 
 - `gulp js` - Process and concatenate all *.js* files in */src/js/* creating *script.min.css* in */dist/assets/*.
 
-- `gulp html` - Execute the *jekyll build* shell command to process all *.html* files in */src/html/* creating the correspondent files in */dist/*.
+- `gulp stuff` - Simply copy all files in */src/stuff/* to */dist/*. Is useful to save with the source code things like images, *manifest.json*, etc.
 
-- `gulp files` - Simply copy all files in */src/files/* to */dist/*. Is useful to save with the source code things like images, *manifest.json*, etc.
-
-- `gulp php` - Really, this is exactly the same as *gulp files*. But copy all *.php* files in */src/php/* to */dist/*. Is useful to build WordPress themes.
 
 **Docs related tasks:**
 - `gulp docs` - Execute all this tasks: *gulp css-docs*.
 
-- `gulp docs-watch` - Put in *watch* all source files that can build docs.
-
-- `gulp css-docs` - Build the CSS docs in */docs/sass/*.
+- `gulp css:docs` - Build the CSS docs in */docs/sass/*.
 
 
 ### Deploying
