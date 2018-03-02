@@ -14,12 +14,12 @@ $Navbar--large-section-margin: 15px;
  * 2. box-shadow: For navbar with shadow
  *    transform: For navbar--scrollSensitive variant
  */
- // html { /* 1 */
- // 	margin-top: $Navbar-height;
- // 	@include breakpoint(large) {
- // 		margin-top: $Navbar-height--large;
- // 	}
- // }
+// html { /* 1 */
+// 	margin-top: $Navbar-height;
+// 	@include breakpoint(large) {
+// 		margin-top: $Navbar-height--large;
+// 	}
+// }
 
 .Navbar {
 	@include transition((box-shadow, transform), $transitionTime); /* 2 */
