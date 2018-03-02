@@ -1,5 +1,7 @@
 // Plugins
 const gulp         = require('gulp');
+const del          = require('del');
+const path         = require('path');
 const browserSync  = require('browser-sync').create();
 const rename       = require('gulp-rename');
 const run          = require('gulp-run');
@@ -12,155 +14,67 @@ const autoprefixer = require('autoprefixer');
 const cssnano      = require('cssnano');
 const concat       = require('gulp-concat');
 const uglify       = require('gulp-uglify-es').default;
-const sassdoc      = require('sassdoc')
+const sassdoc      = require('sassdoc');
 
 
-// Paths
-const path = {
-	source: 'src/',
-	build: 'build/',
-	dist: 'dist/',
-	docs: 'docs/'
-};
+// Import the config file
+const config       = require('./config.json');
 
 
-// Tasks
-const task = {
-	build: 'build',
-	docs: 'docs',
-	html: 'html',
-	css: 'css',
-	docsCss: 'css-docs',
-	js: 'js',
-	php: 'php',
-	files: 'files',
-	docsWatch: 'docs-watch'
-};
+// Sourcefiles
+const sourcefiles = {
+	html: [config.path.srcHtml + '**/*.html',
+				 config.path.srcHtml + '_config.yml'],
+	php: config.path.srcPhp + '**/*.php',
+	css: config.path.srcScss + '**/*.scss',
+	js: config.path.srcJs + '**/*.js',
+	stuff: config.path.srcStuff + '**/*',
+}
 
 
-// Config
-const config = {
-
-	// Browser Sync
-	browsersync: {
-		server: 'dist/',
-		browser: 'google chrome',
-		//proxy: 'localhost:8080' //Remove 'server' before activate this
-	},
+// Build HTMl with Jekyll. You need to have Jekyll installed
+const buildHTML = 'jekyll build --source src/html --destination dist/';
 
 
-	// Sourcemaps
-	sourcemap: {
-		build: '.',
-	},
+
+// FUNCTIONS
 
 
-	// HTML
-	html: {
-		source: [path.source + 'html/**/*.html',
-						 path.source + 'html/_config.yml'],
-		dist: path.dist,
-		buildHTML: 'jekyll build --source src/html --destination dist/'
-	},
-
-
-	// CSS
-	css: {
-		source: path.source + 'scss/**/*.scss',
-		dist: path.dist + 'assets/',
-		plugin: {
-			rename: {
-				suffix: '.min'
-			},
-			sass: {},
-			postcss: [
-				autoprefixer({
-					browsers: ['> 5%']
-				}),
-				cssnano({
-					autoprefixer: false,
-					safe: true,
-					sourcemap: false
-				})
-			]
-		}
-	},
-
-	// JS
-	js: {
-		source: path.source + 'js/**/*.js',
-		dist: path.dist + 'assets/',
-		plugin: {
-			concat: {
-				path: 'script.js'
-			},
-			uglify: {},
-			rename: {
-				suffix: '.min'
-			}
-		}
-	},
-
-	// Files
-	files: {
-		source: path.source + 'files/**/*',
-		dist: path.dist
-	},
-
-	// PHP
-	php: {
-		source: path.source + 'php/**/*.php',
-		dist: path.dist
-	},
-
-
-	// Docs
-	docs: {
-		css: {
-			source: path.source + 'scss/**/*.scss',
-			plugin: {
-				sassdoc: {
-					dest: path.docs + 'sass/'
-				}
-			}
-		}
+/**
+ * Execute all build functions.
+ */
+const build = function() {
+	switch (config.language) {
+	  case 'html':
+	    htmlTask();
+	    break;
+	  case 'php':
+			phpTask();
+			break;
+	  default:
+	    break;
 	}
+	cssTask();
+	jsTask();
+	stuffTask();
+	console.log("Builded All");
 };
 
 
 
-// Execute all tasks (not build docs)
-const allTasks = [task.html, task.css, task.js, task.files, task.php];
-gulp.task(task.build, allTasks);
-
-// Build all docs
-const docsTasks = [task.docsCss];
-gulp.task(task.docs, docsTasks);
-
-
-
-// Watch and Browser Sync - DEFAULT
-gulp.task('default', allTasks, function () {
-
-	// Browser sync
-	browserSync.init(config.browsersync);
-
-	// Watch
-	gulp.watch(config.html.source, [task.html, browserSync.reload]);
-	gulp.watch(config.css.source, [task.css]);
-	gulp.watch(config.js.source, [task.js]);
-	gulp.watch(config.files.source, [task.files, browserSync.reload]);
-	gulp.watch(config.php.source, [task.php]);
-});
-
-// Watch docs
-gulp.task(task.docsWatch, docsTasks, function () {
-	gulp.watch(config.docs.css.source, [task.docsCss]);
-});
+/**
+ * Remove build/ and dist/ folders
+ */
+const deleteBuild = function() {
+	del([config.path.dist, config.path.build]);
+	console.log("Removed build/ and dist/ folders");
+};
 
 
 
-// Error
+/**
+ * Error function
+ */
 const reportError = function (error) {
 	notify({
 		title: 'Gulp error',
@@ -175,59 +89,175 @@ const reportError = function (error) {
 
 
 
-// HTML
-gulp.task(task.html, function() {
-	return run(config.html.buildHTML).exec()
-});
+/**
+ * Init browserSync
+ */
+const initBrowserSync = function() {
+	if (config.browserSync.proxy) {
+
+		browserSync.init({
+			browser: config.browserSync.browser,
+			proxy: config.browserSync.proxyURL
+		});
+
+	} else {
+
+		browserSync.init({
+			browser: config.browserSync.browser,
+			server: config.browserSync.server
+		});
+
+	}
+};
 
 
 
-// CSS
-gulp.task(task.css, function () {
-	return gulp.src(config.css.source)
+/**
+ * Watch
+ */
+const watch = function() {
+	gulp.watch(sourcefiles.html, [config.task.html, browserSync.reload]);
+	gulp.watch(sourcefiles.css, [config.task.css]);
+	gulp.watch(sourcefiles.js, [config.task.js]);
+
+	/**
+	 * Watch for PHP and delete PHP files in dist directory if it was removed in src
+	 * With any change also reload browserSync
+	 */
+	gulp.watch(sourcefiles.php, [config.task.php, browserSync.reload]).on('change', function(ev) {
+		if(ev.type === 'deleted') {
+				del(path.relative('./', ev.path).replace(config.path.srcPhp, config.path.dist));
+		}
+	});
+
+	/**
+	 * Watch for all files in src/stuff/, and delete this files in dist directory if it was removed in src
+	 * With any change also reload browserSync
+	 */
+	gulp.watch(sourcefiles.stuff, [config.task.stuff, browserSync.reload]).on('change', function(ev) {
+		if(ev.type === 'deleted') {
+				del(path.relative('./', ev.path).replace(config.path.srcStuff, config.path.dist));
+		}
+	});
+};
+
+
+
+/**
+ * HTML. Execute the jekyll buil command. You need to have Jekyll installed
+ */
+const htmlTask = function() {
+	return run(buildHTML).exec();
+};
+
+
+
+/**
+ * PHP. The same of 'stuff'. This ONLY COPY all PHP files, not sync. For also
+ * remove the deleted files use the watch task (default gulp task)
+ */
+const phpTask = function() {
+	return gulp.src(sourcefiles.php)
+	.pipe(gulp.dest(config.path.dist));
+};
+
+
+
+/**
+ * CSS
+ */
+const cssTask = function() {
+	return gulp.src(sourcefiles.css)
 	.pipe(plumber({errorHandler: reportError}))
 	.pipe(sourcemaps.init())
-	.pipe(sass(config.css.plugin.sass))
-	.pipe(postcss(config.css.plugin.postcss))
-	.pipe(rename(config.css.plugin.rename))
-	.pipe(sourcemaps.write(config.sourcemap.build))
-	.pipe(gulp.dest(config.css.dist))
+	.pipe(sass({}))
+	.pipe(postcss([
+		autoprefixer({
+			browsers: [config.postCss.autoprefixer.browsers]
+		}),
+		cssnano({
+			autoprefixer: config.postCss.cssnano.autoprefixer,
+			safe: config.postCss.cssnano.safe,
+			sourcemap: config.postCss.cssnano.sourcemap
+		})
+	]))
+	.pipe(rename({
+		suffix: '.min'
+	}))
+	.pipe(sourcemaps.write(config.path.sourcemap))
+	.pipe(gulp.dest(config.path.distAssets))
 	.pipe(browserSync.stream());
-});
-
-// CSS Docs
-gulp.task(task.docsCss, [task.css], function () {
-  return gulp.src(config.docs.css.source)
-    .pipe(sassdoc(config.docs.css.plugin.sassdoc));
-});
+};
 
 
 
-// JS
-gulp.task(task.js, function() {
-	return gulp.src(config.js.source)
+/**
+ * JS
+ */
+const jsTask = function() {
+	return gulp.src(sourcefiles.js)
 	.pipe(plumber({errorHandler: reportError}))
 	.pipe(sourcemaps.init())
-	.pipe(concat(config.js.plugin.concat))
-	.pipe(uglify(config.js.plugin.uglify))
-	.pipe(rename(config.js.plugin.rename))
-	.pipe(sourcemaps.write(config.sourcemap.build))
-	.pipe(gulp.dest(config.js.dist))
+	.pipe(concat({
+		path: 'script.js'
+	}))
+	.pipe(uglify({}))
+	.pipe(rename({
+		suffix: '.min'
+	}))
+	.pipe(sourcemaps.write(config.path.sourcemap))
+	.pipe(gulp.dest(config.path.distAssets))
 	.pipe(browserSync.stream());
+};
+
+
+
+/**
+ * Stuff. This ONLY COPY all files, not sync. For also
+ * remove the deleted files use the watch task (default gulp task)
+ */
+const stuffTask = function() {
+	return gulp.src(sourcefiles.stuff)
+	.pipe(gulp.dest(config.path.dist));
+};
+
+
+
+const buildDocs = function() {
+	cssDocs();
+	console.log("Builded documentation");
+};
+
+
+
+const cssDocs = function() {
+	return gulp.src(sourcefiles.css)
+    .pipe(sassdoc({
+			dest: config.path.docsScss
+		}));
+};
+
+
+
+
+
+/**
+ * TASKS
+ */
+
+// Default - Build all, start BrowserSync and Watch
+gulp.task('default', function () {
+	initBrowserSync();
+	watch();
 });
 
+gulp.task(config.task.all, function() { build() });
+gulp.task(config.task.stuff, function() { stuffTask() });
+gulp.task(config.task.html, function() { htmlTask() });
+gulp.task(config.task.php, function() { phpTask() });
+gulp.task(config.task.css, function() { cssTask() });
+gulp.task(config.task.js, function() { jsTask() });
 
-
-// Files (Only copy all the files in dist/)
-gulp.task(task.files, function () {
-	return gulp.src(config.files.source)
-	.pipe(gulp.dest(config.files.dist))
-});
-
-
-
-// PHP (The same of 'files'. Only copy all PHP files.)
-gulp.task(task.php, function () {
-	return gulp.src(config.php.source)
-	.pipe(gulp.dest(config.php.dist))
-});
+// DOCS
+gulp.task(config.task.docs.all, function() { buildDocs() });
+gulp.task(config.task.docs.css, function() { cssDocs() });

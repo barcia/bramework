@@ -1,0 +1,55 @@
+{
+	"language": "php",
+
+	"task": {
+		"all": "build",
+		"stuff": "stuff",
+		"html": "html",
+		"php": "php",
+		"css": "css",
+		"js": "js",
+		"docs": {
+			"all": "docs",
+			"css": "css:docs"
+		}
+	},
+
+	"path": {
+		"src": "src/",
+		"srcStuff": "src/stuff/",
+		"srcHtml": "src/html/",
+		"srcPhp": "src/php/",
+		"srcScss": "src/scss/",
+		"srcJs": "src/js/",
+		"srcSvg": "src/svg/",
+
+		"build": "build/",
+		"buildAssets": "build/assets/",
+
+		"dist": "dist/",
+		"distAssets": "dist/assets/",
+
+		"docs": "docs/",
+		"docsScss": "docs/scss/",
+
+		"sourcemap": "."
+	},
+
+	"browserSync": {
+		"proxy": true,
+		"proxyURL": "localhost:8080",
+		"server": "dist/",
+		"browser": "google chrome"
+	},
+
+	"postCss": {
+		"autoprefixer": {
+			"browsers": "> 5%"
+		},
+		"cssnano": {
+			"autoprefixer": false,
+			"safe": true,
+			"sourcemap": false
+		}
+	}
+}
