@@ -6,7 +6,7 @@ A web starter kit
 - Repository: https://github.com/barcia/bramework
 - Support: https://barcia.cc/contacto
 
-Bramework is a web starter kit that offers a set of tools and basic files for a quick start of a web development project. It is more oriented to develop with [Sass](http://sass-lang.com), but also offers a basic HTML template system with [Jekyll](https://jekyllrb.com) and facilities to create [WordPress](https://wordpress.org) themes with PHP.
+Bramework is a web starter kit that offers a set of tools and basic files for a quick start of a web development project. It is more oriented to develop with [Sass](http://sass-lang.com), but also offers a basic HTML template system with [Nunjucks](https://mozilla.github.io/nunjucks/) and facilities to create [WordPress](https://wordpress.org) themes with PHP.
 
 
 ## 🛫 Getting Started
@@ -33,7 +33,7 @@ bramework/
 ├── dist/     All processed files are here
 ├── docs/     Documentation
 └── src/
-    ├── html/     Put here your HTML files with Jekyll (if you want). All files inside html/includes/ are not processed.
+    ├── html/     Put here your NJK and HTML files with Nunjucks (if you want). All files inside `html/partials/`, `html/layouts/` and `html/macros/` are not processed.
     ├── js/       Put here all you JavaScript files
     ├── php/      Put here all your PHP files. They are literally copied to /dist/
     ├── scss/     Put here all your Sass code.
@@ -65,7 +65,7 @@ This project use [Gulp](https://gulpjs.com) as task runner.
 
 - `gulp build` - Execute all this tasks: *gulp css*, *gulp js*, *gulp html*, *gulp stuff*, *gulp php*.
 
-- `gulp html` - Execute the *jekyll build* shell command to process all *.html* files in */src/html/* creating the correspondent files in */dist/*.
+- `gulp html` - Compile all *.html* and *.njk* files in */src/html/* creating the correspondent files in */dist/*.
 
 - `gulp php` - Really, this is exactly the same as *gulp stuff*. But copy all *.php* files in */src/php/* to */dist/*. Is useful to build WordPress themes.
 

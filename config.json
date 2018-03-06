@@ -1,5 +1,5 @@
 {
-	"language": "",
+	"language": "html",
 
 	"task": {
 		"all": "build",
@@ -40,6 +40,10 @@
 		"proxyURL": "localhost:8080",
 		"server": "dist/",
 		"browser": "google chrome"
+	},
+
+	"html": {
+		"data": "data.json"
 	},
 
 	"postCss": {

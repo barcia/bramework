@@ -2,9 +2,10 @@
 const gulp         = require('gulp');
 const del          = require('del');
 const path         = require('path');
+const data         = require('gulp-data');
 const browserSync  = require('browser-sync').create();
 const rename       = require('gulp-rename');
-const run          = require('gulp-run');
+const nunjucks     = require('gulp-nunjucks');
 const plumber      = require('gulp-plumber');
 const notify       = require('gulp-notify');
 const sourcemaps   = require('gulp-sourcemaps');
@@ -23,17 +24,17 @@ const config       = require('./config.json');
 
 // Sourcefiles
 const sourcefiles = {
-	html: [config.path.srcHtml + '**/*.html',
-				 config.path.srcHtml + '_config.yml'],
+	html: [config.path.srcHtml + '**/*.+(html|njk|nunjucks)',
+				 '!' + config.path.srcHtml + 'partials/**/*',
+				 '!' + config.path.srcHtml + 'macros/**/*',
+				 '!' + config.path.srcHtml + 'layouts/**/*'],
+	htmlAll: [config.path.srcHtml + '**/*.+(html|njk|nunjucks)',
+						config.path.srcHtml + config.html.data],
 	php: config.path.srcPhp + '**/*.php',
 	css: config.path.srcScss + '**/*.scss',
 	js: config.path.srcJs + '**/*.js',
 	stuff: config.path.srcStuff + '**/*',
 }
-
-
-// Build HTMl with Jekyll. You need to have Jekyll installed
-const buildHTML = 'jekyll build --source src/html --destination dist/';
 
 
 
@@ -116,7 +117,7 @@ const initBrowserSync = function() {
  * Watch
  */
 const watch = function() {
-	gulp.watch(sourcefiles.html, [config.task.html, browserSync.reload]);
+	gulp.watch(sourcefiles.htmlAll, [config.task.html, browserSync.reload]);
 	gulp.watch(sourcefiles.css, [config.task.css]);
 	gulp.watch(sourcefiles.js, [config.task.js]);
 
@@ -144,10 +145,19 @@ const watch = function() {
 
 
 /**
- * HTML. Execute the jekyll buil command. You need to have Jekyll installed
+ * HTML. Compile de Nunjucks files to HTML
  */
 const htmlTask = function() {
-	return run(buildHTML).exec();
+	gulp.src(sourcefiles.html)
+	.pipe(plumber({errorHandler: reportError}))
+	.pipe(data(function() {
+		return require('./' + config.path.srcHtml + config.html.data)
+	}))
+	.pipe(nunjucks.compile())
+	.pipe(rename({
+		extname: '.html'
+	}))
+	.pipe(gulp.dest(config.path.dist))
 };
 
 
@@ -170,7 +180,7 @@ const cssTask = function() {
 	return gulp.src(sourcefiles.css)
 	.pipe(plumber({errorHandler: reportError}))
 	.pipe(sourcemaps.init())
-	.pipe(sass({}))
+	.pipe(sass())
 	.pipe(postcss([
 		autoprefixer({
 			browsers: [config.postCss.autoprefixer.browsers]
