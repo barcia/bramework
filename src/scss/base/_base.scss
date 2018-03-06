@@ -4,17 +4,17 @@
 
 //Body
 body {
-	background-color: $bgColor--light;
+	background-color: var(--bgColor--light);
 }
 
 
 //Lists
 ul,
 ol {
-	padding-left: 0;
+	padding-left: 30px;
 
-	& & {
-		padding-left: 30px;
+	li {
+		@include paddingVt(5px);
 	}
 }
 
