@@ -118,7 +118,7 @@
 /// @param {Units} $size [base] - The size of the margin in px.
 @mixin marginBottom($size: base) {
 	@if $size == base {
-		margin-bottom: $marginBottom;
+		margin-bottom: var(--marginBottom);
 	}
 	@else {
 		margin-bottom: $size;

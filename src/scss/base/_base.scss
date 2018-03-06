@@ -2,36 +2,57 @@
 	#BASE
 \*------------------------------------*/
 
-//Body
-body {
-	background-color: var(--bgColor--light);
+// Variables
+:root {
+
+	// Site Layout
+	--site-maxWidth   : 1920px;
+	--wrapper-width   : 800px;
+	--wrapper-marginHz: 8px;
+
+	// Transitions
+	--transitionTime          : 200ms;
+	--transitionTime--fast    : 100ms;
+	--transitionTime--slow    : 300ms;
+	--transitionTimingFunction: ease-in-out;
 }
 
 
-//Lists
-ul,
-ol {
-	padding-left: 30px;
 
-	li {
-		@include paddingVt(5px);
-	}
-}
-
-
-//Media
-figcaption {
-	font-size: $fontSize--small;
-	color: $fontColor--light;
-	&:first-child {margin-bottom: 0.5em;}
-	&:last-child {margin-top: 0.5em;}
-}
+/// Breakpoints map
+/// @group breakpoint
+/// @type Map
+/// @prop {Number} medium - 450px.
+/// @prop {Number} large - 1024px.
+/// @prop {Number} extraLarge - 1920px.
+$breakpoints: (
+	'medium': 450px,
+	'large': 1024px,
+	'extraLarge': 1920px,
+) !default;
 
 
-// Dialog
-dialog {
-	@include horizontalCenter;
-	@include shadow(4);
-	width: 70vw;
-	border: 0;
-}
+
+/// Body classess map
+/// @group body-class
+/// @type Map
+/// @prop {string} scrollDown - Body class for when the page is scroll down
+/// @prop {string} scrollUp - Body class for when the page is scroll up
+/// @prop {string} scrolled - Body class for when the page is scrolled
+/// @prop {string} touchDevice - Body class for when is a touchDevice
+/// @prop {string} notTouchDevice - Body class for when isn't a touchDevice
+/// @prop {string} night - Body class for when is night
+$bodyClass: (
+	'scrollDown': 'site-scrollDown',
+	'scrollUp': 'site-scrollUp',
+	'scrolled': 'site-scrolled',
+	'touchDevice': 'site-touchDevice',
+	'notTouchDevice': 'site-notTouchDevice',
+	'night': 'site-night',
+) !default;
+
+
+
+/// The zindex order of all website components
+/// @group property
+$index: bottomNavbar, Navbar;

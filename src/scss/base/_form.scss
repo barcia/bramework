@@ -2,31 +2,51 @@
 	#FORM
 \*------------------------------------*/
 
+// Variables
+$InputText: 'textarea',
+'input[type=email]',
+'input[type=password]',
+'input[type=search]',
+'input[type=tel]',
+'input[type=text]',
+'input[type=url]',
+'input[type=number]',
+'input[type=datetime]',
+'input[type=datetime-local]',
+'input[type=date]',
+'input[type=month]',
+'input[type=week]',
+'input[type=time]',
+'input[list]';
+
+
+// Default
 input,
 select {
 	outline: none;
 
 	&:disabled {
-		color: $fontColor--light;
+		color: var(--fontColor--light);
 	}
 }
 
 
+// Input fields
 #{$InputText} {
-	@include transition(border-color, $transitionTime--fast);
-	padding: $InputText-paddingVt $InputText-paddingHz;
-	color: $fontColor;
+	@include transition(border-color, var(--transitionTime--fast));
+	padding: 5px 10px;
+	color: var(--fontColor);
 	background-color: transparent;
-	border: $InputText-borderWidth solid $InputText-borderColor;
-	border-radius: $InputText-borderRadius;
+	border: 1px solid $grey-200;
+	border-radius: 0;
 	outline: none;
 
 	&::placeholder {
-		color: $fontColor--lighter;
+		color: var(--fontColor--lighter);
 	}
 
 	&:focus {
-		border-color: $InputText-borderColor--focus;
+		border-color: var(--brand-color);
 	}
 
 	&:disabled {

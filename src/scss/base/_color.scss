@@ -1,0 +1,94 @@
+/*------------------------------------*\
+	#COLOR
+\*------------------------------------*/
+
+// Variables
+:root {
+	--bgColor--dark: $oc-grey-800;
+	--bgColor--light: $white;
+
+	// Font color
+	--fontColor: $grey-700;
+	--fontColor--light: $grey-500;
+	--fontColor--lighter: $grey-300;
+	--fontColor--dark: $grey-900;
+
+	--fontColor-alpha--black: alpha-black(0.4);
+	--fontColor-alpha--white: alpha-white(0.4);
+
+
+	// Brand colors
+	$brand-color: $royal-blue;
+	$brand-color-sec: $sunglo;
+
+	--brand-color       : $brand-color;
+	--brand-color--c    : complement($brand-color);
+	--brand-color-sec   : $brand-color-sec;
+	--brand-color-sec--c: complement($brand-color-sec);
+
+	--blue  : $royal-blue;
+	--green : $nephritis;
+	--orange: $carrot-500;
+	--pink  : $peach-colored;
+	--purple: $bellflower;
+	--red   : $pure-crimson;
+	--yellow: $sandstorm;
+
+
+	// Link colors
+	--link-fontColor          : $brand-color;
+	--link-fontColor--onHover : shadow($brand-color, 15%);
+	--link-fontColor--onActive: shadow($brand-color, 30%);
+
+	// --link-fontColor-alpha-b--hover : shadow($alpha, $link-fontColor--hover-pct);
+	// --link-fontColor-alpha-b--active: shadow($alpha, $link-fontColor--active-pct);
+	// --link-fontColor-alpha-w--hover : tint($alpha, $link-fontColor--hover-pct);
+	// --link-fontColor-alpha-w--active: tint($alpha, $link-fontColor--active-pct);
+}
+
+
+// Body
+body {
+	background-color: var(--bgColor--light);
+	color: var(--fontColor);
+}
+
+
+// Inline elements
+a {
+	color: var(--link-fontColor);
+	text-decoration: underline;
+	@include linkStates(--link-fontColor, var(--link-fontColor--onHover));
+}
+
+
+del {
+	color: var(--red);
+}
+
+
+ins {
+	color: var(--green);
+}
+
+
+mark {
+	background-color: var(--yellow);
+}
+
+
+kbd {
+	background-color: $white;
+	box-shadow: 0 2px $grey-150;
+}
+
+
+small {
+	color: var(--fontColor--light);
+}
+
+
+//Media
+figcaption {
+	color: var(--fontColor--light);
+}

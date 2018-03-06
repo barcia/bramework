@@ -12,8 +12,8 @@
 ///   .foo {
 ///   	background-color: lighter(#9f2773, 50%);
 ///   }
-@function lighter($color, $percentage) {
-	@return mix(white, $color, $percentage);
+@function tint($color, $percentage) {
+	@return mix(#fff, $color, $percentage);
 }
 
 
@@ -27,16 +27,24 @@
 ///   .foo {
 ///   	background-color: darker(#9f2773, 50%);
 ///   }
-@function darker($color, $percentage) {
-	@return mix(black, $color, $percentage);
+@function shadow($color, $percentage) {
+	@return mix(#000, $color, $percentage);
 }
 
+
+@function alpha-black($opacity) {
+	@return hsla(0, 0%, 0%, $opacity);
+}
+
+@function alpha-white($opacity) {
+	@return hsla(0, 0%, 100%, $opacity);
+}
 
 /// Check the lightness of a color and return a String in consecuence
 /// @param {Color} $color - Main color to check his lightness
 /// @return {String} - Return 'dark' or 'light' if the main color has more or
 /// less tha 50% of lightness.
-@function contrastColor($color) {
+@function contrast-color($color) {
 	@if (lightness($color) > 50) {
 		@return light; // The main color is light
 	}
@@ -55,9 +63,9 @@
 /// @return {Color} - Return the soft version of the main color.
 @function fontColor-soft($color, $percentage) {
 	@if contrastColor($color) == dark {
-		@return lighter($color, $percentage);
+		@return tint($color, $percentage);
 	}
 	@else {
-		@return darker($color, $percentage);
+		@return shadow($color, $percentage);
 	}
 }

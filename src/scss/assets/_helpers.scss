@@ -68,7 +68,7 @@
 .h-underline {text-decoration: underline !important;}
 .h-overline {text-decoration: overline !important;}
 .h-strikethrough {text-decoration: line-through !important;}
-.h-monospace {font-family: $fontFamily-monospace !important;}
+.h-monospace {font-family: var(--fontFamily-monospace) !important;}
 
 .h-unselectable {user-select: none !important;}
 

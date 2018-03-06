@@ -9,22 +9,22 @@
 @import 'plugins/standarize';
 
 // SITE
-@import 'base/variables';
 @import 'base/base';
 @import 'base/button';
-@import 'base/typography';
 @import 'base/code';
+@import 'base/color';
 @import 'base/form';
 @import 'base/img';
+@import 'base/typography';
 
-@import 'components/card';
-@import 'components/dropdown';
-@import 'components/embed';
-@import 'components/list';
-@import 'components/tag';
+// @import 'components/card';
+// @import 'components/dropdown';
+// @import 'components/embed';
+// @import 'components/list';
+// @import 'components/tag';
 
-@import 'layout/navbar';
-@import 'layout/bottom-navbar';
+// @import 'layout/navbar';
+// @import 'layout/bottom-navbar';
 
 // ASSETS
 @import 'assets/helpers';

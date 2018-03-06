@@ -58,7 +58,7 @@
 ///	 .foo {
 ///		 @include transition([width, height], 5s);
 ///	 }
-@mixin transition($property, $duration: $transitionTime, $timing-function: $transitionTimingFunction) {
+@mixin transition($property, $duration: var(--transitionTime), $timing-function: var(--transitionTimingFunction)) {
 	transition-delay: 0s;
 	transition-duration: $duration;
 	transition-property: $property;

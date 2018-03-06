@@ -1,41 +1,92 @@
-//sass-lint:disable single-line-per-selector
 /*------------------------------------*\
 	#TYPOGRAPHY
 \*------------------------------------*/
 
+// Variables
+:root {
+	// Font family
+	--fontFamily: var(--fontFamily-sans-serif);
+	--fontFamily-sans-serif: 'Open Sans', 'Helvetica Neue', Roboto, sans-serif;
+	--fontFamily-serif: serif;
+	--fontFamily-monospace: Hack, Inconsolata, Menlo, monospace;
+	--fontFamily-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+
+	// Font size
+	--fontSize: 1rem;
+	--fontSize--large: 1.2rem;
+	--fontSize--small: 0.8rem;
+
+	// Font weight
+	--fontWeight--bold: bold;
+
+	// Line height
+	--lineHeight: 1.5em;
+
+	// Letter spacing
+	--letterSpacing--narrow: -0.05em;
+	--letterSpacing--wide: 0.05em;
+
+	// Word spacing
+	--wordSpacing--narrow: -0.05em;
+	--wordSpacing--wide: 0.05em;
+
+	// Margin
+	--marginBottom: 1.7em;
+
+
+	// Headings
+	// Headings - Font size
+	--fontSize-h1: 2rem;
+	--fontSize-h2: 1.6rem;
+	--fontSize-h3: 1.3rem;
+	--fontSize-h4: 1rem;
+	--fontSize-h5: 1rem;
+	--fontSize-h6: 1rem;
+
+	@include breakpoint(large) {
+		--fontSize-h1: 2.3rem;
+		--fontSize-h2: 2rem;
+		--fontSize-h3: 1.7rem;
+		--fontSize-h4: 1.3rem;
+		--fontSize-h5: 1rem;
+		--fontSize-h6: 1rem;
+	}
+
+	// Headings - Line height
+	--lineHeight-headings: 1.4em;
+
+	// Headings - Margin
+	--marginTop-headings: 1.2em;
+	--marginBottom-headings: 0.5em;
+}
+
+
 // Body
 body {
-	font-family: $fontFamily;
-	font-size: $fontSize;
-	color: $fontColor;
+	font-family: var(--fontFamily);
+	font-size: var(--fontSize);
 }
 
 
 // Headings
 h1, h3, h4, h2, h5, h6 {
-	margin-top: $marginTop-headings;
-	margin-bottom: $marginBottom-headings;
-	font-family: $fontFamily;
-	line-height: $lineHeight-headings;
+	margin-top: var(--marginTop-headings);
+	margin-bottom: var(--marginBottom-headings);
+	font-family: var(--fontFamily);
+	line-height: var(--lineHeight-headings);
 	text-rendering: optimizeLegibility;
 
 	&:first-child {
 		margin-top: 0;
 	}
-
-// FIXME: Change breakpoints
-	// @include breakpointDown(small) {
-	// 	line-height: $lineHeight-headings * 0.9;
-	// 	letter-spacing: -0.03em;
-	// }
 }
 
-h1 {font-size: $fontSize-h1;}
-h2 {font-size: $fontSize-h2;}
-h3 {font-size: $fontSize-h3;}
-h4 {font-size: $fontSize-h4;}
-h5 {font-size: $fontSize-h5;}
-h6 {font-size: $fontSize-h6;}
+h1 {font-size: var(--fontSize-h1);}
+h2 {font-size: var(--fontSize-h2);}
+h3 {font-size: var(--fontSize-h3);}
+h4 {font-size: var(--fontSize-h4);}
+h5 {font-size: var(--fontSize-h5);}
+h6 {font-size: var(--fontSize-h6);}
 
 
 // Text layout
@@ -50,42 +101,40 @@ blockquote {
 }
 
 p {
-	line-height: $lineHeight;
+	line-height: var(--lineHeight);
 	text-align: left;
- }
-
-
-// Inline elements
-a {
-	color: $link-fontColor;
-	text-decoration: underline;
-	@include linkStates(color, $link-fontColor--hover, $link-fontColor--active);
 }
 
 
+//Lists
+ul,
+ol {
+	padding-left: 20px;
+
+	li {
+		@include paddingVt(5px);
+	}
+
+	@include breakpoint(large) {
+		padding-left: 30px;
+	}
+}
+
+
+// Inline elements
 abbr {
 	text-transform: uppercase;
 }
 
 
-del {
-	color: $brand-red;
-}
-
-ins {
-	color: $brand-green;
-}
-
-mark {
-	background-color: $brand-yellow;
-}
-
-kbd {
-	background-color: $white;
-	box-shadow: 0 2px $grey-150;
-}
-
 small {
-	font-size: $fontSize--small;
-	color: $fontColor--light;
+	font-size: var(--fontSize--small);
+}
+
+
+//Media
+figcaption {
+	font-size: var(--fontSize--small);
+	&:first-child {margin-bottom: 0.5em;}
+	&:last-child {margin-top: 0.5em;}
 }
