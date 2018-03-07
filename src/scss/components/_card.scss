@@ -2,43 +2,14 @@
 	#CARD
 \*------------------------------------*/
 
+// Link card
 @mixin Card-link {
 	@include voidLink;
+	@include transition(box-shadow);
 	cursor: pointer;
-}
-
-.Card {
-	@include paddingVt(8px);
-	@include shadow(2);
-	display: inline-block;
-	width: 100%;
-	background-color: $white;
-	border-radius: 5px;
-
-	@include breakpoint(medium) {
-		width: 400px;
+	@include hoverFocus {
+		@include shadow(3);
 	}
-}
-
-.Card-section {
-	margin: 16px;
-}
-
-
-// Elements
-.Card-title {
-	margin: 0;
-	font-size: 1.6em;
-}
-
-.Card-subtitle {
-	margin: 0;
-	color: $fontColor--light;
-}
-
-.Card-text,
-.Card-subtitle {
-	font-size: 0.9em;
 }
 
 
@@ -65,4 +36,40 @@
 	&.is-5by3::before {padding-bottom: percentage(3 / 5);} // 5:3
 	&.is-4by3::before {padding-bottom: percentage(3 / 4);} // 4:3
 	&.is-1by1::before {padding-bottom: percentage(1 / 1);} // 1:1
+}
+
+
+.Card {
+	@include paddingVt(8px);
+	@include shadow(2);
+	display: inline-block;
+	width: 100%;
+	background-color: var(--bgColor--light);
+	border-radius: 5px;
+	@include Card-link;
+
+	@include breakpoint(medium) {
+		width: 400px;
+	}
+}
+
+.Card-section {
+	margin: 16px;
+}
+
+
+// Elements
+.Card-title {
+	margin: 0;
+	font-size: 1.6em;
+}
+
+.Card-subtitle {
+	margin: 0;
+	color: var(--fontColor--light);
+}
+
+.Card-text,
+.Card-subtitle {
+	font-size: 0.9em;
 }
