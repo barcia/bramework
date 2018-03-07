@@ -5,6 +5,7 @@
 // Variables
 :root {
 	// Color
+	--code-fontColor: var(--fontColor);
 	--code-bgColor: $grey-50;
 
 	// Font size
@@ -18,6 +19,11 @@ code,
 kbd {
 	font-size: var(--code-fontSize);
 	font-family: var(--fontFamily-monospace);
+}
+
+pre,
+code {
+	color: var(--code-fontColor);
 	background-color: var(--code-bgColor);
 }
 
@@ -44,27 +50,27 @@ kbd {
 // Code themes
 code {
 	&.is-dark {
-		color: $white;
-		background-color: $grey-700;
+		--code-fontColor: $white;
+		--code-bgColor: $grey-700;
 	}
 
 	&.is-green {
-		color: $md-lightgreen-a400;
-		background-color: $grey-700;
+		--code-fontColor: $md-lightgreen-a400;
+		--code-bgColor: $grey-700;
 	}
 
 	&.is-red {
-		color: $razzmatazz;
-		background-color: $alizarin-50;
+		--code-fontColor: $razzmatazz;
+		--code-bgColor: $alizarin-50;
 	}
 
 	&.is-blue {
-		color: $belize-hole-700;
-		background-color: $belize-hole-50;
+		--code-fontColor: $belize-hole-700;
+		--code-bgColor: $belize-hole-50;
 	}
 
 	&.is-brown {
-		color: $carrot-700;
-		background-color: $carrot-50;
+		--code-fontColor: $carrot-700;
+		--code-bgColor: $carrot-50;
 	}
 }
