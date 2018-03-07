@@ -32,6 +32,10 @@ code {
 pre {
 	tab-size: 4;
 	padding: 10px;
+
+	figure & {
+		margin-bottom: 0;
+	}
 }
 
 
