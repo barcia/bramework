@@ -40,6 +40,11 @@
 	--link-fontColor--onHover : shadow($brand-color, 15%);
 	--link-fontColor--onActive: shadow($brand-color, 30%);
 
+	--link-onHover-bgColor--alpha--black : alpha-black(0.1);
+	--link-onActive-bgColor--alpha--black: alpha-black(0.2);
+	--link-onHover-bgColor--alpha--white : alpha-white(0.1);
+	--link-onActive-bgColor--alpha--white: alpha-white(0.2);
+
 	// --link-fontColor-alpha-b--hover : shadow($alpha, $link-fontColor--hover-pct);
 	// --link-fontColor-alpha-b--active: shadow($alpha, $link-fontColor--active-pct);
 	// --link-fontColor-alpha-w--hover : tint($alpha, $link-fontColor--hover-pct);
