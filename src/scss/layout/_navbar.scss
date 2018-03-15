@@ -24,17 +24,15 @@
  * 2. box-shadow: For navbar with shadow
  *    transform: For navbar--scrollSensitive variant
  */
-
 /* NAVBAR */
 .Navbar {
-	z-index: index($index, Navbar);
+	z-index: 99;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
 	width: 100%;
 	height: var(--Navbar-height);
 	padding: 0 var(--Navbar-paddingHz);
-	background-color: $grey-100;
 }
 
 
@@ -49,13 +47,17 @@
 }
 
 
-// Link
-.Navbar-link {
+// Text
+.Navbar-text {
 	@include inlineFlexCenter;
 	padding: var(--Navbar-link-paddingVt) var(--Navbar-link-paddingHz);
 	color: var(--link-fontColor);
 	text-decoration: none;
 	@include linkStates(color, var(--link-fontColor--onHover));
+
+	svg {
+		margin-right: 10px;
+	}
 }
 
 
@@ -77,10 +79,9 @@
 //  */
 // .Navbar--fixed {
 // 	@include shadow(1);
-// 	@include transition((box-shadow), var(--transitionTime)); /* 2 */
+// 	@include transition(box-shadow); /* 2 */
 // 	position: fixed; /* 1 */
 // 	top: 0;
-// 	left: 0;
 // 	will-change: box-shadow;
 //
 // 	@include scrolled {
@@ -93,10 +94,9 @@
 //  */
 // .Navbar--scrollSensitive {
 // 	@include shadow(1);
-// 	@include transition((box-shadow, transform), var(--transitionTime)); /* 2 */
+// 	@include transition((box-shadow, transform)); /* 2 */
 // 	position: fixed; /* 1 */
 // 	top: 0;
-// 	left: 0;
 // 	will-change: box-shadow, transform;
 //
 // 	@include scrolled {

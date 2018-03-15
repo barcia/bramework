@@ -2,37 +2,46 @@
 	#BOTTOM-NAVBAR
 \*------------------------------------*/
 
-$BottomNavbar-height: 56px;
-$BottomNavbarItem-maxWidth: 150px;
-$BottomNavbarItem-color--active: $link-fontColor;
+// Variables
+:root {
+	--BottomNavbar-height: 56px;
+	--BottomNavbar-maxWidth: 105px;
+}
 
+
+/* BOTTOM NAVBAR */
 .BottomNavbar {
-	@include shadow(2, top);
 	position: fixed;
 	bottom: 0;
-	z-index: index($index, bottomNavbar);
+	z-index: 99;
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	height: $BottomNavbar-height;
-}
-
-.BottomNavbar--scrollSensitive {
-	@include transition(bottom);
-	@include scrollDown {
-		bottom: -$BottomNavbar-height;
-	}
+	height: var(--BottomNavbar-height);
 }
 
 
+
+/* BOTTOM NAVBAR ITEMS */
 .BottomNavbar-item {
-	display: flex;
-	align-items: center;
+	@include flexCenter;
 	flex: 1;
 	flex-direction: column;
-	justify-content: center;
-	max-width: $BottomNavbarItem-maxWidth;
+	max-width: var(--BottomNavbar-maxWidth);
 	padding: 5px 12px 8px;
 	font-size: 0.9rem;
-	@include linkStates(background-color, $link-fontColor-alpha-b--hover, $link-fontColor-alpha-b--active);
+	color: var(--fontColor);
+	text-decoration: none;
+	@include linkStates(background-color, var(--link-onHover-bgColor--alpha--black), var(--link-onActive-bgColor--alpha--black));
 }
+
+
+
+/* VARIANTS */
+// .BottomNavbar--scrollSensitive {
+// 	@include shadow(2, top);
+// 	@include transition(transform);
+// 	@include scrollDown {
+// 		transform: translateY(var(--BottomNavbar-height));
+// 	}
+// }

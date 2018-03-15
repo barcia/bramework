@@ -50,9 +50,3 @@ $bodyClass: (
 	'notTouchDevice': 'site-notTouchDevice',
 	'night': 'site-night',
 ) !default;
-
-
-
-/// The zindex order of all website components
-/// @group property
-$index: bottomNavbar, Navbar;
