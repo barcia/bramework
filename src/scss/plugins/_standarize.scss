@@ -234,6 +234,8 @@ textarea {
 button {
 	text-transform: none;
 	overflow: visible; // Internet Explorer 11-
+	border: 0;
+	outline: 0;
 }
 
 optgroup {

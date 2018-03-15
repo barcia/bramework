@@ -2,7 +2,7 @@
 	#BUTTON
 \*------------------------------------*/
 
-button,
+
 .Button,
 input[type='button'],
 input[type='reset'],
@@ -12,16 +12,11 @@ input[type='submit'] {
 	min-width: 60px;
 	padding: 1px 7px;
 	color: var(--fontColor);
+	text-decoration: none;
 	white-space: nowrap;
 	vertical-align: bottom;
-	border: 0;
-	outline: 0;
 
 	&:disabled {
 		color: var(--fontColor--light);
 	}
-}
-
-.Button {
-	text-decoration: none;
 }

@@ -128,3 +128,10 @@
 		margin-bottom: 0;
 	}
 }
+
+
+@mixin inlineList {
+	padding: 0;
+	display: inline-flex;
+	list-style: none;
+}

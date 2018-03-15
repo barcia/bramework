@@ -2,143 +2,108 @@
 	#NAVBAR
 \*------------------------------------*/
 
+// Variables
+:root {
+	--Navbar-height: 55px;
+	--Navbar-paddingHz: 6px;
+	--Navbar-items-gap: 5px;
+	--Navbar-link-paddingVt: 5px;
+	--Navbar-link-paddingHz: 5px;
+	--Navbar-icon-height: 48px;
 
-$Navbar-height: 55px;
-$Navbar--large-height: 65px;
-$Navbar-section-margin: 6px;
-$Navbar--large-section-margin: 15px;
-
+	@include breakpoint(large) {
+		--Navbar-height: 65px;
+		--Navbar-paddingHz: 20px;
+		--Navbar-items-gap: 10px;
+		--Navbar-link-paddingHz: 15px;
+	}
+}
 
 /**
  * 1. The navbar height not computing in box-model layout.
  * 2. box-shadow: For navbar with shadow
  *    transform: For navbar--scrollSensitive variant
  */
-// html { /* 1 */
-// 	margin-top: $Navbar-height;
-// 	@include breakpoint(large) {
-// 		margin-top: $Navbar-height--large;
-// 	}
-// }
 
+/* NAVBAR */
 .Navbar {
-	@include transition((box-shadow, transform), $transitionTime); /* 2 */
-	position: absolute; /* 1 */
-	top: 0;
-	left: 0;
 	z-index: index($index, Navbar);
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 	width: 100%;
-	height: $Navbar-height;
-	background-color: $white;
+	height: var(--Navbar-height);
+	padding: 0 var(--Navbar-paddingHz);
+	background-color: $grey-100;
+}
 
-	@include breakpoint(large) {
-		height: $Navbar--large-height;
+
+/* NAVBAR ITEMS */
+.Navbar-items {
+	@include inlineList;
+	margin-bottom: 0; // To rewrite paragraph default margin-bottom
+
+	li:not(:first-child) {
+		margin-left: var(--Navbar-items-gap);
 	}
 }
 
 
-
-/* Sections */
-.Navbar-left,
-.Navbar-center,
-.Navbar-right {
-	display: flex;
-	align-items: center;
-}
-
-.Navbar-left {
-	margin-left: $Navbar-section-margin;
-	@include breakpoint(large) {
-		margin-left: $Navbar--large-section-margin;
-	}
-}
-
-.Navbar-center {
-	@include horizontalCenter;
-}
-
-.Navbar-right {
-	position: absolute;
-	right: 0;
-	margin-right: $Navbar-section-margin;
-	@include breakpoint(large) {
-		margin-right: $Navbar--large-section-margin;
-	}
-}
-
-.Navbar-links {
-	display: inline-flex;
-	list-style: none;
-}
-
-
-
-/* Elements */
+// Link
 .Navbar-link {
 	@include inlineFlexCenter;
-	padding: 5px;
-	color: $link-fontColor;
-
-	@include breakpoint(large) {
-		padding: 5px 15px;
-	}
-
-	@include hoverFocus {
-		color: $link-fontColor--hover;
-	}
-
-	@include selfHoverFocusActive {
-		text-decoration: none;
-	}
+	padding: var(--Navbar-link-paddingVt) var(--Navbar-link-paddingHz);
+	color: var(--link-fontColor);
+	text-decoration: none;
+	@include linkStates(color, var(--link-fontColor--onHover));
 }
 
+
+// Icon
 .Navbar-icon {
-	@include circle(48px);
+	@include circle(var(--Navbar-icon-height));
 	@include inlineFlexCenter;
-	@include linkStates(background-color, $link-fontColor-alpha-b--hover, $link-fontColor-alpha-b--active);
-	cursor: pointer;
+	color: var(--fontColor);
+	background-color: transparent;
+	@include linkStates(background-color, var(--link-onHover-bgColor--alpha--black), var(--link-onActive-bgColor--alpha--black));
 }
 
 
 
+/* VARIANTS */
 
-/** VARIANTS
- * Always maintain the navbar fixed at the top.
- *
- * 1. Remember that the height of teh navbar don't count in box-model flow.
- *    You can modify the wrapper with the predefinied classes in
- *    layout/_wrapper.scss
- */
-.Navbar--fixed {
-	@include shadow(1);
-	position: fixed; /* 1 */
-	will-change: box-shadow;
-
-	@include scrolled {
-		@include shadow(3);
-	}
-}
-
-
-/**
- * Fix the navbar always on top, but it show and hide if scroll down or up
- */
-.Navbar--scrollSensitive {
-	@include shadow(1);
-	position: fixed;
-	will-change: box-shadow, transform;
-
-	@include scrolled {
-		@include shadow(3);
-	}
-
-	@include scrollDown {
-		transform: translateY(-$Navbar-height);
-
-		@include breakpoint(large) {
-			transform: translateY(-$Navbar--large-height);
-		}
-	}
-}
+// /**
+//  * Fix the navbar always on top
+//  */
+// .Navbar--fixed {
+// 	@include shadow(1);
+// 	@include transition((box-shadow), var(--transitionTime)); /* 2 */
+// 	position: fixed; /* 1 */
+// 	top: 0;
+// 	left: 0;
+// 	will-change: box-shadow;
+//
+// 	@include scrolled {
+// 		@include shadow(3);
+// 	}
+// }
+//
+// /**
+//  * Fix the navbar always on top, but it show and hide if scroll down or up
+//  */
+// .Navbar--scrollSensitive {
+// 	@include shadow(1);
+// 	@include transition((box-shadow, transform), var(--transitionTime)); /* 2 */
+// 	position: fixed; /* 1 */
+// 	top: 0;
+// 	left: 0;
+// 	will-change: box-shadow, transform;
+//
+// 	@include scrolled {
+// 		@include shadow(3);
+// 	}
+//
+// 	@include scrollDown {
+// 		transform: translateY(var(--Navbar-height));
+// 	}
+// }
