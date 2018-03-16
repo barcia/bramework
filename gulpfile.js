@@ -145,7 +145,7 @@ const watch = function() {
 
 
 /**
- * HTML. Compile de Nunjucks files to HTML
+ * HTML. Compile the Nunjucks files to HTML
  */
 const htmlTask = function() {
 	gulp.src(sourcefiles.html)
