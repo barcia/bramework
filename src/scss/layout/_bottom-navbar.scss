@@ -39,7 +39,7 @@
 
 /* VARIANTS */
 // .BottomNavbar--scrollSensitive {
-// 	@include shadow(2, top);
+// 	@include boxShadow(2, top);
 // 	@include transition(transform);
 // 	@include scrollDown {
 // 		transform: translateY(var(--BottomNavbar-height));

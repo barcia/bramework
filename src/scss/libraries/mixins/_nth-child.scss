@@ -10,6 +10,8 @@
 	}
 }
 
+
+
 /// The *n* child from last
 /// @param {number} $number - The *n* child whose will be affected, beginning from last
 @mixin childInv($number) {
@@ -17,6 +19,8 @@
 		@content;
 	}
 }
+
+
 
 /// All except *n*
 /// @param {number} $number - The *n* child whose will not be affected
@@ -26,6 +30,8 @@
 	}
 }
 
+
+
 /// All except *n* form last
 /// @param {number} $number - The *n* child whose will not be affected, beginning from last
 @mixin exceptChildInv($number) {
@@ -34,6 +40,8 @@
 	}
 }
 
+
+
 /// Even
 @mixin even {
 	&:nth-child(even) {
@@ -41,12 +49,16 @@
 	}
 }
 
+
+
 /// Odd
 @mixin odd {
 	&:nth-child(odd) {
 		@content;
 	}
 }
+
+
 
 /// Each $number
 /// @param {number} $number - It will be affected one of *n*
@@ -56,6 +68,8 @@
 	}
 }
 
+
+
 /// All from first to $number
 /// @param {number} $number - The number whose put the limit
 @mixin first-to($number) {
@@ -63,6 +77,8 @@
 		@content;
 	}
 }
+
+
 
 /// All from the last to $number
 /// @param {number} $number - The number whose put the limit, beginning from last
@@ -73,6 +89,7 @@
 }
 
 
+
 /// All from de $number to forward
 /// @param {number} $number - The number that marks the beginning
 @mixin since($number) {
@@ -80,6 +97,8 @@
 		@content;
 	}
 }
+
+
 
 /// Beginning at last, all from the $number to forward
 /// @param {number} $number - The number that marks the beginning, beginning from last
@@ -90,6 +109,7 @@
 }
 
 
+
 /// All between $first and $last
 /// @param {number} $first - The number that marks the beginning
 /// @param {number} $last - The number that marks the ending
@@ -98,6 +118,8 @@
 		@content;
 	}
 }
+
+
 
 /// Child z-index
 @mixin childZindex($items, $zindex: 0) {

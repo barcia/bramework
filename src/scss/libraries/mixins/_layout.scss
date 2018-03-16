@@ -9,12 +9,16 @@
 	justify-content: center;
 }
 
+
+
 /// Completly center items in a `inline-flex` container
 @mixin inlineFlexCenter {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 }
+
+
 
 /// Vertical center absolute item
 @mixin verticalCenter {
@@ -23,12 +27,16 @@
 	transform: translateY(-50%);
 }
 
+
+
 /// Horizontal center absolute item
 @mixin horizontalCenter {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
 }
+
+
 
 /// Completly center absolute item
 @mixin absoluteCenter {

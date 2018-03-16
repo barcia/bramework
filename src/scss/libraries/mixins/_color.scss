@@ -1,5 +1,5 @@
 ////
-/// @group property
+/// @group color
 ////
 
 /// Mixin for create simple gradients
@@ -16,22 +16,23 @@
 }
 
 
+
 /// Mixin for create animated gradients
 /// @group animation
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient Mozilla Developer Network
 /// @param {string} $colors - Put the colors that will form the gradient
-/// @param {seconds} $time [20s] - The seconds of a complete cicle of the animation
+/// @param {seconds} $time - The seconds of a complete cicle of the animation
 /// @example scss - Usage
 ///   .foo {
 ///     @include gradientAnimated((blue, red, yellow), 10s);
 ///   }
-@mixin backgroundGradient--animated($colors, $time: 20s) {
+@mixin backgroundGradient--animated($colors, $time) {
 	background: linear-gradient(90deg, $colors);
 	background-size: 400% 400%;
-	animation: gradientAnimation $time ease-in-out infinite;
+	animation: backgroundGradientAnimation $time ease-in-out infinite;
 }
 
-@keyframes gradientAnimation {
+@keyframes backgroundGradientAnimation {
 	0% {background-position: left}
 	50% {background-position: right}
 	100% {background-position: left}

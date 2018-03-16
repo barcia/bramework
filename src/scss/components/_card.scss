@@ -8,7 +8,7 @@
 	@include transition(box-shadow);
 	cursor: pointer;
 	@include hoverFocus {
-		@include shadow(3);
+		@include boxShadow(3);
 	}
 }
 
@@ -41,7 +41,7 @@
 
 .Card {
 	@include paddingVt(8px);
-	@include shadow(2);
+	@include boxShadow(2);
 	display: inline-block;
 	width: 100%;
 	background-color: var(--bgColor--light);

@@ -2,6 +2,31 @@
 /// @group animation
 ////
 
+/// Transitions
+/// @param {string} $property - The property who will be transitioned
+/// @param {string} $duration [$transitionTime] - The number of seconds or milliseconds a transition animation should take to complete
+/// @param {string} $timing-function [transition-timing-function] - How the intermediate values of the CSS properties being affected. Use `ease`, `linear`, `step-end`, `steps(4, end)`, etc. View the [docs](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function) or an [example](http://css3.bradshawenterprises.com/transitions/)
+/// @example scss - Simple usage
+///	 .foo {
+///		 @include transition(width);
+///	 }
+/// @example scss - More than one property
+///	 .foo {
+///		 @include transition([width, height]);
+///	 }
+/// @example scss - More than one property and change duration
+///	 .foo {
+///		 @include transition([width, height], 5s);
+///	 }
+@mixin transition($property, $duration: var(--transitionTime), $timing-function: var(--transitionTimingFunction)) {
+	transition-delay: 0s;
+	transition-duration: $duration;
+	transition-property: $property;
+	transition-timing-function: $timing-function; //timing-function ('ease', 'linear', 'step-end', 'steps(4, end)') (http://goo.gl/2rbYlE	| http://goo.gl/3btZHf)
+}
+
+
+
 /// Animation mixin with default values that you can change
 /// @param {string} $name - The animation name declarated in the @keyframe
 /// @param {time} $duration - The length of time that an animation should take to complete one cycle
@@ -39,28 +64,4 @@
 	animation-timing-function: $function; //(http://goo.gl/2rbYlE	|	http://goo.gl/3btZHf)
 	animation-fill-mode: $mode;
 	animation-direction: $direction;
-}
-
-
-/// Transitions
-/// @param {string} $property - The property who will be transitioned
-/// @param {string} $duration [$transitionTime] - The number of seconds or milliseconds a transition animation should take to complete
-/// @param {string} $timing-function [transition-timing-function] - How the intermediate values of the CSS properties being affected. Use `ease`, `linear`, `step-end`, `steps(4, end)`, etc. View the [docs](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function) or an [example](http://css3.bradshawenterprises.com/transitions/)
-/// @example scss - Simple usage
-///	 .foo {
-///		 @include transition(width);
-///	 }
-/// @example scss - More than one property
-///	 .foo {
-///		 @include transition([width, height]);
-///	 }
-/// @example scss - More than one property and change duration
-///	 .foo {
-///		 @include transition([width, height], 5s);
-///	 }
-@mixin transition($property, $duration: var(--transitionTime), $timing-function: var(--transitionTimingFunction)) {
-	transition-delay: 0s;
-	transition-duration: $duration;
-	transition-property: $property;
-	transition-timing-function: $timing-function; //timing-function ('ease', 'linear', 'step-end', 'steps(4, end)') (http://goo.gl/2rbYlE	| http://goo.gl/3btZHf)
 }

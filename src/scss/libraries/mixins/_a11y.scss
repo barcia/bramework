@@ -18,6 +18,8 @@
 	clip-path: inset(50%);
 }
 
+
+
 /// Mixin for make something hidden (some screen reader show a item with "display: none")
 @mixin moreHidden {
 	display: none;

@@ -1,0 +1,36 @@
+/// Full width in small screens
+/// @group layout
+/// @param {units} $marginHz - Horizontal margin of the parent element
+@mixin oversize($marginHz) {
+	@include breakpointDown(medium) {
+		position: relative;
+		left: 50%;
+		width: calc(100% + (#{$marginHz} * 2));
+		border-radius: 0;
+		transform: translateX(-50%);
+	}
+}
+
+
+
+/// Convert a list in a inline list
+/// @group layout
+@mixin inlineList {
+	display: inline-flex;
+	padding: 0;
+	list-style: none;
+}
+
+
+
+/// Helper to clear inner floats
+/// @author Nicolas Gallagher
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix
+/// @group layout
+@mixin clearfix {
+	&::after {
+		display: table;
+		clear: both;
+		content: '';
+	}
+}

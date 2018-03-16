@@ -1,5 +1,5 @@
 ////
-/// @group property
+/// @group color
 ////
 
 /// Lighten a color
@@ -13,7 +13,7 @@
 ///   	background-color: lighter(#9f2773, 50%);
 ///   }
 @function tint($color, $percentage) {
-	@return mix(#fff, $color, $percentage);
+	@return mix(#ffffff, $color, $percentage);
 }
 
 
@@ -28,17 +28,33 @@
 ///   	background-color: darker(#9f2773, 50%);
 ///   }
 @function shadow($color, $percentage) {
-	@return mix(#000, $color, $percentage);
+	@return mix(#000000, $color, $percentage);
 }
 
 
+/// Return a Alpha color based in black
+/// @param {Number} $opacity - Number between 0 and 1
+/// @return {Color} - The Alpha color
+/// @example scss
+///   .foo {
+///   	background-color: alpha-black(0.4);
+///   }
 @function alpha-black($opacity) {
 	@return hsla(0, 0%, 0%, $opacity);
 }
 
+
+/// Return a Alpha color based in white
+/// @param {Number} $opacity - Number between 0 and 1
+/// @return {Color} - The Alpha color
+/// @example scss
+///   .foo {
+///   	background-color: alpha-white(0.4);
+///   }
 @function alpha-white($opacity) {
 	@return hsla(0, 0%, 100%, $opacity);
 }
+
 
 /// Check the lightness of a color and return a String in consecuence
 /// @param {Color} $color - Main color to check his lightness
@@ -61,8 +77,8 @@
 /// @param {Percentage} $percentage - Percentage that
 /// will change the main color to create the soft version.
 /// @return {Color} - Return the soft version of the main color.
-@function fontColor-soft($color, $percentage) {
-	@if contrastColor($color) == dark {
+@function font-color-soft($color, $percentage) {
+	@if contrast-color($color) == dark {
 		@return tint($color, $percentage);
 	}
 	@else {

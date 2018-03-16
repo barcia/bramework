@@ -10,12 +10,14 @@
 }
 
 
+
 /// Styles for the item when isn't in a touchDevice
 @mixin notTouchDevice {
 	.#{map-get($bodyClass, notTouchDevice)} & {
 		@content;
 	}
 }
+
 
 
 /// Styles for the item when the page is scroll down
@@ -26,6 +28,7 @@
 }
 
 
+
 /// Styles for the item when the page is scroll up
 @mixin scrollUp {
 	.#{map-get($bodyClass, scrollUp)} & {
@@ -34,12 +37,14 @@
 }
 
 
+
 /// Styles for the item when page is scrolled
 @mixin scrolled {
 	.#{map-get($bodyClass, scrolled)} & {
 		@content;
 	}
 }
+
 
 
 /// Styles for the item when is night

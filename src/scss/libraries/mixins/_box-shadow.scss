@@ -5,8 +5,7 @@
 /// where the shadow is focused
 /// @link https://css-tricks.com/snippets/sass/material-shadows-mixin/ CSS Tricks
 /// @link https://codepen.io/HugoGiraudel/pen/yyaGaP Hugo Giraudel CodePen
-/// @example
-@mixin shadow($depth: 0, $side: bottom) {
+@mixin boxShadow($depth: 0, $side: bottom) {
 	@if $depth < 1 {
 		box-shadow: none;
 	}
@@ -14,6 +13,6 @@
 		@error 'Invalid $depth `#{$depth}` for mixin `shadow`.'; //sass-lint:disable-line no-warn
 	}
 	@else {
-		box-shadow: mdShadow($depth, $side);
+		box-shadow: box-shadow($depth, $side);
 	}
 }

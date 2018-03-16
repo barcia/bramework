@@ -18,6 +18,8 @@
 	height: $height;
 }
 
+
+
 /// Makes a circular element (with possibilities to expand in one axis)
 /// @param {units} $size - The element size
 /// @example scss - Usage
@@ -31,14 +33,6 @@
 }
 
 
-/// Makes circular an element
-/// @example scss - Usage
-///   .foo {
-///     @include rounded;
-///   }
-@mixin rounded {
-	border-radius: 50%;
-}
 
 /// Border top radius
 /// @param {Units} $radius [$border-radius] - The border radius in px.
@@ -51,6 +45,8 @@
 	border-top-left-radius: $radius;
 }
 
+
+
 /// Border bottom radius
 /// @param {Units} $radius [$border-radius] - The border radius in px.
 /// @example scss - Usage
@@ -62,6 +58,8 @@
 	border-bottom-left-radius: $radius;
 }
 
+
+
 /// Border left radius
 /// @param {Units} $radius [$border-radius] - The border radius in px.
 /// @example scss - Usage
@@ -72,6 +70,8 @@
 	border-bottom-left-radius: $radius;
 	border-top-left-radius: $radius;
 }
+
+
 
 /// Border right radius
 /// @param {Units} $radius [$border-radius] - The border radius in px.
@@ -85,12 +85,15 @@
 }
 
 
+
 /// Horizontal margin
 /// @param {Units} $px - The margin in px.
 @mixin marginHz($px) {
 	margin-right: $px;
 	margin-left: $px;
 }
+
+
 
 /// Vertical margin
 /// @param {Units} $px - The margin in px.
@@ -99,12 +102,16 @@
 	margin-bottom: $px;
 }
 
+
+
 /// Horizontal padding
 /// @param {Units} $px - The margin in px.
 @mixin paddingHz($px) {
 	padding-right: $px;
 	padding-left: $px;
 }
+
+
 
 /// Vertical padding
 /// @param {Units} $px - The margin in px.
@@ -114,24 +121,20 @@
 }
 
 
+
 /// Margin bottom except in last item
 /// @param {Units} $size [base] - The size of the margin in px.
 @mixin marginBottom($size: base) {
-	@if $size == base {
-		margin-bottom: var(--marginBottom);
-	}
-	@else {
-		margin-bottom: $size;
+	&:not(:last-child) {
+		@if $size == base {
+			margin-bottom: var(--marginBottom);
+		}
+		@else {
+			margin-bottom: $size;
+		}
 	}
 
 	&:last-child {
 		margin-bottom: 0;
 	}
-}
-
-
-@mixin inlineList {
-	padding: 0;
-	display: inline-flex;
-	list-style: none;
 }

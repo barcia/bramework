@@ -78,14 +78,14 @@
 //  * Fix the navbar always on top
 //  */
 // .Navbar--fixed {
-// 	@include shadow(1);
+// 	@include boxShadow(1);
 // 	@include transition(box-shadow); /* 2 */
 // 	position: fixed; /* 1 */
 // 	top: 0;
 // 	will-change: box-shadow;
 //
 // 	@include scrolled {
-// 		@include shadow(3);
+// 		@include boxShadow(3);
 // 	}
 // }
 //
@@ -93,14 +93,14 @@
 //  * Fix the navbar always on top, but it show and hide if scroll down or up
 //  */
 // .Navbar--scrollSensitive {
-// 	@include shadow(1);
+// 	@include boxShadow(1);
 // 	@include transition((box-shadow, transform)); /* 2 */
 // 	position: fixed; /* 1 */
 // 	top: 0;
 // 	will-change: box-shadow, transform;
 //
 // 	@include scrolled {
-// 		@include shadow(3);
+// 		@include boxShadow(3);
 // 	}
 //
 // 	@include scrollDown {
