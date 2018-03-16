@@ -16,7 +16,8 @@
 // Code
 pre,
 code,
-kbd {
+kbd,
+samp {
 	font-size: var(--code-fontSize);
 	font-family: var(--fontFamily-monospace);
 }

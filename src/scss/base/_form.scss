@@ -22,6 +22,7 @@ $InputText: 'textarea',
 
 // Default
 input,
+textarea,
 select {
 	outline: none;
 
@@ -39,7 +40,6 @@ select {
 	background-color: transparent;
 	border: 1px solid $grey-200;
 	border-radius: 0;
-	outline: none;
 
 	&::placeholder {
 		color: var(--fontColor--lighter);

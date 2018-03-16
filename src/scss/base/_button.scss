@@ -3,10 +3,7 @@
 \*------------------------------------*/
 
 
-.Button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
+.Button {
 	@include inlineFlexCenter;
 	height: 30px;
 	min-width: 60px;
@@ -20,3 +17,11 @@ input[type='submit'] {
 		color: var(--fontColor--light);
 	}
 }
+
+// button,
+// input[type='button'],
+// input[type='reset'],
+// input[type='submit'] {
+// 	border: 0;
+// 	outline: 0;
+// }
