@@ -2,6 +2,15 @@
 	#BUTTON
 \*------------------------------------*/
 
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	border: 0;
+	outline: 0;
+}
+
+
 
 .Button {
 	@include inlineFlexCenter;
@@ -17,11 +26,3 @@
 		color: var(--fontColor--light);
 	}
 }
-
-// button,
-// input[type='button'],
-// input[type='reset'],
-// input[type='submit'] {
-// 	border: 0;
-// 	outline: 0;
-// }

@@ -2,31 +2,23 @@
 	#CODE
 \*------------------------------------*/
 
-// Variables
-:root {
-	// Color
-	--code-fontColor: var(--fontColor);
-	--code-bgColor: $grey-50;
-
-	// Font size
-	--code-fontSize: 0.85rem;
-}
-
 
 // Code
 pre,
 code,
 kbd,
 samp {
-	font-size: var(--code-fontSize);
+	font-size: var(--code-fontSize, 0.85rem);
 	font-family: var(--fontFamily-monospace);
 }
 
+
 pre,
 code {
-	color: var(--code-fontColor);
-	background-color: var(--code-bgColor);
+	color: var(--code-fontColor, var(--fontColor));
+	background-color: var(--code-bgColor, $grey-50);
 }
+
 
 
 // Preformatted
@@ -40,6 +32,7 @@ pre {
 }
 
 
+
 // Inline code
 :not(pre) > code,
 kbd {
@@ -50,6 +43,7 @@ kbd {
 	border-radius: 2px;
 	user-select: all;
 }
+
 
 
 // Code themes

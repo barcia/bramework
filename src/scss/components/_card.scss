@@ -2,43 +2,8 @@
 	#CARD
 \*------------------------------------*/
 
-// Link card
-@mixin Card-link {
-	@include voidLink;
-	@include transition(box-shadow);
-	cursor: pointer;
-	@include hoverFocus {
-		@include boxShadow(3);
-	}
-}
 
-
-// Media
-@mixin Card-media {
-	position: relative;
-	margin: 0 auto;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-
-	// For preserve the aspect ratio
-	// http://nicolasgallagher.com/flexible-css-cover-images
-	&::before {
-		display: block;
-		padding-bottom: 56.25%; // 16:9 by default
-		content: '';
-	}
-
-	// Modifiers
-	&.is-2by1::before {padding-bottom: percentage(1 / 2);} // 2:1
-	&.is-21by9::before {padding-bottom: percentage(9 / 21);} // 21:9
-	&.is-16by9::before {padding-bottom: percentage(9 / 16);} // 16:9
-	&.is-5by3::before {padding-bottom: percentage(3 / 5);} // 5:3
-	&.is-4by3::before {padding-bottom: percentage(3 / 4);} // 4:3
-	&.is-1by1::before {padding-bottom: percentage(1 / 1);} // 1:1
-}
-
-
+// Base
 .Card {
 	@include paddingVt(8px);
 	@include boxShadow(2);
@@ -46,7 +11,6 @@
 	width: 100%;
 	background-color: var(--bgColor--light);
 	border-radius: 5px;
-	@include Card-link;
 
 	@include breakpoint(medium) {
 		width: 400px;
@@ -56,6 +20,7 @@
 .Card-section {
 	margin: 16px;
 }
+
 
 
 // Elements
@@ -72,4 +37,45 @@
 .Card-text,
 .Card-subtitle {
 	font-size: 0.9em;
+}
+
+
+
+// Modifiers
+.Card {
+	// Link card
+	&.is-link {
+		@include voidLink;
+		@include transition(box-shadow);
+		cursor: pointer;
+		@include hoverFocus {
+			@include boxShadow(3);
+		}
+	}
+
+
+	// Media
+	&.is-media {
+		position: relative;
+		margin: 0 auto;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		// For preserve the aspect ratio
+		// http://nicolasgallagher.com/flexible-css-cover-images
+		&::before {
+			display: block;
+			padding-bottom: 56.25%; // 16:9 by default
+			content: '';
+		}
+
+		// Modifiers
+		&.is-2by1::before {padding-bottom: percentage(1 / 2);} // 2:1
+		&.is-21by9::before {padding-bottom: percentage(9 / 21);} // 21:9
+		&.is-16by9::before {padding-bottom: percentage(9 / 16);} // 16:9
+		&.is-5by3::before {padding-bottom: percentage(3 / 5);} // 5:3
+		&.is-4by3::before {padding-bottom: percentage(3 / 4);} // 4:3
+		&.is-1by1::before {padding-bottom: percentage(1 / 1);} // 1:1
+	}
 }

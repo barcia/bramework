@@ -2,25 +2,22 @@
 	#DROPDOWN
 \*------------------------------------*/
 
-.Dropdown {
-	position: relative;
-	cursor: pointer;
 
-	@include hoverFocus {
-		outline: 0;
-	}
-}
+.SubMenu {
+	// position: absolute;
+	// right: 0;
+	// @include boxShadow(3);
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
 
-.Dropdown-content {
-	@include boxShadow(3);
-	position: absolute;
-	right: 0;
-	display: none;
-	min-width: 150px;
-	list-style-type: none;
-
-	.Dropdown:hover &,
-	.Dropdown:focus & {
-		display: block;
+	li:hover > &,
+	li:focus > &,
+	li:active > & {
+		width: inherit;
+		height: inherit;
+		overflow: inherit;
+		clip: inherit;
 	}
 }

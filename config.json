@@ -30,7 +30,7 @@
 		"distAssets": "dist/assets/",
 
 		"docs": "docs/",
-		"docsScss": "docs/scss/",
+		"docsScss": "docs/sass/",
 
 		"sourcemap": "."
 	},
