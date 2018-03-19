@@ -112,3 +112,47 @@
 		#{$property}: $value2;
 	}
 }
+
+
+
+/// Mixin to create an animated underline effect when the text is hovered over
+/// @param {axis} $axix - The axis to create the animation. (X or Y)
+/// @param {color} $color - The underline color
+/// @param {units} $height - The underline height
+/// @param {units} $time - The animation time
+/// @link https://atomiks.github.io/30-seconds-of-css/#hover-underline-animation
+/// @example scss - Usage
+///   .foo {
+///   	@include underlineAnimation(x, red, 2px, 0.3s);
+///   }
+@mixin underlineAnimation($axis, $color, $height, $time) {
+	position: relative;
+	display: inline-block;
+
+	&::after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: $height;
+		background-color: $color;
+		content: '';
+		transition: transform $time ease-out;
+		transform-origin: bottom left;
+		@if $axis == X or $axis == x {
+			transform: scaleX(0);
+		}
+		@else {
+			transform: scaleY(0);
+		}
+	}
+
+	&:hover::after {
+		@if $axis == X or $axis == x {
+			transform: scaleX(1);
+		}
+		@else {
+			transform: scaleY(1);
+		}
+	}
+}

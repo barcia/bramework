@@ -19,7 +19,7 @@
 
 
 
-/// Creates a shadow similar to box-shadow but based on the colors of the element itself
+/// Creates a shadow similar to box-shadow but based on the colors of the element itself. If you add display:inline-block you can use 90deg gradients
 /// @group property
 /// @param {Number} $opacity [0.7] - Opacity of the shadow (between 0 and 1)
 /// @param {Pixels} $blur [7px] - Blur of the shadow
