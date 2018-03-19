@@ -16,3 +16,26 @@
 		box-shadow: box-shadow($depth, $side);
 	}
 }
+
+
+
+/// Creates a shadow similar to box-shadow but based on the colors of the element itself
+/// @group property
+/// @param {Number} $opacity [0.7] - Opacity of the shadow (between 0 and 1)
+/// @param {Pixels} $blur [7px] - Blur of the shadow
+/// @link https://atomiks.github.io/30-seconds-of-css/#dynamic-shadow
+@mixin dinamicShadow($opacity: 0.7, $blur: 7px) {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		top: 0.5rem;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background: inherit;
+		content: '';
+		opacity: $opacity;
+		filter: blur($blur);
+	}
+}
