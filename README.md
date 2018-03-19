@@ -71,7 +71,7 @@ This project use [Gulp](https://gulpjs.com) as task runner.
 
 - `gulp css` - Process all *.scss* files in */src/scss/* and apply the PostCSS plugins creating *style.min.css* in */dist/assets/*.
 
-- `gulp js` - Process and concatenate all *.js* files in */src/js/* creating *script.min.css* in */dist/assets/*.
+- `gulp js` - Process and concatenate all *.js* files in */src/js/* creating *script.min.js* in */dist/assets/*.
 
 - `gulp stuff` - Simply copy all files in */src/stuff/* to */dist/*. Is useful to save with the source code things like images, *manifest.json*, etc.
 
