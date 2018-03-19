@@ -37,3 +37,20 @@
 	50% {background-position: right}
 	100% {background-position: left}
 }
+
+
+
+/// Mixin for create simple text gradients
+/// @link https://atomiks.github.io/30-seconds-of-css/#gradient-text
+/// @param {string} $colors - Put the colors that will form the gradient
+/// @param {degrees | string} $direction [0deg] - An angle of direction for
+/// the gradient. Bu default it has 0 degrees.
+/// @example scss - Usage
+///   .foo {
+///     @include textGradient((blue, red, yellow));
+///   }
+@mixin textGradient($colors, $direction: 0deg) {
+	background: linear-gradient($direction, $colors);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
