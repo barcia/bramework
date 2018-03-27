@@ -59,6 +59,12 @@ body {
 }
 
 
+::selection {
+	background-color: var(--brand-color--c);
+	color: $white;
+}
+
+
 // Inline elements
 a {
 	color: var(--link-fontColor);
