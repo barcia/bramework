@@ -17,6 +17,7 @@
 /// @group layout
 @mixin inlineList {
 	display: inline-flex;
+	align-items: center;
 	padding: 0;
 	list-style: none;
 }
