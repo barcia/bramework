@@ -18,7 +18,7 @@
 	},
 	"homepage": "https://github.com/barcia/bramework#readme",
 	"devDependencies": {
-		"autoprefixer": "^7.1.5",
+		"autoprefixer": "^8.2.0",
 		"browser-sync": "^2.18.8",
 		"cssnano": "^3.10.0",
 		"del": "^3.0.0",
@@ -30,13 +30,13 @@
 		"gulp-plumber": "^1.1.0",
 		"gulp-postcss": "^7.0.0",
 		"gulp-rename": "^1.2.2",
-		"gulp-sass": "^3.1.0",
+		"gulp-sass": "^4.0.0",
 		"gulp-sourcemaps": "^2.6.0",
-		"gulp-uglify-es": "^0.2.0",
+		"gulp-uglify-es": "^1.0.1",
 		"path": "^0.12.7",
 		"sassdoc": "^2.2.2"
 	},
 	"dependencies": {
-		"npm": "^5.7.1"
+		"npm": "^5.8.0"
 	}
 }
