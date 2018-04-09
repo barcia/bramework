@@ -1,21 +1,23 @@
+		<footer class="footer" itemscope itemtype="https://schema.org/WPFooter">
 
-	<?php if ( is_front_page() ): ?>
-		<footer class="footer footer--frontpage">
-	<?php else: ?>
-		<footer class="footer">
-	<?php endif; ?>
+			<!-- Footer widget area -->
+			<?php get_sidebar( 'footer' ); ?>
 
-			<div class="footer-links">
-				<?php wp_nav_menu( array( 'theme_location'   => 'footer' ) ); ?>
-			</div>
+			<!-- Footer menu -->
+			<?php wp_nav_menu( array(
+				'theme_location'   => 'footer',
+				'menu_class'   => 'footer-menu',
+				'container_class'   => 'footer-links',
+				'fallback_cb' => false
+			)); ?>
+
+			<!-- Footer text. Edit it in the customizer -->
+			<?php if (get_theme_mod('bramework_option_footertext')): ?>
+				<span class="footer-text"> <?php echo get_theme_mod('bramework_option_footertext') ?> </span>
+			<?php endif; ?>
 
 			<?php wp_footer(); ?>
 		</footer>
-
-		<?php if ( is_front_page() ): ?>
-			<!-- Frontpage-background started in header.php -->
-			</div>
-		<?php endif; ?>
 
 	</body>
 

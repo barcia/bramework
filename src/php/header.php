@@ -1,17 +1,26 @@
+<?php
+/**
+ * The head and header
+ *
+ * @package bramework
+ */
+ ?>
 <!DOCTYPE html>
 <html <?php language_attributes();?> >
 
-	<head>
+	<head itenmscope itemtype="https://schema.org/WebSite">
 		<?php get_template_part( 'partials/head'); ?>
+
+		<?php wp_head(); ?>
 	</head>
 
-	<body>
-		<?php if ( is_front_page() ): ?>
-			<div class="frontpage">
-		<?php endif; ?>
+	<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
-		<header class="site-header">
+		<header class="header" itemscope itemtype="https://schema.org/WPHeader">
 
-			<?php get_template_part( 'partials/nav'); ?>
+			<?php if ( ! is_page_template( 'templates/landing.php' )) {
+				// The landing page template not shows the navbar
+				get_template_part( 'partials/nav' );
+			} ?>
 
 		</header>
