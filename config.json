@@ -1,11 +1,11 @@
 {
-	"language": "html",
+	"mode": "html",
 
 	"task": {
 		"all": "build",
 		"stuff": "stuff",
 		"html": "html",
-		"php": "php",
+		"wp": "wp",
 		"css": "css",
 		"js": "js",
 		"docs": {
@@ -18,7 +18,7 @@
 		"src": "src/",
 		"srcStuff": "src/stuff/",
 		"srcHtml": "src/html/",
-		"srcPhp": "src/php/",
+		"srcWp": "src/wordpress/",
 		"srcScss": "src/scss/",
 		"srcJs": "src/js/",
 		"srcSvg": "src/svg/",
@@ -36,9 +36,8 @@
 	},
 
 	"browserSync": {
-		"proxy": false,
 		"proxyURL": "localhost:8080",
-		"server": "dist/",
+		"serverRoot": "dist/",
 		"browser": "google chrome"
 	},
 

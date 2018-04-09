@@ -5,6 +5,7 @@ const path         = require('path');
 const data         = require('gulp-data');
 const browserSync  = require('browser-sync').create();
 const rename       = require('gulp-rename');
+const replace      = require('gulp-replace');
 const nunjucks     = require('gulp-nunjucks');
 const plumber      = require('gulp-plumber');
 const notify       = require('gulp-notify');
@@ -30,7 +31,7 @@ const sourcefiles = {
 				 '!' + config.path.srcHtml + 'layouts/**/*'],
 	htmlAll: [config.path.srcHtml + '**/*.+(html|njk|nunjucks)',
 						config.path.srcHtml + config.html.data],
-	php: config.path.srcPhp + '**/*.php',
+	wp: config.path.srcWp + '**/*',
 	css: config.path.srcScss + '**/*.scss',
 	js: config.path.srcJs + '**/*.js',
 	stuff: config.path.srcStuff + '**/*',
@@ -45,12 +46,12 @@ const sourcefiles = {
  * Execute all build functions.
  */
 const build = function() {
-	switch (config.language) {
+	switch (config.mode) {
 	  case 'html':
 	    htmlTask();
 	    break;
-	  case 'php':
-			phpTask();
+	  case 'wp':
+			wpTask();
 			break;
 	  default:
 	    break;
@@ -94,21 +95,28 @@ const reportError = function (error) {
  * Init browserSync
  */
 const initBrowserSync = function() {
-	if (config.browserSync.proxy) {
 
-		browserSync.init({
-			browser: config.browserSync.browser,
-			proxy: config.browserSync.proxyURL
-		});
+	switch (config.mode) {
 
-	} else {
+		case 'html':
+			browserSync.init({
+				browser: config.browserSync.browser,
+				server: config.browserSync.serverRoot
+			});
+			break;
 
-		browserSync.init({
-			browser: config.browserSync.browser,
-			server: config.browserSync.server
-		});
+		case 'wp':
+			browserSync.init({
+				browser: config.browserSync.browser,
+				proxy: config.browserSync.proxyURL
+			});
+			break;
+
+		default:
+			break;
 
 	}
+
 };
 
 
@@ -122,12 +130,12 @@ const watch = function() {
 	gulp.watch(sourcefiles.js, [config.task.js]);
 
 	/**
-	 * Watch for PHP and delete PHP files in dist directory if it was removed in src
+	 * Watch for WP and delete files in dist directory if it was removed in src
 	 * With any change also reload browserSync
 	 */
-	gulp.watch(sourcefiles.php, [config.task.php, browserSync.reload]).on('change', function(ev) {
+	gulp.watch(sourcefiles.wp, [config.task.wp, browserSync.reload]).on('change', function(ev) {
 		if(ev.type === 'deleted') {
-				del(path.relative('./', ev.path).replace(config.path.srcPhp, config.path.dist));
+				del(path.relative('./', ev.path).replace(config.path.srcWp, config.path.dist));
 		}
 	});
 
@@ -163,11 +171,12 @@ const htmlTask = function() {
 
 
 /**
- * PHP. The same of 'stuff'. This ONLY COPY all PHP files, not sync. For also
+ * WordPress. The same of 'stuff'. This ONLY COPY all files, not sync. For also
  * remove the deleted files use the watch task (default gulp task)
  */
-const phpTask = function() {
-	return gulp.src(sourcefiles.php)
+const wpTask = function() {
+	return gulp.src(sourcefiles.wp)
+	.pipe(replace('$bramework', '$mytheme'))
 	.pipe(gulp.dest(config.path.dist));
 };
 
@@ -264,7 +273,7 @@ gulp.task('default', function () {
 gulp.task(config.task.all, function() { build() });
 gulp.task(config.task.stuff, function() { stuffTask() });
 gulp.task(config.task.html, function() { htmlTask() });
-gulp.task(config.task.php, function() { phpTask() });
+gulp.task(config.task.wp, function() { wpTask() });
 gulp.task(config.task.css, function() { cssTask() });
 gulp.task(config.task.js, function() { jsTask() });
 
