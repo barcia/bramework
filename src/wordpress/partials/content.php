@@ -15,16 +15,16 @@
 	</div>
 
 	<div class="post-edit">
-		<?php bramework_editpost(); ?>
+		<?php _bramework_editpost(); ?>
 	</div>
 
 	<footer class="post-footer">
 		<?php if ( is_single() ): ?>
 			<div class="post-meta">
-				<div class="post-meta-date"> <?php bramework_post_date() ?> </div>
-				<div class="post-meta-author"> <?php bramework_post_author(); ?> </div>
-				<div class="post-meta-category"> <?php bramework_post_category(); ?> </div>
-				<div class="post-meta-tags"> <?php bramework_post_tags(); ?> </div>
+				<div class="post-meta-date"> <?php _bramework_post_date() ?> </div>
+				<div class="post-meta-author"> <?php _bramework_post_author(); ?> </div>
+				<div class="post-meta-category"> <?php _bramework_post_category(); ?> </div>
+				<div class="post-meta-tags"> <?php _bramework_post_tags(); ?> </div>
 			</div>
 		<?php endif; ?>
 	</footer>

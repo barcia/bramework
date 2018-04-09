@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div <?php bramework_wrapper_class() ?>>
+	<div <?php _bramework_wrapper_class() ?>>
 
 		<main class="container">
 
@@ -18,11 +18,11 @@
 
 				<?php endwhile; ?>
 
-					<?php bramework_pagination(); ?>
+					<?php _bramework_pagination(); ?>
 
 			<?php else : ?>
 
-				<p><?php bramework_noposts() ?></p>
+				<p><?php _bramework_noposts() ?></p>
 
 			<?php endif; ?>
 

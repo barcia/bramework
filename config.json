@@ -1,6 +1,12 @@
 {
 	"mode": "html",
 
+	"string": {
+		"key": "_",
+		"original": "bramework",
+		"replace": "theme_name"
+	},
+
 	"task": {
 		"all": "build",
 		"stuff": "stuff",

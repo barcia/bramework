@@ -3,13 +3,13 @@
  * Sets up theme default settings and WordPress features
  */
 
-add_action( 'after_setup_theme', 'bramework_setup' );
+add_action( 'after_setup_theme', '_bramework_setup' );
 
 
-if ( ! function_exists( 'bramework_setup' )) {
+if ( ! function_exists( '_bramework_setup' )) {
 
 	// Function
-  function bramework_setup() {
+  function _bramework_setup() {
 
 		// Set the content width in px
 		if ( is_active_sidebar( 'primary' ) ) {
@@ -19,7 +19,7 @@ if ( ! function_exists( 'bramework_setup' )) {
 		}
 
     // Make theme avaiable for translations.
-    load_theme_textdomain( 'bramework_text', get_template_directory() . '/languages' );
+    load_theme_textdomain( '_bramework_text', get_template_directory() . '/languages' );
 
     // Let WordPress manage the document title.
     add_theme_support( 'title-tag' );

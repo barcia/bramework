@@ -9,12 +9,12 @@ if ( post_password_required() ) {
 }
 ?>
 
-<aside id="<?php _e('comments', 'bramework_text') ?>" class="post-comments">
+<aside id="<?php _e('comments', '_bramework_text') ?>" class="post-comments">
 
 	<?php if ( have_comments() ) : ?>
 
 		<!-- Title -->
-		<h3 class="post-comments-title"><?php _e('Comments', 'bramework_text') ?></h3>
+		<h3 class="post-comments-title"><?php _e('Comments', '_bramework_text') ?></h3>
 
 		<!-- Comments -->
 		<ol class="post-comments-list">
@@ -42,7 +42,7 @@ if ( post_password_required() ) {
 		 */
 		if ( ! comments_open() && get_comments_number() ) : ?>
 
-		<p class="post-comments-nocomments"><?php _e( 'Comments are closed.', 'bramework_text' ); ?></p>
+		<p class="post-comments-nocomments"><?php _e( 'Comments are closed.', '_bramework_text' ); ?></p>
 
 		<?php endif; ?>
 

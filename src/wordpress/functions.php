@@ -1,6 +1,6 @@
 <?php
 /**
- * Bramework functions and definitions
+ * Theme functions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  */

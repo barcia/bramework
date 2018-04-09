@@ -2,7 +2,7 @@
 /**
  * The head and header
  *
- * @package bramework
+ * @package _bramework
  */
  ?>
 <!DOCTYPE html>

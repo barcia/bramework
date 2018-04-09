@@ -12,8 +12,8 @@
 			)); ?>
 
 			<!-- Footer text. Edit it in the customizer -->
-			<?php if (get_theme_mod('bramework_option_footertext')): ?>
-				<span class="footer-text"> <?php echo get_theme_mod('bramework_option_footertext') ?> </span>
+			<?php if (get_theme_mod('_bramework_option_footertext')): ?>
+				<span class="footer-text"> <?php echo get_theme_mod('_bramework_option_footertext') ?> </span>
 			<?php endif; ?>
 
 			<?php wp_footer(); ?>

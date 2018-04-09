@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="post-edit">
-		<?php bramework_editpost(); ?>
+		<?php _bramework_editpost(); ?>
 	</div>
 
 	<footer class="post-footer">

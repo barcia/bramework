@@ -4,9 +4,9 @@
  * Filter the excerpt "read more" string.
  */
 
-add_filter( 'excerpt_more', 'bramework_excerpt_more' );
+add_filter( 'excerpt_more', '_bramework_excerpt_more' );
 
-function bramework_excerpt_more( $more ) {
+function _bramework_excerpt_more( $more ) {
     return '&hellip;';
 }
 
@@ -16,9 +16,9 @@ function bramework_excerpt_more( $more ) {
  * Custom archive title
  */
 
-// if ( ! function_exists( 'bramework_change_archive_title' ) ) {
+// if ( ! function_exists( '_bramework_change_archive_title' ) ) {
 //
-// 	function bramework_change_archive_title( $title ) {
+// 	function _bramework_change_archive_title( $title ) {
 // 		if ( is_category() ) {
 // 			$title = single_cat_title( '', false );
 // 		} elseif ( is_tag() ) {
@@ -33,32 +33,32 @@ function bramework_excerpt_more( $more ) {
 // 			$title = get_the_date( get_option( 'date_format' ) );
 // 		} elseif ( is_tax( 'post_format' ) ) {
 // 			if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-// 				$title = _x( 'Asides', 'post format archive title', 'bramework_text' );
+// 				$title = _x( 'Asides', 'post format archive title', '_bramework_text' );
 // 			} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-// 				$title = _x( 'Galleries', 'post format archive title', 'bramework_text' );
+// 				$title = _x( 'Galleries', 'post format archive title', '_bramework_text' );
 // 			} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-// 				$title = _x( 'Images', 'post format archive title', 'bramework_text' );
+// 				$title = _x( 'Images', 'post format archive title', '_bramework_text' );
 // 			} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-// 				$title = _x( 'Videos', 'post format archive title', 'bramework_text' );
+// 				$title = _x( 'Videos', 'post format archive title', '_bramework_text' );
 // 			} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-// 				$title = _x( 'Quotes', 'post format archive title', 'bramework_text' );
+// 				$title = _x( 'Quotes', 'post format archive title', '_bramework_text' );
 // 			} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-// 				$title = _x( 'Links', 'post format archive title', 'bramework_text' );
+// 				$title = _x( 'Links', 'post format archive title', '_bramework_text' );
 // 			} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-// 				$title = _x( 'Statuses', 'post format archive title', 'bramework_text' );
+// 				$title = _x( 'Statuses', 'post format archive title', '_bramework_text' );
 // 			} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-// 				$title = _x( 'Audio', 'post format archive title', 'bramework_text' );
+// 				$title = _x( 'Audio', 'post format archive title', '_bramework_text' );
 // 			} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-// 				$title = _x( 'Chats', 'post format archive title', 'bramework_text' );
+// 				$title = _x( 'Chats', 'post format archive title', '_bramework_text' );
 // 			}
 // 		} elseif ( is_post_type_archive() ) {
 // 			$title = post_type_archive_title( '', false );
 // 		} elseif ( is_tax() ) {
 // 			$title = single_term_title( '', false );
 // 		} else {
-// 			$title = __( 'Archives', 'bramework_text' );
+// 			$title = __( 'Archives', '_bramework_text' );
 // 		}
 // 		return $title;
 // 	}
-// 	add_filter( 'get_the_archive_title', 'bramework_change_archive_title' );
+// 	add_filter( 'get_the_archive_title', '_bramework_change_archive_title' );
 // }

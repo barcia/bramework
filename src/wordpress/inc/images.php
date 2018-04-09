@@ -4,12 +4,12 @@
  * Remove default image sizes
  */
 
-// add_filter('intermediate_image_sizes_advanced', 'bramework_remove_default_image_sizes');
+// add_filter('intermediate_image_sizes_advanced', '_bramework_remove_default_image_sizes');
 //
 //
-// if ( ! function_exists( 'bramework_remove_default_image_sizes' )) {
+// if ( ! function_exists( '_bramework_remove_default_image_sizes' )) {
 //
-// 	function bramework_remove_default_image_sizes( $sizes) {
+// 	function _bramework_remove_default_image_sizes( $sizes) {
 // 		unset( $sizes['thumbnail']); // 150px
 // 		unset( $sizes['medium']); // 300px
 // 		unset( $sizes['medium_large']); //768px
@@ -40,12 +40,12 @@
  * @link https://codex.wordpress.org/Plugin_API/Filter_Reference/image_size_names_choose
  */
 
-// add_filter( 'image_size_names_choose', 'bramework_custom_sizes' );
+// add_filter( 'image_size_names_choose', '_bramework_custom_sizes' );
 //
 //
-// if ( ! function_exists( 'bramework_custom_sizes' )) {
+// if ( ! function_exists( '_bramework_custom_sizes' )) {
 //
-// 	function bramework_custom_sizes( $sizes ) {
+// 	function _bramework_custom_sizes( $sizes ) {
 //
 // 		return array_merge( $sizes, array(
 // 			'medium-width' => __('Medium Width'),

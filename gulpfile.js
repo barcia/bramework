@@ -176,7 +176,7 @@ const htmlTask = function() {
  */
 const wpTask = function() {
 	return gulp.src(sourcefiles.wp)
-	.pipe(replace('$bramework', '$mytheme'))
+	.pipe(replace(config.string.key + config.string.original, config.string.replace))
 	.pipe(gulp.dest(config.path.dist));
 };
 

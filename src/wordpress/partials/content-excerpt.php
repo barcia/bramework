@@ -16,16 +16,16 @@
 	</div>
 
 	<div class="loop-readmore">
-		<a href="<?php echo esc_url( get_permalink() ) ?>"><?php _e('Read more', ('bramework_text')) ?></a>
+		<a href="<?php echo esc_url( get_permalink() ) ?>"><?php _e('Read more', ('_bramework_text')) ?></a>
 	</div>
 
 	<footer class="loop-footer">
 		<div class="loop-meta">
-			<div class="loop-meta-date"> <?php bramework_post_date() ?> </div>
-			<div class="loop-meta-author"> <?php bramework_post_author(); ?> </div>
-			<div class="loop-meta-category"> <?php bramework_post_category(); ?> </div>
-			<div class="loop-meta-tags"> <?php bramework_post_tags(); ?> </div>
-			<div class="loop-meta-commentsnumber"> <?php bramework_commentsnumber(); ?> </div>
+			<div class="loop-meta-date"> <?php _bramework_post_date() ?> </div>
+			<div class="loop-meta-author"> <?php _bramework_post_author(); ?> </div>
+			<div class="loop-meta-category"> <?php _bramework_post_category(); ?> </div>
+			<div class="loop-meta-tags"> <?php _bramework_post_tags(); ?> </div>
+			<div class="loop-meta-commentsnumber"> <?php _bramework_commentsnumber(); ?> </div>
 		</div>
 	</footer>
 

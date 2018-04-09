@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div <?php bramework_wrapper_class() ?>>
+<div <?php _bramework_wrapper_class() ?>>
 
 	<main class="container">
 

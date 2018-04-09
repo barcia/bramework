@@ -1,9 +1,9 @@
 <?php
-	if (get_theme_mod('bramework_option_navtype') == 'fixed') {
+	if (get_theme_mod('_bramework_option_navtype') == 'fixed') {
 		$navbarTypeClass = "Navbar--fixed";
 	}
 
-	elseif (get_theme_mod('bramework_option_navtype') == 'scroll') {
+	elseif (get_theme_mod('_bramework_option_navtype') == 'scroll') {
 		$navbarTypeClass = "Navbar--scrollSensitive";
 	}
 
