@@ -169,7 +169,7 @@ endif;
 if ( ! function_exists( '_bramework_wrapper_class' ) ) :
 	function _bramework_wrapper_class( $class='' ) {
 
-		$default_classes = ['wrapper', 'xamon'];
+		$default_classes = ['wrapper'];
 
 
 		if ( ! empty( $class ) ) {
