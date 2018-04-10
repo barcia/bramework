@@ -14,7 +14,7 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
+	<body <?php body_class( 'body' ); ?> itemscope itemtype="https://schema.org/WebPage">
 
 		<header class="header" itemscope itemtype="https://schema.org/WPHeader">
 
