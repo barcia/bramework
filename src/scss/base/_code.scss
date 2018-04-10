@@ -49,27 +49,27 @@ kbd {
 // Code themes
 code {
 	&.is-dark {
-		--code-fontColor: $white;
-		--code-bgColor: $grey-700;
+		--code-fontColor: #{$white};
+		--code-bgColor: #{$grey-700};
 	}
 
 	&.is-green {
-		--code-fontColor: $md-lightgreen-a400;
-		--code-bgColor: $grey-700;
+		--code-fontColor: #{$md-lightgreen-a400};
+		--code-bgColor: #{$grey-700};
 	}
 
 	&.is-red {
-		--code-fontColor: $razzmatazz;
-		--code-bgColor: $alizarin-50;
+		--code-fontColor: #{$razzmatazz};
+		--code-bgColor: #{$alizarin-50};
 	}
 
 	&.is-blue {
-		--code-fontColor: $belize-hole-700;
-		--code-bgColor: $belize-hole-50;
+		--code-fontColor: #{$belize-hole-700};
+		--code-bgColor: #{$belize-hole-50};
 	}
 
 	&.is-brown {
-		--code-fontColor: $carrot-700;
-		--code-bgColor: $carrot-50;
+		--code-fontColor: #{$carrot-700};
+		--code-bgColor: #{$carrot-50};
 	}
 }

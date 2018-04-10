@@ -4,51 +4,52 @@
 
 // Variables
 :root {
-	--bgColor--dark: $oc-grey-800;
-	--bgColor--light: $white;
+	--bgColor--dark: #{$oc-grey-800};
+	--bgColor--light: #{$white};
 
 	// Font color
-	--fontColor: $grey-700;
-	--fontColor--light: $grey-500;
-	--fontColor--lighter: $grey-300;
-	--fontColor--dark: $grey-900;
+	--fontColor: #{$grey-700};
+	--fontColor--light: #{$grey-500};
+	--fontColor--lighter: #{$grey-300};
+	--fontColor--dark: #{$grey-900};
 
-	--fontColor-alpha--black: alpha-black(0.4);
-	--fontColor-alpha--white: alpha-white(0.4);
+	--fontColor-alpha--black: #{alpha-black(0.4)};
+	--fontColor-alpha--white: #{alpha-white(0.4)};
 
 
 	// Brand colors
 	$brand-color: $royal-blue;
 	$brand-color-sec: $sunglo;
 
-	--brand-color       : $brand-color;
-	--brand-color--c    : complement($brand-color);
-	--brand-color-sec   : $brand-color-sec;
-	--brand-color-sec--c: complement($brand-color-sec);
+	--brand-color       : #{$brand-color};
+	--brand-color--c    : #{complement($brand-color)};
+	--brand-color-sec   : #{$brand-color-sec};
+	--brand-color-sec--c: #{complement($brand-color-sec)};
 
-	--blue  : $royal-blue;
-	--green : $nephritis;
-	--orange: $carrot-500;
-	--pink  : $peach-colored;
-	--purple: $bellflower;
-	--red   : $pure-crimson;
-	--yellow: $sandstorm;
+	--white : #{$white};
+	--blue  : #{$royal-blue};
+	--green : #{$nephritis};
+	--orange: #{$carrot-500};
+	--pink  : #{$peach-colored};
+	--purple: #{$bellflower};
+	--red   : #{$pure-crimson};
+	--yellow: #{$sandstorm};
 
 
 	// Link colors
-	--link-fontColor          : $brand-color;
-	--link-fontColor--onHover : shadow($brand-color, 15%);
-	--link-fontColor--onActive: shadow($brand-color, 30%);
+	--link-fontColor          : #{$brand-color};
+	--link-fontColor--onHover : #{shadow($brand-color, 15%)};
+	--link-fontColor--onActive: #{shadow($brand-color, 30%)};
 
-	--link-onHover-bgColor--alpha--black : alpha-black(0.1);
-	--link-onActive-bgColor--alpha--black: alpha-black(0.2);
-	--link-onHover-bgColor--alpha--white : alpha-white(0.1);
-	--link-onActive-bgColor--alpha--white: alpha-white(0.2);
+	--link-onHover-bgColor--alpha--black : #{alpha-black(0.1)};
+	--link-onActive-bgColor--alpha--black: #{alpha-black(0.2)};
+	--link-onHover-bgColor--alpha--white : #{alpha-white(0.1)};
+	--link-onActive-bgColor--alpha--white: #{alpha-white(0.2)};
 
-	// --link-fontColor-alpha-b--hover : shadow($alpha, $link-fontColor--hover-pct);
-	// --link-fontColor-alpha-b--active: shadow($alpha, $link-fontColor--active-pct);
-	// --link-fontColor-alpha-w--hover : tint($alpha, $link-fontColor--hover-pct);
-	// --link-fontColor-alpha-w--active: tint($alpha, $link-fontColor--active-pct);
+	// --link-fontColor-alpha-b--hover : #{shadow($alpha, $link-fontColor--hover-pct)};
+	// --link-fontColor-alpha-b--active: #{shadow($alpha, $link-fontColor--active-pct)};
+	// --link-fontColor-alpha-w--hover : #{tint($alpha, $link-fontColor--hover-pct)};
+	// --link-fontColor-alpha-w--active: #{tint($alpha, $link-fontColor--active-pct)};
 }
 
 
