@@ -1,0 +1,14 @@
+//Layout
+.wrapper--NavbarFixed,
+.wrapper--NavbarScrollSensitive {
+	margin-top: var(--Navbar-height);
+}
+
+.container {
+	flex: 2;
+}
+
+.sidebar {
+	flex: 1;
+	max-width: 350px;
+}

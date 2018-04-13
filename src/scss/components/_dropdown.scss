@@ -21,3 +21,41 @@
 		clip: inherit;
 	}
 }
+
+
+
+// WordPress Sub-menus
+.sub-menu {
+	display: none;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	list-style-type: none;
+	padding: 0;
+	width: 180px;
+	--Navbar-items-gap: 0;
+
+	& .sub-menu {
+		left: auto;
+		transform: translateX(0);
+		top: -1px;
+		left: 178px;
+	}
+
+
+	li {
+		border: 1px solid $grey-100;
+		padding: 0;
+		&:not(:last-child) {
+			border-bottom: none;
+		}
+	}
+
+	a {
+		display: block;
+	}
+
+	li:hover > & {
+		display: block;
+	}
+}

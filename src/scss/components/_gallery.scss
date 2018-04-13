@@ -1,0 +1,35 @@
+// WP Galleries
+.gallery {
+	display: grid;
+	flex-wrap: wrap;
+	justify-items: center;
+	align-items: start;
+	grid-gap: 20px;
+	grid-template-columns: repeat(1, 1fr);
+
+	figure {
+		margin: 0;
+		width: auto;
+	}
+}
+
+@for $i from 1 through 9 {
+	.gallery-columns-#{$i} {
+
+		@if $i = 2 {
+			@include breakpoint(medium) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@if $i >= 3 {
+			@include breakpoint(medium) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+		@include breakpoint(large) {
+			grid-template-columns: repeat(#{$i}, 1fr);
+		}
+	}
+}

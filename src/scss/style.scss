@@ -6,7 +6,7 @@
 @import 'libraries/mixins';
 
 // RESET
-@import 'plugins/standarize';
+@import '../lib/standarize/standarize';
 
 // SITE
 @import 'base/base';
@@ -26,10 +26,10 @@
 
 @import 'layout/wrapper';
 @import 'layout/navbar';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/comments';
 @import 'layout/bottom-navbar';
-
-// PLUGINS
-@import 'plugins/wordpress';
 
 // ASSETS
 @import 'assets/helpers';

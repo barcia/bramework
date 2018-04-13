@@ -40,6 +40,26 @@
 }
 
 
+
+
+// WP Navbar
+.Navbar-brand {
+	display: flex;
+}
+
+.Navbar-title {
+	margin: 0;
+}
+
+.custom-logo {
+	max-height: var(--Navbar-height);
+	width: auto;
+}
+
+
+
+
+
 /* NAVBAR ITEMS */
 .Navbar-items {
 	@include inlineList;
