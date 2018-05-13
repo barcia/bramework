@@ -6,7 +6,7 @@
 
 			<header class="loop-header">
 
-				<?php get_template_part( 'partials/header'); ?>
+				<?php get_template_part( 'views/header'); ?>
 
 			</header>
 
@@ -14,7 +14,7 @@
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'partials/content', 'excerpt'); ?>
+					<?php get_template_part( 'views/content', 'excerpt'); ?>
 
 				<?php endwhile; ?>
 

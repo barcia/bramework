@@ -8,11 +8,11 @@
 		while ( have_posts() ) : the_post();
 
 			// The content
-			get_template_part( 'partials/content', 'page' );
+			get_template_part( 'views/content', 'page' );
 
 			// The comments
 			if ( comments_open() || get_comments_number() ) {
-				comments_template( '/partials/comments.php' );
+				comments_template( '/views/comments.php' );
 			}
 
 		endwhile;

@@ -8,10 +8,10 @@
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'partials/post' );
+			get_template_part( 'views/post' );
 
 			if ( comments_open() || get_comments_number() ) :
-				comments_template( '/partials/comments.php' );
+				comments_template( '/views/comments.php' );
 			endif;
 
 		endwhile;

@@ -9,7 +9,7 @@
 <html <?php language_attributes();?> >
 
 	<head itenmscope itemtype="https://schema.org/WebSite">
-		<?php get_template_part( 'partials/head'); ?>
+		<?php get_template_part( 'views/head'); ?>
 
 		<?php wp_head(); ?>
 	</head>
@@ -20,7 +20,7 @@
 
 			<?php if ( ! is_page_template( 'templates/landing.php' )) {
 				// The landing page template not shows the navbar
-				get_template_part( 'partials/nav' );
+				get_template_part( 'views/nav' );
 			} ?>
 
 		</header>
