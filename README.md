@@ -4,7 +4,7 @@ A web starter kit
 
 ## ℹ️ About
 - Repository: https://github.com/barcia/bramework
-- Support: https://barcia.cc/contacto
+- Support: https://barcia.gal/contacto
 
 Bramework is a web starter kit that offers a set of tools and basic files for a quick start of a web development project. It is more oriented to develop with [Sass](http://sass-lang.com), but also offers a basic HTML template system with [Nunjucks](https://mozilla.github.io/nunjucks/) and facilities to create [WordPress](https://wordpress.org) themes with PHP.
 
@@ -94,7 +94,7 @@ You only need copy the content of */dist/* folder to your server root path.
 
 ## 🤓 Credits
 Developed by Iván Barcia  
-[Web](https://barcia.cc) · [Email](mailto:ivan@barcia.cc) · [Twitter](http://www.twitter.com/bartzia) · [GitHub](http://www.github.com/barcia)
+[Web](https://barcia.gal) · [Email](mailto:ivan@barcia.gal) · [Twitter](http://www.twitter.com/bartzia) · [GitHub](http://www.github.com/barcia)
 
 
 
