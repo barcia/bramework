@@ -144,7 +144,7 @@ rules:
 
     # Order
     property-sort-order:
-        - 1
+        - 0
         - order:
             - 'position'
             - 'top'
