@@ -60,26 +60,7 @@ Examples of the **naming convention** applied to **selectors** and **mixins**:
 ### Building
 This project use [Gulp](https://gulpjs.com) as task runner.
 
-**Development tasks:**
-- `gulp` - The default task. Build all, create a light web server, put in *watch* all source files and reload de browser with any change.
-
-- `gulp build` - Execute all this tasks: *gulp css*, *gulp js*, *gulp html*, *gulp stuff*, *gulp php*.
-
-- `gulp html` - Compile all *.html* and *.njk* files in */src/html/* creating the correspondent files in */dist/*.
-
-- `gulp php` - Really, this is exactly the same as *gulp stuff*. But copy all *.php* files in */src/php/* to */dist/*. Is useful to build WordPress themes.
-
-- `gulp css` - Process all *.scss* files in */src/scss/* and apply the PostCSS plugins creating *style.min.css* in */dist/assets/*.
-
-- `gulp js` - Process and concatenate all *.js* files in */src/js/* creating *script.min.js* in */dist/assets/*.
-
-- `gulp stuff` - Simply copy all files in */src/stuff/* to */dist/*. Is useful to save with the source code things like images, *manifest.json*, etc.
-
-
-**Docs related tasks:**
-- `gulp docs` - Execute all this tasks: *gulp css-docs*.
-
-- `gulp css:docs` - Build the CSS docs in */docs/sass/*.
+Soon…
 
 
 ### Deploying
