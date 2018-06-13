@@ -58,8 +58,10 @@ Examples of the **naming convention** applied to **selectors** and **mixins**:
 
 
 ### Building
-All command must be writted with 'npm run COMMAND'
+All command must be writted with `npm run COMMAND`
 
+| Command       | Description  |
+| ------------- | ------------- |
 | dev     | Develop CSS and JS with HTML |
 | dev:wp  | Develop CSS and JS with a WordPress theme |
 
