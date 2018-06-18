@@ -2,9 +2,14 @@
 	#BUTTONS
 \*------------------------------------*/
 
-
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'],
 .Button {
 	@include inlineFlexCenter;
+	border: 0;
+	outline: 0;
 	height: 30px;
 	min-width: 60px;
 	padding: 1px 7px;
