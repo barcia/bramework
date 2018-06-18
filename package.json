@@ -18,19 +18,17 @@
 	},
 	"scripts": {
 		"css": "node-sass --output-style compressed --source-map true --source-map-contents true src/scss/style.scss dist/assets/style.min.css",
-		"autoprefixer": "postcss -u autoprefixer -r dist/assets/style.min.css",
-		"build:css": "npm run css && npm run autoprefixer",
+		"postcss": "postcss -u autoprefixer -r dist/assets/style.min.css",
+		"build:css": "npm run css && npm run postcss",
 		"build:js": "mkdir -p dist/assets && uglifyjs src/js/*.js -m -o dist/assets/script.min.js",
 		"build:html": "cp -r src/html/* dist/",
-		"build:wp": "cp -r src/wp/* dist/",
 		"watch:css": "onchange 'src/scss/**/*.scss' -- npm run build:css",
 		"watch:js": "onchange 'src/js/**/*.js' -- npm run build:js",
-		"watch:html": "onchange 'src/html/**/*' -- npm run build:html",
-		"watch:wp": "onchange 'src/wp/**/*' -- npm run build:wp",
+		"watch:html": "onchange 'src/html/**/*.html' -- npm run build:html",
+		"watch": "run-p -s watch:css watch:js watch:html",
 		"serve": "browser-sync start --server 'dist/' --browser 'google chrome' --files 'dist/assets/style.min.css, dist/assets/script.min.js, dist/*.html'",
-		"serve:wp": "browser-sync start --proxy 'localhost:8080' --browser 'google chrome' --files 'dist/assets/style.min.css, dist/assets/script.min.js, dist/*.php'",
-		"dev": "run-s -s build:css build:js build:html && run-p -s serve watch:css watch:js watch:html",
-		"dev:wp": "run-s -s build:css build:js build:wp && run-p -s serve:wp watch:css watch:js watch:wp"
+		"prestart": "run-s -s build:css build:js build:html",
+		"start": "run-p -s serve watch:css watch:js watch:html"
 	},
 	"dependencies": {},
 	"devDependencies": {
