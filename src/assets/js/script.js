@@ -1,6 +1,5 @@
 const bramework = {
 
-
 	config: {
 		scrolledClass: 'site-scrolled',
 		scrollDownClass: 'site-scrollDown',
@@ -12,11 +11,13 @@ const bramework = {
 
 
 	load() {
-		bramework.elements.get();
-		bramework.scroll.load();
-		bramework.touch.load();
-		bramework.time.load();
-		bramework.user.load();
+		document.addEventListener('DOMContentLoaded', function() {
+			bramework.elements.get();
+			bramework.scroll.load();
+			bramework.touch.load();
+			bramework.time.load();
+			bramework.user.load();
+  	});
 	},
 
 

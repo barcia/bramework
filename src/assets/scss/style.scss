@@ -1,12 +1,13 @@
 @charset 'UTF-8';
 
 // LIBRARIES
-@import 'libraries/colors';
-@import 'libraries/functions';
-@import 'libraries/mixins';
+@import 'library/colors';
+@import 'library/functions';
+@import 'library/mixins';
 
 // RESET
-@import '../lib/standarize/standarize';
+@import '../../vendor/standarize/standarize';
+
 
 // SITE
 @import 'base/base';
@@ -31,5 +32,5 @@
 @import 'layout/bottom-navbar';
 
 // ASSETS
-@import 'assets/helpers';
-@import 'assets/print';
+@import 'utils/helpers';
+@import 'utils/print';
