@@ -1,3 +1,0 @@
-[submodule "src/vendor/standarize"]
-	path = src/vendor/standarize
-	url = git@github.com:barcia/standarize.git
