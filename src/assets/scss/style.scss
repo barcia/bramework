@@ -6,8 +6,7 @@
 @import 'library/mixins';
 
 // RESET
-@import '../../vendor/standarize/standarize';
-
+@import 'standarize/standarize'; // node_module
 
 // SITE
 @import 'base/base';
