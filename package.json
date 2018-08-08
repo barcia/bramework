@@ -17,32 +17,47 @@
 		"url": "https://github.com/barcia/bramework/issues"
 	},
 	"scripts": {
-		"css": "node-sass --output-style compressed --source-map true --source-map-contents true src/scss/style.scss dist/assets/style.min.css",
-		"postcss": "postcss -u autoprefixer -r dist/assets/style.min.css",
-		"build:css": "npm run css && npm run postcss",
-		"build:js": "mkdir -p dist/assets && uglifyjs src/js/*.js -m -o dist/assets/script.min.js",
-		"build:html": "cp -r src/html/* dist/",
-		"watch:css": "onchange 'src/scss/**/*.scss' -- npm run build:css",
-		"watch:js": "onchange 'src/js/**/*.js' -- npm run build:js",
-		"watch:html": "onchange 'src/html/**/*.html' -- npm run build:html",
-		"watch": "run-p -s watch:css watch:js watch:html",
-		"serve": "browser-sync start --server 'dist/' --browser 'google chrome' --files 'dist/assets/style.min.css, dist/assets/script.min.js, dist/*.html'",
-		"prestart": "run-s -s build:css build:js build:html",
-		"start": "run-p -s serve watch:css watch:js watch:html"
+		"clean": "rm -rf dist/* & mkdir -p dist/assets/",
+		"css-build": "node-sass --output-style compressed src/assets/scss/style.scss dist/assets/style.css --include-path 'node_modules/'",
+		"css-dev": "node-sass --output-style expanded --source-comments true --source-map-embed true --source-map-contents true src/assets/scss/style.scss dist/assets/style.css --include-path 'node_modules/'",
+		"css-postcss": "postcss --use autoprefixer --replace dist/assets/style.css",
+		"js-build": "browserify src/assets/js/script.js --outfile dist/assets/script.js",
+		"js-dev": "browserify --debug src/assets/js/script.js --outfile dist/assets/script.js",
+		"js-uglify": "uglifyjs dist/assets/script.js --mangle --compress  --output dist/assets/script.js",
+		"html-cp": "cp -r src/html/* dist/",
+		"html-rm": "find dist/ -name '*.html' -type f -delete & find dist/ -type d -empty -delete",
+		"prebuild": "npm run clean",
+		"build:css": "run-s css-build css-postcss",
+		"build:js": "run-s js-build js-uglify",
+		"build:html": "run-s html-rm html-cp",
+		"build": "run-s build:*",
+		"predev": "npm run clean",
+		"dev:css": "run-s css-dev css-postcss",
+		"dev:js": "run-s js-dev",
+		"dev": "run-p serve watch",
+		"watch:css": "nodemon --watch src/assets/scss --ext scss --exec \"npm run dev:css\"",
+		"watch:js": "nodemon --watch src/assets/js --ext js --exec 'npm run dev:js'",
+		"watch:html": "nodemon --watch src/html --ext html --exec 'npm run build:html'",
+		"watch": "run-p watch:*",
+		"serve": "browser-sync start --server 'dist/' --browser 'google chrome' --watch --files 'dist/assets/style.css, dist/assets/script.js, dist/*.html'"
 	},
 	"dependencies": {},
 	"devDependencies": {
 		"autoprefixer": "^8.6.2",
 		"browser-sync": "^2.24.4",
-		"node-sass": "^4.9.0",
+		"browserify": "^16.2.2",
+		"eslint": "^5.2.0",
+		"node-sass": "^4.9.2",
+		"nodemon": "^1.18.3",
 		"npm-run-all": "^4.1.3",
-		"onchange": "^4.0.0",
 		"postcss-cli": "^5.0.0",
+		"sass-lint": "^1.12.1",
+		"standarize": "^0.1.4",
 		"uglify-es": "^3.3.9"
 	},
 	"browserslist": [
 		"> 5%",
 		"last 1 major version"
 	],
-	"sasslintConfig": "/src/scss/.sass-lint.yml"
+	"sasslintConfig": "src/assets/scss/.sass-lint.yml"
 }
