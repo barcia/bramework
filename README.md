@@ -11,32 +11,35 @@ Bramework is a web starter kit that offers a set of tools and basic files for a 
 
 ## 🛫 Getting Started
 
-1. [Download the last release](https://github.com/barcia/bramework/archive/master.zip) or clone the project
-2. Install all development dependencies with `npm install`
-3. Put *NPM* to *watch* with `npm run starts` command
-4. Write your code
-
-All source code must go in`/src/` and all tasks put the distributable code in `/dist/`.
-
-
-## 💻 Developing
-
 ### Prerequisites
 You must have installed [Node](https://nodejs.org/en/download/) and [NPM](https://www.npmjs.com/get-npm)
 
-### Setting up development environment
-Normally, you only must have NPM *watching* with the `npm run start` command, and write your code in all files inside */src/*
+### Start
+1. [Download the last release](https://github.com/barcia/bramework/archive/master.zip) or clone the project
+2. Install all development dependencies with `npm install`
+3. Type `npm run dev:html` to run develop tasks of `css`, `js`, `img` and `html` files and *watch* then.
+4. Write your code
+
+- Bramework is ready for *WordPress* themes development. Put all your theme files in `src/wp/` and run `npm run dev:wp` to run develop tasks of `css`, `js`, `img` and `wp` files and *watch* them.
+
+## 💻 Developing
+
+### Development environment
+All source code must go in`/src/` and all tasks put the distributable code in `/dist/`.
 
 **Main directory tree:**
 ```
 bramework/
-├── dist/     All processed files are here
+├── dist/     Processed files
 ├── docs/     Documentation
 └── src/
-    ├── html/     Put here your HTML files.
-    ├── js/       Put here all you JavaScript files
-    ├── scss/     Put here all your Sass code.
-    └── svg/      Files here are not processed. Only save here your SVG to copy them and put it inline.
+    └── assets/
+        ├── js/     JavaScript files
+        ├── scss/   Scss files
+        ├── img/    Images
+        ├── svg/    Files here are not processed. Only save here your SVG to copy them and put it inline.
+    ├── html/       HTML files.
+    └── wp/         WordPress themes related files.     
 ```
 
 ### Style Guide
@@ -61,14 +64,18 @@ All command must be writted with `npm run COMMAND`
 
 | Command       | Description  |
 | ------------- | ------------- |
-| start     | Create a synced server and watch css, js and html. |
+| build:html     | Build all your HTML project |
+| build:wp     | Build all your WordPress theme |
+| dev:html     | HTML development. Start server and watch all files |
+| dev:wp     | WordPress theme development. Start server* and watch all files |
 
+> *Is ready to work with docker containers and by default does a proxy at `localhost:8080`
 
 
 ### Deploying
 You only need copy the content of */dist/* folder to your server root path.
 
-> Remember save the source code for deploy for build your project again in the future.
+> Remember save the source code for build your project again in the future.
 
 ### Built With
 - [Standarize](https://github.com/barcia/standarize)
