@@ -98,36 +98,46 @@
 
 /* VARIANTS */
 
-// /**
-//  * Fix the navbar always on top
-//  */
-// .Navbar--fixed {
-// 	@include boxShadow(1);
-// 	@include transition(box-shadow); /* 2 */
-// 	position: fixed; /* 1 */
-// 	top: 0;
-// 	will-change: box-shadow;
-//
-// 	@include scrolled {
-// 		@include boxShadow(3);
-// 	}
-// }
-//
-// /**
-//  * Fix the navbar always on top, but it show and hide if scroll down or up
-//  */
-// .Navbar--scrollSensitive {
-// 	@include boxShadow(1);
-// 	@include transition((box-shadow, transform)); /* 2 */
-// 	position: fixed; /* 1 */
-// 	top: 0;
-// 	will-change: box-shadow, transform;
-//
-// 	@include scrolled {
-// 		@include boxShadow(3);
-// 	}
-//
-// 	@include scrollDown {
-// 		transform: translateY(var(--Navbar-height));
-// 	}
-// }
+/**
+ * Fix the navbar always on top
+ */
+.Navbar--fixed {
+	@include boxShadow(1);
+	@include transition(box-shadow); /* 2 */
+	position: fixed; /* 1 */
+	top: 0;
+	will-change: box-shadow;
+
+	@include scrolled {
+		@include boxShadow(3);
+	}
+}
+
+/**
+ * Fix the navbar always on top, but it show and hide if scroll down or up
+ */
+.Navbar--scrollSensitive {
+	@include boxShadow(1);
+	@include transition((box-shadow, transform)); /* 2 */
+	position: fixed; /* 1 */
+	top: 0;
+	will-change: box-shadow, transform;
+
+	@include scrolled {
+		@include boxShadow(3);
+	}
+
+	@include scrollDown {
+		transform: translateY(var(--Navbar-height));
+	}
+}
+
+/**
+ * For WordPress Admin bar
+ */
+.Navbar--fixed,
+.Navbar--scrollSensitive {
+	body.admin-bar & {
+		top: 32px;
+	}
+}
