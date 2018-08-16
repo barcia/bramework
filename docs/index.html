@@ -102,12 +102,22 @@
 			}
 
 		.footer {
-			height: 60px;
 			display: flex;
-    	align-items: center;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 20px;
 		}
 
-		.footer small,
+		.footer-ad {
+			margin-bottom: 10px;
+		}
+
+		.browserstack-logo {
+			height: 25px;
+			vertical-align: middle;
+		}
+
+		.footer,
 		.footer a {
 			color: hsla(0, 0%, 100%, 0.6);
 		}
@@ -148,6 +158,7 @@
 
 
 		<footer class="footer">
+			<small class="footer-ad">Tested on <a href="https://www.browserstack.com" title="BrowserStack" target="blank"><img class="browserstack-logo" src="./assets/img/browserstack-logo.svg" alt="BrowserStack Logo"></a></small>
 			<small>Created by <a href="https://barcia.cc" title="Iván Barcia's website">Iván Barcia</a> • <a href="https://raw.githubusercontent.com/barcia/bramework/master/LICENSE" title="License">MIT License</a></small>
 		</footer>
 	</body>
