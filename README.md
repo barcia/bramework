@@ -86,6 +86,8 @@ You only need copy the content of */dist/* folder to your server root path.
 Developed by Iván Barcia  
 [Web](https://barcia.gal) · [Email](mailto:ivan@barcia.gal) · [Twitter](http://www.twitter.com/bartzia) · [GitHub](http://www.github.com/barcia)
 
+Project tested on [BrowserStack](https://www.browserstack.com/)
+
 
 
 ## 📄 License
