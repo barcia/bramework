@@ -6,7 +6,7 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'],
-.Button {
+[role='button'] {
 	@include inlineFlexCenter;
 	border: 0;
 	outline: 0;
@@ -17,8 +17,13 @@ input[type='submit'],
 	text-decoration: none;
 	white-space: nowrap;
 	vertical-align: bottom;
+	background-color: lightblue;
 
 	&:disabled {
 		color: var(--fontColor--light);
+	}
+
+	&:focus {
+		background-color: lightcoral;
 	}
 }
