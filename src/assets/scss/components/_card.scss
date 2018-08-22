@@ -23,24 +23,6 @@
 
 
 
-// Elements
-.Card-title {
-	margin: 0;
-	font-size: 1.6em;
-}
-
-.Card-subtitle {
-	margin: 0;
-	color: var(--fontColor--light);
-}
-
-.Card-text,
-.Card-subtitle {
-	font-size: 0.9em;
-}
-
-
-
 // Modifiers
 .Card {
 	// Link card
@@ -61,6 +43,7 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+
 
 		// For preserve the aspect ratio
 		// http://nicolasgallagher.com/flexible-css-cover-images

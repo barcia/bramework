@@ -8,13 +8,13 @@
 	--fontFamily: var(--fontFamily-sans-serif);
 	--fontFamily-sans-serif: 'Open Sans', 'Helvetica Neue', Roboto, sans-serif;
 	--fontFamily-serif: serif;
-	--fontFamily-monospace: Hack, Inconsolata, Menlo, monospace;
+	--fontFamily-monospace: Hack, Inconsolata, Menlo, Consolas, monospace;
 	--fontFamily-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, Oxygen-Sans, Ubuntu, Cantarell, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 	// Font size
-	--fontSize: 1rem;
-	--fontSize--large: 1.2rem;
-	--fontSize--small: 0.8rem;
+	--fontSize: 1em;
+	--fontSize--large: 1.2em;
+	--fontSize--small: 0.85em;
 
 	// Font weight
 	--fontWeight--bold: bold;
@@ -36,20 +36,20 @@
 
 	// Headings
 	// Headings - Font size
-	--fontSize-h1: 2rem;
-	--fontSize-h2: 1.6rem;
-	--fontSize-h3: 1.3rem;
-	--fontSize-h4: 1rem;
-	--fontSize-h5: 1rem;
-	--fontSize-h6: 1rem;
+	--fontSize-h1: 2em;
+	--fontSize-h2: 1.6em;
+	--fontSize-h3: 1.3em;
+	--fontSize-h4: 1em;
+	--fontSize-h5: 1em;
+	--fontSize-h6: 1em;
 
 	@include breakpoint(large) {
-		--fontSize-h1: 2.3rem;
-		--fontSize-h2: 2rem;
-		--fontSize-h3: 1.7rem;
-		--fontSize-h4: 1.3rem;
-		--fontSize-h5: 1rem;
-		--fontSize-h6: 1rem;
+		--fontSize-h1: 2.3em;
+		--fontSize-h2: 2em;
+		--fontSize-h3: 1.7em;
+		--fontSize-h4: 1.3em;
+		--fontSize-h5: 1em;
+		--fontSize-h6: 1em;
 	}
 
 	// Headings - Line height

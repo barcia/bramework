@@ -156,3 +156,14 @@
 		}
 	}
 }
+
+
+
+
+@mixin backgroundDecoration($size, $color, $color-gradient: $color) {
+	text-decoration: none;
+	background: linear-gradient($color, $color-gradient);
+	background-size: 100% $size;
+	background-repeat: no-repeat;
+	background-position: left 0 bottom 0;
+}

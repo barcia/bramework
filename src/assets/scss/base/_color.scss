@@ -19,12 +19,8 @@
 
 	// Brand colors
 	$brand-color: $royal-blue;
-	$brand-color-sec: $sunglo;
 
-	--brand-color       : #{$brand-color};
-	--brand-color--c    : #{complement($brand-color)};
-	--brand-color-sec   : #{$brand-color-sec};
-	--brand-color-sec--c: #{complement($brand-color-sec)};
+	--brand-color: #{$royal-blue};
 
 	--white : #{$white};
 	--blue  : #{$royal-blue};
@@ -45,11 +41,6 @@
 	--link-onActive-bgColor--alpha--black: #{alpha-black(0.2)};
 	--link-onHover-bgColor--alpha--white : #{alpha-white(0.1)};
 	--link-onActive-bgColor--alpha--white: #{alpha-white(0.2)};
-
-	// --link-fontColor-alpha-b--hover : #{shadow($alpha, $link-fontColor--hover-pct)};
-	// --link-fontColor-alpha-b--active: #{shadow($alpha, $link-fontColor--active-pct)};
-	// --link-fontColor-alpha-w--hover : #{tint($alpha, $link-fontColor--hover-pct)};
-	// --link-fontColor-alpha-w--active: #{tint($alpha, $link-fontColor--active-pct)};
 }
 
 
@@ -61,7 +52,7 @@ body {
 
 
 ::selection {
-	background-color: var(--brand-color--c);
+	background-color: var(--brand-color);
 	color: $white;
 }
 
@@ -69,8 +60,6 @@ body {
 // Inline elements
 a {
 	color: var(--link-fontColor);
-	text-decoration: underline;
-	@include linkStates(--link-fontColor, var(--link-fontColor--onHover));
 }
 
 

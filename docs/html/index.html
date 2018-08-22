@@ -286,7 +286,11 @@ p q r s t u v w x y z { | } ~
 
       <p>The <var>var</var> element</p>
 
-      <p>The wbr element can split a long<wbr>.word</p>
+			<p>The wbr element can split a long<wbr>.word</p>
+
+			<button>Button</button>
+			<a href="" role="button">A Button</a>
+			<span role="button" tabindex="0">Span Button</span>
 
     </section>
 
@@ -432,15 +436,15 @@ p q r s t u v w x y z { | } ~
           </p>
           <p>
             <label for="input_webaddress">Web Address</label>
-            <input id="input_webaddress" type="url" placeholder="http://yoursite.com">
+            <input id="input_webaddress" type="url" placeholder="http://yoursite.com" autocomplete="url">
           </p>
           <p>
             <label for="input_emailaddress">Email Address</label>
-            <input id="input_emailaddress" type="email" placeholder="name@email.com">
+            <input id="input_emailaddress" type="email" placeholder="name@email.com" autocomplete="email">
           </p>
           <p>
             <label for="input_phone">Phone Number</label>
-            <input id="input_phone" type="tel" placeholder="666 999 666">
+            <input id="input_phone" type="tel" placeholder="666 999 666" autocomplete="tel">
           </p>
           <p>
             <label for="input_search">Search</label>
@@ -571,10 +575,9 @@ p q r s t u v w x y z { | } ~
             <input type="submit" value="submit">
             <input type="button" value="button">
             <input type="reset" value="reset">
-            <input type="submit" value="disabled" disabled>
+						<input type="submit" value="disabled" disabled>
           </p>
         </fieldset>
-
 
       </form>
 

@@ -17,13 +17,13 @@ input[type='submit'],
 	text-decoration: none;
 	white-space: nowrap;
 	vertical-align: bottom;
-	background-color: lightblue;
+	background-color: lightgrey;
 
 	&:disabled {
 		color: var(--fontColor--light);
 	}
 
 	&:focus {
-		background-color: lightcoral;
+		background-color: lightsalmon;
 	}
 }
