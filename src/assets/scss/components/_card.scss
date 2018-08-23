@@ -49,16 +49,11 @@
 		// http://nicolasgallagher.com/flexible-css-cover-images
 		&::before {
 			display: block;
-			padding-bottom: 56.25%; // 16:9 by default
+			padding-bottom: percentage(9 / 16);
 			content: '';
 		}
 
 		// Modifiers
-		&.is-2by1::before {padding-bottom: percentage(1 / 2);} // 2:1
-		&.is-21by9::before {padding-bottom: percentage(9 / 21);} // 21:9
-		&.is-16by9::before {padding-bottom: percentage(9 / 16);} // 16:9
-		&.is-5by3::before {padding-bottom: percentage(3 / 5);} // 5:3
-		&.is-4by3::before {padding-bottom: percentage(3 / 4);} // 4:3
-		&.is-1by1::before {padding-bottom: percentage(1 / 1);} // 1:1
+		@include aspectRatio;
 	}
 }

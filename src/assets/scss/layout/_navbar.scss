@@ -36,6 +36,7 @@
 
 // All inside an element with this class is at right
 .Navbar-right {
+	@include inlineFlexCenter;
 	margin-left: auto;
 }
 
@@ -63,7 +64,7 @@
 /* NAVBAR ITEMS */
 .Navbar-items {
 	@include inlineList;
-	margin-bottom: 0; // To rewrite paragraph default margin-bottom
+	margin: 0;
 
 	li:not(:first-child) {
 		margin-left: var(--Navbar-items-gap);

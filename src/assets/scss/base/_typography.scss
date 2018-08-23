@@ -90,15 +90,15 @@ h6 {font-size: var(--fontSize-h6);}
 
 
 // Text layout
-p,
-ul, ol, dl,
-pre,
-form,
-table,
-figure,
-blockquote {
-	@include marginBottom(base);
-}
+// p,
+// ul, ol, dl,
+// pre,
+// form,
+// table,
+// figure,
+// blockquote {
+// 	@include marginBottom(base);
+// }
 
 p {
 	line-height: var(--lineHeight);

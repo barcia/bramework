@@ -2,14 +2,11 @@
 	#LIST
 \*------------------------------------*/
 
+// Variables
 :root {
 	--List-item-minHeight: 48px;
 	--List-item-paddingVertical: 4px;
 	--List-item-paddingHorizontal: 16px;
-
-	--List-inlineElements-marginHorizontal: 16px;
-	--List-avatar-size: 40px;
-	--List-icon-size: 24px;
 }
 
 
@@ -21,78 +18,54 @@
 	list-style-type: none;
 	background-color: var(--bgColor--light);
 
-	&:not(:last-child) {
-		border-bottom: 1px solid $alpha-b-100;
-	}
-
 	li {
 		display: flex;
+
+		&.is-centered {
+			overflow-x: scroll;
+		}
 	}
 }
 
 
 
 // List items
-.List-item,
+.List-main,
 .List-aside {
+	@include voidLink;
 	display: inline-flex;
 	align-items: center;
 	min-height: var(--List-item-minHeight);
 	padding: var(--List-item-paddingVertical) var(--List-item-paddingHorizontal);
-}
 
-a {
-	&.List-item,
-	&.List-aside {
-		@include voidLink;
-		@include linkStates(background-color, var(--link-onHover-bgColor--alpha--black), var(--link-onActive-bgColor--alpha--black));
+	@include hoverFocus {
+		background-color: var(--link-onHover-bgColor--alpha--black);
+	}
+
+
+	&[data-value]::after {
+		content: attr(data-value);
+		text-align: right;
+		flex: 1;
+		margin-left: var(--List-item-paddingHorizontal);
 	}
 }
 
 
-.List-item {
+.List-main {
 	flex: 1;
 
-	&.is-centered {
+	li.is-centered > & {
 		justify-content: center;
 	}
 }
 
 
-.List-aside {
-	min-width: var(--List-item-minHeight);
-}
-
-
-
-// Inline elements
 .List-icon {
-	@include size(var(--List-icon-size));
-
-	&:not(:last-child) {
-		margin-right: var(--List-inlineElements-marginHorizontal);
+	@include size(1.5em);
+		&:not(:last-child) {
+		margin-right: var(--List-item-paddingHorizontal);
 	}
-}
-
-
-.List-avatar {
-	@include circle(var(--List-avatar-size));
-	object-fit: cover;
-
-	&:not(:last-child) {
-		margin-right: var(--List-inlineElements-marginHorizontal);
-	}
-}
-
-
-.List-text {
-	flex: 1;
-}
-
-
-.List-data {
-	margin-left: var(--List-inlineElements-marginHorizontal);
-	color: var(--fontColor--light);
 }
 
 
@@ -104,7 +77,5 @@ a {
 		--List-item-minHeight: 40px;
 		--List-item-paddingVertical: 2px;
 		--List-item-paddingHorizontal: 8px;
-		--List-inlineElements-marginHorizontal: 8px;
-		--List-avatar-size: 34px;
 	}
 }
