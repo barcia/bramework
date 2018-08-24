@@ -9,33 +9,35 @@
   <body>
 
 		<nav class="Navbar Navbar--fixed">
+			<!-- Left icon -->
+			<span class="Navbar-icon" id="menuButton" href="" aria-controls="menu">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+						<line x1="3" y1="12" x2="21" y2="12"></line>
+						<line x1="3" y1="6" x2="21" y2="6"></line>
+						<line x1="3" y1="18" x2="21" y2="18"></line>
+				</svg>
+			</span>
+
+			<!-- Right section -->
 			<div class="Navbar-right">
 
+				<!-- Links list -->
+				<ul class="Navbar-list" id="menu" aria-labelledby="menuButton">
+					<li><a href="">Link 1</a></li>
+					<li><a href="">Link 2</a></li>
+					<li><a href="">Link 3</a></li>
+					<li><a href="">Link 4</a></li>
+				</ul>
 
-			<ul class="Navbar-items">
-				<li><a class="Navbar-link" href="#">Link 1</a></li>
-				<li><a class="Navbar-link" href="#">Link 2</a></li>
-				<li><a class="Navbar-link" href="#">Link 3</a></li>
-			</ul>
-			<ul class="Navbar-items">
-				<li>
-					<a class="Navbar-icon" href="#">
-						<?xml version="1.0"?>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
-						    <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
+				<!-- Right icon -->
+				<span class="Navbar-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+								<circle cx="12" cy="12" r="1"></circle>
+								<circle cx="12" cy="5" r="1"></circle>
+								<circle cx="12" cy="19" r="1"></circle>
 						</svg>
-					</a>
-				</li>
-				<li>
-					<button class="Navbar-icon">
-						<?xml version="1.0"?>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
-						<path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path>
-						</svg>
-					</button>
-				</li>
-			</ul>
-		</div>
+				</span>
+			</div>
 		</nav>
 
   </body>

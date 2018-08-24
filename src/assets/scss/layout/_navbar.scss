@@ -7,15 +7,12 @@
 	--Navbar-height: 55px;
 	--Navbar-paddingHz: 6px;
 	--Navbar-items-gap: 5px;
-	--Navbar-link-paddingVt: 5px;
-	--Navbar-link-paddingHz: 5px;
-	--Navbar-icon-height: 48px;
+	--Navbar-icon-height: 24px;
 
 	@include breakpoint(large) {
 		--Navbar-height: 65px;
 		--Navbar-paddingHz: 20px;
-		--Navbar-items-gap: 10px;
-		--Navbar-link-paddingHz: 15px;
+		--Navbar-items-gap: 15px;
 	}
 }
 
@@ -29,42 +26,22 @@
 	z-index: 99;
 	display: flex;
 	align-items: center;
-	width: 100%;
+	width: 100vw;
 	height: var(--Navbar-height);
 	padding: 0 var(--Navbar-paddingHz);
 }
 
-// All inside an element with this class is at right
+/* All inside an element with this class is at right */
 .Navbar-right {
 	@include inlineFlexCenter;
 	margin-left: auto;
 }
 
 
-
-
-// WP Navbar
-.Navbar-brand {
-	display: flex;
-}
-
-.Navbar-title {
-	margin: 0;
-}
-
-.custom-logo {
-	max-height: var(--Navbar-height);
-	width: auto;
-}
-
-
-
-
-
-/* NAVBAR ITEMS */
-.Navbar-items {
+/* NAVBAR LIST */
+.Navbar-list {
 	@include inlineList;
-	margin: 0;
+	margin: 0 20px;
 
 	li:not(:first-child) {
 		margin-left: var(--Navbar-items-gap);
@@ -72,27 +49,19 @@
 }
 
 
-// Text
-.Navbar-text {
+/* NAVBAR ICON */
+.Navbar-icon {
 	@include inlineFlexCenter;
-	padding: var(--Navbar-link-paddingVt) var(--Navbar-link-paddingHz);
-	color: var(--link-fontColor);
-	text-decoration: none;
-	@include linkStates(color, var(--link-fontColor--onHover));
+	border-radius: 50%;
+	padding: 12px;
+	cursor: pointer;
+	@include linkStates(background-color, var(--link-onHover-bgColor--alpha--black), var(--link-onActive-bgColor--alpha--black));
 
 	svg {
-		margin-right: 10px;
+		color: var(--fontColor);
+		background-color: transparent;
+		@include circle(var(--Navbar-icon-height));
 	}
-}
-
-
-// Icon
-.Navbar-icon {
-	@include circle(var(--Navbar-icon-height));
-	@include inlineFlexCenter;
-	color: var(--fontColor);
-	background-color: transparent;
-	@include linkStates(background-color, var(--link-onHover-bgColor--alpha--black), var(--link-onActive-bgColor--alpha--black));
 }
 
 
