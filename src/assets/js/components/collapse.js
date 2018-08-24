@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', function() {
 
 	const collapses = Array.prototype.slice.call(document.querySelectorAll('[data-component="collapse"]'));
@@ -9,41 +11,48 @@ document.addEventListener('DOMContentLoaded', function() {
 		let status = controller.getAttribute('aria-expanded') === 'true';
 
 		// Set initial status
-		if (! status) {
-			content.hidden = true;
-			content.setAttribute('aria-hidden', true);
-		} else {
-			content.hidden = false;
-			content.setAttribute('aria-hidden', false);
-		}
+		status ? contentShow() : contentHide();
 
 		// Add event listener
 		controller.addEventListener('click', toggle)
+		controller.addEventListener("keydown", function(event) {
+			if (event.keyCode === 13) { //13 is the Enter key
+				toggle();
+			};
+		});
 
 		// Toggle function
 		function toggle() {
-			if (! status) {
-				show();
-			} else {
-				hide();
-			}
+			status ? hide() : show();
 		}
 
 		// Show function
 		function show() {
-			controller.setAttribute('aria-expanded', true);
-			content.hidden = false;
-			content.setAttribute('aria-hidden', false);
-			status = true;
+			contentShow();
+			statusToggle();
 		}
 
 		// Hide function
 		function hide() {
-			controller.setAttribute('aria-expanded', false);
+			contentHide();
+			statusToggle();
+		}
+
+
+		function contentShow() {
+			content.hidden = false;
+			content.setAttribute('aria-hidden', false);
+		}
+
+		function contentHide() {
 			content.hidden = true;
 			content.setAttribute('aria-hidden', true);
-			status = false;
-		}
+		};
+
+		function statusToggle() {
+			controller.setAttribute('aria-expanded', !status);
+			status = !status;
+		};
 
 	});
 
