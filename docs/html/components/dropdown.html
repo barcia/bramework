@@ -8,26 +8,36 @@
   <script src="../../../dist/assets/script.js" defer></script>
   <body>
 
-		<ul class="">
-			<li><a href="#">Link</a> </li>
-			<li><a href="#">Link</a> </li>
-			<li>
-				<span tabindex="0" >Submenus</span>
-				<ul class="SubMenu">
-					<li><a href="#">Sublink</a></li>
-					<li><a href="#">Sublink</a></li>
-					<li>
-						<a>Link exp</a>
-						<ul class="SubMenu">
-							<li><a class="List-item" href="#">Sublink</a></li>
-							<li><a class="List-item" href="#">Sublink</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Sublink</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Link</a> </li>
-		</ul>
+		<nav>
+			<ul>
+				<li><a href="">Item 1</a></li>
+				<li><a href="">Item 2</a></li>
+				<li><a href="">Item 3</a></li>
+				<li><span class="submenu" href="" aria-haspopup="true" tabindex="0">Item 4 sub</span>
+					<ul aria-expanded="false">
+							<li><a href="">Item 4.1</a></li>
+							<li><a href="">Item 4.2</a></li>
+							<li><a href="">Item 4.3</a></li>
+					</ul>
+				</li>
+				<li><a href="">Item 5</a></li>
+			</ul>
+		</nav>
+		<nav>
+			<ul>
+				<li><a href="">Item 1</a></li>
+				<li><a href="">Item 2</a></li>
+				<li><a href="">Item 3</a></li>
+				<li><span class="submenu" href="" aria-haspopup="true" tabindex="0">Item 4 sub</span>
+					<ul aria-expanded="false">
+							<li><a href="">Item 4.1</a></li>
+							<li><a href="google.es">Item 4.2</a></li>
+							<li><a href="">Item 4.3</a></li>
+					</ul>
+				</li>
+				<li><a href="">Item 5</a></li>
+			</ul>
+		</nav>
 
   </body>
 </html>

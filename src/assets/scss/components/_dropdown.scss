@@ -1,61 +1,64 @@
-/*------------------------------------*\
-	#DROPDOWN
-\*------------------------------------*/
+// /*------------------------------------*\
+// 	#DROPDOWN
+// \*------------------------------------*/
 
-
-.SubMenu {
-	// position: absolute;
-	// right: 0;
-	// @include boxShadow(3);
-	width: 0;
-	height: 0;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-
-	li:hover > &,
-	li:focus > &,
-	li:active > & {
-		width: inherit;
-		height: inherit;
-		overflow: inherit;
-		clip: inherit;
-	}
-}
-
-
-
-// WordPress Sub-menus
-.sub-menu {
+.submenu + [aria-expanded='false'] {
 	display: none;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	list-style-type: none;
-	padding: 0;
-	width: 180px;
-	--Navbar-items-gap: 0;
-
-	& .sub-menu {
-		left: auto;
-		transform: translateX(0);
-		top: -1px;
-		left: 178px;
-	}
-
-
-	li {
-		border: 1px solid $grey-100;
-		padding: 0;
-		&:not(:last-child) {
-			border-bottom: none;
-		}
-	}
-
-	a {
-		display: block;
-	}
-
-	li:hover > & {
-		display: block;
-	}
 }
+
+// .SubMenu {
+// 	// position: absolute;
+// 	// right: 0;
+// 	// @include boxShadow(3);
+// 	width: 0;
+// 	height: 0;
+// 	overflow: hidden;
+// 	clip: rect(0, 0, 0, 0);
+
+// 	li:hover > &,
+// 	li:focus > &,
+// 	li:active > & {
+// 		width: inherit;
+// 		height: inherit;
+// 		overflow: inherit;
+// 		clip: inherit;
+// 	}
+// }
+
+
+
+// // WordPress Sub-menus
+// .sub-menu {
+// 	display: none;
+// 	position: absolute;
+// 	left: 50%;
+// 	transform: translateX(-50%);
+// 	list-style-type: none;
+// 	padding: 0;
+// 	width: 180px;
+// 	--Navbar-items-gap: 0;
+
+// 	& .sub-menu {
+// 		left: auto;
+// 		transform: translateX(0);
+// 		top: -1px;
+// 		left: 178px;
+// 	}
+
+
+// 	li {
+// 		border: 1px solid $grey-100;
+// 		padding: 0;
+// 		&:not(:last-child) {
+// 			border-bottom: none;
+// 		}
+// 	}
+
+// 	a {
+// 		display: block;
+// 	}
+
+// 	li:hover > & {
+// 		display: block;
+// 	}
+// }
