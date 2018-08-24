@@ -1,60 +1,50 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+	const collapses = Array.prototype.slice.call(document.querySelectorAll('[data-component="collapse"]'));
 
-	const collapses = document.getElementsByClassName('collapse');
+	collapses.forEach(function(collapse) {
 
-	for (var i = 0; i < collapses.length; i++) {
-		collapse;
-		collapse.content = collapses[i].getElementsByClassName('collapse-content')[0];
-		collapse.control = collapses[i].getElementsByClassName('collapse-ctrl')[0];
-		// collapse.id = collapses[i].id;
-		collapse.status = collapse.control.getAttribute('aria-expanded');
-		collapse.status = (collapse.status === 'true');
-		// console.log(collapse.status);
+		const controller = collapse.querySelector('[aria-controls]');
+		const content = controller.nextElementSibling;
+		let status = controller.getAttribute('aria-expanded') === 'true';
 
-		collapse.control.addEventListener('click', function() {
-			if (! this.status) {
-				this.control.setAttribute('aria-expanded', true);
-				this.content.hidden = false;
-				this.status = true;
+		// Set initial status
+		if (! status) {
+			content.hidden = true;
+			content.setAttribute('aria-hidden', true);
+		} else {
+			content.hidden = false;
+			content.setAttribute('aria-hidden', false);
+		}
+
+		// Add event listener
+		controller.addEventListener('click', toggle)
+
+		// Toggle function
+		function toggle() {
+			if (! status) {
+				show();
 			} else {
-				this.control.setAttribute('aria-expanded', false);
-				this.content.hidden = true;
-				this.status = false;
-			};
-		});
+				hide();
+			}
+		}
 
-	}
+		// Show function
+		function show() {
+			controller.setAttribute('aria-expanded', true);
+			content.hidden = false;
+			content.setAttribute('aria-hidden', false);
+			status = true;
+		}
 
-	// for (var i = 0; i < collapses.length; i++) {
-	// 	collapse = {};
-	// 	collapse.id = collapses[i].id;
-	// 	collapse.content = document.getElementById(collapse.id );
-	// 	collapse.control = document.querySelector('[aria-controls=' + collapse.id  + ']');
-	// 	collapse.status = collapse.control.getAttribute('aria-expanded');
-	// 	collapse.status = (collapse.status === 'true');
+		// Hide function
+		function hide() {
+			controller.setAttribute('aria-expanded', false);
+			content.hidden = true;
+			content.setAttribute('aria-hidden', true);
+			status = false;
+		}
 
+	});
 
-
-	// 	if (! collapse.status) {
-	// 		collapse.content.hidden = true;
-	// 	} else {
-	// 		collapse.content.hidden = false;
-	// 	};
-
-	// 	collapse.control.addEventListener('click', function() {
-	// 		// collapse.status = collapse.control.getAttribute('aria-expanded');
-	// 		// collapse.status = (collapse.status === 'true');
-
-	// 		if (! collapse.status) {
-	// 			collapse.control.setAttribute('aria-expanded', true);
-	// 			collapse.content.hidden = false;
-	// 			collapse.status = true;
-	// 		} else {
-	// 			collapse.control.setAttribute('aria-expanded', false);
-	// 			collapse.content.hidden = true;
-	// 			collapse.status = false;
-	// 		};
-	// 	});
-	// }
 });
