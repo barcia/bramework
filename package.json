@@ -48,8 +48,8 @@
 		"watch:html": "npm run html-build -- --watch",
 		"watch:wp": "npm run wp-build -- --watch",
 		"watch:assets": "npm run img-build -- --watch",
-		"serve:html": "browser-sync start --server './dist/' --browser 'google chrome' --watch --files 'dist/assets/style.css, dist/assets/script.js, dist/**/*.html'",
-		"serve:wp": "browser-sync start --proxy 'localhost:8080' --browser 'google chrome' --watch --files 'dist/assets/style.css, dist/assets/script.js, dist/**/*.php'",
+		"serve:html": "browser-sync start --server './dist/' --browser 'firefox developer edition' --watch --files 'dist/assets/style.css, dist/assets/script.js, dist/**/*.html'",
+		"serve:wp": "browser-sync start --proxy 'localhost:8080' --browser 'firefox developer edition' --watch --files 'dist/assets/style.css, dist/assets/script.js, dist/**/*.php'",
 		"export:wp": "cpx 'dist/**/*' /Users/ivan/Developer/wp/wordpress/wp-content/themes/wololoo --watch"
 	},
 	"dependencies": {},
