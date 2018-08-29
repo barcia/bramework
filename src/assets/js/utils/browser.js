@@ -61,6 +61,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	browser.online = navigator.onLine;
 	document.documentElement.dataset.online = browser.online;
 
+	// Get the navigator language
+	// The 'lang' atributte refers to content lang
+	browser.lang = navigator.language;
+	document.documentElement.dataset.browserlang = browser.lang;
+
 });
 
 
