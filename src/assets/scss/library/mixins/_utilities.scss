@@ -37,6 +37,7 @@
 }
 
 
+/// Aspect radio
 @mixin aspectRatio {
 	&.is-2by1::before {padding-bottom: percentage(1 / 2);} // 2:1
 	&.is-21by9::before {padding-bottom: percentage(9 / 21);} // 21:9
