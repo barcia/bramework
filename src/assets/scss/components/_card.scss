@@ -12,7 +12,7 @@
 	background-color: var(--bgColor--light);
 	border-radius: 5px;
 
-	@include breakpoint(medium) {
+	@include from(medium) {
 		width: 400px;
 	}
 }

@@ -9,7 +9,7 @@
 	--Navbar-items-gap: 5px;
 	--Navbar-icon-height: 24px;
 
-	@include breakpoint(large) {
+	@include from(large) {
 		--Navbar-height: 65px;
 		--Navbar-paddingHz: 20px;
 		--Navbar-items-gap: 15px;

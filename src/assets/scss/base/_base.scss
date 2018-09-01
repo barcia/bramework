@@ -4,7 +4,6 @@
 
 // Variables
 :root {
-
 	// Site Layout
 	--site-maxWidth   : 1920px;
 	--wrapper-width   : 800px;
@@ -19,14 +18,10 @@
 
 
 
-/// Breakpoints map
-/// @group breakpoint
-/// @type Map
-/// @prop {Number} medium - 450px.
-/// @prop {Number} large - 1024px.
-/// @prop {Number} extraLarge - 1920px.
+// Breakpoints map
 $breakpoints: (
 	'medium': 450px,
 	'large': 1024px,
-	'extraLarge': 1920px,
+	'widescreen': 1344px,
+	'fullhd': 1920px,
 ) !default;

@@ -17,18 +17,18 @@
 	.gallery-columns-#{$i} {
 
 		@if $i = 2 {
-			@include breakpoint(medium) {
+			@include from(medium) {
 				grid-template-columns: repeat(2, 1fr);
 			}
 		}
 
 		@if $i >= 3 {
-			@include breakpoint(medium) {
+			@include from(medium) {
 				grid-template-columns: repeat(3, 1fr);
 			}
 		}
 
-		@include breakpoint(large) {
+		@include from(large) {
 			grid-template-columns: repeat(#{$i}, 1fr);
 		}
 	}

@@ -43,7 +43,7 @@
 	--fontSize-h5: 1em;
 	--fontSize-h6: 1em;
 
-	@include breakpoint(large) {
+	@include from(large) {
 		--fontSize-h1: 2.3em;
 		--fontSize-h2: 2em;
 		--fontSize-h3: 1.7em;
@@ -115,7 +115,7 @@ ol {
 		@include paddingVt(5px);
 	}
 
-	@include breakpoint(large) {
+	@include from(large) {
 		padding-left: 30px;
 	}
 }

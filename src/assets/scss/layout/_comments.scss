@@ -19,7 +19,7 @@
 	'notes'
 	'footer';
 
-	@include breakpoint(large) {
+	@include from(large) {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-areas:
 		'logged logged logged'

@@ -113,7 +113,7 @@
 /// All between $first and $last
 /// @param {number} $first - The number that marks the beginning
 /// @param {number} $last - The number that marks the ending
-@mixin between($first, $last) {
+@mixin childBetween($first, $last) {
 	&:nth-child(n + #{$first}):nth-child(-n + #{$last}) {  //sass-lint:disable-line force-pseudo-nesting
 		@content;
 	}

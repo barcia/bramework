@@ -11,22 +11,22 @@
 .h-invisible {visibility: hidden !important;}
 
 // Hidden from medium to high
-@include breakpoint(medium) {.h-md-hidden {display: none !important;}}
+@include from(medium) {.h-md-hidden {display: none !important;}}
 
 // Hidden from large to high
-@include breakpoint(large) {.h-lg-hidden {display: none !important;}}
+@include from(large) {.h-lg-hidden {display: none !important;}}
 
 // Hidden from extraLarge to high
-@include breakpoint(extraLarge) {.h-xl-hidden {display: none !important;}}
+@include from(extraLarge) {.h-xl-hidden {display: none !important;}}
 
 // Show from medium to high
-@include breakpointDown(medium) {.h-md-show {display: none !important;}}
+@include until(medium) {.h-md-show {display: none !important;}}
 
 // Show from large to high
-@include breakpointDown(large) {.h-lg-show {display: none !important;}}
+@include until(large) {.h-lg-show {display: none !important;}}
 
 // Show from extraLarge to high
-@include breakpointDown(extraLarge) {.h-xl-show {display: none !important;}}
+@include until(extraLarge) {.h-xl-show {display: none !important;}}
 
 
 // A11Y
