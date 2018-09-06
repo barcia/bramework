@@ -65,7 +65,7 @@
 		"postcss-cli": "^5.0.0",
 		"sass-lint": "^1.12.1",
 		"sassdoc": "^2.5.0",
-		"standarize": "^0.3.3",
+		"standarize": "^1.0.0",
 		"uglify-es": "^3.3.9"
 	},
 	"browserslist": [
