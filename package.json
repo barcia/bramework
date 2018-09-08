@@ -17,14 +17,14 @@
 		"url": "https://github.com/barcia/bramework/issues"
 	},
 	"scripts": {
-		"clean": "rm -rf dist log && mkdir -p dist/assets/ log/",
+		"clean": "rm -rf dist && mkdir -p dist/assets/",
 		"css-sass-build": "node-sass --output-style compressed --error-bell src/assets/scss/style.scss dist/assets/style.css --include-path 'node_modules/'",
 		"css-sass-dev": "node-sass --output-style expanded --error-bell --source-comments true --source-map-embed true --source-map-contents true src/assets/scss/style.scss dist/assets/style.css --include-path 'node_modules/'",
 		"css-postcss-build": "postcss --no-map --use autoprefixer --replace dist/assets/style.css",
 		"css-postcss-dev": "postcss --use autoprefixer --replace dist/assets/style.css",
-		"css-build": "run-s css-lint css-sass-build css-postcss-build",
-		"css-dev": "run-s css-lint css-sass-dev css-postcss-dev",
-		"css-lint": "stylelint 'src/assets/scss/**/*.scss' --config src/assets/scss/.stylelintrc -f verbose > src/assets/scss/lint.log || echo \"💥 lint fail for some file(s)\n📄 See $(pwd)/src/assets/scss/lint.log\"",
+		"css-build": "run-s css-sass-build css-postcss-build",
+		"css-dev": "run-s css-sass-dev css-postcss-dev",
+		"sass-lint": "stylelint 'src/assets/scss/**/*.scss' --config '.stylelintrc' --cache -f verbose > sasslint.log || echo \"💥 lint fail for some file(s)\n📄 See $(pwd)/sasslint.log\"",
 		"js-browserify-build": "browserify src/assets/js/script.js --outfile dist/assets/script.js",
 		"js-browserify-dev": "browserify --debug src/assets/js/script.js --outfile dist/assets/script.js",
 		"js-uglify": "uglifyjs dist/assets/script.js --mangle --compress  --output dist/assets/script.js",
@@ -46,6 +46,7 @@
 		"watch:html": "npm run html-build -- --watch",
 		"watch:wp": "npm run wp-build -- --watch",
 		"watch:assets": "npm run img-build -- --watch",
+		"lint": "npm run sass-lint",
 		"serve:html": "browser-sync start --server './dist/' --browser 'firefox developer edition' --watch --files 'dist/assets/style.css, dist/assets/script.js, dist/**/*.html'",
 		"serve:wp": "browser-sync start --proxy 'localhost:8080' --browser 'firefox developer edition' --watch --files 'dist/assets/style.css, dist/assets/script.js, dist/**/*.php'",
 		"export:wp": "cpx 'dist/**/*' /Users/ivan/Developer/wp/wordpress/wp-content/themes/wololoo --watch"
@@ -65,6 +66,7 @@
 		"standarize": "^1.0.0",
 		"stylelint": "^9.5.0",
 		"stylelint-config-recommended": "^2.1.0",
+		"stylelint-order": "^1.0.0",
 		"stylelint-scss": "^3.3.0",
 		"uglify-es": "^3.3.9"
 	}

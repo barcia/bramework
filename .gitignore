@@ -12,7 +12,6 @@ test.*
 
 # Dependency directories
 node_modules/
-bower_components/
 
 # Cache
 .cache
@@ -20,6 +19,7 @@ bower_components/
 .eslintcache
 .npm
 .env
+.stylelintcache
 
 # OS
 .directory
@@ -30,8 +30,6 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Editors
-*.sublime-project
-*.sublime-workspace
 .vscode/*
 
 # Thumbnails
