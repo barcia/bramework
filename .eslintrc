@@ -1,0 +1,17 @@
+{
+	"parserOptions": {
+		"ecmaVersion": 6
+	},
+	"rules": {
+		"semi": 2
+	},
+	"env": {
+		"browser": true
+	},
+	"rules": {
+		"no-console": [1],
+		"quotes": [1, "single"],
+
+		"indent": [1, "tab"]
+	}
+}
