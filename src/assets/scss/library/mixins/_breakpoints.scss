@@ -1,9 +1,11 @@
-// If the $breakpoint exists in the $breakpoints map prints a media query based on the value, else use a custom breakpoint
+// Can use $breakpoint name that exists in the $breakpoints map or a custom breakpoint
 
 // From $breakpoint to up
 @mixin from($breakpoint) {
 	$value: map-get($breakpoints, $breakpoint);
-	@if $value == null {$value: $breakpoint}
+
+	@if $value == null {$value: $breakpoint;}
+
 	@media (min-width: $value) {
 		@content;
 	}
@@ -14,7 +16,9 @@
 // From $breakpoint to down
 @mixin until($breakpoint) {
 	$value: map-get($breakpoints, $breakpoint);
-	@if $value == null {$value: $breakpoint}
+
+	@if $value == null {$value: $breakpoint;}
+
 	@media (max-width: $value) {
 		@content;
 	}
@@ -26,8 +30,10 @@
 @mixin between($breakpoint1, $breakpoint2) {
 	$value1: map-get($breakpoints, $breakpoint1);
 	$value2: map-get($breakpoints, $breakpoint2);
+
 	@if $value1 == null {$value1: $breakpoint1;}
 	@if $value2 == null {$value2: $breakpoint2;}
+
 	@media (min-width: $value1) and (max-width: $value2) {
 		@content;
 	}

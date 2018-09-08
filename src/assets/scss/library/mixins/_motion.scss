@@ -1,67 +1,9 @@
-////
-/// @group motion
-////
-
-/// Transitions
-/// @param {string} $property - The property who will be transitioned
-/// @param {string} $duration [$transitionTime] - The number of seconds or milliseconds a transition animation should take to complete
-/// @param {string} $timing-function [transition-timing-function] - How the intermediate values of the CSS properties being affected. Use `ease`, `linear`, `step-end`, `steps(4, end)`, etc. View the [docs](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function) or an [example](http://css3.bradshawenterprises.com/transitions/)
-/// @example scss - Simple usage
-///	 .foo {
-///		 @include transition(width);
-///	 }
-/// @example scss - More than one property
-///	 .foo {
-///		 @include transition([width, height]);
-///	 }
-/// @example scss - More than one property and change duration
-///	 .foo {
-///		 @include transition([width, height], 5s);
-///	 }
-@mixin transition($property, $duration: var(--transitionTime), $timing-function: var(--transitionTimingFunction)) {
-	transition-delay: 0s;
+// Transitions
+// Example: @include transition([width, height], 5s);
+@mixin transition($property,
+									$duration: var($transitionTime),
+									$timing-function: var($transitionTimingFunction)) {
 	transition-duration: $duration;
 	transition-property: $property;
-	transition-timing-function: $timing-function; //timing-function ('ease', 'linear', 'step-end', 'steps(4, end)') (http://goo.gl/2rbYlE	| http://goo.gl/3btZHf)
-}
-
-
-
-/// Animation mixin with default values that you can change
-/// @param {string} $name - The animation name declarated in the @keyframe
-/// @param {time} $duration - The length of time that an animation should take to complete one cycle
-/// @param {string} $function [ease-in-out] - How a CSS animation should progress over the duration of each cycle. View the [docs](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function) or an [example](http://css3.bradshawenterprises.com/transitions/)
-/// @param {time} $delay [0s] - Specifies when the animation should start
-/// @param {string} $count [infinite] - The number of times an animation cycle should be played before stopping
-/// @param {string} $direction [alternate] - Indicates whether the animation should play in reverse on alternate cycles
-/// @param {string} $mode [fordwards] - Specifies how a CSS animation should apply styles to its target before and after it is executing
-/// @param {string} $play-state [running] - Setermines whether an animation is running or paused
-/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation Mozilla Developer Network
-///
-/// @example scss - Usage
-///	 .foo {
-///		 @include animation(beat);
-///	 }
-/// @example scss - Usage changing the duration
-///	 .foo {
-///		 @include animation(beat, 400ms);
-///	 }
-/// @example scss - Keyframes declaration
-///	 @keyframes $beat {
-///		 from {transform: scale(1);}
-///		 to {transform: scale(1.15);}
-///	 }
-///	 @keyframes $spin {
-///		 0% {transform: rotate(0deg);};
-///		 100% {transform: rotate(359deg);};
-///	 }
-@mixin animation($name, $duration, $function: ease-in-out, $delay: 0s, $count: infinite, $direction: alternate, $mode: fordwards, $play-state: running) {
-	animation-delay: $delay;
-	animation-duration: $duration;
-	animation-iteration-count: $count;
-	animation-name: $name;
-	animation-play-state: $play-state;
-	animation-timing-function: $function; //(http://goo.gl/2rbYlE	|	http://goo.gl/3btZHf)
-	animation-fill-mode: $mode;
-	animation-direction: $direction;
+	transition-timing-function: $timing-function; // http://goo.gl/2rbYlE
 }

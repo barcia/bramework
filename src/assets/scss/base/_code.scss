@@ -1,18 +1,17 @@
-/*------------------------------------*\
-	#CODE
-\*------------------------------------*/
+/* $CODE */
 
-
-// Code
+// Typography
 pre,
 code,
 kbd,
 samp {
-	font-size: var(--code-fontSize, 0.85rem);
 	font-family: var(--fontFamily-monospace);
+	font-size: var(--code-fontSize, 0.85rem);
 }
 
 
+
+// Color
 pre,
 code {
 	color: var(--code-fontColor, var(--fontColor));
@@ -38,16 +37,16 @@ pre {
 kbd {
 	display: inline-block;
 	padding: 0 5px;
+	border-radius: 2px;
 	line-height: var(--lineHeight);
 	vertical-align: middle;
-	border-radius: 2px;
 	user-select: all;
 }
 
 
 
 // Code themes
-code {
+code { // stylelint-disable-line no-descending-specificity
 	&.is-dark {
 		--code-fontColor: #{$white};
 		--code-bgColor: #{$grey-700};

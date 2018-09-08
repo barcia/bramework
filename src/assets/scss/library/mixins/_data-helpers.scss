@@ -1,55 +1,72 @@
-////
-/// @group data-helpers
-////
+// Color schemes
+@mixin colorSchemeDark {
+	[data-color-scheme="dark"] & {
+		@content;
+	}
+}
 
-/// Styles for the item when is in a touchDevice
+@mixin colorSchemeLight {
+	[data-color-scheme="light"] & {
+		@content;
+	}
+}
+
+@mixin colorSchemeHighContrast {
+	[data-color-scheme="highcontrast"] & {
+		@content;
+	}
+}
+
+
+
+// Styles for the item when is in a touchDevice
 @mixin touchDevice {
-	[data-touchdevice='true'] & {
+	[data-touchdevice="true"] & {
 		@content;
 	}
 }
 
 
 
-/// Styles for the item when isn't in a touchDevice
+// Styles for the item when isn"t in a touchDevice
 @mixin notTouchDevice {
-	[data-touchdevice='false'] & {
+	[data-touchdevice="false"] & {
 		@content;
 	}
 }
 
 
 
-/// Styles for the item when the page is scroll down
+// Styles for the item when the page is scroll down
 @mixin scrollDown {
-	[data-scrolldir='down'] & {
+	[data-scrolldir="down"] & {
 		@content;
 	}
 }
 
 
 
-/// Styles for the item when the page is scroll up
+// Styles for the item when the page is scroll up
 @mixin scrollUp {
-	[data-scrolldir='up'] & {
+	[data-scrolldir="up"] & {
 		@content;
 	}
 }
 
 
 
-/// Styles for the item when page is scrolled
+// Styles for the item when page is scrolled
 @mixin scrolled {
-	[data-scroll='true'] & {
+	[data-scroll="true"] & {
 		@content;
 	}
 }
 
 
 
-/// Styles for the item when is night
+// Styles for the item when is night
 @mixin night {
-	[data-night='true'] & {
+	[data-night="true"] & {
 		@content;
 	}
 }

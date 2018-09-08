@@ -1,8 +1,5 @@
-////
-/// @group layout
-////
+// Completly center items in a `flex` container
 
-/// Completly center items in a `flex` container
 @mixin flexCenter {
 	display: flex;
 	align-items: center;
@@ -11,7 +8,6 @@
 
 
 
-/// Completly center items in a `inline-flex` container
 @mixin inlineFlexCenter {
 	display: inline-flex;
 	align-items: center;
@@ -20,28 +16,24 @@
 
 
 
-/// Vertical center absolute item
-@mixin verticalCenter {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+// Completly center a block item
+@mixin blockCenter {
+	display: block;
+	margin: auto;
 }
 
 
 
-/// Horizontal center absolute item
-@mixin horizontalCenter {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+// Vertical center a block item
+@mixin blockCenterVt {
+	@include marginVt(auto);
+	display: block;
 }
 
 
 
-/// Completly center absolute item
-@mixin absoluteCenter {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+/// Horizontal center a block item
+@mixin blockCenterHz {
+	@include marginHz(auto);
+	display: block;
 }

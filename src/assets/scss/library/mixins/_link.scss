@@ -1,19 +1,4 @@
-////
-/// @group link
-////
-
-/// Mixin to styles in :hover and :focus pseudo-classes
-/// @example scss - Usage
-///   .foo {
-///     @include hoverFocus {
-///   		background-color: red;
-///   	}
-///   }
-/// @example css - Output
-///   .foo:hover,
-///   .foo:focus {
-///   		background-color: red;
-///   }
+// Mixin to styles in :hover and :focus pseudo-classes
 @mixin hoverFocus {
 	&:hover,
 	&:focus {
@@ -23,19 +8,7 @@
 
 
 
-/// Mixin to styles in :hover, :focus and :active pseudo-classes
-/// @example scss - Usage
-///   .foo {
-///     @include hoverFocusActive {
-///   		background-color: red;
-///   	}
-///   }
-/// @example css - Output
-///   .foo:hover,
-///   .foo:focus,
-///   .foo:active {
-///   		background-color: red;
-///   }
+// Mixin to styles in :hover, :focus and :active pseudo-classes
 @mixin hoverFocusActive {
 	&:hover,
 	&:focus,
@@ -46,21 +19,8 @@
 
 
 
-/// Mixin to styles in :hover, :focus and :active pseudo-classes **and the element itself**
-/// @example scss - Usage
-///   .foo {
-///     @include selfHoverFocusActive{
-///   		background-color: red;
-///   	}
-///   }
-/// @example css - Output
-///   .foo,
-///   .foo:hover,
-///   .foo:focus,
-///   .foo:active {
-///   		background-color: red;
-///   }
-@mixin selfHoverFocusActive{
+// Mixin to styles in :hover, :focus and :active pseudo-classes **and the element itself**
+@mixin selfHoverFocusActive {
 	&,
 	&:hover,
 	&:focus,
@@ -71,38 +31,17 @@
 
 
 
-/// Mixin to remove the link classes and its pseudo-classes
-/// @example scss
-///   .link {
-///   	@include voidLink;
-///   }
+// Mixin to remove the link classes and its pseudo-classes
 @mixin voidLink {
-	@include selfHoverFocusActive{
-		color: inherit;
+	@include selfHoverFocusActive {
 		text-decoration: none;
+		color: inherit;
 	}
 }
 
 
 
-/// Mixin to add the styles to selector pseudo classes
-/// @param {string} $property - The property who will be modified
-/// @param {string} $value1 - The value for :hover and :focus status, and for
-/// :active if $value2 is not passed
-/// @param {string} $value2 [$value1] - Value for :active status
-/// @example scss - Usage
-///   .link {
-///   	@include linkStates(color, red, blue);
-///   }
-/// @example css - Output
-///   .link:hover,
-///   .link:focus {
-///   	color: red
-///   }
-///
-///   .link:active {
-///   	color:blue;
-///   }
+// Mixin to add the styles to selector pseudo classes
 @mixin linkStates($property, $value1, $value2: $value1) {
 	@include hoverFocus {
 		#{$property}: $value1;
@@ -115,16 +54,8 @@
 
 
 
-/// Mixin to create an animated underline effect when the text is hovered over
-/// @param {axis} $axix - The axis to create the animation. (X or Y)
-/// @param {color} $color - The underline color
-/// @param {units} $height - The underline height
-/// @param {units} $time - The animation time
-/// @link https://atomiks.github.io/30-seconds-of-css/#hover-underline-animation
-/// @example scss - Usage
-///   .foo {
-///   	@include underlineAnimation(x, red, 2px, 0.3s);
-///   }
+// Mixin to create an animated underline effect when the text is hovered over
+// Example: @include underlineAnimation(x, red, 2px, 0.3s);
 @mixin underlineAnimation($axis, $color, $height, $time) {
 	position: relative;
 	display: inline-block;
@@ -136,13 +67,12 @@
 		width: 100%;
 		height: $height;
 		background-color: $color;
-		content: '';
+		content: "";
 		transition: transform $time ease-out;
 		transform-origin: bottom left;
 		@if $axis == X or $axis == x {
 			transform: scaleX(0);
-		}
-		@else {
+		} @else {
 			transform: scaleY(0);
 		}
 	}
@@ -150,20 +80,8 @@
 	&:hover::after {
 		@if $axis == X or $axis == x {
 			transform: scaleX(1);
-		}
-		@else {
+		} @else {
 			transform: scaleY(1);
 		}
 	}
-}
-
-
-
-
-@mixin backgroundDecoration($size, $color, $color-gradient: $color) {
-	text-decoration: none;
-	background: linear-gradient($color, $color-gradient);
-	background-size: 100% $size;
-	background-repeat: no-repeat;
-	background-position: left 0 bottom 0;
 }

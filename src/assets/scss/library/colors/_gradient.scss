@@ -1,9 +1,9 @@
-// sass-lint:disable space-before-colon hex-length
+// stylelint-disable color-no-hex
+// stylelint-disable scss/dollar-variable-colon-space-before
 
 // UI Gradients
 // https://uigradients.com
 // https://github.com/subinsebastian/uigradients-scss
-
 $sea-blue                     : #2b5876 , #4e4376;
 $nimvelo                      : #314755 , #26a0da;
 $noon-to-dusk                 : #ff6e7f , #bfe9ff;
@@ -198,7 +198,7 @@ $dawn                         : #f3904f , #3b4371;
 $mild                         : #67b26f , #4ca2cd;
 $vice-city                    : #3494e6 , #ec6ead;
 $jaipur                       : #dbe6f6 , #c5796d;
-$cocoaa-ice                   : #c0c0aa , #1ce;
+$cocoaa-ice                   : #c0c0aa , #1ce1ce;
 $easymed                      : #dce35b , #45b649;
 $rose-colored-lenses          : #e8cbc0 , #636fa4;
 $what-lies-beyond             : #f0f2f0 , #000c40;

@@ -1,3 +1,4 @@
+/*
 // Comments
 .post-comments {
 	ol,
@@ -12,28 +13,28 @@
 	grid-column-gap: 10px;
 	grid-template-rows: auto;
 	grid-template-areas:
-	'author'
-	'email'
-	'url'
-	'message'
-	'notes'
-	'footer';
+		"author"
+		"email"
+		"url"
+		"message"
+		"notes"
+		"footer";
 
-	@include from(large) {
+	@include from(medium) {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-areas:
-		'logged logged logged'
-		'author email url'
-		'message message message'
-		'notes notes notes'
-		'footer footer footer';
+			"logged logged logged"
+			"author email url"
+			"message message message"
+			"notes notes notes"
+			"footer footer footer";
 	}
 }
 
-.logged-in-as { grid-area: logged; }
-.comment-form-author { grid-area: author; }
-.comment-form-email { grid-area: email; }
-.comment-form-url { grid-area: url; }
+.logged-in-as {grid-area: logged;}
+.comment-form-author {grid-area: author;}
+.comment-form-email {grid-area: email;}
+.comment-form-url {grid-area: url;}
 
 .comment-form-comment {
 	display: flex;
@@ -41,8 +42,8 @@
 	grid-area: message;
 }
 
-.comment-notes { grid-area: notes; }
-.form-submit { grid-area: footer; }
+.comment-notes {grid-area: notes;}
+.form-submit {grid-area: footer;}
 
 
 
@@ -52,3 +53,4 @@
 	display: flex;
 	flex-direction: column;
 }
+*/

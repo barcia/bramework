@@ -1,6 +1,4 @@
-/*------------------------------------*\
-	#LIST
-\*------------------------------------*/
+/* $LIST */
 
 // Variables
 :root {
@@ -44,10 +42,10 @@
 
 
 	&[data-value]::after {
-		content: attr(data-value);
-		text-align: right;
 		flex: 1;
 		margin-left: var(--List-item-paddingHorizontal);
+		text-align: right;
+		content: attr(data-value);
 	}
 }
 
@@ -63,14 +61,17 @@
 
 .List-icon {
 	@include size(1.5em);
-		&:not(:last-child) {
+
+	&:not(:last-child) {
 		margin-right: var(--List-item-paddingHorizontal);
 	}
 }
 
 
 
-// Variants
+// VARIANTS
+// stylelint-disable no-duplicate-selectors
+
 // Small variant
 .List {
 	&.is-small {

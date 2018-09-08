@@ -1,6 +1,4 @@
-/*------------------------------------*\
-	#NAVBAR
-\*------------------------------------*/
+/* $NAVBAR */
 
 // Variables
 :root {
@@ -9,7 +7,7 @@
 	--Navbar-items-gap: 5px;
 	--Navbar-icon-height: 24px;
 
-	@include from(large) {
+	@include from(medium) {
 		--Navbar-height: 65px;
 		--Navbar-paddingHz: 20px;
 		--Navbar-items-gap: 15px;
@@ -52,25 +50,25 @@
 /* NAVBAR ICON */
 .Navbar-icon {
 	@include inlineFlexCenter;
-	border-radius: 50%;
 	padding: 12px;
+	border-radius: 50%;
 	cursor: pointer;
-	@include linkStates(background-color, var(--link-onHover-bgColor--alpha--black), var(--link-onActive-bgColor--alpha--black));
+	@include linkStates(background-color,
+											var(--link-onHover-bgColor--alpha--black),
+											var(--link-onActive-bgColor--alpha--black));
 
 	svg {
+		@include circle(var(--Navbar-icon-height));
 		color: var(--fontColor);
 		background-color: transparent;
-		@include circle(var(--Navbar-icon-height));
 	}
 }
 
 
 
-/* VARIANTS */
+// VARIANTS
 
-/**
- * Fix the navbar always on top
- */
+// Fix the navbar always on top
 .Navbar--fixed {
 	@include boxShadow(1);
 	@include transition(box-shadow); /* 2 */
@@ -83,9 +81,8 @@
 	}
 }
 
-/**
- * Fix the navbar always on top, but it show and hide if scroll down or up
- */
+
+// Fix the navbar always on top, but it show and hide if scroll down or up
 .Navbar--scrollSensitive {
 	@include boxShadow(1);
 	@include transition((box-shadow, transform)); /* 2 */
@@ -102,9 +99,8 @@
 	}
 }
 
-/**
- * For WordPress Admin bar
- */
+
+// For WordPress Admin bar
 .Navbar--fixed,
 .Navbar--scrollSensitive {
 	body.admin-bar & {

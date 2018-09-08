@@ -1,8 +1,8 @@
-// Footer
+/* $FOOTER */
 .footer {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	flex-direction: column;
 	background-color: $oc-grey-100;
 }
 
@@ -12,16 +12,16 @@
 
 .footer-widgetArea {
 	display: flex;
+	align-items: flex-start;
 	flex-wrap: wrap;
 	justify-content: center;
 	padding: 20px;
-	align-items: flex-start;
 
 	.widget {
-		min-width: 200px;
-		max-width: 500px;
-		margin: 20px;
 		flex: 1;
+		max-width: 500px;
+		min-width: 200px;
+		margin: 20px;
 		background-color: $oc-grey-300;
 	}
 }

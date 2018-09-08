@@ -1,26 +1,26 @@
-/*------------------------------------*\
-	#FORM
-\*------------------------------------*/
+/* $FORM */
 
-// Variables
-$InputText: 'textarea',
-'input[type=email]',
-'input[type=password]',
-'input[type=search]',
-'input[type=tel]',
-'input[type=text]',
-'input[type=url]',
-'input[type=number]',
-'input[type=datetime]',
-'input[type=datetime-local]',
-'input[type=date]',
-'input[type=month]',
-'input[type=week]',
-'input[type=time]',
-'input[list]';
+// VARIABLES
+// Text-type input
+$InputText: "textarea",
+	"input[type=email]",
+	"input[type=password]",
+	"input[type=search]",
+	"input[type=tel]",
+	"input[type=text]",
+	"input[type=url]",
+	"input[type=number]",
+	"input[type=datetime]",
+	"input[type=datetime-local]",
+	"input[type=date]",
+	"input[type=month]",
+	"input[type=week]",
+	"input[type=time]",
+	"input[list]";
 
 
-// Default
+
+// Basic
 input,
 textarea,
 select {
@@ -32,18 +32,15 @@ select {
 }
 
 
-// Input fields
+
+// Text-type input fields
 #{$InputText} {
-	@include transition(border-color, var(--transitionTime--fast));
+	@include transition(border-color, var($transitionTime--fast));
 	padding: 5px 10px;
-	color: var(--fontColor);
-	background-color: transparent;
 	border: 1px solid $grey-200;
 	border-radius: 0;
-
-	&::placeholder {
-		color: var(--fontColor--lighter);
-	}
+	color: var(--fontColor);
+	background-color: transparent;
 
 	&:focus {
 		border-color: var(--brand-color);
@@ -51,5 +48,9 @@ select {
 
 	&:disabled {
 		background-color: $alpha-b-50;
+	}
+
+	&::placeholder {
+		color: var(--fontColor--lighter);
 	}
 }

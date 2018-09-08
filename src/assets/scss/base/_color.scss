@@ -1,28 +1,30 @@
-/*------------------------------------*\
-	#COLOR
-\*------------------------------------*/
+/* $COLOR */
 
-// Variables
+// VARIABLES
+// Brand color
+$brand-color: $royal-blue;
+
+
+
+// CUSTOM PROPERTIES
+// stylelint-disable declaration-colon-space-before
 :root {
-	--bgColor--dark: #{$oc-grey-800};
+	// Background color
+	--bgColor--dark : #{$oc-grey-800};
 	--bgColor--light: #{$white};
 
 	// Font color
-	--fontColor: #{$grey-700};
-	--fontColor--light: #{$grey-500};
-	--fontColor--lighter: #{$grey-300};
-	--fontColor--dark: #{$grey-900};
-
+	--fontColor             : #{$grey-700};
+	--fontColor--light      : #{$grey-500};
+	--fontColor--lighter    : #{$grey-300};
+	--fontColor--dark       : #{$grey-900};
 	--fontColor-alpha--black: #{alpha-black(0.4)};
 	--fontColor-alpha--white: #{alpha-white(0.4)};
 
-
-	// Brand colors
-	$brand-color: $royal-blue;
-
+	// Brand color
 	--brand-color: #{$royal-blue};
 
-	--white : #{$white};
+	// Basic color
 	--blue  : #{$royal-blue};
 	--green : #{$nephritis};
 	--orange: #{$carrot-500};
@@ -31,30 +33,32 @@
 	--red   : #{$pure-crimson};
 	--yellow: #{$sandstorm};
 
-
 	// Link colors
 	--link-fontColor          : #{$brand-color};
 	--link-fontColor--onHover : #{shadow($brand-color, 15%)};
 	--link-fontColor--onActive: #{shadow($brand-color, 30%)};
 
+	// Link color - status
 	--link-onHover-bgColor--alpha--black : #{alpha-black(0.1)};
 	--link-onActive-bgColor--alpha--black: #{alpha-black(0.2)};
 	--link-onHover-bgColor--alpha--white : #{alpha-white(0.1)};
 	--link-onActive-bgColor--alpha--white: #{alpha-white(0.2)};
 }
+// stylelint-enable
 
 
 // Body
 body {
-	background-color: var(--bgColor--light);
 	color: var(--fontColor);
+	background-color: var(--bgColor--light);
 }
 
 
 ::selection {
-	background-color: var(--brand-color);
 	color: $white;
+	background-color: var(--brand-color);
 }
+
 
 
 // Inline elements
@@ -89,7 +93,8 @@ small {
 }
 
 
-//Media
+
+// Media
 figcaption {
 	color: var(--fontColor--light);
 }

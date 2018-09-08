@@ -1,15 +1,17 @@
-/*------------------------------------*\
-	#TYPOGRAPHY
-\*------------------------------------*/
+/* $TYPOGRAPHY */
 
-// Variables
+// VARIABLES
+// Margin
+$marginBottom: 1em;
+
+
+// CUSTOM PROPERTIES
 :root {
 	// Font family
 	--fontFamily: var(--fontFamily-sans-serif);
-	--fontFamily-sans-serif: 'Open Sans', 'Helvetica Neue', Roboto, sans-serif;
+	--fontFamily-sans-serif: "Open Sans", "Helvetica Neue", "Roboto", sans-serif;
 	--fontFamily-serif: serif;
-	--fontFamily-monospace: Hack, Inconsolata, Menlo, Consolas, monospace;
-	--fontFamily-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, Oxygen-Sans, Ubuntu, Cantarell, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	--fontFamily-monospace: "Hack", "Inconsolata", "Menlo", "Consolas", monospace;
 
 	// Font size
 	--fontSize: 1em;
@@ -17,7 +19,7 @@
 	--fontSize--small: 0.85em;
 
 	// Font weight
-	--fontWeight--bold: bold;
+	--fontWeight--bold: 600;
 
 	// Line height
 	--lineHeight: 1.5em;
@@ -30,11 +32,7 @@
 	--wordSpacing--narrow: -0.05em;
 	--wordSpacing--wide: 0.05em;
 
-	// Margin
-	--marginBottom: 1.7em;
 
-
-	// Headings
 	// Headings - Font size
 	--fontSize-h1: 2em;
 	--fontSize-h2: 1.6em;
@@ -43,7 +41,14 @@
 	--fontSize-h5: 1em;
 	--fontSize-h6: 1em;
 
-	@include from(large) {
+	// Headings - Line height
+	--lineHeight-headings: 1.4em;
+
+	// Headings - Margin
+	--marginTop-headings: 1.2em;
+	--marginBottom-headings: 0.5em;
+
+	@include from(medium) {
 		--fontSize-h1: 2.3em;
 		--fontSize-h2: 2em;
 		--fontSize-h3: 1.7em;
@@ -51,14 +56,8 @@
 		--fontSize-h5: 1em;
 		--fontSize-h6: 1em;
 	}
-
-	// Headings - Line height
-	--lineHeight-headings: 1.4em;
-
-	// Headings - Margin
-	--marginTop-headings: 1.2em;
-	--marginBottom-headings: 0.5em;
 }
+
 
 
 // Body
@@ -69,6 +68,14 @@ body {
 
 
 // Headings
+h1 {font-size: var(--fontSize-h1);}
+h2 {font-size: var(--fontSize-h2);}
+h3 {font-size: var(--fontSize-h3);}
+h4 {font-size: var(--fontSize-h4);}
+h5 {font-size: var(--fontSize-h5);}
+h6 {font-size: var(--fontSize-h6);}
+
+// stylelint-disable-next-line selector-list-comma-newline-after
 h1, h3, h4, h2, h5, h6 {
 	margin-top: var(--marginTop-headings);
 	margin-bottom: var(--marginBottom-headings);
@@ -81,24 +88,19 @@ h1, h3, h4, h2, h5, h6 {
 	}
 }
 
-h1 {font-size: var(--fontSize-h1);}
-h2 {font-size: var(--fontSize-h2);}
-h3 {font-size: var(--fontSize-h3);}
-h4 {font-size: var(--fontSize-h4);}
-h5 {font-size: var(--fontSize-h5);}
-h6 {font-size: var(--fontSize-h6);}
 
 
 // Text layout
-// p,
-// ul, ol, dl,
-// pre,
-// form,
-// table,
-// figure,
-// blockquote {
-// 	@include marginBottom(base);
-// }
+p,
+ul,
+ol,
+dl,
+pre,
+table,
+figure,
+blockquote {
+	@include textBlock;
+}
 
 p {
 	line-height: var(--lineHeight);
@@ -106,19 +108,21 @@ p {
 }
 
 
-//Lists
+
+// Lists
 ul,
 ol {
 	padding-left: 20px;
 
 	li {
-		@include paddingVt(5px);
+		@include marginVt(0.25em);
 	}
 
-	@include from(large) {
+	@include from(medium) {
 		padding-left: 30px;
 	}
 }
+
 
 
 // Inline elements
@@ -132,7 +136,8 @@ small {
 }
 
 
-//Media
+
+// Media
 figcaption {
 	font-size: var(--fontSize--small);
 	&:first-child {margin-bottom: 0.5em;}

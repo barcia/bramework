@@ -1,6 +1,4 @@
-/*------------------------------------*\
-	#BOTTOM-NAVBAR
-\*------------------------------------*/
+/* $BOTTOM-NAVBAR */
 
 // Variables
 :root {
@@ -30,9 +28,12 @@
 	max-width: var(--BottomNavbar-maxWidth);
 	padding: 5px 12px 8px;
 	font-size: 0.9rem;
-	color: var(--fontColor);
 	text-decoration: none;
-	@include linkStates(background-color, var(--link-onHover-bgColor--alpha--black), var(--link-onActive-bgColor--alpha--black));
+	color: var(--fontColor);
+
+	@include linkStates(background-color,
+											var(--link-onHover-bgColor--alpha--black),
+											var(--link-onActive-bgColor--alpha--black));
 }
 
 

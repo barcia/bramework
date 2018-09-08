@@ -1,0 +1,24 @@
+// Build a shadow for a depth effect in any of four sides
+// Inspired on Material Design specs and a Hugo Giraudel function.
+@function box-shadow($depth, $side) {
+	$primary-offset: nth(1.5 3 6 10 15, $depth) * 1px;
+	$primary-blur: nth(1 3 3 5 6, $depth) * 4px;
+	$primary-color: rgba($black, nth(0.12 0.12 0.12 0.12 0.12, $depth));
+	$secondary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
+	$secondary-blur: nth(1.5 3 10 14 19, $depth) * 4px;
+	$secondary-color: rgba($black, nth(0.06 0.07 0.08 0.1 0.12, $depth));
+
+	@if $side == bottom {
+		@return 0 $primary-offset $primary-blur $primary-color,
+						0 $secondary-offset $secondary-blur $secondary-color;
+	} @else if $side == top {
+		@return 0 -#{$primary-offset} $primary-blur $primary-color,
+						0 -#{$secondary-offset} $secondary-blur $secondary-color;
+	} @else if $side == right {
+		@return $primary-offset 0 $primary-blur $primary-color,
+						$secondary-offset 0 $secondary-blur $secondary-color;
+	} @else if $side == left {
+		@return -#{$primary-offset} 0 $primary-blur $primary-color,
+						-#{$secondary-offset} 0 $secondary-blur $secondary-color;
+	}
+}

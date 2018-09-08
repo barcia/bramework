@@ -1,0 +1,87 @@
+// Margin bottom except in last item
+@mixin textBlock($size: $marginBottom) {
+	&:not(:last-child) {
+		margin-bottom: $size;
+	}
+}
+
+
+
+// Specify the element size. Is only put one, the element is square
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+
+
+// Makes a circular element (with possibilities to expand in one axis)
+@mixin circle($size) {
+	width: $size;
+	height: $size;
+	border-radius: $size / 2;
+}
+
+
+
+// Border top radius
+@mixin borderTopRadius($radius: $border-radius) {
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
+}
+
+
+
+// Border bottom radius
+@mixin borderBottomRadius($radius: $border-radius) {
+	border-bottom-right-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+
+
+// Border left radius
+@mixin borderLeftRadius($radius: $border-radius) {
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;
+}
+
+
+
+// Border right radius
+@mixin borderRightRadius($radius: $border-radius) {
+	border-top-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+}
+
+
+
+// Horizontal margin
+@mixin marginHz($px) {
+	margin-right: $px;
+	margin-left: $px;
+}
+
+
+
+// Vertical margin
+@mixin marginVt($px) {
+	margin-top: $px;
+	margin-bottom: $px;
+}
+
+
+
+// Horizontal padding
+@mixin paddingHz($px) {
+	padding-right: $px;
+	padding-left: $px;
+}
+
+
+
+// Vertical padding
+@mixin paddingVt($px) {
+	padding-top: $px;
+	padding-bottom: $px;
+}

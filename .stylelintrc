@@ -21,7 +21,7 @@
 		"declaration-no-important": [ true, {
 			"severity": "warning"
 		} ],
-		"selector-class-pattern": "^([a-zA-Z]+)*(-[a-z]+)*(--[a-z0-9]+)*(-[a-z]+)*$",
+		"selector-class-pattern": "^([a-zA-Z0-9]+)*(-[a-zA-Z0-9]+)*(--[a-zA-Z0-9]+)*(-[a-zA-Z0-9]+)*$",
 		"selector-max-compound-selectors": [ 3, {
 			"severity": "warning"
 		} ],
@@ -168,7 +168,7 @@
 		"scss/at-import-no-partial-leading-underscore": true,
 		"scss/at-mixin-argumentless-call-parentheses": "never",
 		"scss/at-mixin-parentheses-space-before": "never",
-		"scss/at-mixin-pattern": "^([a-zA-Z]+)*(-[a-z]+)*(--[a-z0-9]+)*(-[a-z]+)*$",
+		"scss/at-mixin-pattern": "^([a-zA-Z0-9]+)*(-[a-zA-Z0-9]+)*(--[a-zA-Z0-9]+)*(-[a-zA-Z0-9]+)*$",
 		"scss/dollar-variable-colon-space-after": "always",
 		"scss/dollar-variable-colon-space-before": "never",
 		"scss/dollar-variable-no-missing-interpolation": true,
@@ -177,14 +177,10 @@
 			"ignore": ["between-comments", "stylelint-commands"]
 		} ],
 		"scss/double-slash-comment-whitespace-inside": "always",
-		"scss/declaration-nested-properties": [ "always", {
-			"except": ["only-of-namespace"]
-		} ],
 		"scss/declaration-nested-properties-no-divided-groups": true,
 		"scss/operator-no-newline-after": true,
 		"scss/operator-no-newline-before": true,
 		"scss/operator-no-unspaced": true,
-		"scss/partial-no-import": true,
 		"scss/selector-no-redundant-nesting-selector": true,
 		"order/order": [
 			"dollar-variables",
@@ -201,10 +197,34 @@
 			{
 				type: 'at-rule',
 				name: 'include',
+				parameter: 'linkStates',
+			},
+			{
+				type: 'at-rule',
+				name: 'include',
 				hasBlock: true
 			},
 			"rules",
-			"at-rules"
+			"at-rules",
+
+			{
+				type: 'at-rule',
+				name: 'include',
+				hasBlock: true,
+				parameter: 'until',
+			},
+			{
+				type: 'at-rule',
+				name: 'include',
+				hasBlock: true,
+				parameter: 'between',
+			},
+			{
+				type: 'at-rule',
+				name: 'include',
+				hasBlock: true,
+				parameter: 'from',
+			},
 		]
 	}
 }

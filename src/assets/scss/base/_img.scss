@@ -1,11 +1,10 @@
-/*------------------------------------*\
-	#IMAGES & #ICONS
-\*------------------------------------*/
+/* $IMAGES & $ICONS */
 
+// ICONS
+// Sizes
 .icon--24 {
 	@include size(24px);
 }
-
 
 
 // Animations
@@ -14,11 +13,11 @@
 }
 
 .icon--animation-beat {
-	@include animation (beat, 400ms);
+	animation: beat 400ms ease-in-out infinite alternate;
 }
 
 .icon--animation-spin {
-	animation: spin 2s linear infinite reverse;
+	animation: spin 2s linear infinite;
 }
 
 .icon--animation-step {
@@ -26,8 +25,7 @@
 }
 
 
-
-// Keyframes
+// Icon animatons keyframes
 @keyframes laught {
 	from {transform: translateY(1px);}
 	to {transform: translateY(-1px);}
@@ -39,6 +37,6 @@
 }
 
 @keyframes spin {
-	0% {transform: rotate(0deg);}
-	100% {transform: rotate(359deg);}
+	from {transform: rotate(0deg);}
+	to {transform: rotate(359deg);}
 }

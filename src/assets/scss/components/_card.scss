@@ -1,7 +1,4 @@
-/*------------------------------------*\
-	#CARD
-\*------------------------------------*/
-
+/* $CARD */
 
 // Base
 .Card {
@@ -9,8 +6,8 @@
 	@include boxShadow(2);
 	display: inline-block;
 	width: 100%;
-	background-color: var(--bgColor--light);
 	border-radius: 5px;
+	background-color: var(--bgColor--light);
 
 	@include from(medium) {
 		width: 400px;
@@ -24,7 +21,12 @@
 
 
 // Modifiers
+// stylelint-disable no-duplicate-selectors
 .Card {
+	// Aspect ratio
+	@include aspectRatio;
+
+
 	// Link card
 	&.is-link {
 		@include voidLink;
@@ -50,10 +52,7 @@
 		&::before {
 			display: block;
 			padding-bottom: percentage(9 / 16);
-			content: '';
+			content: "";
 		}
-
-		// Modifiers
-		@include aspectRatio;
 	}
 }

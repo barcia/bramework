@@ -1,27 +1,26 @@
-/*------------------------------------*\
-	#BASE
-\*------------------------------------*/
+/* $BASE */
 
-// Variables
-:root {
-	// Site Layout
-	--site-maxWidth   : 1920px;
-	--wrapper-width   : 800px;
-	--wrapper-marginHz: 8px;
-
-	// Transitions
-	--transitionTime          : 200ms;
-	--transitionTime--fast    : 100ms;
-	--transitionTime--slow    : 300ms;
-	--transitionTimingFunction: ease-in-out;
-}
-
-
+// VARIABLES
+// Transitions
+$transitionTime: 200ms;
+$transitionTime--fast: 100ms;
+$transitionTime--slow: 300ms;
+$transitionTimingFunction: ease-in-out;
 
 // Breakpoints map
 $breakpoints: (
-	'medium': 450px,
-	'large': 1024px,
-	'widescreen': 1344px,
-	'fullhd': 1920px,
+	"small": 450px,
+	"medium": 1024px,
+	"large": 1344px,
+	"extralarge": 1920px,
 ) !default;
+
+
+
+// CUSTOM PROPERTIES
+:root {
+	// Site Layout
+	--site-maxWidth: 1920px;
+	--wrapper-width: 800px;
+	--wrapper-marginHz: 8px;
+}

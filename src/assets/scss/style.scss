@@ -1,35 +1,34 @@
-@charset 'UTF-8';
+@charset "UTF-8";
 
 // LIBRARIES
-@import 'library/colors';
-@import 'library/functions';
-@import 'library/mixins';
+@import "library/colors";
+@import "library/functions";
+@import "library/mixins";
 
 // RESET
-@import 'standarize/standarize'; // node_module
+@import "standarize/standarize"; // node_module
 
 // SITE
-@import 'base/base';
-@import 'base/code';
-@import 'base/color';
-@import 'base/form';
-@import 'base/img';
-@import 'base/typography';
+@import "base/base";
+@import "base/code";
+@import "base/color";
+@import "base/form";
+@import "base/img";
+@import "base/typography";
 
-@import 'components/button';
-@import 'components/card';
-@import 'components/dropdown';
-@import 'components/embed';
-@import 'components/list';
+@import "components/button";
+@import "components/card";
+@import "components/dropdown";
+@import "components/embed";
+@import "components/list";
 
-// @import 'layout/wrapper';
-@import 'layout/navbar';
-// @import 'layout/header';
-// @import 'layout/footer';
-// @import 'layout/comments';
-@import 'layout/bottom-navbar';
+@import "layout/wrapper";
+@import "layout/navbar";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/comments";
+@import "layout/bottom-navbar";
 
 // ASSETS
-@import 'utils/helpers';
-@import 'utils/print';
-
+@import "utils/helpers";
+@import "utils/print";

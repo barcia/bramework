@@ -1,7 +1,5 @@
-// sass-lint:disable no-important
-/*------------------------------------*\
-	#HELPERS
-\*------------------------------------*/
+// stylelint-disable declaration-no-important
+/* $HELPERS */
 
 // LAYOUT
 // Hide an element
@@ -9,25 +7,6 @@
 
 // Not show it, but maintain the layout
 .h-invisible {visibility: hidden !important;}
-
-// Hidden from medium to high
-@include from(medium) {.h-md-hidden {display: none !important;}}
-
-// Hidden from large to high
-@include from(large) {.h-lg-hidden {display: none !important;}}
-
-// Hidden from extraLarge to high
-@include from(extraLarge) {.h-xl-hidden {display: none !important;}}
-
-// Show from medium to high
-@include until(medium) {.h-md-show {display: none !important;}}
-
-// Show from large to high
-@include until(large) {.h-lg-show {display: none !important;}}
-
-// Show from extraLarge to high
-@include until(extraLarge) {.h-xl-show {display: none !important;}}
-
 
 // A11Y
 .h-screenReader {@include screenReader;}
@@ -54,8 +33,8 @@
 
 // In HTML5, tags with pure stylistic purposes are deprecated, I recommend
 // use the clasess below into a '<span>' element.
-.h-bold {font-weight: bold;}
-.h-italic {font-weight: italic;}
+.h-bold {font-weight: var(--fontWeight--bold);}
+.h-italic {font-style: italic;}
 .h-underline {text-decoration: underline;}
 .h-overline {text-decoration: overline;}
 .h-strikethrough {text-decoration: line-through;}
