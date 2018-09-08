@@ -186,45 +186,45 @@
 			"dollar-variables",
 			"custom-properties",
 			{
-				type: 'at-rule',
-				name: 'expand'
+				"type": "at-rule",
+				"name": "expand"
 			},
 			 {
-				type: 'at-rule',
-				name: 'include'
+				"type": "at-rule",
+				"name": "include"
 			},
 			"declarations",
 			{
-				type: 'at-rule',
-				name: 'include',
-				parameter: 'linkStates',
+				"type": "at-rule",
+				"name": "include",
+				"parameter": "linkStates"
 			},
 			{
-				type: 'at-rule',
-				name: 'include',
-				hasBlock: true
+				"type": "at-rule",
+				"name": "include",
+				"hasBlock": true
 			},
 			"rules",
 			"at-rules",
 
 			{
-				type: 'at-rule',
-				name: 'include',
-				hasBlock: true,
-				parameter: 'until',
+				"type": "at-rule",
+				"name": "include",
+				"hasBlock": true,
+				"parameter": "until"
 			},
 			{
-				type: 'at-rule',
-				name: 'include',
-				hasBlock: true,
-				parameter: 'between',
+				"type": "at-rule",
+				"name": "include",
+				"hasBlock": true,
+				"parameter": "between"
 			},
 			{
-				type: 'at-rule',
-				name: 'include',
-				hasBlock: true,
-				parameter: 'from',
-			},
+				"type": "at-rule",
+				"name": "include",
+				"hasBlock": true,
+				"parameter": "from"
+			}
 		]
 	}
 }

@@ -3,7 +3,7 @@
 		"order/properties-order": [
 			[
 				{
-					properties: [
+					"properties": [
 						"position",
 						"top",
 						"right",
@@ -15,7 +15,7 @@
 					]
 				},
 				{
-					properties: [
+					"properties": [
 						"display",
 						"align-content",
 						"align-items",
@@ -32,7 +32,7 @@
 					]
 				},
 				{
-					properties: [
+					"properties": [
 						"width",
 						"height",
 						"max-width",
@@ -42,7 +42,7 @@
 					]
 				},
 				{
-					properties: [
+					"properties": [
 						"padding",
 						"padding-top",
 						"padding-right",
@@ -51,7 +51,7 @@
 					]
 				},
 				{
-					properties: [
+					"properties": [
 						"margin",
 						"margin-top",
 						"margin-right",
@@ -65,7 +65,7 @@
 					]
 				},
 				{
-					properties: [
+					"properties": [
 						"border",
 						"border-collapse",
 						"border-top",
@@ -101,7 +101,7 @@
 					]
 				},
 				{
-					properties: [
+					"properties": [
 						"overflow",
 						"overflow-x",
 						"overflow-y",
@@ -109,7 +109,7 @@
 					]
 				},
 				{
-					properties: [
+					"properties": [
 						"font",
 						"font-family",
 						"src",
@@ -137,7 +137,7 @@
 					]
 				},
 				{
-					properties: [
+					"properties": [
 						"list-style",
 						"list-style-type",
 						"list-style-position",
@@ -145,7 +145,7 @@
 					]
 				},
 				{
-					properties: [
+					"properties": [
 						"color",
 						"background",
 						"background-attachment",
@@ -154,11 +154,11 @@
 						"background-position",
 						"background-repeat",
 						"background-size",
-						"background-clip",
+						"background-clip"
 					]
 				},
 				{
-					properties: [
+					"properties": [
 						"color",
 						"background",
 						"background-attachment",
