@@ -9,7 +9,7 @@
 	border-radius: 5px;
 	background-color: var(--bgColor--light);
 
-	@include from(medium) {
+	@include from(small) {
 		width: 400px;
 	}
 }
@@ -25,6 +25,14 @@
 .Card {
 	// Aspect ratio
 	@include aspectRatio;
+
+	// For preserve the aspect ratio
+	// http://nicolasgallagher.com/flexible-css-cover-images
+	&::before {
+		display: block;
+		padding-bottom: percentage(9 / 16);
+		content: "";
+	}
 
 
 	// Link card
@@ -45,14 +53,5 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
-
-
-		// For preserve the aspect ratio
-		// http://nicolasgallagher.com/flexible-css-cover-images
-		&::before {
-			display: block;
-			padding-bottom: percentage(9 / 16);
-			content: "";
-		}
 	}
 }
