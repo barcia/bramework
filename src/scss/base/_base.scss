@@ -1,11 +1,9 @@
 /* $BASE */
 
 // VARIABLES
-// Transitions
-$transitionTime: 200ms;
-$transitionTime--fast: 100ms;
-$transitionTime--slow: 300ms;
-$transitionTimingFunction: ease-in-out;
+// Brand color
+$brand-color: $royal-blue !default;
+
 
 // Breakpoints map
 $breakpoints: (
@@ -16,11 +14,228 @@ $breakpoints: (
 ) !default;
 
 
+// Transitions
+$transitionTime: 200ms !default;
+$transitionTime--fast: 100ms !default;
+$transitionTime--slow: 300ms !default;
+$transitionTimingFunction: ease-in-out !default;
+
+
+// Font family
+$fontFamily-sans-serif: "Open Sans", "Helvetica Neue", "Roboto", sans-serif;
+$fontFamily-serif: serif;
+$fontFamily-monospace: "Hack", "Inconsolata", "Menlo", "Consolas", monospace;
+
+
+// Margin
+$marginBottom: 1em !default;
+
+
 
 // CUSTOM PROPERTIES
+// stylelint-disable declaration-colon-space-before
 :root {
 	// Site Layout
 	--site-maxWidth: 1920px;
 	--wrapper-width: 800px;
 	--wrapper-marginHz: 8px;
+
+
+	// Background color
+	--bgColor         : #{$white};
+	--bgColor-onHover : #{alpha-black(0.1)};
+	--bgColor-onActive: #{alpha-black(0.2)};
+
+
+	// Font color
+	--fontColor             : #{$grey-700};
+	--fontColor--light      : #{$grey-500};
+	--fontColor--lighter    : #{$grey-300};
+	--fontColor--dark       : #{$grey-900};
+	--fontColor-alpha--black: #{alpha-black(0.4)};
+	--fontColor-alpha--white: #{alpha-white(0.4)};
+
+
+	// Brand color
+	--brand-color: #{$royal-blue};
+
+	// Basic color
+	--blue  : #{$royal-blue};
+	--green : #{$nephritis};
+	--orange: #{$carrot-500};
+	--pink  : #{$peach-colored};
+	--purple: #{$bellflower};
+	--red   : #{$pure-crimson};
+	--yellow: #{$sandstorm};
+
+
+	// Font size
+	--fontFamily: $fontFamily-sans-serif;
+
+	// Font size
+	--fontSize: 1em;
+	--fontSize--large: 1.2em;
+	--fontSize--small: 0.85em;
+
+	// Font weight
+	--fontWeight--bold: 600;
+
+	// Line height
+	--lineHeight: 1.5em;
+
+
+	// Headings - Font size
+	--fontSize-h1: 2em;
+	--fontSize-h2: 1.6em;
+	--fontSize-h3: 1.3em;
+	--fontSize-h4: 1em;
+	--fontSize-h5: 1em;
+	--fontSize-h6: 1em;
+
+	// Headings - Line height
+	--lineHeight-headings: 1.4em;
+
+	// Headings - Margin
+	--marginTop-headings: 1.2em;
+	--marginBottom-headings: 0.5em;
+
+	@include from(medium) {
+		--fontSize-h1: 2.3em;
+		--fontSize-h2: 2em;
+		--fontSize-h3: 1.7em;
+		--fontSize-h4: 1.3em;
+		--fontSize-h5: 1em;
+		--fontSize-h6: 1em;
+	}
+}
+// stylelint-enable
+
+
+
+// Body
+body {
+	font-family: var(--fontFamily);
+	font-size: var(--fontSize);
+	color: var(--fontColor);
+	background-color: var(--bgColor);
+}
+
+
+::selection {
+	color: $white;
+	background-color: var(--brand-color);
+}
+
+
+// Headings
+h1 {font-size: var(--fontSize-h1);}
+h2 {font-size: var(--fontSize-h2);}
+h3 {font-size: var(--fontSize-h3);}
+h4 {font-size: var(--fontSize-h4);}
+h5 {font-size: var(--fontSize-h5);}
+h6 {font-size: var(--fontSize-h6);}
+
+// stylelint-disable-next-line selector-list-comma-newline-after
+h1, h3, h4, h2, h5, h6 {
+	margin-top: var(--marginTop-headings);
+	margin-bottom: var(--marginBottom-headings);
+	font-family: var(--fontFamily);
+	line-height: var(--lineHeight-headings);
+	text-rendering: optimizeLegibility;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+
+// Text layout
+p,
+ul,
+ol,
+dl,
+pre,
+table,
+figure,
+blockquote {
+	@include textBlock;
+}
+
+p {
+	line-height: var(--lineHeight);
+	text-align: left;
+}
+
+
+
+// Lists
+ul,
+ol {
+	padding-left: 20px;
+
+	li {
+		@include marginVt(0.25em);
+	}
+
+	@include from(medium) {
+		padding-left: 30px;
+	}
+}
+
+
+
+// Inline elements
+a {
+	--link-fontColor: #{$brand-color};
+	color: var(--link-fontColor);
+
+	&:hover,
+	&:focus {
+		--link-fontColor: #{shadow($brand-color, 15%)};
+	}
+
+	&:active {
+		--link-fontColor: #{shadow($brand-color, 30%)};
+	}
+}
+
+
+small {
+	font-size: var(--fontSize--small);
+	color: var(--fontColor--light);
+}
+
+
+del {
+	color: var(--red);
+}
+
+
+ins {
+	color: var(--green);
+}
+
+
+mark {
+	background-color: var(--yellow);
+}
+
+
+kbd {
+	background-color: $white;
+	box-shadow: 0 2px $grey-150;
+}
+
+abbr {
+	text-transform: uppercase;
+}
+
+
+
+// Media
+figcaption {
+	font-size: var(--fontSize--small);
+	color: var(--fontColor--light);
+	&:first-child {margin-bottom: 0.5em;}
+	&:last-child {margin-top: 0.5em;}
 }
