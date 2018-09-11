@@ -54,8 +54,8 @@
 	border-radius: 50%;
 	cursor: pointer;
 	@include linkStates(background-color,
-											var(--link-onHover-bgColor--alpha--black),
-											var(--link-onActive-bgColor--alpha--black));
+											var(--bgColor-onHover),
+											var(--bgColor-onActive));
 
 	svg {
 		@include circle(var(--Navbar-icon-height));

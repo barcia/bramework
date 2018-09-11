@@ -32,8 +32,8 @@
 	color: var(--fontColor);
 
 	@include linkStates(background-color,
-											var(--link-onHover-bgColor--alpha--black),
-											var(--link-onActive-bgColor--alpha--black));
+											var(--bgColor-onHover),
+											var(--bgColor-onActive));
 }
 
 

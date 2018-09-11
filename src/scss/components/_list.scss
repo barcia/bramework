@@ -14,7 +14,7 @@
 	margin: 0;
 	font-size: var(--fontSize);
 	list-style-type: none;
-	background-color: var(--bgColor--light);
+	background-color: var(--bgColor);
 
 	li {
 		display: flex;
@@ -37,7 +37,7 @@
 	padding: var(--List-item-paddingVertical) var(--List-item-paddingHorizontal);
 
 	@include hoverFocus {
-		background-color: var(--link-onHover-bgColor--alpha--black);
+		background-color: var(--bgColor-onHover);
 	}
 
 

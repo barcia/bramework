@@ -149,18 +149,7 @@ h1, h3, h4, h2, h5, h6 {
 }
 
 
-// Text layout
-p,
-ul,
-ol,
-dl,
-pre,
-table,
-figure,
-blockquote {
-	@include textBlock;
-}
-
+// Text
 p {
 	line-height: var(--lineHeight);
 	text-align: left;
@@ -179,6 +168,22 @@ ol {
 
 	@include from(medium) {
 		padding-left: 30px;
+	}
+}
+
+
+
+// Content layout
+.content {
+	p,
+	ul,
+	ol,
+	dl,
+	pre,
+	table,
+	figure,
+	blockquote {
+		@include textBlock;
 	}
 }
 

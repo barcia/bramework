@@ -7,7 +7,7 @@
 	display: inline-block;
 	width: 100%;
 	border-radius: 5px;
-	background-color: var(--bgColor--light);
+	background-color: var(--bgColor);
 
 	@include from(small) {
 		width: 400px;
