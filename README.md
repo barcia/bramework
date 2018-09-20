@@ -2,14 +2,14 @@
 A web starter kit
 
 
-## ℹ️ About
+## About
 - Repository: https://github.com/barcia/bramework
 - Support: https://barcia.gal/contacto
 
-Bramework is a web starter kit that offers a set of tools and basic files for a quick start of a web development project. It is more oriented to develop with [Sass](http://sass-lang.com).
+Bramework is a web starter kit that offers a set of tools and basic files for a quick start of a web development project.
 
 
-## 🛫 Getting Started
+## Getting Started
 
 ### Prerequisites
 You must have installed [Node](https://nodejs.org/en/download/) and [NPM](https://www.npmjs.com/get-npm)
@@ -17,12 +17,12 @@ You must have installed [Node](https://nodejs.org/en/download/) and [NPM](https:
 ### Start
 1. [Download the last release](https://github.com/barcia/bramework/archive/master.zip) or clone the project
 2. Install all development dependencies with `npm install`
-3. Type `npm run dev:html` to run develop tasks of `css`, `js`, `img` and `html` files and *watch* then.
-4. Write your code
+3. Type `npm run dev` to run develop tasks of `css`, `js` and `web` files and *watch* then.
+4. Write your code. Your output code is ind `/dist/`.
 
-- Bramework is ready for *WordPress* themes development. Put all your theme files in `src/wp/` and run `npm run dev:wp` to run develop tasks of `css`, `js`, `img` and `wp` files and *watch* them.
+- Bramework is ready for *WordPress* themes development. Put all your theme files in `src/web/` and run `npm run dev:wp` to run develop tasks of `css`, `js` and `web` files and *watch* them. You need to be installed and running this _dockerized_ WordPress: https://github.com/barcia/wp 
 
-## 💻 Developing
+## Developing
 
 ### Development environment
 All source code must go in`/src/` and all tasks put the distributable code in `/dist/`.
@@ -33,13 +33,10 @@ bramework/
 ├── dist/     Processed files
 ├── docs/     Documentation
 └── src/
-    └── assets/
-        ├── js/     JavaScript files
-        ├── scss/   Scss files
-        ├── img/    Images
-        ├── svg/    Files here are not processed. Only save here your SVG to copy them and put it inline.
-    ├── html/       HTML files.
-    └── wp/         WordPress themes related files.     
+    ├── js/     JavaScript files
+    ├── scss/   Scss files
+    ├── svg/    Files here are not processed. Only save here your SVG to copy them and put it inline.
+    ├── web/    HTML/WP files.
 ```
 
 ### Style Guide
@@ -64,10 +61,10 @@ All command must be writted with `npm run COMMAND`
 
 | Command       | Description  |
 | ------------- | ------------- |
-| build:html     | Build all your HTML project |
-| build:wp     | Build all your WordPress theme |
-| dev:html     | HTML development. Start server and watch all files |
-| dev:wp     | WordPress theme development. Start server* and watch all files |
+| build     | Build all your HTML/WP project |
+| dev       | HTML development. Start server and watch all files |
+| dev:wp    | WordPress theme development. Start server* and watch all files |
+| lint    | Run all configured linter and output `*.logs` in the main path |
 
 > *Is ready to work with docker containers and by default does a proxy at `localhost:8080`
 
@@ -82,7 +79,7 @@ You only need copy the content of */dist/* folder to your server root path.
 
 
 
-## 🤓 Credits
+## Credits
 Developed by Iván Barcia  
 [Web](https://barcia.gal) · [Email](mailto:ivan@barcia.gal) · [Twitter](http://www.twitter.com/bartzia) · [GitHub](http://www.github.com/barcia)
 
@@ -90,5 +87,5 @@ Project tested on [BrowserStack](https://www.browserstack.com/)
 
 
 
-## 📄 License
+## License
 This project is under [MIT License](https://github.com/barcia/bramework/blob/master/LICENSE)
