@@ -16,7 +16,6 @@ input[type="submit"],
 	color: var(--fontColor);
 	background-color: $grey-150;
 	outline: 0;
-	cursor: default;
 
 	@include hoverFocus {
 		background-color: var(--brand-color);
