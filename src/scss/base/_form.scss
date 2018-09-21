@@ -50,6 +50,10 @@ select {
 		background-color: $alpha-b-50;
 	}
 
+	&:invalid:not(:focus) {
+		border-color: var(--red);
+	}
+
 	&::placeholder {
 		color: var(--fontColor--lighter);
 	}
