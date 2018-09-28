@@ -65,6 +65,7 @@ All command must be writted with `npm run COMMAND`
 | dev       | HTML development. Start server and watch all files |
 | dev:wp    | WordPress theme development. Start server* and watch all files |
 | lint    | Run all configured linter and output `*.logs` in the main path |
+| docs    | Update the docs |
 
 > *Is ready to work with docker containers and by default does a proxy at `localhost:8080`
 
