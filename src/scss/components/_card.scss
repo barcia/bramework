@@ -2,7 +2,7 @@
 
 // Base
 .Card {
-	@include paddingVt(8px);
+	@include paddingY(8px);
 	@include boxShadow(2);
 	display: inline-block;
 	width: 100%;

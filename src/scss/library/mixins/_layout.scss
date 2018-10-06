@@ -25,15 +25,15 @@
 
 
 // Vertical center a block item
-@mixin blockCenterVt {
-	@include marginVt(auto);
+@mixin blockCenterY {
+	@include marginY(auto);
 	display: block;
 }
 
 
 
 /// Horizontal center a block item
-@mixin blockCenterHz {
-	@include marginHz(auto);
+@mixin blockCenterX {
+	@include marginX(auto);
 	display: block;
 }

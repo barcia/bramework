@@ -3,13 +3,13 @@
 // Variables
 :root {
 	--Navbar-height: 55px;
-	--Navbar-paddingHz: 6px;
+	--Navbar-padding-x: 6px;
 	--Navbar-items-gap: 5px;
 	--Navbar-icon-height: 24px;
 
 	@include from(medium) {
 		--Navbar-height: 65px;
-		--Navbar-paddingHz: 20px;
+		--Navbar-padding-x: 20px;
 		--Navbar-items-gap: 15px;
 	}
 }
@@ -26,7 +26,7 @@
 	align-items: center;
 	width: 100vw;
 	height: var(--Navbar-height);
-	padding: 0 var(--Navbar-paddingHz);
+	padding: 0 var(--Navbar-padding-x);
 }
 
 /* All inside an element with this class is at right */

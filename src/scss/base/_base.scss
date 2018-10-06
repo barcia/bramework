@@ -38,7 +38,7 @@ $marginBottom: 1em !default;
 	// Site Layout
 	--site-maxWidth: 1920px;
 	--wrapper-width: 800px;
-	--wrapper-marginHz: 8px;
+	--wrapper-margin-x: 8px;
 
 
 	// Background color
@@ -163,7 +163,7 @@ ol {
 	padding-left: 20px;
 
 	li {
-		@include marginVt(0.25em);
+		@include marginY(0.25em);
 	}
 
 	@include from(medium) {

@@ -57,7 +57,7 @@
 
 
 // Horizontal margin
-@mixin marginHz($px) {
+@mixin marginX($px) {
 	margin-right: $px;
 	margin-left: $px;
 }
@@ -65,7 +65,7 @@
 
 
 // Vertical margin
-@mixin marginVt($px) {
+@mixin marginY($px) {
 	margin-top: $px;
 	margin-bottom: $px;
 }
@@ -73,7 +73,7 @@
 
 
 // Horizontal padding
-@mixin paddingHz($px) {
+@mixin paddingX($px) {
 	padding-right: $px;
 	padding-left: $px;
 }
@@ -81,7 +81,7 @@
 
 
 // Vertical padding
-@mixin paddingVt($px) {
+@mixin paddingY($px) {
 	padding-top: $px;
 	padding-bottom: $px;
 }
