@@ -40,7 +40,8 @@
 		"dev": "npm run clean && run-p watch:css watch:js watch:web server",
 		"dev:wp": "npm run clean && run-p watch:css watch:js watch:web server:wp",
 		"docs": "cpx 'dist/assets/{style.css,script.js}' docs/assets",
-		"lint": "npm run stylelint"
+		"lint": "npm run stylelint",
+		"zip": "npm run build && sh .zip.sh"
 	},
 	"dependencies": {},
 	"devDependencies": {
