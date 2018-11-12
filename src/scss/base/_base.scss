@@ -43,8 +43,8 @@ $marginBottom: 1em !default;
 
 	// Background color
 	--bgColor         : #{$white};
-	--bgColor-onHover : #{alpha-black(0.1)};
-	--bgColor-onActive: #{alpha-black(0.2)};
+	--bgColor-onHover : #{black(0.1)};
+	--bgColor-onActive: #{black(0.2)};
 
 
 	// Font color
@@ -52,8 +52,8 @@ $marginBottom: 1em !default;
 	--fontColor--light      : #{$grey-500};
 	--fontColor--lighter    : #{$grey-300};
 	--fontColor--dark       : #{$grey-900};
-	--fontColor-alpha--black: #{alpha-black(0.4)};
-	--fontColor-alpha--white: #{alpha-white(0.4)};
+	--fontColor-alpha--black: #{black(0.4)};
+	--fontColor-alpha--white: #{white(0.4)};
 
 
 	// Brand color

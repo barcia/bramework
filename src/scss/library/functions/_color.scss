@@ -11,12 +11,12 @@
 
 
 // Return a Alpha color based in black
-@function alpha-black($opacity) {
+@function black($opacity) {
 	@return hsla(0, 0%, 0%, $opacity);
 }
 
 // Return a Alpha color based in white
-@function alpha-white($opacity) {
+@function white($opacity) {
 	@return hsla(0, 0%, 100%, $opacity);
 }
 
