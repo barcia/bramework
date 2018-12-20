@@ -19,7 +19,7 @@
 
 	@if $value == null {$value: $breakpoint;}
 
-	@media (max-width: $value + 1) {
+	@media (max-width: $value) {
 		@content;
 	}
 }
