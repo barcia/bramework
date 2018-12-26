@@ -70,7 +70,7 @@ $marginBottom: 1em !default;
 
 
 	// Font size
-	--fontFamily: $fontFamily-sans-serif;
+	--fontFamily: #{$fontFamily-sans-serif};
 
 	// Font size
 	--fontSize: 1em;
