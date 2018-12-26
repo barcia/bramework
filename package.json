@@ -12,7 +12,7 @@
 		"url": "https://barcia.gal"
 	},
 	"scripts": {
-		"clean": "rm -rf dist && mkdir -p dist/assets/",
+		"clean": "rm -rf dist/* && mkdir -p dist/assets/",
 		"sass": "node-sass --output-style compressed --error-bell src/scss/style.scss dist/assets/style.css --include-path 'node_modules/'",
 		"sass:dev": "node-sass --output-style expanded --error-bell --source-comments true --source-map-embed true --source-map-contents true src/scss/style.scss dist/assets/style.css --include-path 'node_modules/'",
 		"postcss": "postcss --no-map --use autoprefixer --replace dist/assets/style.css",
