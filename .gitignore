@@ -12,6 +12,7 @@ test.*
 
 # Dependency directories
 node_modules/
+package-lock.json
 
 # Cache
 .cache
@@ -30,7 +31,11 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Editors
-.vscode/
+.vscode/*
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
 
 # Thumbnails
 ._*
