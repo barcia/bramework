@@ -17,10 +17,9 @@ You must have installed [Node](https://nodejs.org/en/download/) and [NPM](https:
 ### Start
 1. [Download the last release](https://github.com/barcia/bramework/archive/master.zip) or clone the project
 2. Install all development dependencies with `npm install`
-3. Type `npm run dev` to run develop tasks of `css`, `js` and `web` files and *watch* then.
+3. Type `npm start` to run develop tasks of `css`, `js` and `web` files and *watch* then.
 4. Write your code. Your output code is ind `/dist/`.
 
-- Bramework is ready for *WordPress* themes development. Put all your theme files in `src/web/` and run `npm run dev:wp` to run develop tasks of `css`, `js` and `web` files and *watch* them. You need to be installed and running this _dockerized_ WordPress: https://github.com/barcia/wp 
 
 ## Developing
 
@@ -38,6 +37,13 @@ bramework/
     ├── svg/    Files here are not processed. Only save here your SVG to copy them and put it inline.
     ├── web/    HTML/WP files.
 ```
+
+### WordPress
+Bramework is also intended for *WordPress* themes development, but you should make twi changes in `package.json` file:
+
+1. In the `start` task change `npm run server` to `npm run server:wp`
+2. In the `server:wp` task put the url where your WordPress is proxied. By default `localhost:8080`.
+3. Put all your theme files in `src/web/` and run `npm start`.
 
 ### Style Guide
 This project use the guidelines indicated by [Suit CSS](https://suitcss.github.io) with some very small changes.
@@ -81,7 +87,7 @@ You only need copy the content of */dist/* folder to your server root path.
 
 
 ## Credits
-Developed by Iván Barcia  
+Developed by Iván Barcia
 [Web](https://barcia.gal) · [Email](mailto:ivan@barcia.gal) · [Twitter](http://www.twitter.com/bartzia) · [GitHub](http://www.github.com/barcia)
 
 Project tested on [BrowserStack](https://www.browserstack.com/)
