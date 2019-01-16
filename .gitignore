@@ -1,16 +1,12 @@
-https://gist.github.com/barcia/20d806bdb1d0730fcc8344c8d63cb531
-
 # Production
 dist/
 build/
 
-# Temporary and testing files
+# Temporary files
 temp/
 temp.*
-test/
-test.*
 
-# Dependency directories
+# Packager managers
 node_modules/
 package-lock.json
 
@@ -32,10 +28,6 @@ $RECYCLE.BIN/
 
 # Editors
 .vscode/*
-# !.vscode/settings.json
-# !.vscode/tasks.json
-# !.vscode/launch.json
-# !.vscode/extensions.json
 
 # Thumbnails
 ._*
