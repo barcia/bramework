@@ -37,7 +37,8 @@
 		"docs": "cpx 'dist/assets/{style.css,script.js}' docs/assets",
 		"stylelint": "stylelint 'src/scss/**/*.scss' --config '.stylelintrc' --cache -f verbose > sasslint.log || echo \"💥 lint fail for some file(s)\n📄 See $(pwd)/sasslint.log\"",
 		"eslint": "eslint 'src/js/**/*.js' --cache --format 'compact' --output-file 'eslint.log'",
-		"lint": "npm run stylelint; npm run eslint"
+		"lint": "npm run stylelint; npm run eslint",
+		"test": "jest"
 	},
 	"dependencies": {},
 	"devDependencies": {
@@ -47,6 +48,7 @@
 		"chokidar-cli": "^1.2.1",
 		"cpx": "^1.5.0",
 		"eslint": "^5.11.1",
+		"jest": "^23.6.0",
 		"node-sass": "^4.11.0",
 		"postcss-cli": "^6.1.0",
 		"standarize": "^1.1.0",
