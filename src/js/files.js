@@ -5,4 +5,6 @@
 // import './utils/scroll';
 // import './utils/time';
 // import './utils/touchscreen';
-// import './utils/visits';
+// import './utils/tempo';
+
+     console.log("script");
