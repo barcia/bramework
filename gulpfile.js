@@ -2,46 +2,51 @@
 
 const gulp = require('gulp');
 const del = require('del');
+const notify = require('gulp-notify');
 const sourcemaps = require('gulp-sourcemaps');
-const notify = require("gulp-notify");
-const browsersync = require("browser-sync").create();
+const browsersync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const stylelint = require('gulp-stylelint');
 const cssnano = require('cssnano');
-const terser = require('gulp-terser');
-const babel = require('gulp-babel');
-const concat = require('gulp-concat');
+const stylelint = require('gulp-stylelint');
 const eslint = require('gulp-eslint');
+const webpack = require('webpack-stream');
+const argv = require('yargs').argv;
 
 const config = {
+	build: './build/',
 	css: {
-		entry: "./src/scss/style.scss",
-		src: "./src/scss/**/*.scss",
-		dest: "./build/assets/"
+		entry: './src/scss/style.scss',
+		src: './src/scss/**/*.scss',
+		dest: './build/assets/'
 	},
 	js: {
-		src: "./src/js/**/*.js",
-		out: "script.js",
-		dest: "./build/assets/"
+		src: './src/js/**/*.js',
+		dest: './build/assets/'
 	},
 	web: {
-		src: "./src/web/**/*",
-		dest: "./build/"
+		src: './src/web/**/*',
+		dest: './build/'
+	},
+	sass: {
+		includePaths: 'node_modules/'
 	},
 	postcss: [
-		autoprefixer({
-			browsers: ['last 2 version']
-		}),
+		autoprefixer(),
 		cssnano({
 			autoprefixer: false,
 			safe: true,
 			sourcemap: false
 		})
 	],
-	sass: {
-		includePaths: 'node_modules/'
+	webpack: {
+		entry: {
+			app: './src/js/app.js',
+		},
+		output: {
+			filename: '[name].js',
+		}
 	},
 	stylelint: {
 		configFile: '.stylelintrc',
@@ -62,25 +67,25 @@ const config = {
 // CSS
 function css_dev() {
 	return gulp.src(config.css.entry, {since: gulp.lastRun(css_dev)})
-	.pipe(sourcemaps.init())
-	.pipe(sass(config.sass).on('error', notify.onError({
-		title: "Error in Gulp:Sass",
-		message: "<%= error.message %>"
-	})))
-	.pipe(sourcemaps.write())
-	.pipe(gulp.dest(config.css.dest))
-	.pipe(browsersync.stream());
-};
+		.pipe(sourcemaps.init())
+		.pipe(sass(config.sass).on('error', notify.onError({
+			title: 'Error in Gulp:Sass',
+			message: '<%= error.message %>'
+		})))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest(config.css.dest))
+		.pipe(browsersync.stream());
+}
 
 function css_prod() {
 	return gulp.src(config.css.entry)
-	.pipe(sass(config.sass).on('error', notify.onError({
-		title: "Error in Gulp:Sass",
-		message: "<%= error.message %>"
-	})))
-	.pipe(postcss(config.postcss))
-	.pipe(gulp.dest(config.css.dest))
-};
+		.pipe(sass(config.sass).on('error', notify.onError({
+			title: 'Error in Gulp:Sass',
+			message: '<%= error.message %>'
+		})))
+		.pipe(postcss(config.postcss))
+		.pipe(gulp.dest(config.css.dest))
+}
 
 function css_lint() {
 	return gulp.src(config.css.src)
@@ -91,19 +96,30 @@ function css_lint() {
 
 // JS
 function js_dev() {
-	return gulp.src(config.js.src, {since: gulp.lastRun(js_dev)})
-		.pipe(sourcemaps.init())
-		.pipe(concat(config.js.out))
-		.pipe(sourcemaps.write())
+	return  webpack({
+		mode: 'development',
+		entry: config.webpack.entry,
+		output: config.webpack.output
+	})
 		.pipe(gulp.dest(config.js.dest))
 		.pipe(browsersync.stream());
 }
 
 function js_prod() {
-	return gulp.src(config.js.src)
-		.pipe(concat(config.js.out))
-		.pipe(terser())
-		.pipe(babel())
+	return webpack({
+		mode: 'production',
+		entry: config.webpack.entry,
+		output: config.webpack.output,
+		module: {
+			rules: [
+				{
+					test: /\.js$/,
+					exclude: /node_modules/,
+					loader: 'babel-loader',
+				},
+			],
+		},
+	})
 		.pipe(gulp.dest(config.js.dest))
 }
 
@@ -119,6 +135,7 @@ function js_test() {
 }
 
 
+
 // Web
 function web() {
 	return gulp.src(config.web.src)
@@ -126,19 +143,37 @@ function web() {
 }
 
 
+
+// Watch
 function serve(done) {
 	browsersync.init({
 		server: {
-			baseDir: "./build/"
+			baseDir: config.build
 		},
 		port: 3000,
 		open: false,
 		notify: false
 	});
 
-	gulp.watch("./src/scss/**/*", {ignoreInitial: false}, css_dev);
-	gulp.watch("./src/js/**/*", {ignoreInitial: false}, js_dev);
-	gulp.watch("./src/web/**/*", {ignoreInitial: false}, gulp.series(web, reload));
+	gulp.watch(config.css.src, {ignoreInitial: false}, css_dev);
+	gulp.watch(config.js.src, {ignoreInitial: false}, js_dev);
+	gulp.watch(config.web.src, {ignoreInitial: false}, gulp.series(web, reload));
+
+	done();
+}
+
+function serve_proxy(done) {
+	browsersync.init({
+		proxy: argv.proxy,
+		open: false,
+		notify: false
+	});
+
+	gulp.watch(config.css.src, {ignoreInitial: false}, css_dev);
+	gulp.watch(config.js.src, {ignoreInitial: false}, js_dev);
+	gulp.watch(config.web.src, {ignoreInitial: false}, gulp.series(web, reload));
+
+	done();
 }
 
 
@@ -148,12 +183,15 @@ function reload(done) {
 	done();
 }
 
-
-
 function clean() {
-	return del(["./build/*"]);
+	return del([config.build + '*']);
 }
 
+
+
 exports.start = gulp.series(clean, gulp.parallel(serve));
+exports.start_proxy = gulp.series(clean, gulp.parallel(serve_proxy));
 exports.build = gulp.series(clean, css_lint, js_lint, gulp.parallel(css_prod, js_prod, web));
 exports.build_force = gulp.series(clean, gulp.parallel(css_prod, js_prod, web));
+exports.build_dev = gulp.series(clean, gulp.parallel(css_dev, js_dev, web));
+exports.test = gulp.series(css_lint, js_lint, js_test);
