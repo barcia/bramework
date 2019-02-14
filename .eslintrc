@@ -1,7 +1,13 @@
 {
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
+	},
 	"parserOptions": {
 		"ecmaVersion": 6
 	},
+	"extends": "eslint:recommended",
 	"rules": {
 		"no-console": [1],
 		"quotes": [1, "single"],

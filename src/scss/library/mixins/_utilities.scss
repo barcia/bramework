@@ -1,12 +1,9 @@
 // Full width in small screens
 @mixin oversize($marginX) {
-	@include until(small) {
-		position: relative;
-		left: 50%;
-		width: calc(100% + (#{$marginX} * 2));
-		border-radius: 0;
-		transform: translateX(-50%);
-	}
+	position: relative;
+	left: 50%;
+	width: calc(100% + (#{$marginX} * 2));
+	transform: translateX(-50%);
 }
 
 
