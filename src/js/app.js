@@ -1,1 +1,2 @@
-// Silence is golden
+// Font
+import './fonts';
