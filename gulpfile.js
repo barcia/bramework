@@ -15,22 +15,32 @@ const webpack = require('webpack-stream');
 const argv = require('yargs').argv;
 
 const config = {
-	build: './build/',
-	css: {
-		entry: './src/scss/style.scss',
+	dist: './dist/',
+	assets: './dist/assets/',
+	scss: {
+		entry: [
+			'./src/scss/style.scss',
+			// './src/scss/print.scss',
+		],
 		src: './src/scss/**/*.scss',
-		dest: './build/assets/'
+		options: {
+			includePaths: 'node_modules/'
+		}
 	},
 	js: {
+		entry: {
+			app: './src/js/app.js',
+		},
+		output: {
+			filename: '[name].js',
+		},
 		src: './src/js/**/*.js',
-		dest: './build/assets/'
+	},
+	img: {
+		src: './src/img/**/*',
 	},
 	web: {
 		src: './src/web/**/*',
-		dest: './build/'
-	},
-	sass: {
-		includePaths: 'node_modules/'
 	},
 	postcss: [
 		autoprefixer(),
@@ -40,14 +50,6 @@ const config = {
 			sourcemap: false
 		})
 	],
-	webpack: {
-		entry: {
-			app: './src/js/app.js',
-		},
-		output: {
-			filename: '[name].js',
-		}
-	},
 	stylelint: {
 		configFile: '.stylelintrc',
 		reporters: [
@@ -64,32 +66,43 @@ const config = {
 
 
 
+// Check arguments
+if (argv.proxy && !argv.serve) {
+	console.log("🚨 If you pass a proxy, you must pass also the --serve option");
+	return false;
+}
+
+
+
 // CSS
 function css_dev() {
-	return gulp.src(config.css.entry, {since: gulp.lastRun(css_dev)})
+	return gulp.src(config.scss.entry)
 		.pipe(sourcemaps.init())
-		.pipe(sass(config.sass).on('error', notify.onError({
+		.pipe(sass(config.scss.options).on('error', notify.onError({
 			title: 'Error in Gulp:Sass',
 			message: '<%= error.message %>'
 		})))
 		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(config.css.dest))
+		.pipe(gulp.dest(config.assets))
 		.pipe(browsersync.stream());
 }
 
 function css_prod() {
-	return gulp.src(config.css.entry)
-		.pipe(sass(config.sass).on('error', notify.onError({
+	return gulp.src(config.scss.entry)
+		.pipe(sass(config.scss.options).on('error', notify.onError({
 			title: 'Error in Gulp:Sass',
 			message: '<%= error.message %>'
 		})))
 		.pipe(postcss(config.postcss))
-		.pipe(gulp.dest(config.css.dest))
+		.pipe(gulp.dest(config.assets))
 }
 
-function css_lint() {
-	return gulp.src(config.css.src)
-		.pipe(stylelint(config.stylelint));
+function css_lint(done) {
+	if (! argv.force) {
+		return gulp.src(config.scss.src)
+			.pipe(stylelint(config.stylelint));
+	}
+	done();
 }
 
 
@@ -98,18 +111,18 @@ function css_lint() {
 function js_dev() {
 	return  webpack({
 		mode: 'development',
-		entry: config.webpack.entry,
-		output: config.webpack.output
+		entry: config.js.entry,
+		output: config.js.output
 	})
-		.pipe(gulp.dest(config.js.dest))
+		.pipe(gulp.dest(config.assets))
 		.pipe(browsersync.stream());
 }
 
 function js_prod() {
 	return webpack({
 		mode: 'production',
-		entry: config.webpack.entry,
-		output: config.webpack.output,
+		entry: config.js.entry,
+		output: config.js.output,
 		module: {
 			rules: [
 				{
@@ -120,78 +133,94 @@ function js_prod() {
 			],
 		},
 	})
-		.pipe(gulp.dest(config.js.dest))
+		.pipe(gulp.dest(config.assets))
 }
 
-function js_lint() {
-	return gulp.src(config.js.src)
-		.pipe(eslint(config.eslint))
-		.pipe(eslint.format('stylish'))
-		.pipe(eslint.failAfterError());
+function js_lint(done) {
+	if (! argv.force) {
+		return gulp.src(config.js.src)
+			.pipe(eslint(config.eslint))
+			.pipe(eslint.format('stylish'))
+			.pipe(eslint.failAfterError());
+	}
+	done();
 }
 
-function js_test() {
 
+
+// Img
+function img() {
+	return gulp.src(config.img.src)
+		.pipe(gulp.dest(config.assets));
 }
 
 
 
 // Web
-function web() {
-	return gulp.src(config.web.src)
-		.pipe(gulp.dest(config.web.dest));
+function web(done) {
+	if (argv.serve || argv.web) {
+		return gulp.src(config.web.src)
+			.pipe(gulp.dest(config.dist));
+	}
+	done();
 }
 
 
 
 // Watch
-function serve(done) {
-	browsersync.init({
-		server: {
-			baseDir: config.build
-		},
-		port: 3000,
-		open: false,
-		notify: false
-	});
-
-	gulp.watch(config.css.src, {ignoreInitial: false}, css_dev);
+function watch(done) {
+	gulp.watch(config.scss.src, {ignoreInitial: false}, css_dev);
 	gulp.watch(config.js.src, {ignoreInitial: false}, js_dev);
-	gulp.watch(config.web.src, {ignoreInitial: false}, gulp.series(web, reload));
+	gulp.watch(config.img.src, {ignoreInitial: false}, gulp.series(img, reload));
+
+	if (argv.serve || argv.web) {
+		gulp.watch(config.web.src, {ignoreInitial: false}, gulp.series(web, reload));
+	}
+
+	if (argv.serve) {
+		if (argv.proxy) {
+			browsersync.init({
+				proxy: argv.proxy,
+				open: false,
+				notify: false
+			});
+		} else {
+			browsersync.init({
+				server: {
+					baseDir: config.dist
+				},
+				port: 3000,
+				open: false,
+				notify: false
+			});
+		}
+	}
 
 	done();
 }
 
-function serve_proxy(done) {
-	browsersync.init({
-		proxy: argv.proxy,
-		open: false,
-		notify: false
-	});
 
-	gulp.watch(config.css.src, {ignoreInitial: false}, css_dev);
-	gulp.watch(config.js.src, {ignoreInitial: false}, js_dev);
-	gulp.watch(config.web.src, {ignoreInitial: false}, gulp.series(web, reload));
 
-	done();
+// Clean
+function clean() {
+	if (argv.web || argv.serve) {
+		return del([config.dist + '*']);
+	} else {
+		return del([config.assets + '*']);
+	}
 }
 
 
 
+// Reload BrowserSync
 function reload(done) {
 	browsersync.reload();
 	done();
 }
 
-function clean() {
-	return del([config.build + '*']);
-}
 
 
-
-exports.start = gulp.series(clean, gulp.parallel(serve));
-exports.start_proxy = gulp.series(clean, gulp.parallel(serve_proxy));
-exports.build = gulp.series(clean, css_lint, js_lint, gulp.parallel(css_prod, js_prod, web));
-exports.build_force = gulp.series(clean, gulp.parallel(css_prod, js_prod, web));
-exports.build_dev = gulp.series(clean, gulp.parallel(css_dev, js_dev, web));
-exports.test = gulp.series(css_lint, js_lint, js_test);
+// Exports
+exports.watch = gulp.series(clean, gulp.parallel(watch));
+exports.build = gulp.series(clean, css_lint, js_lint, gulp.parallel(css_prod, js_prod, img, web));
+exports.test = gulp.series(css_lint, js_lint);
