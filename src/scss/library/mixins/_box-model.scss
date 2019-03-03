@@ -1,5 +1,5 @@
 // Margin bottom except in last item
-@mixin textBlock($size: $marginBottom) {
+@mixin textBlock($size) {
 	&:not(:last-child) {
 		margin-bottom: $size;
 	}

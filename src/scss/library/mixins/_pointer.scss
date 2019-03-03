@@ -1,0 +1,15 @@
+// Styles for the item when the device has a fine pointer
+@mixin fine {
+	@media (pointer: fine) {
+		@content;
+	}
+}
+
+
+
+// Styles for the item when the device has a coarse pointer
+@mixin coarse {
+	@media (pointer: coarse) {
+		@content;
+	}
+}

@@ -1,18 +1,12 @@
 /* $LIST */
 
-// Variables
-:root {
+// Base
+.List {
 	--List-item-minHeight: 48px;
 	--List-item-paddingVertical: 4px;
 	--List-item-paddingHorizontal: 16px;
-}
-
-
-// Base
-.List {
 	padding: 8px 0;
 	margin: 0;
-	font-size: var(--fontSize);
 	list-style-type: none;
 	background-color: var(--bgColor);
 
@@ -23,60 +17,56 @@
 			overflow-x: scroll;
 		}
 	}
-}
 
 
+	// List items
+	&-main,
+	&-aside {
+		@include voidLink;
+		display: inline-flex;
+		align-items: center;
+		min-height: var(--List-item-minHeight);
+		padding: var(--List-item-paddingVertical) var(--List-item-paddingHorizontal);
 
-// List items
-.List-main,
-.List-aside {
-	@include voidLink;
-	display: inline-flex;
-	align-items: center;
-	min-height: var(--List-item-minHeight);
-	padding: var(--List-item-paddingVertical) var(--List-item-paddingHorizontal);
+		@include hoverFocus {
+			background-color: var(--bgColor-onHover);
+		}
 
-	@include hoverFocus {
-		background-color: var(--bgColor-onHover);
+		&[data-value]::after {
+			flex: 1;
+			margin-left: var(--List-item-paddingHorizontal);
+			text-align: right;
+			content: attr(data-value);
+		}
 	}
 
-
-	&[data-value]::after {
+	&-main {
 		flex: 1;
-		margin-left: var(--List-item-paddingHorizontal);
-		text-align: right;
-		content: attr(data-value);
+
+		li.is-centered > & {
+			justify-content: center;
+		}
 	}
-}
 
+	&-icon {
+		@include size(1.5em);
 
-.List-main {
-	flex: 1;
-
-	li.is-centered > & {
-		justify-content: center;
+		&:not(:last-child) {
+			margin-right: var(--List-item-paddingHorizontal);
+		}
 	}
-}
-
-
-.List-icon {
-	@include size(1.5em);
-
-	&:not(:last-child) {
-		margin-right: var(--List-item-paddingHorizontal);
-	}
-}
 
 
 
-// VARIANTS
-// stylelint-disable no-duplicate-selectors
+	// VARIANTS
+	// stylelint-disable no-duplicate-selectors
 
-// Small variant
-.List {
+	// Small variant
 	&.is-small {
-		--List-item-minHeight: 40px;
-		--List-item-paddingVertical: 2px;
-		--List-item-paddingHorizontal: 8px;
+		&.is-small {
+			--List-item-minHeight: 40px;
+			--List-item-paddingVertical: 2px;
+			--List-item-paddingHorizontal: 8px;
+		}
 	}
 }

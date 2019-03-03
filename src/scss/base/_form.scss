@@ -35,7 +35,7 @@ select {
 
 // Text-type input fields
 #{$InputText} {
-	@include transition(border-color, var($transitionTime--fast));
+	@include transition(border-color, time(fast));
 	padding: 5px 10px;
 	border: 1px solid $grey-200;
 	border-radius: 0;
@@ -43,7 +43,7 @@ select {
 	background-color: transparent;
 
 	&:focus {
-		border-color: var(--brand-color);
+		border-color: color(primary);
 	}
 
 	&:disabled {

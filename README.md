@@ -1,94 +1,88 @@
 # Bramework
-A web starter kit
+Web starter kit
+
+## Description
+Bramework is a **web starter kit** to build simple websites. You can build only the assets or build full websites, also integrate it with other tools like [Eleventy](https://www.11ty.io) or [barcia/wp](https://github.com/barcia/wp).
+
+## Getting started
+1. Clone the repository: `git clone https://github.com/barcia/bramework.git`
+2. Install the NPM packages: `npm install`
+3. Start to develop with `npm start` or build your project with `npm run build`.
+
+## Configuration
+### Assets
+By default, bramework only build the **assets** (`/src/scss/`, `/src/js/` and `/src/img/`) and can work with other static site generators like [Eleventy](https://www.11ty.io) (included by default).
+
+#### Add more entries
+By default build only one *css* and one *js* file, but you can pass more entry files in `gulpfile.js`
 
 
-## About
-- Repository: https://github.com/barcia/bramework
-- Support: https://barcia.gal/contacto
+### Web
+If you add the option `--web` in the *start* or *build* task in `package.json`, also copy the content in `/src/web/` to `/dist/`. This is useful to use it with simple html (without site generators) or to build, for example, WordPress templates.
 
-Bramework is a web starter kit that offers a set of tools and basic files for a quick start of a web development project.
+> Use it only if you are not using a static site generator.
 
-
-## Getting Started
-
-### Prerequisites
-You must have installed [Node](https://nodejs.org/en/download/) and [NPM](https://www.npmjs.com/get-npm)
-
-### Start
-1. [Download the last release](https://github.com/barcia/bramework/archive/master.zip) or clone the project
-2. Install all development dependencies with `npm install`
-3. Type `npm start` to run develop tasks of `css`, `js` and `web` files and *watch* then.
-4. Write your code. Your output code is ind `/dist/`.
-
-
-## Developing
-
-### Development environment
-All source code must go in`/src/` and all tasks put the distributable code in `/dist/`.
-
-**Main directory tree:**
-```
-bramework/
-├── dist/     Processed files
-├── docs/     Documentation
-└── src/
-    ├── js/     JavaScript files
-    ├── scss/   Scss files
-    ├── svg/    Files here are not processed. Only save here your SVG to copy them and put it inline.
-    ├── web/    HTML/WP files.
+```json
+"scripts": {
+  "start": "gulp watch --web",
+  "build": "gulp build --web",
+  "test": "gulp test"
+},
 ```
 
-### WordPress
-Bramework is also intended for *WordPress* themes development, but you should make twi changes in `package.json` file:
+> You can also pass the options directly when call the task: `npm run build -- --web`
 
-1. In the `start` task change `npm run server` to `npm run server:wp`
-2. In the `server:wp` task put the url where your WordPress is proxied. By default `localhost:8080`.
-3. Put all your theme files in `src/web/` and run `npm start`.
+### Live server
+If you want to enable live server with live reload, you should pass the `--server` option in the *start* task.
 
-### Style Guide
-This project use the guidelines indicated by [Suit CSS](https://suitcss.github.io) with some very small changes.
+> The `--serve` option already includes the `--web` option.
 
-Examples of the **naming convention** applied to **selectors** and **mixins**:
-- ComponentName
-- ComponentName--modifierName
-- ComponentName-descendentName
-- namespace-ComponentName
-- ComponentName.is-state
-- ComponentName.has-state
-- h-helperName
+#### Proxy
+Can also sync with a existing host (For example, if you are building a WordPress theme with [barcia/wp](https://github.com/barcia/wp)) passing the proxy url: `--proxy=localhost:8080`.
 
-**Variables**:
-- ComponentName[-descendant|--modifier][-onState]-(cssProperty|variableName)
+```json
+"scripts": {
+  "start": "gulp watch --serve --proxy=localhost:8080",
+  "build": "gulp build",
+  "test": "gulp test"
+},
+```
 
+## Tasks
+* ***start***: **Build** all **assets** in **development** mode and **watch** changes on then.
+  * `--web`: Works also with the content in `/src/web/`
+  * `--serve`: Start a **live server**. Already includes the `--web` option.
+  * `--proxy=localhost:8080`: Redirect the live server to passed URL.
 
+* ***build*:** **Test** and **build** all **assets** in **production** mode.
+  * `--web`: Works also with the content in `/src/web/`
+  * `--force`: Force the build without **ignoring the tests**
 
-### Building
-All command must be writted with `npm run COMMAND`
+* ***test*:** Pass all **linters** and **tests** indicated in `gulpfile.js`
 
-| Command       | Description  |
-| ------------- | ------------- |
-| build     | Build all your HTML/WP project |
-| dev       | HTML development. Start server and watch all files |
-| dev:wp    | WordPress theme development. Start server* and watch all files |
-| lint    | Run all configured linter and output `*.logs` in the main path |
-| docs    | Update the docs |
+## Eleventy
+By default this project installs [Eleventy](https://www.11ty.io), a simple Node based **static site generator**. Read his [documentation](https://www.11ty.io/docs/) if you want to work with him.
 
-> *Is ready to work with docker containers and by default does a proxy at `localhost:8080`
+Eleventy creates his own live server, so you must configure it in his configuration file, `.eleventy.js`.
 
+> IMPORTANT. If you use Eleventy, you can not use the `--web` or `--serve` options.
 
-### Deploying
-You only need copy the content of */dist/* folder to your server root path.
+Change the *start* and *build* tasks to work with Eleventy.
 
-> Remember save the source code for build your project again in the future.
-
-### Built With
-- [Standarize](https://github.com/barcia/standarize)
-
+```json
+"scripts": {
+  "start": "gulp watch & eleventy --serve",
+  "build": "gulp build & eleventy",
+  "test": "gulp test"
+},
+```
 
 
 ## Credits
 Developed by Iván Barcia
-[Web](https://barcia.gal) · [Email](mailto:ivan@barcia.gal) · [Twitter](http://www.twitter.com/bartzia) · [GitHub](http://www.github.com/barcia)
+* [barcia.dev](https://barcia.dev)
+* [Twitter](http://www.twitter.com/bartzia)
+* [GitHub](http://www.github.com/barcia)
 
 Project tested on [BrowserStack](https://www.browserstack.com/)
 

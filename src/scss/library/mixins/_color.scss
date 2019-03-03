@@ -7,17 +7,19 @@
 
 
 // Mixin for create animated gradients
-// Example: @include gradientAnimated((blue, red, yellow), 10s);
+// Example: @include backgroundGradient--animated((blue, red, yellow), 10s);
 @mixin backgroundGradient--animated($colors, $time) {
 	background: linear-gradient(90deg, $colors);
 	background-size: 400% 400%;
 	animation: backgroundGradientAnimation $time ease-in-out infinite;
-}
 
-@keyframes backgroundGradientAnimation {
-	0% {background-position: left;}
-	50% {background-position: right;}
-	100% {background-position: left;}
+	@at-root {
+		@keyframes backgroundGradientAnimation {
+			0% {background-position: left;}
+			50% {background-position: right;}
+			100% {background-position: left;}
+		}
+	}
 }
 
 

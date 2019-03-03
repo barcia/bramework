@@ -1,12 +1,13 @@
 @charset "UTF-8";
 
-// LIBRARIES
+// LIBRARY
 @import "library/colors";
+@import "library/variables";
 @import "library/functions";
 @import "library/mixins";
 
 // RESET
-@import "standarize/standarize"; // node_module
+@import "standarize/standarize";
 
 // SITE
 @import "base/base";
@@ -16,7 +17,6 @@
 
 @import "components/button";
 @import "components/card";
-@import "components/dropdown";
 @import "components/embed";
 @import "components/list";
 
@@ -24,9 +24,6 @@
 @import "layout/navbar";
 @import "layout/header";
 @import "layout/footer";
-@import "layout/comments";
 @import "layout/bottom-navbar";
 
-// ASSETS
 @import "utils/helpers";
-@import "utils/print";

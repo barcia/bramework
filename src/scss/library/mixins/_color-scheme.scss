@@ -1,0 +1,16 @@
+// Prefer an interface that has a light theme
+// stylelint-disable media-feature-name-no-unknown
+@mixin light {
+	@media (prefers-color-scheme: light) {
+		@content;
+	}
+}
+
+
+
+// Prefer an interface that has a dark theme
+@mixin dark {
+	@media (prefers-color-scheme: dark) {
+		@content;
+	}
+}

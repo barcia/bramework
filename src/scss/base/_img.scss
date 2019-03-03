@@ -8,35 +8,35 @@
 
 
 // Animations
-.icon--animation-laught {
-	animation: laught 150ms ease-in-out infinite alternate;
-}
+// .icon--animation-laught {
+// 	animation: laught 150ms ease-in-out infinite alternate;
+// }
 
-.icon--animation-beat {
-	animation: beat 400ms ease-in-out infinite alternate;
-}
+// .icon--animation-beat {
+// 	animation: beat 400ms ease-in-out infinite alternate;
+// }
 
-.icon--animation-spin {
-	animation: spin 2s linear infinite;
-}
+// .icon--animation-spin {
+// 	animation: spin 2s linear infinite;
+// }
 
-.icon--animation-step {
-	animation: spin 2s infinite steps(8);
-}
+// .icon--animation-step {
+// 	animation: spin 2s infinite steps(8);
+// }
 
 
 // Icon animatons keyframes
-@keyframes laught {
-	from {transform: translateY(1px);}
-	to {transform: translateY(-1px);}
-}
+// @keyframes laught {
+// 	from {transform: translateY(1px);}
+// 	to {transform: translateY(-1px);}
+// }
 
-@keyframes beat {
-	from {transform: scale(1);}
-	to {transform: scale(1.15);}
-}
+// @keyframes beat {
+// 	from {transform: scale(1);}
+// 	to {transform: scale(1.15);}
+// }
 
-@keyframes spin {
-	from {transform: rotate(0deg);}
-	to {transform: rotate(359deg);}
-}
+// @keyframes spin {
+// 	from {transform: rotate(0deg);}
+// 	to {transform: rotate(359deg);}
+// }

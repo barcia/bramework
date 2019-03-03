@@ -1,32 +1,28 @@
 /* $NAVBAR */
 
-// Variables
+/* NAVBAR */
 :root {
 	--Navbar-height: 55px;
-	--Navbar-padding-x: 6px;
-	--Navbar-items-gap: 5px;
-	--Navbar-icon-height: 24px;
-
 	@include from(medium) {
 		--Navbar-height: 65px;
-		--Navbar-padding-x: 20px;
-		--Navbar-items-gap: 15px;
 	}
 }
 
-/**
- * 1. The navbar height not computing in box-model layout.
- * 2. box-shadow: For navbar with shadow
- *    transform: For navbar--scrollSensitive variant
- */
-/* NAVBAR */
 .Navbar {
+	--Navbar-padding-x: 6px;
+	--Navbar-items-gap: 5px;
+	--Navbar-icon-height: 24px;
 	z-index: 99;
 	display: flex;
 	align-items: center;
 	width: 100vw;
 	height: var(--Navbar-height);
 	padding: 0 var(--Navbar-padding-x);
+
+	@include from(medium) {
+		--Navbar-padding-x: 20px;
+		--Navbar-items-gap: 15px;
+	}
 }
 
 /* All inside an element with this class is at right */
@@ -67,7 +63,11 @@
 
 
 // VARIANTS
-
+/**
+ * 1. The navbar height not computing in box-model layout.
+ * 2. box-shadow: For navbar with shadow
+ *    transform: For navbar--scrollSensitive variant
+ */
 // Fix the navbar always on top
 .Navbar--fixed {
 	@include boxShadow(1);
