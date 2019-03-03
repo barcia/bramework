@@ -22,7 +22,7 @@ If you add the option `--web` in the *start* or *build* task in `package.json`, 
 
 > Use it only if you are not using a static site generator.
 
-```json
+```js
 "scripts": {
   "start": "gulp watch --web",
   "build": "gulp build --web",
@@ -40,7 +40,7 @@ If you want to enable live server with live reload, you should pass the `--serve
 #### Proxy
 Can also sync with a existing host (For example, if you are building a WordPress theme with [barcia/wp](https://github.com/barcia/wp)) passing the proxy url: `--proxy=localhost:8080`.
 
-```json
+```js
 "scripts": {
   "start": "gulp watch --serve --proxy=localhost:8080",
   "build": "gulp build",
@@ -69,7 +69,7 @@ Eleventy creates his own live server, so you must configure it in his configurat
 
 Change the *start* and *build* tasks to work with Eleventy.
 
-```json
+```js
 "scripts": {
   "start": "gulp watch & eleventy --serve",
   "build": "gulp build & eleventy",
