@@ -2,5 +2,9 @@
 import './fonts';
 
 // BrowserDOM
-import * as BrowserDOM from 'browserdom';
-new BrowserDOM.print()
+import BrowserDOM from 'browserdom';
+const myBrowserDOM = new BrowserDOM();
+
+document.addEventListener(`DOMContentLoaded`, function() {
+	myBrowserDOM.print();
+})
