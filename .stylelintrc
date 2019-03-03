@@ -201,9 +201,12 @@
 				"name": "include",
 				"hasBlock": true
 			},
+			{
+				"type": "rule",
+				"selector": "^&:"
+			},
 			"rules",
 			"at-rules",
-
 			{
 				"type": "at-rule",
 				"name": "include",
@@ -221,6 +224,10 @@
 				"name": "include",
 				"hasBlock": true,
 				"parameter": "from"
+			},
+			{
+				"type": "rule",
+				"selector": "^&"
 			}
 		],
 		"order/properties-order": [
