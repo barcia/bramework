@@ -3,8 +3,5 @@
 last 1 major version
 > 1%
 not dead
-not ExplorerMobile <= 11
-not Baidu <= 8
-not QQAndroid <= 2
-not OperaMobile <= 46
-not Chrome <= 40
+not ExplorerMobile
+Chrome > 40
