@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 WebFontConfig = {
 	google: {
 		families: ['Open Sans:300,400,700']

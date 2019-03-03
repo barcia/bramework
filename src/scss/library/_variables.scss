@@ -1,0 +1,71 @@
+// Site Layout
+$site-maxWidth: 1920px;
+$wrapper-width: 800px;
+$wrapper-margin-x: 8px;
+$textLineHeight: 1.5em;
+
+
+// Colors
+$color: (
+	"primary": $royal-blue,
+) !default;
+
+@function color($key) {
+	@return map-get($color, $key);
+}
+
+
+
+// Font types
+$fontFamily-sans-serif: "Open Sans", "Helvetica Neue", "Roboto", sans-serif;
+$fontFamily-serif: serif;
+$fontFamily-monospace: "Hack", "Inconsolata", "Menlo", "Consolas", monospace;
+
+// Fonts
+$font: (
+	"normal": $fontFamily-sans-serif,
+	"heading": $fontFamily-sans-serif,
+	"code": $fontFamily-monospace,
+) !default;
+
+@function font($key) {
+	@return map-get($font, $key);
+}
+
+// Font Sizes
+$weight: (
+	"light": 300,
+	"regular": 400,
+	"bold": 700,
+) !default;
+
+@function weight($key) {
+	@return map-get($weight, $key);
+}
+
+
+
+// Breakpoints map
+$breakpoints: (
+	"small": 450px,
+	"medium": 1024px,
+	"large": 1344px,
+	"extralarge": 1920px,
+) !default;
+
+@function bp($key) {
+	@return map-get($breakpoints, $key);
+}
+
+
+
+// Timing
+$time: (
+	"fast": 100ms,
+	"normal": 200ms,
+	"slow": 300ms,
+) !default;
+
+@function time($key) {
+	@return map-get($time, $key);
+}

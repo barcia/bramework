@@ -29,7 +29,7 @@ const config = {
 	},
 	js: {
 		entry: {
-			app: './src/js/app.js',
+			app: './src/js/index.js',
 		},
 		output: {
 			filename: '[name].js',

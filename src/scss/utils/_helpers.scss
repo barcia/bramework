@@ -11,26 +11,11 @@
 // A11Y
 .h-screenReader {@include screenReader;}
 
-// LINKS
-.h-voidLink {@include voidLink;}
-
-// Display links when the <a> element has no text value but the href
-.h-showLink::before {content: attr(href);}
-
-
-// SIZE
-.h-fullWidth {width: 100%;}
-
 
 // TEXT
 .h-uppercase {text-transform: uppercase;}
 .h-capitalize {text-transform: capitalize;}
 .h-smallCaps {font-variant: small-caps;}
-
-.h-textAlign-right {text-align: right;}
-.h-textAlign-left {text-align: left;}
-.h-textAlign-center {text-align: center;}
-.h-textAlign-justify {text-align: justify;}
 
 // In HTML5, tags with pure stylistic purposes are deprecated, I recommend
 // use the clasess below into a '<span>' element.
@@ -40,14 +25,3 @@
 .h-overline {text-decoration: overline;}
 .h-strikethrough {text-decoration: line-through;}
 .h-monospace {font-family: var(--fontFamily-monospace);}
-
-.h-unselectable {user-select: none;}
-
-
-// PRINT
-// No print the element
-@media print {
-	.h-noPrint {
-		display: none !important;
-	}
-}

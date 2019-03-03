@@ -5,8 +5,8 @@ pre,
 code,
 kbd,
 samp {
-	font-family: var(--fontFamily-monospace);
-	font-size: var(--code-fontSize, 0.85rem);
+	font-family: font(code);
+	font-size: 0.95em;
 }
 
 
@@ -38,7 +38,7 @@ kbd {
 	display: inline-block;
 	padding: 0 5px;
 	border-radius: 2px;
-	line-height: var(--lineHeight);
+	line-height: $textLineHeight;
 	vertical-align: middle;
 	user-select: all;
 }

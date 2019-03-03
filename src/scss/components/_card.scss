@@ -12,10 +12,10 @@
 	@include from(small) {
 		width: 400px;
 	}
-}
 
-.Card-section {
-	margin: 16px;
+	&-section {
+		margin: 16px;
+	}
 }
 
 

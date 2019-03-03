@@ -1,14 +1,9 @@
 /* $BOTTOM-NAVBAR */
 
-// Variables
-:root {
-	--BottomNavbar-height: 56px;
-	--BottomNavbar-maxWidth: 105px;
-}
-
-
 /* BOTTOM NAVBAR */
 .BottomNavbar {
+	--BottomNavbar-height: 56px;
+	--BottomNavbar-maxWidth: 105px;
 	position: fixed;
 	bottom: 0;
 	z-index: 99;
@@ -16,26 +11,24 @@
 	justify-content: center;
 	width: 100%;
 	height: var(--BottomNavbar-height);
+
+	/* BOTTOM NAVBAR ITEMS */
+	&-item {
+		@include flexCenter;
+		flex: 1;
+		flex-direction: column;
+		max-width: var(--BottomNavbar-maxWidth);
+		padding: 5px 12px 8px;
+		font-size: 0.9rem;
+		text-decoration: none;
+		color: var(--fontColor);
+		@include linkStates(
+			background-color,
+			var(--bgColor-onHover),
+			var(--bgColor-onActive)
+		);
+	}
 }
-
-
-
-/* BOTTOM NAVBAR ITEMS */
-.BottomNavbar-item {
-	@include flexCenter;
-	flex: 1;
-	flex-direction: column;
-	max-width: var(--BottomNavbar-maxWidth);
-	padding: 5px 12px 8px;
-	font-size: 0.9rem;
-	text-decoration: none;
-	color: var(--fontColor);
-
-	@include linkStates(background-color,
-											var(--bgColor-onHover),
-											var(--bgColor-onActive));
-}
-
 
 
 /* VARIANTS */

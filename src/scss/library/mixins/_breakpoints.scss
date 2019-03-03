@@ -2,7 +2,7 @@
 
 // From $breakpoint to up
 @mixin from($breakpoint) {
-	$value: map-get($breakpoints, $breakpoint);
+	$value: bp($breakpoint);
 
 	@if $value == null {$value: $breakpoint;}
 
@@ -15,7 +15,7 @@
 
 // From $breakpoint to down
 @mixin until($breakpoint) {
-	$value: map-get($breakpoints, $breakpoint);
+	$value: bp($breakpoint);
 
 	@if $value == null {$value: $breakpoint;}
 
@@ -28,8 +28,8 @@
 
 // Between $breakpoint1 and breakpoint2
 @mixin between($breakpoint1, $breakpoint2) {
-	$value1: map-get($breakpoints, $breakpoint1);
-	$value2: map-get($breakpoints, $breakpoint2);
+	$value1: bp($breakpoint1);
+	$value2: bp($breakpoint2);
 
 	@if $value1 == null {$value1: $breakpoint1;}
 	@if $value2 == null {$value2: $breakpoint2;}

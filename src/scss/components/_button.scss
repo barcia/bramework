@@ -6,10 +6,10 @@ input[type="reset"],
 input[type="submit"],
 [role="button"] {
 	@include inlineFlexCenter;
-	height: 30px;
 	min-width: 60px;
+	min-height: 35px;
 	padding: 1px 7px;
-	border: 0;
+	border: none;
 	text-decoration: none;
 	white-space: nowrap;
 	vertical-align: middle;
@@ -18,7 +18,8 @@ input[type="submit"],
 	outline: 0;
 
 	@include hoverFocus {
-		background-color: var(--brand-color);
+		color: inherit;
+		background-color: color(primary);
 	}
 
 	&:disabled {
