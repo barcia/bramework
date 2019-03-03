@@ -5,6 +5,6 @@ import './fonts';
 import BrowserDOM from 'browserdom';
 const myBrowserDOM = new BrowserDOM();
 
-document.addEventListener(`DOMContentLoaded`, function() {
+document.addEventListener('DOMContentLoaded', function() {
 	myBrowserDOM.print();
 })
