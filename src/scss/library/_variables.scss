@@ -69,3 +69,31 @@ $time: (
 @function time($key) {
 	@return map-get($time, $key);
 }
+
+
+// CUSTOM PROPERTIES
+// stylelint-disable declaration-colon-space-before
+:root {
+	// Background color
+	--bgColor         : #{$white};
+	--bgColor-onHover : #{black(0.1)};
+	--bgColor-onActive: #{black(0.2)};
+
+	// Font color
+	--fontColor             : #{$grey-700};
+	--fontColor--light      : #{$grey-500};
+	--fontColor--lighter    : #{$grey-300};
+	--fontColor--dark       : #{$grey-900};
+	--fontColor-alpha--black: #{black(0.4)};
+	--fontColor-alpha--white: #{white(0.4)};
+
+	// Basic color
+	--blue  : #{$royal-blue};
+	--green : #{$nephritis};
+	--orange: #{$carrot-500};
+	--pink  : #{$peach-colored};
+	--purple: #{$bellflower};
+	--red   : #{$pure-crimson};
+	--yellow: #{$sandstorm};
+}
+// stylelint-enable
