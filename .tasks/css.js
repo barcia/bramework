@@ -6,7 +6,6 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const browsersync = require('browser-sync');
 
 sass.compiler = require('node-sass');
 
@@ -42,7 +41,6 @@ module.exports = {
 		})))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(config.assets))
-		.pipe(browsersync.stream());
 	},
 	prod: function() {
 		return gulp.src(config.scss.entry)

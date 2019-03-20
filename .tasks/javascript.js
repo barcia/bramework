@@ -1,6 +1,5 @@
 const config = require('./paths.json');
 const gulp = require('gulp');
-const browsersync = require('browser-sync');
 const webpack = require('webpack-stream');
 
 
@@ -23,7 +22,6 @@ module.exports = {
 			output: config.js.output
 		})
 			.pipe(gulp.dest(config.assets))
-			.pipe(browsersync.stream());
 	},
 	prod: function() {
 		return webpack({
