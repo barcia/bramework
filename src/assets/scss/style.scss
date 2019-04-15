@@ -4,7 +4,9 @@
 @import "library/colors";
 @import "library/functions";
 @import "library/mixins";
-@import "library/variables";
+
+// VARIABLES
+@import "variables";
 
 // RESET
 @import "standarize/standarize";
