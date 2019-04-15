@@ -5,12 +5,12 @@ const webpack = require('webpack-stream');
 
 config.js = {
 	entry: {
-		script: './src/js/index.js',
+		script: './src/assets/js/index.js',
 	},
 	output: {
 		filename: '[name].js',
 	},
-	src: './src/js/**/*.js',
+	src: './src/assets/js/**/*.js',
 }
 
 

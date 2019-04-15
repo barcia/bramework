@@ -10,7 +10,10 @@
 	"author": "Iván Barcia <ivan@barcia.dev> (https://barcia.dev)",
 	"scripts": {
 		"start": "gulp watch",
-		"build": "gulp build"
+		"build": "gulp build",
+		"clean": "rm -rf ./dist/*",
+		"prebuild": "npm run clean",
+		"prestart": "npm run clean"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.4.0",

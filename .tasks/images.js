@@ -3,7 +3,7 @@ const gulp = require('gulp');
 
 
 config.img = {
-	src: './src/img/**/*',
+	src: './src/assets/img/**/*',
 }
 
 

@@ -3,7 +3,7 @@ const gulp = require('gulp');
 
 
 config.web = {
-	src: './src/web/**/*',
+	src: './src/*.html',
 }
 
 

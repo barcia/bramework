@@ -12,10 +12,10 @@ sass.compiler = require('node-sass');
 
 config.scss = {
 		entry: [
-			'./src/scss/style.scss',
-			// './src/scss/print.scss',
+			'./src/assets/scss/style.scss',
+			// './src/assets/scss/print.scss',
 		],
-		src: './src/scss/**/*.scss',
+		src: './src/assets/scss/**/*.scss',
 		options: {
 			includePaths: 'node_modules/'
 		}
