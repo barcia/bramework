@@ -12,7 +12,7 @@ sass.compiler = require('node-sass');
 
 config.scss = {
 		entry: [
-			'./src/assets/scss/style.scss',
+			'./src/assets/scss/main.scss',
 			// './src/assets/scss/print.scss',
 		],
 		src: './src/assets/scss/**/*.scss',

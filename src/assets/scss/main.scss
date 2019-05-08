@@ -6,7 +6,7 @@
 @import "library/mixins";
 
 // VARIABLES
-@import "variables";
+@import "library/variables";
 
 // RESET
 @import "standarize/standarize";
@@ -16,11 +16,7 @@
 @import "base/code";
 @import "base/form";
 @import "base/img";
-
-@import "components/button";
-@import "components/card";
-@import "components/embed";
-@import "components/list";
+@import "base/helpers";
 
 @import "layout/wrapper";
 @import "layout/navbar";
@@ -28,4 +24,7 @@
 @import "layout/footer";
 @import "layout/bottom-navbar";
 
-@import "utils/helpers";
+@import "components/button";
+@import "components/card";
+@import "components/embed";
+@import "components/list";
