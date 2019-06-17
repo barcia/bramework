@@ -1,45 +1,22 @@
 // Lighten a color
 @function tint($color, $percentage) {
-	@return mix(#ffffff, $color, $percentage);
+	@return mix(#fff, $color, $percentage);
 }
+
+
 
 // Darken a color
-@function shadow($color, $percentage) {
-	@return mix(#000000, $color, $percentage);
+@function shade($color, $percentage) {
+	@return mix(#000, $color, $percentage);
 }
 
 
 
-// Return a Alpha color based in black
-@function black($opacity) {
-	@return hsla(0, 0%, 0%, $opacity);
-}
-
-// Return a Alpha color based in white
-@function white($opacity) {
-	@return hsla(0, 0%, 100%, $opacity);
-}
-
-
-
-// Check the lightness of a color and return a String in consecuence
-@function contrast-color($color) {
-	@if (lightness($color) > 50) {
-		@return light; // The main color is light
+// Return an alpha color
+@function alpha($color, $opacity) {
+	@if unit($opacity) == "%" {
+		@return transparentize($color, $opacity / 100%);
 	} @else {
-		@return dark; // The main color is dark
-	}
-}
-
-
-
-// Create the 'soft' version of a color depending of his lightness. If the
-// color is dark, the soft version is lighter, and for light colors, the soft
-// version is darker.
-@function color-soft($color, $percentage) {
-	@if contrast-color($color) == dark {
-		@return tint($color, $percentage);
-	} @else {
-		@return shadow($color, $percentage);
+		@return transparentize($color, $opacity);
 	}
 }

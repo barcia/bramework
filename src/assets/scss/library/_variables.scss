@@ -5,13 +5,59 @@ $wrapper-margin-x: 8px;
 $textLineHeight: 1.5em;
 
 
+
+// Base
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+
+// Greyscale
+$grey-50 : tint($black, 95%);
+$grey-100: tint($black, 90%);
+$grey-150: tint($black, 85%);
+$grey-200: tint($black, 80%);
+$grey-250: tint($black, 75%);
+$grey-300: tint($black, 70%);
+$grey-350: tint($black, 65%);
+$grey-400: tint($black, 60%);
+$grey-450: tint($black, 55%);
+$grey-500: tint($black, 50%);
+$grey-550: tint($black, 45%);
+$grey-600: tint($black, 40%);
+$grey-650: tint($black, 35%);
+$grey-700: tint($black, 30%);
+$grey-750: tint($black, 25%);
+$grey-800: tint($black, 20%);
+$grey-850: tint($black, 15%);
+$grey-900: tint($black, 10%);
+$grey-950: tint($black, 5%);
+
+
 // Colors
 $color: (
-	"primary": $royal-blue,
+	"primary": hsl(204, 70%, 53%),
+	"dark": $black
 ) !default;
 
 @function color($key) {
-	@return map-get($color, $key);
+	@if map-has-key($color, $key) {
+		@return map-get($color, $key);
+	} @else {
+		@error "Undefined color: '$key'.";
+	}
+}
+
+
+// z-index
+$z-index: (
+	"navbar": 99
+) !default;
+
+@function z($key) {
+	@if map-has-key($z-index, $key) {
+		@return map-get($z-index, $key);
+	} @else {
+		@error "Undefined z-index: '$key'.";
+	}
 }
 
 
@@ -78,8 +124,8 @@ $time: (
 	--bgColor         : #{$white};
 	--bgColor-onHover : #{black(0.1)};
 	--bgColor-onActive: #{black(0.2)};
-	--brandColor-primary: #{$royal-blue};
-	--brandColor-secondary: #{$sunglo};
+	// --brandColor-primary: #{$royal-blue};
+	// --brandColor-secondary: #{$sunglo};
 
 	// Font color
 	--fontColor             : #{$grey-700};
@@ -90,12 +136,16 @@ $time: (
 	--fontColor-alpha--white: #{white(0.4)};
 
 	// Basic color
-	--blue  : #{$royal-blue};
-	--green : #{$nephritis};
-	--orange: #{$carrot-500};
-	--pink  : #{$peach-colored};
-	--purple: #{$bellflower};
-	--red   : #{$pure-crimson};
-	--yellow: #{$sandstorm};
+	// --blue  : #{$royal-blue};
+	// --green : #{$nephritis};
+	// --orange: #{$carrot-500};
+	// --pink  : #{$peach-colored};
+	// --purple: #{$bellflower};
+	// --red   : #{$pure-crimson};
+	// --yellow: #{$sandstorm};
 }
+
+
+
+
 // stylelint-enable

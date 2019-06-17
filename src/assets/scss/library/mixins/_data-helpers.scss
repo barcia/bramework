@@ -39,7 +39,7 @@
 
 // Styles for the item when the page is scroll down
 @mixin scrollDown {
-	[data-scrolldir="down"] & {
+	[data-scrolldirection="down"] & {
 		@content;
 	}
 }
@@ -48,7 +48,7 @@
 
 // Styles for the item when the page is scroll up
 @mixin scrollUp {
-	[data-scrolldir="up"] & {
+	[data-scrolldirection="up"] & {
 		@content;
 	}
 }
@@ -57,7 +57,7 @@
 
 // Styles for the item when page is scrolled
 @mixin scrolled {
-	[data-scroll="true"] & {
+	[data-scrolled="true"] & {
 		@content;
 	}
 }

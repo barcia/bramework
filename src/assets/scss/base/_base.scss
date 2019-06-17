@@ -1,5 +1,3 @@
-/* $BASE */
-
 // Body
 body {
 	font-family: font(normal);
@@ -11,6 +9,7 @@ body {
 ::selection {
 	background-color: tint(color(primary), 70%);
 }
+
 
 
 // Headings

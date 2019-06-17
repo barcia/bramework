@@ -1,6 +1,6 @@
-/* $NAVBAR */
+// /* $NAVBAR */
 
-/* NAVBAR */
+// /* NAVBAR */
 :root {
 	--Navbar-height: 55px;
 	@include from(medium) {
@@ -8,102 +8,59 @@
 	}
 }
 
+
 .Navbar {
-	--Navbar-padding-x: 6px;
-	--Navbar-items-gap: 5px;
-	--Navbar-icon-height: 24px;
-	z-index: 99;
+	height: var(--Navbar-height);
 	display: flex;
 	align-items: center;
+	z-index: z(navbar);
+	padding: 0 12px;
 	width: 100vw;
-	height: var(--Navbar-height);
-	padding: 0 var(--Navbar-padding-x);
+	background-color: lightgrey;
 
-	@include from(medium) {
-		--Navbar-padding-x: 20px;
-		--Navbar-items-gap: 15px;
-	}
-}
-
-/* All inside an element with this class is at right */
-.Navbar-right {
-	@include inlineFlexCenter;
-	margin-left: auto;
-}
-
-
-/* NAVBAR LIST */
-.Navbar-list {
-	@include inlineList;
-	margin: 0 20px;
-
-	li:not(:first-child) {
-		margin-left: var(--Navbar-items-gap);
-	}
-}
-
-
-/* NAVBAR ICON */
-.Navbar-icon {
-	@include inlineFlexCenter;
-	padding: 12px;
-	border-radius: 50%;
-	cursor: pointer;
-	@include linkStates(background-color,
-											var(--bgColor-onHover),
-											var(--bgColor-onActive));
-
-	svg {
-		@include circle(var(--Navbar-icon-height));
-		color: var(--fontColor);
+	&-toggle {
+		@include circle(48px);
 		background-color: transparent;
-	}
-}
 
-
-
-// VARIANTS
-/**
- * 1. The navbar height not computing in box-model layout.
- * 2. box-shadow: For navbar with shadow
- *    transform: For navbar--scrollSensitive variant
- */
-// Fix the navbar always on top
-.Navbar--fixed {
-	@include boxShadow(1);
-	@include transition(box-shadow); /* 2 */
-	position: fixed; /* 1 */
-	top: 0;
-	will-change: box-shadow;
-
-	@include scrolled {
-		@include boxShadow(3);
-	}
-}
-
-
-// Fix the navbar always on top, but it show and hide if scroll down or up
-.Navbar--scrollSensitive {
-	@include boxShadow(1);
-	@include transition((box-shadow, transform)); /* 2 */
-	position: fixed; /* 1 */
-	top: 0;
-	will-change: box-shadow, transform;
-
-	@include scrolled {
-		@include boxShadow(3);
+		.Icon {
+			@include size(24px);
+		}
 	}
 
-	@include scrollDown {
-		transform: translateY(var(--Navbar-height));
+	&-menu {
+		@include inlineList;
+		margin-left: auto;
+
+		li:not(:first-child) {
+			margin-left: 20px;
+		}
 	}
-}
 
 
-// For WordPress Admin bar
-.Navbar--fixed,
-.Navbar--scrollSensitive {
-	body.admin-bar & {
-		top: 32px;
+
+	&--fixed {
+		@include transition(box-shadow);
+		position: fixed;
+		top: 0;
+		will-change: box-shadow;
+
+		@include scrolled {
+			@include boxShadow(2);
+		}
+	}
+
+	&--scrollable {
+		@include transition((box-shadow, transform));
+		position: fixed;
+		top: 0;
+		will-change: box-shadow, transform;
+
+		@include scrolled {
+			@include boxShadow(2);
+		}
+
+		@include scrollDown {
+			transform: translateY(calc(var(--Navbar-height) * -1));
+		}
 	}
 }

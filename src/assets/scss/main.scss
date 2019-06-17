@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 // LIBRARY
-@import "library/colors";
 @import "library/functions";
 @import "library/mixins";
 
@@ -28,3 +27,12 @@
 @import "components/card";
 @import "components/embed";
 @import "components/list";
+
+.box {
+	@include size(300px);
+	background-color: color(dark);
+}
+
+body {
+	height: 300vh;
+}
