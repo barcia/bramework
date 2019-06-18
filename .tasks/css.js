@@ -1,4 +1,4 @@
-const config = require('./paths.json');
+const path = require('./paths.json');
 const gulp = require('gulp');
 const notify = require('gulp-notify');
 const sourcemaps = require('gulp-sourcemaps');
@@ -6,29 +6,30 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-
 sass.compiler = require('node-sass');
 
 
-config.scss = {
+
+const config = {
+	scss: {
 		entry: [
 			'./src/assets/scss/main.scss',
 			// './src/assets/scss/print.scss',
 		],
-		src: './src/assets/scss/**/*.scss',
 		options: {
 			includePaths: 'node_modules/'
 		}
+	},
+	postcss: [
+		autoprefixer(),
+		cssnano({
+			autoprefixer: false,
+			safe: true,
+			sourcemap: false
+		})
+	]
 }
 
-config.postcss = [
-	autoprefixer(),
-	cssnano({
-		autoprefixer: false,
-		safe: true,
-		sourcemap: false
-	})
-]
 
 
 module.exports = {
@@ -40,7 +41,7 @@ module.exports = {
 			message: '<%= error.message %>'
 		})))
 		.pipe(sourcemaps.write())
-		.pipe(gulp.dest(config.assets))
+		.pipe(gulp.dest(path.assets))
 	},
 	prod: function() {
 		return gulp.src(config.scss.entry)
@@ -49,6 +50,6 @@ module.exports = {
 			message: '<%= error.message %>'
 		})))
 		.pipe(postcss(config.postcss))
-		.pipe(gulp.dest(config.assets))
+		.pipe(gulp.dest(path.assets))
 	}
 }

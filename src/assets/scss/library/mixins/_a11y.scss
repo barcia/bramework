@@ -1,5 +1,5 @@
 // Mixin for make parent visible only to screen readers
-@mixin screenReader {
+@mixin screen-reader {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -8,13 +8,5 @@
 	overflow: hidden;
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
-	clip-path: inset(50%);
-}
-
-
-
-/// Mixin for make something hidden (some screen reader show a item with "display: none")
-@mixin moreHidden {
-	display: none;
-	visibility: hidden;
+	clip-path: inset(100%);
 }

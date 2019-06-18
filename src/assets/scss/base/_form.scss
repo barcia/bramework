@@ -1,6 +1,3 @@
-/* $FORM */
-
-// VARIABLES
 // Text-type input
 $InputText: "textarea",
 	"input[type=email]",
@@ -31,30 +28,34 @@ select {
 	}
 }
 
+fieldset {
+	border: 1px solid var(--bgColor--200);
+}
+
 
 
 // Text-type input fields
 #{$InputText} {
-	@include transition(border-color, time(fast));
+	@include transition(border-color, speed(fast));
 	padding: 5px 10px;
-	border: 1px solid $grey-200;
+	border: 1px solid var(--bgColor--200);
 	border-radius: 0;
 	color: var(--fontColor);
-	background-color: transparent;
+	background-color: var(--bgColor--50);
 
 	&:focus {
-		border-color: color(primary);
+		border-color: var(--color-primary);
 	}
 
 	&:disabled {
-		background-color: alpha($black, 0.05);
+		background-color: var(--bgColor--200);
 	}
 
 	&:invalid:not(:focus) {
-		border-color: var(--red);
+		border-color: var(--color-red);
 	}
 
 	&::placeholder {
-		color: var(--fontColor--lighter);
+		color: var(--fontColor--light);
 	}
 }

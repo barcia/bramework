@@ -8,7 +8,7 @@
 
 
 // The *n* child from last
-@mixin childInv($number) {
+@mixin child--inv($number) {
 	&:nth-last-child(#{$number}) {
 		@content;
 	}
@@ -17,7 +17,7 @@
 
 
 // All except *n*
-@mixin exceptChild($number) {
+@mixin except-child($number) {
 	&:not(:nth-child(#{$number})) {
 		@content;
 	}
@@ -26,7 +26,7 @@
 
 
 // All except *n* form last
-@mixin exceptChildInv($number) {
+@mixin except-child--inv($number) {
 	&:not(:nth-last-child(#{$number})) {
 		@content;
 	}
@@ -71,7 +71,7 @@
 
 
 // All from the last to $number
-@mixin lastTo($num) {
+@mixin last-to($num) {
 	&:nth-last-child(-n + #{$num}) {
 		@content;
 	}
@@ -89,7 +89,7 @@
 
 
 // Beginning at last, all from the $number to forward
-@mixin sinceInv($number) {
+@mixin since--inv($number) {
 	&:nth-last-child(n + #{$number + 1}) {
 		@content;
 	}
@@ -98,7 +98,7 @@
 
 
 // All between $first and $last
-@mixin childBetween($first, $last) {
+@mixin child-between($first, $last) {
 	&:nth-child(n + #{$first}):nth-child(-n + #{$last}) {
 		@content;
 	}
@@ -107,7 +107,7 @@
 
 
 // Child z-index
-@mixin childZindex($items, $zindex: 0) {
+@mixin child-zindex($items, $zindex: 0) {
 	@for $i from 1 through $items {
 		&:nth-child(#{$i}) {
 			z-index: $i;

@@ -21,18 +21,8 @@
 @import "layout/navbar";
 @import "layout/header";
 @import "layout/footer";
-@import "layout/bottom-navbar";
 
 @import "components/button";
 @import "components/card";
 @import "components/embed";
 @import "components/list";
-
-.box {
-	@include size(300px);
-	background-color: color(dark);
-}
-
-body {
-	height: 300vh;
-}

@@ -1,0 +1,7 @@
+@function z($key) {
+	@if map-has-key($z-index, $key) {
+		@return map-get($z-index, $key);
+	} @else {
+		@error "Undefined z-index: '$key'.";
+	}
+}

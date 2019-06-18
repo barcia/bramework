@@ -4,8 +4,8 @@ const gulp = require('gulp');
 
 // Tasks
 const css = require('./.tasks/css');
-const img = require('./.tasks/images');
-const js = require('./.tasks/javascript');
+const img = require('./.tasks/img');
+const js = require('./.tasks/js');
 const watch = require('./.tasks/watch');
 const web = require('./.tasks/web');
 

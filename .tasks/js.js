@@ -1,17 +1,20 @@
-const config = require('./paths.json');
+const path = require('./paths.json');
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
 
 
-config.js = {
-	entry: {
-		script: './src/assets/js/index.js',
-	},
-	output: {
-		filename: '[name].js',
-	},
-	src: './src/assets/js/**/*.js',
+
+const config = {
+	js: {
+		entry: {
+			script: './src/assets/js/index.js',
+		},
+		output: {
+			filename: '[name].js',
+		}
+	}
 }
+
 
 
 module.exports = {
@@ -21,7 +24,7 @@ module.exports = {
 			entry: config.js.entry,
 			output: config.js.output
 		})
-			.pipe(gulp.dest(config.assets))
+			.pipe(gulp.dest(path.assets))
 	},
 	prod: function() {
 		return webpack({
@@ -38,6 +41,6 @@ module.exports = {
 				],
 			},
 		})
-			.pipe(gulp.dest(config.assets))
+			.pipe(gulp.dest(path.assets))
 	}
 }

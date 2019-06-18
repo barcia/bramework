@@ -1,28 +1,36 @@
-/* $BUTTONS */
-
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
 [role="button"] {
-	@include inlineFlexCenter;
-	// min-width: 60px;
-	// min-height: 35px;
-	// padding: 1px 7px;
+	@include inline-flex-center;
 	border: none;
 	text-decoration: none;
 	white-space: nowrap;
 	vertical-align: middle;
-	// color: var(--fontColor);
-	// background-color: $grey-150;
 	outline: 0;
+}
 
-	// @include hoverFocus {
-	// 	color: inherit;
-	// 	background-color: color(primary);
-	// }
+
+
+.Button {
+	min-width: 60px;
+	min-height: 35px;
+	padding: 2px 8px;
+	background-color: $grey-150;
+	color: black;
+
+	@include hover-focus {
+		color: inherit;
+		background-color: var(--color-primary);
+	}
 
 	// &:disabled {
 	// 	color: var(--fontColor--light);
 	// }
+
+	.Icon {
+		@include size(24px);
+		margin-right: 8px;
+	}
 }

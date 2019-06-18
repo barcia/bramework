@@ -1,5 +1,5 @@
 // Margin bottom except in last item
-@mixin textBlock($size) {
+@mixin margin-bottom($size) {
 	&:not(:last-child) {
 		margin-bottom: $size;
 	}
@@ -25,7 +25,7 @@
 
 
 // Border top radius
-@mixin borderTopRadius($radius: $border-radius) {
+@mixin border-top-radius($radius: $border-radius) {
 	border-top-right-radius: $radius;
 	border-top-left-radius: $radius;
 }
@@ -33,7 +33,7 @@
 
 
 // Border bottom radius
-@mixin borderBottomRadius($radius: $border-radius) {
+@mixin border-bottom-radius($radius: $border-radius) {
 	border-bottom-right-radius: $radius;
 	border-bottom-left-radius: $radius;
 }
@@ -41,7 +41,7 @@
 
 
 // Border left radius
-@mixin borderLeftRadius($radius: $border-radius) {
+@mixin border-left-radius($radius: $border-radius) {
 	border-bottom-left-radius: $radius;
 	border-top-left-radius: $radius;
 }
@@ -49,7 +49,7 @@
 
 
 // Border right radius
-@mixin borderRightRadius($radius: $border-radius) {
+@mixin border-right-radius($radius: $border-radius) {
 	border-top-right-radius: $radius;
 	border-bottom-right-radius: $radius;
 }
@@ -57,7 +57,7 @@
 
 
 // Horizontal margin
-@mixin marginX($px) {
+@mixin margin-x($px) {
 	margin-right: $px;
 	margin-left: $px;
 }
@@ -65,7 +65,7 @@
 
 
 // Vertical margin
-@mixin marginY($px) {
+@mixin margin-y($px) {
 	margin-top: $px;
 	margin-bottom: $px;
 }
@@ -73,7 +73,7 @@
 
 
 // Horizontal padding
-@mixin paddingX($px) {
+@mixin padding-x($px) {
 	padding-right: $px;
 	padding-left: $px;
 }
@@ -81,7 +81,7 @@
 
 
 // Vertical padding
-@mixin paddingY($px) {
+@mixin padding-y($px) {
 	padding-top: $px;
 	padding-bottom: $px;
 }

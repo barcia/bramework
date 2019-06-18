@@ -1,72 +1,52 @@
-/* $LIST */
-
 // Base
 .List {
 	--List-item-minHeight: 48px;
-	--List-item-paddingVertical: 4px;
 	--List-item-paddingHorizontal: 16px;
 	padding: 8px 0;
 	margin: 0;
 	list-style-type: none;
-	background-color: var(--bgColor);
 
 	li {
 		display: flex;
-
-		&.is-centered {
-			overflow-x: scroll;
-		}
+		align-items: center;
+		min-height: var(--List-item-minHeight);
 	}
 
-
-	// List items
-	&-main,
+	// Items
+	&-item,
 	&-aside {
-		@include voidLink;
 		display: inline-flex;
 		align-items: center;
 		min-height: var(--List-item-minHeight);
-		padding: var(--List-item-paddingVertical) var(--List-item-paddingHorizontal);
-
-		@include hoverFocus {
-			background-color: var(--bgColor-onHover);
-		}
-
-		&[data-value]::after {
-			flex: 1;
-			margin-left: var(--List-item-paddingHorizontal);
-			text-align: right;
-			content: attr(data-value);
-		}
+		padding: 0 var(--List-item-paddingHorizontal);
 	}
 
-	&-main {
+	&-item {
 		flex: 1;
 
-		li.is-centered > & {
-			justify-content: center;
+		.Icon {
+			margin-right: 8px;
 		}
 	}
 
-	&-icon {
-		@include size(1.5em);
+	// Icon
+	.Icon {
+		@include size(24px);
+	}
 
-		&:not(:last-child) {
-			margin-right: var(--List-item-paddingHorizontal);
+	a,
+	[role="link"] {
+		@include link-raw;
+		@include hover-focus {
+			background-color: $grey-100;
 		}
 	}
 
 
 
-	// VARIANTS
-	// stylelint-disable no-duplicate-selectors
-
-	// Small variant
-	&.is-small {
-		&.is-small {
-			--List-item-minHeight: 40px;
-			--List-item-paddingVertical: 2px;
-			--List-item-paddingHorizontal: 8px;
-		}
+	// Modifiers
+	&--small {
+		--List-item-minHeight: 40px;
+		--List-item-paddingHorizontal: 8px;
 	}
 }

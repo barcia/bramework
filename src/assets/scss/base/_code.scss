@@ -1,12 +1,10 @@
-/* $CODE */
-
 // Typography
 pre,
 code,
 kbd,
 samp {
 	font-family: font(code);
-	font-size: 0.95em;
+	font-size: 0.9em;
 }
 
 
@@ -14,8 +12,7 @@ samp {
 // Color
 pre,
 code {
-	color: var(--code-fontColor, var(--fontColor));
-	background-color: var(--code-bgColor, $grey-50);
+	background-color: var(--bgColor--100);
 }
 
 
@@ -24,10 +21,7 @@ code {
 pre {
 	tab-size: 4;
 	padding: 10px;
-
-	figure & {
-		margin-bottom: 0;
-	}
+	margin: 0.5em 0;
 }
 
 
@@ -35,40 +29,7 @@ pre {
 // Inline code
 :not(pre) > code,
 kbd {
-	display: inline-block;
-	padding: 0 5px;
+	padding: 0.2em 0.4em;
 	border-radius: 2px;
-	line-height: $textLineHeight;
-	vertical-align: middle;
 	user-select: all;
-}
-
-
-
-// Code themes
-code { // stylelint-disable-line no-descending-specificity
-	&.is-dark {
-		--code-fontColor: #{$white};
-		--code-bgColor: #{$grey-700};
-	}
-
-	&.is-green {
-		// --code-fontColor: #{$md-lightgreen-a400}; @Fix
-		--code-bgColor: #{$grey-700};
-	}
-
-	&.is-red {
-		// --code-fontColor: #{$razzmatazz};
-		// --code-bgColor: #{$alizarin-50};
-	}
-
-	&.is-blue {
-		// --code-fontColor: #{$belize-hole-700};
-		// --code-bgColor: #{$belize-hole-50};
-	}
-
-	&.is-brown {
-		// --code-fontColor: #{$carrot-700};
-		// --code-bgColor: #{$carrot-50};
-	}
 }

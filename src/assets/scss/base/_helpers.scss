@@ -1,5 +1,4 @@
 // stylelint-disable declaration-no-important
-/* $HELPERS */
 
 // LAYOUT
 // Hide an element
@@ -9,7 +8,7 @@
 .h-invisible {visibility: hidden !important;}
 
 // A11Y
-.h-screenReader {@include screenReader;}
+.h-screen-reader {@include screen-reader;}
 
 
 // TEXT

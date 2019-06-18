@@ -1,5 +1,5 @@
 // Mixin to styles in :hover and :focus pseudo-classes
-@mixin hoverFocus {
+@mixin hover-focus {
 	&:hover,
 	&:focus {
 		@content;
@@ -9,7 +9,7 @@
 
 
 // Mixin to styles in :hover, :focus and :active pseudo-classes
-@mixin hoverFocusActive {
+@mixin hover-focus-active {
 	&:hover,
 	&:focus,
 	&:active {
@@ -20,7 +20,7 @@
 
 
 // Mixin to styles in :hover, :focus and :active pseudo-classes **and the element itself**
-@mixin selfHoverFocusActive {
+@mixin self-hover-focus-active {
 	&,
 	&:hover,
 	&:focus,
@@ -32,8 +32,8 @@
 
 
 // Mixin to remove the link classes and its pseudo-classes
-@mixin voidLink {
-	@include selfHoverFocusActive {
+@mixin link-raw {
+	@include self-hover-focus-active {
 		text-decoration: none;
 		color: inherit;
 	}
@@ -42,8 +42,8 @@
 
 
 // Mixin to add the styles to selector pseudo classes
-@mixin linkStates($property, $value1, $value2: $value1) {
-	@include hoverFocus {
+@mixin link-states($property, $value1, $value2: $value1) {
+	@include hover-focus {
 		#{$property}: $value1;
 	}
 
@@ -55,8 +55,8 @@
 
 
 // Mixin to create an animated underline effect when the text is hovered over
-// Example: @include underlineAnimation(x, red, 2px, 0.3s);
-@mixin underlineAnimation($axis, $color, $height, $time) {
+// Example: @include underline-animation(x, red, 2px, 0.3s);
+@mixin underline-animation($axis, $color, $height, $time) {
 	position: relative;
 	display: inline-block;
 

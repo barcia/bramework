@@ -1,9 +1,9 @@
 /* $IMAGES & $ICONS */
 
 // ICONS
-// Sizes
-.icon--24 {
+.Icon {
 	@include size(24px);
+	fill: currentColor;
 }
 
 

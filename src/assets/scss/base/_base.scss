@@ -13,24 +13,21 @@ body {
 
 
 // Headings
-// stylelint-disable-next-line selector-list-comma-newline-after
+stylelint-disable-next-line selector-list-comma-newline-after
 h1, h3, h4, h2, h5, h6 {
 	margin-top: 1.2em;
-	margin-bottom: 0.5em;
+	margin-top: 0;
+	margin-bottom: 0.6em;
 	line-height: 1.4em;
 	text-rendering: optimizeLegibility;
-
-	&:first-child {
-		margin-top: 0;
-	}
 }
 
 
 // Text
 p {
-	@include textBlock(1em);
+	@include margin-bottom(1em);
 	margin-top: 0;
-	line-height: $textLineHeight;
+	line-height: 1.5em;
 	text-align: left;
 }
 
@@ -41,7 +38,7 @@ ol {
 	padding-left: 20px;
 
 	li {
-		@include marginY(0.25em);
+		@include margin-y(0.25em);
 	}
 
 	@include from(medium) {
@@ -52,15 +49,12 @@ ol {
 
 // Inline elements
 a {
-	color: color(primary);
+	color: var(--color-primary);
+	text-decoration: none;
 
 	&:hover,
 	&:focus {
-		color: shadow(color(primary), 15%);
-	}
-
-	&:active {
-		color: shadow(color(primary), 30%);
+		text-decoration: underline;
 	}
 }
 
@@ -72,34 +66,38 @@ small {
 
 
 del {
-	color: var(--red);
+	color: var(--color-red);
 }
 
 
 ins {
-	color: var(--green);
+	color: var(--color-green);
 }
 
 
 mark {
-	background-color: var(--yellow);
+	background-color: var(--color-yellow);
 }
 
 
 kbd {
-	background-color: $white;
-	box-shadow: 0 2px $grey-150;
+	background-color: var(--bgColor--50);
+	box-shadow: 0 2px var(--bgColor--100);
 }
 
 abbr {
 	text-transform: uppercase;
 }
 
+address {
+	font-style: inherit;
+}
+
 
 
 // Media
 figure {
-	@include textBlock(1em);
+	@include margin-bottom(1em);
 }
 
 figcaption {

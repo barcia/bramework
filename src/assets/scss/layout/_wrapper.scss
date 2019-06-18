@@ -1,3 +1,6 @@
 .Wrapper {
-	margin-top: var(--Navbar-height);
+	width: 100%;
+	max-width: $wrapper-width + ($wrapper-padding-x * 2);
+	padding: 0 $wrapper-padding-x;
+	margin: var(--Navbar-height) auto 0;
 }

@@ -1,5 +1,5 @@
 // Add ellipsis truncations if the text is bigger than the parent
-@mixin textTruncate {
+@mixin text-truncate {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -8,7 +8,7 @@
 
 
 // Add background color to text
-@mixin backgroundDecoration($size, $color1, $color-gradient: $color1) {
+@mixin background-decoration($size, $color1, $color-gradient: $color1) {
 	text-decoration: none;
 	background: linear-gradient($color1, $color-gradient);
 	background-position: left 0 bottom 0;

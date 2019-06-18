@@ -1,17 +1,14 @@
 // Site Layout
-$site-maxWidth: 1920px;
+$wrapper-max-width: 1920px;
 $wrapper-width: 800px;
-$wrapper-margin-x: 8px;
-$textLineHeight: 1.5em;
-
-
+$wrapper-padding-x: 16px;
 
 // Base
 $black: hsl(0, 0%, 0%);
 $white: hsl(0, 0%, 100%);
 
 // Greyscale
-$grey-50 : tint($black, 95%);
+$grey-50: tint($black, 95%);
 $grey-100: tint($black, 90%);
 $grey-150: tint($black, 85%);
 $grey-200: tint($black, 80%);
@@ -35,16 +32,14 @@ $grey-950: tint($black, 5%);
 // Colors
 $color: (
 	"primary": hsl(204, 70%, 53%),
-	"dark": $black
+	"dark": $black,
+	"dark-soft": $grey-500,
+	"dark-softer": $grey-300,
+	"light": $white,
+	"light-soft": $grey-500,
+	"light-softer": $grey-700,
 ) !default;
 
-@function color($key) {
-	@if map-has-key($color, $key) {
-		@return map-get($color, $key);
-	} @else {
-		@error "Undefined color: '$key'.";
-	}
-}
 
 
 // z-index
@@ -52,31 +47,34 @@ $z-index: (
 	"navbar": 99
 ) !default;
 
-@function z($key) {
-	@if map-has-key($z-index, $key) {
-		@return map-get($z-index, $key);
-	} @else {
-		@error "Undefined z-index: '$key'.";
-	}
-}
-
 
 
 // Font types
-$fontFamily-sans-serif: "Open Sans", "Helvetica Neue", "Roboto", sans-serif;
-$fontFamily-serif: serif;
-$fontFamily-monospace: "Hack", "Inconsolata", "Menlo", "Consolas", monospace;
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", "Roboto", sans-serif;
+$font-family-serif: serif;
+$font-family-monospace: "Hack", "Inconsolata", "Menlo", "Consolas", monospace;
+$font-family-system:	system-ui,
+										-apple-system,
+										BlinkMacSystemFont,
+										"Segoe UI",
+										Roboto,
+										"Helvetica Neue",
+										Ubuntu,
+										Cantarell,
+										"Noto Sans",
+										sans-serif,
+										"Apple Color Emoji",
+										"Segoe UI Emoji",
+										"Segoe UI Symbol",
+										"Noto Color Emoji";
 
 // Fonts
 $font: (
-	"normal": $fontFamily-sans-serif,
-	"heading": $fontFamily-sans-serif,
-	"code": $fontFamily-monospace,
+	"normal": $font-family-system,
+	"heading": $font-family-system,
+	"code": $font-family-monospace,
 ) !default;
 
-@function font($key) {
-	@return map-get($font, $key);
-}
 
 // Font Sizes
 $weight: (
@@ -84,10 +82,6 @@ $weight: (
 	"regular": 400,
 	"bold": 700,
 ) !default;
-
-@function weight($key) {
-	@return map-get($weight, $key);
-}
 
 
 
@@ -99,50 +93,96 @@ $breakpoints: (
 	"extralarge": 1920px,
 ) !default;
 
-@function bp($key) {
-	@return map-get($breakpoints, $key);
-}
 
 
-
-// Timing
-$time: (
+// Speed
+$speed: (
 	"fast": 100ms,
 	"normal": 200ms,
 	"slow": 300ms,
 ) !default;
 
-@function time($key) {
-	@return map-get($time, $key);
-}
+
 
 
 // CUSTOM PROPERTIES
+
 // stylelint-disable declaration-colon-space-before
 :root {
 	// Background color
-	--bgColor         : #{$white};
-	--bgColor-onHover : #{black(0.1)};
-	--bgColor-onActive: #{black(0.2)};
+	// --bgColor         : #{$white};
+
 	// --brandColor-primary: #{$royal-blue};
 	// --brandColor-secondary: #{$sunglo};
 
 	// Font color
+	// --fontColor             : #{$grey-700};
+	// --fontColor--light      : #{$grey-500};
+	// --fontColor--lighter    : #{$grey-300};
+	// --fontColor--dark       : #{$grey-900};
+	// --fontColor-alpha--black: #{black(0.4)};
+	// --fontColor-alpha--white: #{white(0.4)};
+
+	// Basic color
+	--blue  : blue;
+	--green : green;
+	--orange: orange;
+	--pink  : pink;
+	--purple: purple;
+	--red   : red;
+	--yellow: yellow;
+}
+
+$color-primary: hsl(204, 70%, 53%);
+$color-blue  : blue;
+$color-green : green;
+$color-orange: orange;
+$color-pink  : pink;
+$color-purple: purple;
+$color-red   : red;
+$color-yellow: yellow;
+
+
+:root {
+	--color-primary: #{$color-primary};
+	--color-blue: #{$color-blue};
+	--color-green: #{$color-green};
+	--color-orange: #{$color-orange};
+	--color-pink: #{$color-pink};
+	--color-purple: #{$color-purple};
+	--color-red: #{$color-red};
+	--color-yellow: #{$color-yellow};
+
+	--bgColor: #{$white};
+	--bgColor--50: #{$grey-50};
+	--bgColor--100: #{$grey-100};
+	--bgColor--200: #{$grey-200};
+
 	--fontColor             : #{$grey-700};
 	--fontColor--light      : #{$grey-500};
 	--fontColor--lighter    : #{$grey-300};
-	--fontColor--dark       : #{$grey-900};
-	--fontColor-alpha--black: #{black(0.4)};
-	--fontColor-alpha--white: #{white(0.4)};
 
-	// Basic color
-	// --blue  : #{$royal-blue};
-	// --green : #{$nephritis};
-	// --orange: #{$carrot-500};
-	// --pink  : #{$peach-colored};
-	// --purple: #{$bellflower};
-	// --red   : #{$pure-crimson};
-	// --yellow: #{$sandstorm};
+	@media (prefers-color-scheme: dark) {
+		--color-primary: #{tint($color-primary, 40%)};
+		--color-blue: #{tint($color-blue, 40%)};
+		--color-green: #{tint($color-green, 40%)};
+		--color-orange: #{tint($color-orange, 40%)};
+		--color-pink: #{tint($color-pink, 40%)};
+		--color-purple: #{tint($color-purple, 40%)};
+		--color-red: #{tint($color-red, 40%)};
+		--color-yellow: #{tint($color-yellow, 40%)};
+
+
+
+		--bgColor: #{$grey-900};
+		--bgColor--50: #{$grey-850};
+		--bgColor--100: #{$grey-800};
+		--bgColor--200: #{$grey-700};
+
+		--fontColor             : #{$white};
+		--fontColor--light      : #{$grey-300};
+		--fontColor--lighter    : #{$grey-500};
+	}
 }
 
 

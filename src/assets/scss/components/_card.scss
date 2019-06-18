@@ -1,9 +1,7 @@
-/* $CARD */
-
 // Base
 .Card {
-	@include paddingY(8px);
-	@include boxShadow(2);
+	@include padding-y(8px);
+	@include box-shadow(2);
 	display: inline-block;
 	width: 100%;
 	border-radius: 5px;
@@ -24,15 +22,15 @@
 // stylelint-disable no-duplicate-selectors
 .Card {
 	// Aspect ratio
-	@include aspectRatio;
+	@include aspect-ratio;
 
 	// Link card
 	&.is-link {
-		@include voidLink;
+		@include link-raw;
 		@include transition(box-shadow);
 		cursor: pointer;
-		@include hoverFocus {
-			@include boxShadow(3);
+		@include hover-focus {
+			@include box-shadow(3);
 		}
 	}
 

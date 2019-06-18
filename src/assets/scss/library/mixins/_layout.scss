@@ -1,6 +1,6 @@
 // Completly center items in a `flex` container
 
-@mixin flexCenter {
+@mixin flex-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -8,7 +8,7 @@
 
 
 
-@mixin inlineFlexCenter {
+@mixin inline-flex-center {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -16,24 +16,8 @@
 
 
 
-// Completly center a block item
-@mixin blockCenter {
-	display: block;
-	margin: auto;
-}
-
-
-
-// Vertical center a block item
-@mixin blockCenterY {
-	@include marginY(auto);
-	display: block;
-}
-
-
-
-/// Horizontal center a block item
-@mixin blockCenterX {
-	@include marginX(auto);
+// Horizontal center a block item
+@mixin block-center {
+	@include margin-x(auto);
 	display: block;
 }

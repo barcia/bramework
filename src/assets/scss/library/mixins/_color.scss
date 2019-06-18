@@ -1,20 +1,20 @@
 // Mixin for create simple gradientse
 // Example: @include gradient((blue, red, yellow), 30deg);
-@mixin backgroundGradient($colors, $angle: 90deg) {
+@mixin background-gradient($colors, $angle: 90deg) {
 	background: linear-gradient($angle, $colors);
 }
 
 
 
 // Mixin for create animated gradients
-// Example: @include backgroundGradient--animated((blue, red, yellow), 10s);
-@mixin backgroundGradient--animated($colors, $time) {
+// Example: @include background-gradient--animated((blue, red, yellow), 10s);
+@mixin background-gradient--animated($colors, $time) {
 	background: linear-gradient(90deg, $colors);
 	background-size: 400% 400%;
-	animation: backgroundGradientAnimation $time ease-in-out infinite;
+	animation: gradientAnimation $time ease-in-out infinite;
 
 	@at-root {
-		@keyframes backgroundGradientAnimation {
+		@keyframes gradientAnimation {
 			0% {background-position: left;}
 			50% {background-position: right;}
 			100% {background-position: left;}
@@ -26,7 +26,7 @@
 
 // Mixin for create simple text gradients
 // Example: @include textGradient((blue, red, yellow));
-@mixin textGradient($colors, $direction: 0deg) {
+@mixin text-gradient($colors, $direction: 0deg) {
 	background: linear-gradient($direction, $colors);
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text; 	// stylelint-disable-line

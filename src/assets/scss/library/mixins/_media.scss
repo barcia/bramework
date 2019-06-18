@@ -1,5 +1,5 @@
 // Add background images
-@mixin backgroundImage($image-url) {
+@mixin background-image($image-url) {
 	background-image: url($image-url);
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -9,7 +9,7 @@
 
 
 // Aspect radio
-@mixin aspectRatio {
+@mixin aspect-ratio {
 	// stylelint-disable-next-line selector-list-comma-newline-after
 	&.is-1by1::before, &.is-square {padding-bottom: percentage(1 / 1);} // 1:1
 	&.is-21by9::before {padding-bottom: percentage(9 / 21);} // 21:9
@@ -23,7 +23,7 @@
 
 // Media Queries for pixel ratio
 // stylelint-disable media-feature-name-no-vendor-prefix
-@mixin pixelRatio($pixelratio) {
+@mixin pixel-ratio($pixelratio) {
 	@if $pixelratio == 1 {
 		@media (-webkit-min-device-pixel-ratio: 1),
 					 (min-resolution: 96dpi) {

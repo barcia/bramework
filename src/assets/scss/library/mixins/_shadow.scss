@@ -1,5 +1,5 @@
 // Gives a card depth effect based by default on Material Design shadow function
-@mixin boxShadow($depth: 0, $side: bottom) {
+@mixin box-shadow($depth: 0, $side: bottom) {
 	@if $depth < 1 {
 		box-shadow: none;
 	} @else {
@@ -10,7 +10,7 @@
 
 
 // Creates a shadow similar to box-shadow but based on the colors of the element itself. If you add display:inline-block you can use 90deg gradients
-@mixin dinamicShadow($opacity: 0.7, $blur: 7px) {
+@mixin dinamic-shadow($opacity: 0.7, $blur: 7px) {
 	position: relative;
 
 	&::after {

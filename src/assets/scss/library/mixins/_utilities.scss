@@ -1,15 +1,15 @@
 // Full width in small screens
-@mixin oversize($marginX) {
+@mixin oversize($margin-x) {
 	position: relative;
 	left: 50%;
-	width: calc(100% + (#{$marginX} * 2));
+	width: calc(100% + (#{$margin-x} * 2));
 	transform: translateX(-50%);
 }
 
 
 
 // Convert a list in a inline list
-@mixin inlineList {
+@mixin list-inline {
 	display: inline-flex;
 	align-items: center;
 	padding: 0;
@@ -19,6 +19,15 @@
 	li {
 		margin: 0;
 	}
+}
+
+
+
+// Disable basic list styles
+@mixin list-raw {
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 
 

@@ -20,3 +20,13 @@
 		@return transparentize($color, $opacity);
 	}
 }
+
+
+// Return a color
+@function color($key) {
+	@if map-has-key($color, $key) {
+		@return map-get($color, $key);
+	} @else {
+		@error "Undefined color: '$key'.";
+	}
+}

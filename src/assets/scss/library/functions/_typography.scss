@@ -1,0 +1,16 @@
+@function font($key) {
+	@if map-has-key($font, $key) {
+		@return map-get($font, $key);
+	} @else {
+		@error "Undefined font: '$key'.";
+	}
+}
+
+
+@function weight($key) {
+	@if map-has-key($weight, $key) {
+		@return map-get($weight, $key);
+	} @else {
+		@error "Undefined weight: '$key'.";
+	}
+}
