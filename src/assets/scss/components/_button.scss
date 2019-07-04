@@ -17,8 +17,8 @@ input[type="submit"],
 	min-width: 60px;
 	min-height: 35px;
 	padding: 2px 8px;
+	color: color(dark);
 	background-color: $grey-150;
-	color: black;
 
 	@include hover-focus {
 		color: inherit;
