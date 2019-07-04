@@ -16,8 +16,8 @@
 		"prestart": "npm run clean"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.4.5",
-		"@babel/preset-env": "^7.4.5",
+		"@babel/core": "^7.5.0",
+		"@babel/preset-env": "^7.5.0",
 		"autoprefixer": "^9.6.0",
 		"babel-loader": "^8.0.6",
 		"browser-sync": "^2.26.7",
@@ -33,7 +33,7 @@
 		"stylelint": "^10.1.0",
 		"stylelint-config-recommended": "^2.2.0",
 		"stylelint-order": "^3.0.0",
-		"stylelint-scss": "^3.8.0",
+		"stylelint-scss": "^3.9.0",
 		"webpack-stream": "^5.2.1",
 		"yargs": "^13.2.4"
 	}
