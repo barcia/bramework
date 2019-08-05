@@ -1,7 +1,0 @@
-# Browsers that Bramework support
-
-last 1 major version
-> 1%
-not dead
-not ExplorerMobile <= 11
-Chrome > 40
