@@ -10,11 +10,9 @@
 
 // Convert a list in a inline list
 @mixin list-inline {
+	@include list-raw;
 	display: inline-flex;
 	align-items: center;
-	padding: 0;
-	margin: 0;
-	list-style: none;
 
 	li {
 		margin: 0;
@@ -28,6 +26,19 @@
 	padding: 0;
 	margin: 0;
 	list-style: none;
+}
+
+
+
+@mixin button-raw {
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	font: inherit;
+	text-align: inherit;
+	background-color: transparent;
+	appearance: none;
 }
 
 
