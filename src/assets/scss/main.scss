@@ -3,8 +3,6 @@
 // LIBRARY
 @import "library/functions";
 @import "library/mixins";
-
-// VARIABLES
 @import "library/variables";
 
 // RESET
@@ -18,10 +16,10 @@
 @import "base/helpers";
 
 @import "layout/wrapper";
-@import "layout/navbar";
-@import "layout/header";
-@import "layout/footer";
 
+@import "components/navbar";
+@import "components/header";
+@import "components/footer";
 @import "components/button";
 @import "components/card";
 @import "components/embed";
