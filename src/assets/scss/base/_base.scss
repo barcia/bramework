@@ -3,6 +3,7 @@ body {
 	font-family: font(normal);
 	font-size: 1em;
 	color: var(--fontColor);
+	background-color: var(--bgColor);
 	scroll-behavior: smooth;
 }
 
@@ -25,8 +26,6 @@ h1, h3, h4, h2, h5, h6 {
 
 // Text
 p {
-	@include margin-bottom(1em);
-	margin-top: 0;
 	line-height: 1.5em;
 	text-align: left;
 }
@@ -35,7 +34,7 @@ p {
 // Lists
 ul,
 ol {
-	padding-left: 20px;
+	padding-left: 1.25em;
 
 	li {
 		@include margin-y(0.25em);

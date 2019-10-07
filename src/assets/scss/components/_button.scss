@@ -1,36 +1,44 @@
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-[role="button"] {
-	@include inline-flex-center;
-	border: none;
-	text-decoration: none;
-	white-space: nowrap;
-	vertical-align: middle;
-	outline: 0;
-}
-
-
-
 .Button {
+	@include inline-flex-center;
 	min-width: 60px;
 	min-height: 35px;
-	padding: 2px 8px;
+	padding: 0.125em 0.5em;
+	border: none;
+	white-space: nowrap;
+	vertical-align: middle;
 	color: color(dark);
 	background-color: $grey-150;
+	outline: 0;
 
-	@include hover-focus {
-		color: inherit;
-		background-color: var(--color-primary);
+	@include self-hover-focus-active {
+		text-decoration: none;
 	}
 
-	// &:disabled {
-	// 	color: var(--fontColor--light);
-	// }
+	&:focus {
+		@include focus-outline;
+	}
 
+	&:hover {
+		background-color: $grey-200;
+	}
+
+	&:active {
+		background-color: $grey-250;
+	}
+
+	&:disabled {
+		color: color(dark-soft);
+		background-color: $grey-300;
+	}
+
+	// Modifiers
+	&--fullWidth {
+		width: 100%;
+	}
+
+	// Childs
 	.Icon {
-		@include size(24px);
-		margin-right: 8px;
+		&:first-child {margin-right: 0.5em;}
+		&:last-child {margin-left: 0.5em;}
 	}
 }

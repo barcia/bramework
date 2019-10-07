@@ -13,14 +13,23 @@
 @import "base/code";
 @import "base/form";
 @import "base/img";
-@import "base/helpers";
 
 @import "layout/wrapper";
 
-@import "components/navbar";
-@import "components/header";
-@import "components/footer";
 @import "components/button";
 @import "components/card";
 @import "components/embed";
 @import "components/list";
+
+@import "modules/header";
+@import "modules/navbar";
+@import "modules/footer";
+
+@import "helpers/a11y";
+@import "helpers/layout";
+@import "helpers/text";
+
+
+body {
+	padding: 100px;
+}

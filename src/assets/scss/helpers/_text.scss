@@ -1,16 +1,3 @@
-// stylelint-disable declaration-no-important
-
-// LAYOUT
-// Hide an element
-.h-hidden {display: none !important;}
-
-// Not show it, but maintain the layout
-.h-invisible {visibility: hidden !important;}
-
-// A11Y
-.h-screen-reader {@include screen-reader;}
-
-
 // TEXT
 .h-uppercase {text-transform: uppercase;}
 .h-capitalize {text-transform: capitalize;}

@@ -1,44 +1,26 @@
 // Base
 .Card {
-	@include padding-y(8px);
 	@include box-shadow(2);
 	display: inline-block;
-	width: 100%;
-	border-radius: 5px;
+	border-radius: 0.5em;
 	background-color: var(--bgColor);
 
-	@include from(small) {
-		width: 400px;
+	&-content {
+		margin: 1em;
 	}
 
-	&-section {
-		margin: 16px;
-	}
-}
-
-
-
-// Modifiers
-// stylelint-disable no-duplicate-selectors
-.Card {
-	// Aspect ratio
-	@include aspect-ratio;
-
-	// Link card
-	&.is-link {
+	// Modifiers
+	&--link {
 		@include link-raw;
 		@include transition(box-shadow);
-		cursor: pointer;
 		@include hover-focus {
 			@include box-shadow(3);
 		}
 	}
 
-
-	// Media
-	&.is-media {
+	&--media {
 		position: relative;
-		margin: 0 auto;
+		width: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;

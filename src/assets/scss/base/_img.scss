@@ -2,8 +2,9 @@
 
 // ICONS
 .Icon {
-	@include size(24px);
-	fill: currentColor;
+	@include size(1.5em);
+	// fill: currentColor;
+	// stroke: currentColor;
 }
 
 

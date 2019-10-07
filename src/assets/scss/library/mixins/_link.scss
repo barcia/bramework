@@ -31,6 +31,11 @@
 
 
 
+@mixin focus-outline($width: 3px, $color: color(primary), $opacity: 60%) {
+	box-shadow: 0 0 0 $width alpha($color, $opacity);
+}
+
+
 // Mixin to remove the link classes and its pseudo-classes
 @mixin link-raw {
 	@include self-hover-focus-active {
