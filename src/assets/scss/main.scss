@@ -6,30 +6,24 @@
 @import "library/variables";
 
 // RESET
-@import "standarize/standarize";
+@import "standarize/dist/standarize";
 
 // SITE
 @import "base/base";
 @import "base/code";
 @import "base/form";
-@import "base/img";
+@import "base/media";
 
 @import "layout/wrapper";
+@import "layout/header";
+@import "layout/footer";
 
 @import "components/button";
 @import "components/card";
 @import "components/embed";
 @import "components/list";
-
-@import "modules/header";
-@import "modules/navbar";
-@import "modules/footer";
+@import "components/navbar";
 
 @import "helpers/a11y";
 @import "helpers/layout";
 @import "helpers/text";
-
-
-body {
-	padding: 100px;
-}
