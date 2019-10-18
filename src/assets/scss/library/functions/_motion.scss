@@ -1,7 +1,0 @@
-@function speed($key) {
-	@if map-has-key($speed, $key) {
-		@return map-get($speed, $key);
-	} @else {
-		@error "Undefined speed: '$key'.";
-	}
-}

@@ -7,13 +7,13 @@
 
 
 .Navbar {
-	height: var(--Navbar-height);
+	z-index: z(navbar);
 	display: flex;
 	align-items: center;
-	z-index: z(navbar);
-	padding: 0 12px;
 	width: 100vw;
-	background-color: lightgrey;
+	height: var(--Navbar-height);
+	padding: 0 12px;
+	background-color: $grey-100;
 
 	&-toggle {
 		@include circle(48px);

@@ -1,23 +1,18 @@
-// Typography
 pre,
 code,
 kbd,
 samp {
-	font-family: font(code);
+	font-family: $font-family-monospace;
 	font-size: 0.9em;
 }
 
 
-
-// Color
 pre,
 code {
 	background-color: var(--bgColor--100);
 }
 
 
-
-// Preformatted
 pre {
 	tab-size: 2;
 	padding: 10px;
@@ -28,8 +23,6 @@ pre {
 }
 
 
-
-// Inline code
 :not(pre) > code,
 kbd {
 	padding: 0.2em 0.4em;

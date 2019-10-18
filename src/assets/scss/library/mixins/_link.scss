@@ -31,9 +31,11 @@
 
 
 
-@mixin focus-outline($width: 3px, $color: color(primary), $opacity: 60%) {
+// Set outline when focus
+@mixin focus-outline($width: 3px, $color: $primary, $opacity: 60%) {
 	box-shadow: 0 0 0 $width alpha($color, $opacity);
 }
+
 
 
 // Mixin to remove the link classes and its pseudo-classes

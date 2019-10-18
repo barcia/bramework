@@ -1,6 +1,6 @@
-// Body
+// Sectioning root
 body {
-	font-family: font(normal);
+	font-family: $font-family-sans-serif;
 	font-size: 1em;
 	color: var(--fontColor);
 	background-color: var(--bgColor);
@@ -8,12 +8,12 @@ body {
 }
 
 ::selection {
-	background-color: tint(color(primary), 70%);
+	background-color: tint($secondary, 70%);
 }
 
 
 
-// Headings
+// Content sectioning
 // stylelint-disable-next-line selector-list-comma-newline-after
 h1, h3, h4, h2, h5, h6 {
 	margin-bottom: 0.6em;
@@ -21,15 +21,29 @@ h1, h3, h4, h2, h5, h6 {
 	text-rendering: optimizeLegibility;
 }
 
+address {
+	font-style: inherit;
+}
 
-// Text
+
+
+// Text content
 p {
 	line-height: 1.5em;
 	text-align: left;
 }
 
+figure {
+	@include margin-bottom(1em);
+}
 
-// Lists
+figcaption {
+	font-size: 0.85em;
+	color: var(--fontColor--light);
+	&:first-child {margin-bottom: 0.5em;}
+	&:last-child {margin-top: 0.5em;}
+}
+
 ul,
 ol {
 	padding-left: 1.25em;
@@ -44,7 +58,8 @@ ol {
 }
 
 
-// Inline elements
+
+// Inline text semantics
 a {
 	text-decoration: none;
 	color: var(--color-primary);
@@ -55,27 +70,13 @@ a {
 	}
 }
 
-
 small {
 	font-size: 0.85em;
-	color: var(--fontColor--light);
 }
-
-
-del {
-	color: var(--color-red);
-}
-
-
-ins {
-	color: var(--color-green);
-}
-
 
 mark {
 	background-color: var(--color-yellow);
 }
-
 
 kbd {
 	background-color: var(--bgColor--50);
@@ -86,20 +87,13 @@ abbr {
 	text-transform: uppercase;
 }
 
-address {
-	font-style: inherit;
+
+
+// Demarcating
+del {
+	color: var(--color-red);
 }
 
-
-
-// Media
-figure {
-	@include margin-bottom(1em);
-}
-
-figcaption {
-	font-size: 0.85em;
-	color: var(--fontColor--light);
-	&:first-child {margin-bottom: 0.5em;}
-	&:last-child {margin-top: 0.5em;}
+ins {
+	color: var(--color-green);
 }

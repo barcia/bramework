@@ -1,191 +1,34 @@
-// Site Layout
-$wrapper-max-width: 1920px;
-$wrapper-width: 800px;
-$wrapper-padding-x: 16px;
-
-// Base
-$black: hsl(0, 0%, 0%);
-$white: hsl(0, 0%, 100%);
-
-// Greyscale
-$grey-50: tint($black, 95%);
-$grey-100: tint($black, 90%);
-$grey-150: tint($black, 85%);
-$grey-200: tint($black, 80%);
-$grey-250: tint($black, 75%);
-$grey-300: tint($black, 70%);
-$grey-350: tint($black, 65%);
-$grey-400: tint($black, 60%);
-$grey-450: tint($black, 55%);
-$grey-500: tint($black, 50%);
-$grey-550: tint($black, 45%);
-$grey-600: tint($black, 40%);
-$grey-650: tint($black, 35%);
-$grey-700: tint($black, 30%);
-$grey-750: tint($black, 25%);
-$grey-800: tint($black, 20%);
-$grey-850: tint($black, 15%);
-$grey-900: tint($black, 10%);
-$grey-950: tint($black, 5%);
-
-
-// Colors
-$color: (
-	"primary": hsl(204, 70%, 53%),
-	"dark": $black,
-	"dark-soft": $grey-500,
-	"dark-softer": $grey-300,
-	"light": $white,
-	"light-soft": $grey-500,
-	"light-softer": $grey-700,
-) !default;
-
-
-
-// z-index
-$z-index: (
-	"navbar": 99
-) !default;
-
-
-
-// Font types
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", "Roboto", sans-serif;
-$font-family-serif: serif;
-$font-family-monospace: "Hack", "Inconsolata", "Menlo", "Consolas", monospace;
-$font-family-system:	system-ui,
-										-apple-system,
-										BlinkMacSystemFont,
-										"Segoe UI",
-										Roboto,
-										"Helvetica Neue",
-										Ubuntu,
-										Cantarell,
-										"Noto Sans",
-										sans-serif,
-										"Apple Color Emoji",
-										"Segoe UI Emoji",
-										"Segoe UI Symbol",
-										"Noto Color Emoji";
-
-// Fonts
-$font: (
-	"normal": $font-family-system,
-	"heading": $font-family-system,
-	"code": $font-family-monospace,
-) !default;
-
-
-// Font Sizes
-$weight: (
-	"light": 300,
-	"regular": 400,
-	"bold": 700,
-) !default;
-
-
-
-// Breakpoints map
-$breakpoints: (
-	"small": 450px,
-	"medium": 1024px,
-	"large": 1344px,
-	"extralarge": 1920px,
-) !default;
-
-
-
-// Speed
-$speed: (
-	"fast": 100ms,
-	"normal": 200ms,
-	"slow": 300ms,
-) !default;
-
-
-
-
-// CUSTOM PROPERTIES
-
-// stylelint-disable declaration-colon-space-before
-:root {
-	// Background color
-	// --bgColor         : #{$white};
-
-	// --brandColor-primary: #{$royal-blue};
-	// --brandColor-secondary: #{$sunglo};
-
-	// Font color
-	// --fontColor             : #{$grey-700};
-	// --fontColor--light      : #{$grey-500};
-	// --fontColor--lighter    : #{$grey-300};
-	// --fontColor--dark       : #{$grey-900};
-	// --fontColor-alpha--black: #{black(0.4)};
-	// --fontColor-alpha--white: #{white(0.4)};
-
-	// Basic color
-	--blue  : blue;
-	--green : green;
-	--orange: orange;
-	--pink  : pink;
-	--purple: purple;
-	--red   : red;
-	--yellow: yellow;
-}
-
-$color-primary: hsl(204, 70%, 53%);
-$color-blue  : blue;
-$color-green : green;
-$color-orange: orange;
-$color-pink  : pink;
-$color-purple: purple;
-$color-red   : red;
-$color-yellow: yellow;
-
 
 :root {
-	--color-primary: #{$color-primary};
-	--color-blue: #{$color-blue};
-	--color-green: #{$color-green};
-	--color-orange: #{$color-orange};
-	--color-pink: #{$color-pink};
-	--color-purple: #{$color-purple};
-	--color-red: #{$color-red};
-	--color-yellow: #{$color-yellow};
+	--primary: #{$primary};
+	--green: #{$green};
+	--blue: #{$blue};
+	--yellow: #{$yellow};
+	--red: #{$red};
+
+	--fontColor: #{$grey-700};
+	--fontColor--light: #{$grey-500};
+	--fontColor--lighter: #{$grey-300};
 
 	--bgColor: #{$white};
 	--bgColor--50: #{$grey-50};
 	--bgColor--100: #{$grey-100};
 	--bgColor--200: #{$grey-200};
 
-	--fontColor             : #{$grey-700};
-	--fontColor--light      : #{$grey-500};
-	--fontColor--lighter    : #{$grey-300};
+	@include dark {
+		--primary: #{$primary-light};
+		--green: #{$green-light};
+		--blue: #{$blue-light};
+		--yellow: #{$yellow-light};
+		--red: #{$red-light};
 
-	@media (prefers-color-scheme: dark) {
-		--color-primary: #{tint($color-primary, 40%)};
-		--color-blue: #{tint($color-blue, 40%)};
-		--color-green: #{tint($color-green, 40%)};
-		--color-orange: #{tint($color-orange, 40%)};
-		--color-pink: #{tint($color-pink, 40%)};
-		--color-purple: #{tint($color-purple, 40%)};
-		--color-red: #{tint($color-red, 40%)};
-		--color-yellow: #{tint($color-yellow, 40%)};
-
-
+		--fontColor: #{$white};
+		--fontColor--light: #{$grey-300};
+		--fontColor--lighter: #{$grey-500};
 
 		--bgColor: #{$grey-900};
 		--bgColor--50: #{$grey-850};
 		--bgColor--100: #{$grey-800};
 		--bgColor--200: #{$grey-700};
-
-		--fontColor             : #{$white};
-		--fontColor--light      : #{$grey-300};
-		--fontColor--lighter    : #{$grey-500};
 	}
 }
-
-
-
-
-// stylelint-enable

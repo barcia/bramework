@@ -1,24 +1,3 @@
-// Color schemes
-@mixin colorscheme-dark {
-	[data-colorscheme="dark"] & {
-		@content;
-	}
-}
-
-@mixin colorscheme-light {
-	[data-colorscheme="light"] & {
-		@content;
-	}
-}
-
-@mixin colorscheme-highContrast {
-	[data-colorscheme="highcontrast"] & {
-		@content;
-	}
-}
-
-
-
 // Styles for the item when is in a touchDevice
 @mixin touch-device {
 	[data-touchdevice="true"] & {

@@ -36,7 +36,7 @@ fieldset {
 
 // Text-type input fields
 #{$InputText} {
-	@include transition(border-color, speed(fast));
+	@include transition(border-color, $duration-short);
 	padding: 5px 10px;
 	border: 1px solid var(--bgColor--200);
 	border-radius: 0;

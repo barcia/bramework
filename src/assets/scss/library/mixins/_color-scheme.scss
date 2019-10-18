@@ -4,6 +4,9 @@
 	@media (prefers-color-scheme: light) {
 		@content;
 	}
+	// @at-root [data-colorscheme="light"] {
+	// 	@content;
+	// }
 }
 
 
@@ -11,6 +14,17 @@
 // Prefer an interface that has a dark theme
 @mixin dark {
 	@media (prefers-color-scheme: dark) {
+		@content;
+	}
+	// @at-root [data-colorscheme="dark"] {
+	// 	@content;
+	// }
+}
+
+
+// Prefer an interface that has a high contrast
+@mixin highContrast {
+	[data-colorscheme="highcontrast"] & {
 		@content;
 	}
 }
