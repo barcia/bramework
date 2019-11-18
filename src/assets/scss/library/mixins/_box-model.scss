@@ -1,6 +1,7 @@
 // Margin bottom except in last item
 @mixin margin-bottom($size: 1em) {
 	margin-bottom: 0;
+
 	&:not(:last-child) {
 		margin-bottom: $size;
 	}

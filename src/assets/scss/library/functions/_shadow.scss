@@ -10,15 +10,21 @@
 
 	@if $side == bottom {
 		@return 0 $primary-offset $primary-blur $primary-color,
-						0 $secondary-offset $secondary-blur $secondary-color;
-	} @else if $side == top {
+			0 $secondary-offset $secondary-blur $secondary-color;
+	}
+
+	@else if $side == top {
 		@return 0 -#{$primary-offset} $primary-blur $primary-color,
-						0 -#{$secondary-offset} $secondary-blur $secondary-color;
-	} @else if $side == right {
+			0 -#{$secondary-offset} $secondary-blur $secondary-color;
+	}
+
+	@else if $side == right {
 		@return $primary-offset 0 $primary-blur $primary-color,
-						$secondary-offset 0 $secondary-blur $secondary-color;
-	} @else if $side == left {
+			$secondary-offset 0 $secondary-blur $secondary-color;
+	}
+
+	@else if $side == left {
 		@return -#{$primary-offset} 0 $primary-blur $primary-color,
-						-#{$secondary-offset} 0 $secondary-blur $secondary-color;
+			-#{$secondary-offset} 0 $secondary-blur $secondary-color;
 	}
 }

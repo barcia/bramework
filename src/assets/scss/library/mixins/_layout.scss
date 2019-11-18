@@ -18,5 +18,6 @@
 // Horizontal center a block item
 @mixin block-center {
 	@include margin-x(auto);
+
 	display: block;
 }

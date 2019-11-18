@@ -11,6 +11,7 @@
 // Convert a list in a inline list
 @mixin list-inline {
 	@include list-raw;
+
 	display: inline-flex;
 	align-items: center;
 
@@ -26,6 +27,10 @@
 	padding: 0;
 	margin: 0;
 	list-style: none;
+
+	li {
+		@include margin-y(0);
+	}
 }
 
 

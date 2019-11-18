@@ -1,5 +1,6 @@
 :root {
 	--Navbar-height: 55px;
+
 	@include from(medium) {
 		--Navbar-height: 65px;
 	}
@@ -17,6 +18,7 @@
 
 	&-toggle {
 		@include circle(48px);
+
 		background-color: transparent;
 
 		.Icon {
@@ -26,6 +28,7 @@
 
 	&-menu {
 		@include list-inline;
+
 		margin-left: auto;
 
 		li:not(:first-child) {
@@ -37,6 +40,7 @@
 
 	&--fixed {
 		@include transition(box-shadow);
+
 		position: fixed;
 		top: 0;
 		will-change: box-shadow;
@@ -48,6 +52,7 @@
 
 	&--scrollable {
 		@include transition((box-shadow, transform));
+
 		position: fixed;
 		top: 0;
 		will-change: box-shadow, transform;

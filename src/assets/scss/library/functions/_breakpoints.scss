@@ -1,7 +1,9 @@
 @function bp($key) {
 	@if map-has-key($breakpoints, $key) {
 		@return map-get($breakpoints, $key);
-	} @else {
+	}
+
+	@else {
 		@error "Undefined breakpoint: '$key'.";
 	}
 }

@@ -77,9 +77,12 @@
 		content: "";
 		transition: transform $time ease-out;
 		transform-origin: bottom left;
+
 		@if $axis == X or $axis == x {
 			transform: scaleX(0);
-		} @else {
+		}
+
+		@else {
 			transform: scaleY(0);
 		}
 	}
@@ -87,7 +90,9 @@
 	&:hover::after {
 		@if $axis == X or $axis == x {
 			transform: scaleX(1);
-		} @else {
+		}
+
+		@else {
 			transform: scaleY(1);
 		}
 	}

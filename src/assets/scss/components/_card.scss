@@ -1,6 +1,7 @@
 // Base
 .Card {
 	@include box-shadow(2);
+
 	display: inline-block;
 	border-radius: 0.5em;
 	background-color: var(--bgColor);
@@ -13,6 +14,7 @@
 	&--link {
 		@include link-raw;
 		@include transition(box-shadow);
+
 		@include hover-focus {
 			@include box-shadow(3);
 		}

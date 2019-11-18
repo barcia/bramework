@@ -2,7 +2,9 @@
 @mixin box-shadow($depth: 0, $side: bottom) {
 	@if $depth < 1 {
 		box-shadow: none;
-	} @else {
+	}
+
+	@else {
 		box-shadow: box-shadow($depth, $side);
 	}
 }

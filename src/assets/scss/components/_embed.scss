@@ -1,5 +1,6 @@
 .Embed {
 	@include aspect-ratio;
+
 	position: relative;
 	display: block;
 	width: 100%;
@@ -12,7 +13,7 @@
 		content: "";
 	}
 
-	&-element{
+	&-element {
 		position: absolute;
 		top: 0;
 		left: 0;

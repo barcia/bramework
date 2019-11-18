@@ -17,6 +17,7 @@ pre {
 	tab-size: 2;
 	padding: 10px;
 	margin: 0.5em 0;
+
 	@include from(small) {
 		tab-size: 4;
 	}

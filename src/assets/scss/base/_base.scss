@@ -15,7 +15,12 @@ body {
 
 // Content sectioning
 // stylelint-disable-next-line selector-list-comma-newline-after
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin-bottom: 0.6em;
 	line-height: 1.4em;
 	text-rendering: optimizeLegibility;
@@ -40,20 +45,20 @@ figure {
 figcaption {
 	font-size: 0.85em;
 	color: var(--fontColor--light);
-	&:first-child {margin-bottom: 0.5em;}
-	&:last-child {margin-top: 0.5em;}
+	&:first-child { margin-bottom: 0.5em; }
+	&:last-child { margin-top: 0.5em; }
 }
 
 ul,
 ol {
 	padding-left: 1.25em;
 
-	li {
-		@include margin-y(0.25em);
-	}
-
 	@include from(medium) {
 		padding-left: 30px;
+	}
+
+	li {
+		@include margin-y(0.25em);
 	}
 }
 

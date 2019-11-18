@@ -16,7 +16,9 @@
 @function alpha($color, $opacity) {
 	@if unit($opacity) == "%" {
 		@return transparentize($color, $opacity / 100%);
-	} @else {
+	}
+
+	@else {
 		@return transparentize($color, $opacity);
 	}
 }
