@@ -1,5 +1,6 @@
 .Button {
 	@include inline-flex-center;
+
 	min-width: 60px;
 	min-height: 35px;
 	padding: 0.125em 0.5em;
@@ -38,7 +39,7 @@
 
 	// Childs
 	.Icon {
-		&:first-child {margin-right: 0.5em;}
-		&:last-child {margin-left: 0.5em;}
+		&:first-child { margin-right: 0.5em; }
+		&:last-child { margin-left: 0.5em; }
 	}
 }
