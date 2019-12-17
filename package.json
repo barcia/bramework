@@ -17,10 +17,10 @@
 		"prestart": "npm run clean"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.7.4",
-		"@babel/preset-env": "^7.7.4",
+		"@babel/core": "^7.7.5",
+		"@babel/preset-env": "^7.7.6",
 		"@barcia/stylelint-config-order": "^1.0.0-alpha.2",
-		"autoprefixer": "^9.7.2",
+		"autoprefixer": "^9.7.3",
 		"browserdom": "^2.1.0",
 		"parcel-bundler": "^1.12.4",
 		"parcel-plugin-notifier": "^1.0.0",
