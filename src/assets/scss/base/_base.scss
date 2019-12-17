@@ -62,6 +62,24 @@ ol {
 	}
 }
 
+// Fallback
+blockquote {
+	text-indent: -0.45em;
+	quotes: '«' '»';
+
+	&::before {
+		content: open-quote;
+	}
+}
+
+// If there's support, erase the indent and use the property instead
+@supports ( hanging-punctuation: first) {
+	blockquote {
+		text-indent: 0;
+		hanging-punctuation: first;
+	}
+}
+
 
 
 // Inline text semantics
@@ -90,6 +108,10 @@ kbd {
 
 abbr {
 	text-transform: uppercase;
+}
+
+q {
+	quotes: '«' '»';
 }
 
 
