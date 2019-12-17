@@ -1,4 +1,6 @@
 .Button {
+	--Button-bgColor: #{$grey-150};
+
 	@include inline-flex-center;
 
 	min-width: 60px;
@@ -8,7 +10,7 @@
 	white-space: nowrap;
 	vertical-align: middle;
 	color: var(--fontColor);
-	background-color: $grey-150;
+	background-color: var(--Button-bgColor);
 	outline: 0;
 
 	@include self-hover-focus-active {
@@ -20,16 +22,15 @@
 	}
 
 	&:hover {
-		background-color: $grey-200;
+		--Button-bgColor: #{$grey-200};
 	}
 
 	&:active {
-		background-color: $grey-250;
+		--Button-bgColor: #{$grey-250};
 	}
 
 	&:disabled {
-		color: color(dark-soft);
-		background-color: $grey-300;
+		--Button-bgColor: #{$grey-300};
 	}
 
 	// Modifiers

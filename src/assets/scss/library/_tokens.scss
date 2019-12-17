@@ -4,7 +4,7 @@ $wrapper-width: 800px;
 $wrapper-padding-x: 16px;
 
 // Colors
-$black: hsl(0, 0%, 1%);
+$black: hsl(240, 76%, 8%);
 $white: hsl(0, 0%, 100%);
 
 $primary: #2677d1;
@@ -58,9 +58,9 @@ $breakpoints: (
 	"extralarge": 1920px,
 ) !default;
 
-$duration-short: 100ms;
-$duration-normal: 200ms;
-$duration-large: 300ms;
+// $duration-short: 100ms;
+// $duration-normal: 200ms;
+// $duration-large: 300ms;
 
 // z-index
 $z-index: (

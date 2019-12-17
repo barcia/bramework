@@ -1,7 +1,7 @@
 // Transitions
 // Example: @include transition([width, height], 5s);
 @mixin transition($property,
-$duration: $duration-normal,
+$duration: var(--duration-normal),
 $timing-function: ease-in-out) {
 	transition-duration: $duration;
 	transition-property: $property;

@@ -1,5 +1,8 @@
 .Icon {
 	@include size(1.5em);
-	// fill: currentColor;
-	// stroke: currentColor;
+}
+
+svg.Icon {
+	fill: currentColor;
+	stroke: currentColor;
 }

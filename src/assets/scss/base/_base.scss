@@ -1,15 +1,15 @@
 // Sectioning root
 body {
-	font-family: $font-family-sans-serif;
+	font-family: var(--fontFamily-primary);
 	font-size: 1em;
 	color: var(--fontColor);
 	background-color: var(--bgColor);
 	scroll-behavior: smooth;
 }
 
-::selection {
-	background-color: tint($secondary, 70%);
-}
+// ::selection {
+// 	background-color: var(--selectionColor);
+// }
 
 
 

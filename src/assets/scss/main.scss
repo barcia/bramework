@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 // LIBRARY
-@import "library/tokens";
 @import "library/functions";
 @import "library/mixins";
+@import "library/tokens";
 @import "library/variables";
 
 // RESET
@@ -17,10 +17,8 @@
 @import "layout/header";
 @import "layout/footer";
 @import "components/button";
-@import "components/card";
-@import "components/embed";
+// @import "components/embed";
 @import "components/icon";
-@import "components/list";
 @import "components/navbar";
 @import "helpers/a11y";
 @import "helpers/layout";
