@@ -4,6 +4,10 @@ Web starter kit
 ## Description
 Bramework is a **web starter kit** to build simple websites. You can build only the assets or build full websites, also integrate it with other tools like [Eleventy](https://www.11ty.io), [Hugo](https://gohugo.io), etc.
 
+This project uses [Calendar Versioning](http://calver.org).
+
+![Calendar Versioning](https://img.shields.io/badge/CALVER-YY.0M.MICRO-22bfda)
+
 ## Getting started
 1. Clone the repository: `git clone https://github.com/barcia/bramework.git`
 2. Install the NPM packages: `npm install`
