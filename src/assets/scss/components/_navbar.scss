@@ -1,35 +1,30 @@
+@use 'library/function';
+@use 'library/mixin';
+
 :root {
 	--Navbar-height: 55px;
 
-	@include from(medium) {
+	@include mixin.from(medium) {
 		--Navbar-height: 65px;
 	}
 }
 
 
 .Navbar {
-	z-index: z(navbar);
+	z-index: function.elevation(navbar);
 	display: flex;
 	align-items: center;
 	width: 100vw;
 	height: var(--Navbar-height);
-	padding: 0 12px;
-	background-color: $grey-100;
-
-	&-toggle {
-		@include circle(48px);
-
-		background-color: transparent;
-
-		.Icon {
-			@include size(24px);
-		}
-	}
+	padding: 0 var(--content-padding-x);
+	background-color: lightcoral;
 
 	&-menu {
-		@include list-inline;
-
 		margin-left: auto;
+	}
+
+	&-list {
+		@include mixin.list-inline;
 
 		li:not(:first-child) {
 			margin-left: 20px;
@@ -37,32 +32,26 @@
 	}
 
 
-
+	// Modifiers
 	&--fixed {
-		@include transition(box-shadow);
-
 		position: fixed;
 		top: 0;
-		will-change: box-shadow;
 
-		@include scrolled {
-			@include box-shadow(2);
-		}
+		// @include browserdom.scrolled {
+
+		// }
 	}
 
 	&--scrollable {
-		@include transition((box-shadow, transform));
-
 		position: fixed;
 		top: 0;
-		will-change: box-shadow, transform;
 
-		@include scrolled {
-			@include box-shadow(2);
-		}
+		// @include browserdom.scrolled {
 
-		@include scroll-down {
-			transform: translateY(calc(var(--Navbar-height) * -1));
-		}
+		// }
+
+		// @include browserdom.scroll-down {
+		// 	// transform: translateY(calc(var(--Navbar-height) * -1));
+		// }
 	}
 }

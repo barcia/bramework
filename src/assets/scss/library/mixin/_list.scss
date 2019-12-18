@@ -1,0 +1,21 @@
+// Disable basic list styles
+@mixin list-raw {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+
+	li {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+
+
+// Convert a list in a inline list
+@mixin list-inline {
+	@include list-raw;
+
+	display: inline-flex;
+	align-items: center;
+}

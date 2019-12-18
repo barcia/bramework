@@ -1,25 +1,25 @@
 @charset "UTF-8";
 
-// LIBRARY
-@import "library/functions";
-@import "library/mixins";
-@import "library/tokens";
-@import "library/variables";
+// Reset
+@use "standarize/dist/standarize";
 
-// RESET
-@import "standarize/dist/standarize";
+// Base
+@use 'base/variables';
+@use 'base/base';
+// @use 'base/fonts';
 
-// SITE
-@import "base/base";
-@import "base/code";
-@import "base/form";
-@import "layout/wrapper";
-@import "layout/header";
-@import "layout/footer";
-@import "components/button";
-// @import "components/embed";
-@import "components/icon";
-@import "components/navbar";
-@import "helpers/a11y";
-@import "helpers/layout";
-@import "helpers/text";
+// Layout
+@use 'layout/content';
+@use 'layout/wrapper';
+
+// Components
+@use 'components/button';
+@use 'components/embed';
+@use 'components/input';
+@use 'components/navbar';
+
+// Utilities
+@use 'utilities/a11y';
+@use 'utilities/flow';
+@use 'utilities/hidden';
+@use 'utilities/text';

@@ -1,20 +1,17 @@
+@use 'library/mixin';
+
 // Sectioning root
 body {
-	font-family: var(--fontFamily-primary);
-	font-size: 1em;
-	color: var(--fontColor);
-	background-color: var(--bgColor);
+	font-family: var(--fontFamily-primary, sans-serif);
+	font-size: 1rem;
+	color: var(--fontColor, black);
+	background-color: var(--bgColor, white);
 	scroll-behavior: smooth;
 }
-
-// ::selection {
-// 	background-color: var(--selectionColor);
-// }
 
 
 
 // Content sectioning
-// stylelint-disable-next-line selector-list-comma-newline-after
 h1,
 h2,
 h3,
@@ -35,48 +32,36 @@ address {
 // Text content
 p {
 	line-height: 1.5em;
-	text-align: left;
-}
-
-figure {
-	@include margin-bottom(1em);
 }
 
 figcaption {
 	font-size: 0.85em;
-	color: var(--fontColor--light);
 	&:first-child { margin-bottom: 0.5em; }
 	&:last-child { margin-top: 0.5em; }
 }
 
 ul,
 ol {
-	padding-left: 1.25em;
+	padding-left: 1.5em;
 
-	@include from(medium) {
-		padding-left: 30px;
+	@include mixin.from(medium) {
+		padding-left: 2em;
 	}
 
 	li {
-		@include margin-y(0.25em);
+		margin: 0.25em 0;
 	}
 }
 
-// Fallback
-blockquote {
-	text-indent: -0.45em;
-	quotes: '«' '»';
+pre {
+	padding: 10px;
+	font-family: var(--fontFamily-monospace, monospace);
+	font-size: 0.95em;
+	background-color: var(--neutral-100);
+	tab-size: 2;
 
-	&::before {
-		content: open-quote;
-	}
-}
-
-// If there's support, erase the indent and use the property instead
-@supports ( hanging-punctuation: first) {
-	blockquote {
-		text-indent: 0;
-		hanging-punctuation: first;
+	@include mixin.from(small) {
+		tab-size: 4;
 	}
 }
 
@@ -84,12 +69,10 @@ blockquote {
 
 // Inline text semantics
 a {
-	text-decoration: none;
-	color: var(--color-primary);
+	color: var(--color-primary, blue);
 
-	&:hover,
 	&:focus {
-		text-decoration: underline;
+		outline-color: var(--color-outline);
 	}
 }
 
@@ -97,13 +80,25 @@ small {
 	font-size: 0.85em;
 }
 
+:not(pre) > code {
+	padding: 0.2em 0.4em;
+	border-radius: 0.2em;
+	font-family: var(--fontFamily-monospace, monospace);
+	font-size: 0.95em;
+	background-color: var(--neutral-100);
+	user-select: all;
+}
+
 mark {
-	background-color: var(--color-yellow);
+	background-color: var(--color-yellow, yellow);
 }
 
 kbd {
-	background-color: var(--bgColor--50);
-	box-shadow: 0 2px var(--bgColor--100);
+	padding: 0.1em 0.3em;
+	border-radius: 0.2em;
+	background-color: var(--neutral-50);
+	box-shadow: 0 2px var(--neutral-100);
+	user-select: all;
 }
 
 abbr {
@@ -116,11 +111,28 @@ q {
 
 
 
+// Forms
+input,
+textarea,
+select {
+	// outline: none;
+
+	&:disabled {
+		color: var(--fontColor-light);
+	}
+}
+
+fieldset {
+	border: 1px solid var(--neutral-200);
+}
+
+
+
 // Demarcating
 del {
-	color: var(--color-red);
+	color: var(--color-red, red);
 }
 
 ins {
-	color: var(--color-green);
+	color: var(--color-green, green);
 }

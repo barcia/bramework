@@ -1,46 +1,39 @@
+@use 'library/mixin';
+
 .Button {
-	--Button-bgColor: #{$grey-150};
+	--Button-color: var(--fontColor);
+	--Button-bgColor: var(--neutral-150);
 
-	@include inline-flex-center;
-
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	min-width: 60px;
 	min-height: 35px;
 	padding: 0.125em 0.5em;
 	border: none;
+	text-decoration: none;
 	white-space: nowrap;
 	vertical-align: middle;
-	color: var(--fontColor);
+	color: var(--Button-color);
 	background-color: var(--Button-bgColor);
 	outline: 0;
 
-	@include self-hover-focus-active {
-		text-decoration: none;
+	&:hover {
+		--Button-bgColor: var(--neutral-200);
 	}
 
 	&:focus {
-		@include focus-outline;
-	}
-
-	&:hover {
-		--Button-bgColor: #{$grey-200};
-	}
-
-	&:active {
-		--Button-bgColor: #{$grey-250};
+		@include mixin.outline-shadow;
 	}
 
 	&:disabled {
-		--Button-bgColor: #{$grey-300};
+		--Button-color: var(--fontColor-lighter);
+		--Button-bgColor: var(--neutral-150);
 	}
+
 
 	// Modifiers
 	&--fullWidth {
 		width: 100%;
-	}
-
-	// Childs
-	.Icon {
-		&:first-child { margin-right: 0.5em; }
-		&:last-child { margin-left: 0.5em; }
 	}
 }

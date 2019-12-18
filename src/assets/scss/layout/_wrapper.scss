@@ -1,6 +1,5 @@
+@use 'library/mixin';
+
 .l-wrapper {
-	width: 100%;
-	max-width: $wrapper-width + ($wrapper-padding-x * 2);
-	padding: 0 $wrapper-padding-x;
-	margin: var(--Navbar-height) auto 0;
+	margin: var(--Navbar-height, 0) auto 0;
 }

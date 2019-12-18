@@ -26,7 +26,7 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Editors
-.vscode/*
+.vscode/
 
 # Thumbnails
 ._*

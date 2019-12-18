@@ -1,0 +1,43 @@
+@use 'library/token';
+@use 'sass:map';
+
+// Can use $breakpoint name that exists in the $breakpoints map or a custom breakpoint
+// From $breakpoint to up
+@mixin from($breakpoint) {
+	$value: map.get(token.$breakpoints, $breakpoint);
+
+	@if ($value == null) { $value: $breakpoint; }
+
+	@media (min-width: $value) {
+		@content;
+	}
+}
+
+
+
+// From $breakpoint to down
+@mixin until($breakpoint) {
+	$value: map.get(token.$breakpoints, $breakpoint);
+
+	@if $value == null { $value: $breakpoint; }
+
+	@media (max-width: $value - 1) {
+		@content;
+	}
+}
+
+
+
+// Between $breakpoint1 and breakpoint2
+@mixin between($breakpoint1, $breakpoint2) {
+	$value1: map.get(token.$breakpoints, $breakpoint1);
+	$value2: map.get(token.$breakpoints, $breakpoint2);
+
+	@if $value1 == null { $value1: $breakpoint1; }
+
+	@if $value2 == null { $value2: $breakpoint2; }
+
+	@media (min-width: $value1) and (max-width: $value2 - 1) {
+		@content;
+	}
+}

@@ -1,0 +1,13 @@
+@use 'library/mixin';
+
+.l-content {
+	@include mixin.padding-x(var(--content-padding-x, 0));
+
+	max-width: var(--content-width, none);
+	margin: 0 auto;
+	box-sizing: content-box;
+
+	> * {
+		box-sizing: border-box;
+	}
+}

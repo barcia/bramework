@@ -1,0 +1,40 @@
+@use 'library/token';
+@use 'library/mixin';
+@use "sass:color";
+
+:root {
+	// Typography
+	--fontFamily-primary: "Libre Baskerville", "Helvetica Neue", "Roboto", sans-serif;
+	--fontFamily-monospace: "Hack", "Inconsolata", "Menlo", "Consolas", monospace;
+	--fontColor: hsl(0, 0%, 20%);
+	--fontColor-light: hsl(0, 0%, 40%);
+	--fontColor-lighter: hsl(0, 0%, 60%);
+
+	// Colors
+	--color-primary: #{token.$color-primary};
+	--color-blue: #339af0;
+	--color-green: #51cf66;
+	--color-red: #ff6b6b;
+	--color-yellow: #fcc419;
+	--color-outline: #{color.change(token.$color-primary, $alpha: 0.6)};
+
+	// Background colors
+	--bgColor: hsl(0, 0%, 100%);
+
+	// Neutral colors
+	--neutral-50: #{color.scale(token.$color-black, $lightness: +95%)};
+	--neutral-100: #{color.scale(token.$color-black, $lightness: +90%)};
+	--neutral-150: #{color.scale(token.$color-black, $lightness: +85%)};
+	--neutral-200: #{color.scale(token.$color-black, $lightness: +80%)};
+	--neutral-500: #{color.scale(token.$color-black, $lightness: +50%)};
+
+	// Site layout
+	--site-maxWidth: 1920px;
+	--content-width: 800px;
+	--content-padding-x: 16px;
+
+	@include mixin.dark {
+		// --fontColor: hsl(0, 0%, 95%);
+		// --bgColor: hsl(0, 0%, 5%);
+	}
+}

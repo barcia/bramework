@@ -1,0 +1,22 @@
+.u-uppercase { text-transform: uppercase; }
+.u-capitalize { text-transform: capitalize; }
+.u-smallCaps { font-variant: small-caps; }
+.u-bold { font-weight: var(--fontWeight--bold); }
+.u-italic { font-style: italic; }
+.u-underline { text-decoration: underline; }
+.u-overline { text-decoration: overline; }
+.u-strikethrough { text-decoration: line-through; }
+.u-monospace { font-family: var(--fontFamily-monospace); }
+
+.u-block-quoted {
+	text-indent: -0.55em;
+	quotes: "«" "»";
+
+	&::before { content: open-quote; }
+	&::after { content: close-quote; }
+
+	@supports ( hanging-punctuation: first) {
+		text-indent: 0;
+		hanging-punctuation: first;
+	}
+}

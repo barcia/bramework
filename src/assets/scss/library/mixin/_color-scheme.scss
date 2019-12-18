@@ -1,0 +1,42 @@
+@use 'library/token';
+
+// Prefer an interface that has a light theme
+@mixin light {
+	@if token.$dark-mode == native {
+		@media (prefers-color-scheme: light) {
+			@content;
+		}
+	}
+
+	@if token.$dark-mode == custom {
+		@at-root [data-colorscheme="light"] {
+			@content;
+		}
+	}
+}
+
+
+
+// Prefer an interface that has a dark theme
+@mixin dark {
+	@if token.$dark-mode == native {
+		@media (prefers-color-scheme: dark) {
+			@content;
+		}
+	}
+
+	@if token.$dark-mode == custom {
+		@at-root [data-colorscheme="dark"] {
+			@content;
+		}
+	}
+}
+
+
+
+// Prefer an interface that has a high contrast
+@mixin high-contrast {
+	[data-colorscheme="highcontrast"] & {
+		@content;
+	}
+}

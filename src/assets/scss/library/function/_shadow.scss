@@ -1,0 +1,40 @@
+@use 'library/token';
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:math';
+
+// Build a shadow for a depth effect in any of four sides
+// Inspired on Material Design specs and a Hugo Giraudel function.
+@function shadow($depth, $side: bottom) {
+	@if $depth >= 1 and $depth <= 5 {
+		$depth: math.round($depth);
+
+		$offset-1: list.nth(1.5 3 6 10 15, $depth) * 1px;
+		$blur-1: list.nth(1 3 3 5 6, $depth) * 4px;
+		$color-1: color.change(token.$color-black, $alpha: (list.nth(0.12 0.13 0.14 0.15 0.16, $depth)));
+
+		$offset-2: list.nth(1.5 3 10 14 19, $depth) * 1px;
+		$blur-2: list.nth(1.5 3 10 14 19, $depth) * 4px;
+		$color-2: color.change(token.$color-black, $alpha: (list.nth(0.06 0.07 0.08 0.1 0.12, $depth)));
+
+		@if $side == bottom {
+			@return 0 $offset-1 $blur-1 $color-1, 0 $offset-2 $blur-2 $color-2;
+		}
+
+		@else if $side == top {
+			@return 0 -#{$offset-1} $blur-1 $color-1, 0 -#{$offset-2} $blur-2 $color-2;
+		}
+
+		@else if $side == right {
+			@return $offset-1 0 $blur-1 $color-1, $offset-2 0 $blur-2 $color-2;
+		}
+
+		@else if $side == left {
+			@return -#{$offset-1} 0 $blur-1 $color-1, -#{$offset-2} 0 $blur-2 $color-2;
+		}
+	}
+
+	@else {
+		@return null;
+	}
+}

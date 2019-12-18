@@ -1,5 +1,7 @@
+@use 'library/mixin';
+
 .Embed {
-	@include aspect-ratio;
+	@include mixin.aspect-ratio-status;
 
 	position: relative;
 	display: block;
@@ -13,7 +15,7 @@
 		content: "";
 	}
 
-	&-element {
+	& > * {
 		position: absolute;
 		top: 0;
 		left: 0;

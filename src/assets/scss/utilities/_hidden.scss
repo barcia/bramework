@@ -1,0 +1,9 @@
+// Hide an element
+.u-hidden {
+	display: none;
+}
+
+// Not show it, but maintain the layout
+.u-invisible {
+	visibility: hidden;
+}

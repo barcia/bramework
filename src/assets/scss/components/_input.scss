@@ -1,0 +1,30 @@
+.Input {
+	--Input-color: var(--fontColor);
+	--Input-bgColor: var(--neutral-50);
+	--Input-borderColor: var(--neutral-200);
+
+	padding: 5px 10px;
+	border: 1px solid var(--Input-borderColor);
+	border-radius: 0;
+	color: var(--Input-color);
+	background-color: var(--Input-bgColor);
+
+	&:focus {
+		--Input-borderColor: var(--color-primary);
+
+		outline: none;
+	}
+
+	&:disabled {
+		--Input-color: var(--fontColor);
+		--Input-bgColor: var(--neutral-150);
+	}
+
+	&:invalid:not(:focus) {
+		border-color: var(--color-red);
+	}
+
+	&::placeholder {
+		color: var(--fontColor-lighter);
+	}
+}

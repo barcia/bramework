@@ -2,7 +2,7 @@
 Web starter kit
 
 ## Description
-Bramework is a **web starter kit** to build simple websites. You can build only the assets or build full websites, also integrate it with other tools like [Eleventy](https://www.11ty.io), [Hugo](https://gohugo.io) or [barcia/wp](https://github.com/barcia/wp).
+Bramework is a **web starter kit** to build simple websites. You can build only the assets or build full websites, also integrate it with other tools like [Eleventy](https://www.11ty.io), [Hugo](https://gohugo.io), etc.
 
 ## Getting started
 1. Clone the repository: `git clone https://github.com/barcia/bramework.git`
@@ -20,6 +20,11 @@ You can use `.html` or `.js` files as entries. Import your Scss in the entry fil
 
 * ***build*:** **Build** all **assets** in **production** mode.
 
+* ***lint*:** **Lint** yout Scss and JS code.
+
+
+## Resources
+* [HTML Elements Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
 ## Credits
 Developed by Iván Barcia

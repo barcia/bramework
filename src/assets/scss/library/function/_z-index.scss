@@ -1,0 +1,11 @@
+@use 'library/token';
+
+@function elevation($key) {
+	@if map-has-key(token.$z-index, $key) {
+		@return map-get(token.$z-index, $key);
+	}
+
+	@else {
+		@error "Undefined z-index: '$key'.";
+	}
+}

@@ -1,0 +1,20 @@
+// Add background images
+@mixin background-image($background-image...) {
+	background-image: $background-image;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+
+// Add aspect ratio status
+@mixin aspect-ratio-status {
+	&.is-square,
+	&.is-1\:1::before { padding-bottom: percentage(1 / 1); } // 1:1
+	&.is-21\:9::before { padding-bottom: percentage(9 / 21); } // 21:9
+	&.is-16\:9::before { padding-bottom: percentage(9 / 16); } // 16:9
+	&.is-5\:3::before { padding-bottom: percentage(3 / 5); } // 5:3
+	&.is-4\:3::before { padding-bottom: percentage(3 / 4); } // 4:3
+	&.is-2\:1::before { padding-bottom: percentage(1 / 2); } // 2:1
+}

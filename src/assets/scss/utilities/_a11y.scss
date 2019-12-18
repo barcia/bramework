@@ -1,0 +1,5 @@
+@use 'library/mixin';
+
+.u-screen-reader {
+	@include mixin.screen-reader;
+}

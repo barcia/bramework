@@ -1,0 +1,56 @@
+// Mixin to remove the link classes and its pseudo-classes
+@mixin link-raw {
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+
+
+// Set shadow outline
+@mixin outline-shadow($width: 3px) {
+	box-shadow: 0 0 0 $width var(--color-outline);
+}
+
+
+
+// Mixin to create an animated underline effect when the text is hovered over
+// Example: @include underline-animation(x, red, 2px, 0.3s);
+@mixin underline-animation($axis, $color, $height, $time) {
+	position: relative;
+	display: inline-block;
+
+	&::after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: $height;
+		background-color: $color;
+		content: "";
+		transition: transform $time ease-out;
+		transform-origin: bottom left;
+
+		@if $axis == X or $axis == x {
+			transform: scaleX(0);
+		}
+
+		@else {
+			transform: scaleY(0);
+		}
+	}
+
+	&:hover::after {
+		@if $axis == X or $axis == x {
+			transform: scaleX(1);
+		}
+
+		@else {
+			transform: scaleY(1);
+		}
+	}
+}
