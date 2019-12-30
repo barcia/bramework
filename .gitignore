@@ -2,10 +2,6 @@
 dist/
 build/
 
-# Temporary files
-temp/
-temp.*
-
 # Packager managers
 node_modules/
 
