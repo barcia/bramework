@@ -31,7 +31,7 @@
 	// Site layout
 	--site-maxWidth: 1920px;
 	--content-width: 800px;
-	--content-padding-x: 16px;
+	--content-spacing-x: 16px;
 
 	@include mixin.dark {
 		// --fontColor: hsl(0, 0%, 95%);
