@@ -1,0 +1,22 @@
+@use 'library/mixin';
+
+.l-body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.l-flex {
+	flex: 1;
+}
+
+.l-wrapper {
+	@include mixin.padding-x(var(--content-spacing-x, 0));
+
+	max-width: calc(var(--content-width, none) + calc(var(--content-spacing-x, 0) * 2));
+	margin: 0 auto;
+}
+
+.l-navbar {
+	margin: var(--Navbar-height, 0) auto 0;
+}

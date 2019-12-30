@@ -1,0 +1,11 @@
+$spacing: 4, 8, 12, 16, 24, 48;
+
+@each $size in $spacing {
+  .l-marginTop-#{$size} {
+		margin-top: #{$size}px;
+	}
+
+  .l-marginBottom-#{$size} {
+		margin-top: #{$size}px;
+  }
+}
