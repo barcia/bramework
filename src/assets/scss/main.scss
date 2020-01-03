@@ -1,25 +1,25 @@
 @charset "UTF-8";
 
 // Reset
-@use "standarize/dist/standarize";
+@forward "standarize/dist/standarize";
 
 // Base
-@use 'base/variables';
-@use 'base/base';
-// @use 'base/fonts';
+@forward 'base/variables';
+@forward 'base/base';
+// @forward 'base/fonts';
 
 // Layout
-@use 'layout/structure';
-@use 'layout/margin';
+@forward 'layout/structure';
+@forward 'layout/margin';
 
 // Components
-@use 'components/button';
-@use 'components/embed';
-@use 'components/input';
-@use 'components/navbar';
+@forward 'components/button';
+@forward 'components/embed';
+@forward 'components/input';
+@forward 'components/navbar';
 
 // Utilities
-@use 'utilities/a11y';
-@use 'utilities/flow';
-@use 'utilities/hidden';
-@use 'utilities/text';
+@forward 'utilities/a11y';
+@forward 'utilities/flow';
+@forward 'utilities/hidden';
+@forward 'utilities/text';
