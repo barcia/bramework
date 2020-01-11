@@ -14,11 +14,11 @@ Or do it manually:
 3. Start to develop with `npm start` or build your project with `npm run build`.
 
 ## Tasks
-* ***start***: **Build** all **assets** in **development** mode, build the **site**, **watch** changes on then and start a **live server**.
+* `start`: **Build** all **assets** in **development** mode, build the **site**, **watch** changes on then and start a **live server**.
 
-* ***build*:** **Build** all **assets** in **production** mode and the **site**.
+* `build`: **Build** all **assets** in **production** mode and the **site**.
 
-* ***lint*:** **Lint** yout Scss and JS code.
+* `lint`: **Lint** yout Scss and JS code.
 
 
 ## Credits
