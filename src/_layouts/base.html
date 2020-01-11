@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{% if config.language %}{{ config.language }}{% else %}en{% endif %}">
+	<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<title>{{ config.title }}{% if title %} • {{ title }}{% endif %}</title>
+			<meta name="description" content="{{ description }}">
+
+			<link rel="stylesheet" href="/main.css">
+			<script src="/main.js"></script>
+
+			{% include head/google-analytics.html %}
+			{% include head/opengraph.html %}
+			{% include head/twittercards.html %}
+	</head>
+	<body>
+			{{ content }}
+	</body>
+</html>

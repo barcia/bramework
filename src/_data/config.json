@@ -1,0 +1,12 @@
+{
+	"language": "gl",
+    "title": "Document",
+    "description": "Description",
+    "baseURL": "https://example.com/",
+	"feedURL": "https://example.com/feed.xml",
+	"google-analytics-id": "",
+    "author": {
+        "name": "Iván Barcia",
+        "email": "ivan@barcia.dev"
+    }
+}
