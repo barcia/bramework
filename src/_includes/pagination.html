@@ -1,0 +1,24 @@
+{% if pagination.hrefs | length > 1 %}
+<nav aria-label="Paginación" class="Pagination">
+
+	{% if pagination.href.previous %}
+	<a href="{{ pagination.href.previous }}" aria-label="Anterior">
+		<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+	</a>
+	{% endif %}
+
+
+	<ol class="Pagination-list">
+	{%- for item in pagination.hrefs -%}
+		<li><a class="{% if item == page.url %}is-active{% endif %}" href="{{ item }}" {% if item == page.url %}aria-current="page"{% endif %}>{{loop.index}}</a></li>
+	{%- endfor -%}
+	</ol>
+
+	{% if pagination.href.next %}
+	<a href="{{ pagination.href.next }}" aria-label="Seguinte">
+		<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+	</a>
+	{% endif %}
+
+</nav>
+{% endif %}

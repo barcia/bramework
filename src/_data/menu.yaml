@@ -1,0 +1,8 @@
+main:
+    - name: Blog
+      slug: "/blog"
+    - name: Contacto
+      slug: "/contacto"
+footer:
+    - name: Privacidade
+      slug: "/privacidade"

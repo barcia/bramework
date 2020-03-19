@@ -13,6 +13,7 @@
 .l-wrapper {
 	@include mixin.padding-x(var(--content-spacing-x, 0));
 
+	width: 100%;
 	max-width: calc(var(--content-width, none) + calc(var(--content-spacing-x, 0) * 2));
 	margin: 0 auto;
 }
