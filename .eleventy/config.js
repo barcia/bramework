@@ -5,6 +5,8 @@ const now = new Date();
 
 module.exports = function(config) {
 
+	config.setQuietMode(true);
+
 	// Plugins
 	config.addPlugin(pluginRss);
 
@@ -20,7 +22,7 @@ module.exports = function(config) {
 
 	// Collections - blog
 	config.addCollection('blog', collection => {
-		return collection.getFilteredByGlob(`./src/blog/**/*.md`).filter(livePosts).reverse();
+		return collection.getFilteredByGlob(`./src/blog/*.md`).filter(livePosts);
 	})
 
 	// Collections - pages
@@ -36,14 +38,16 @@ module.exports = function(config) {
 	// Filters
 	config.addFilter( 'limit', require("./filters/limit") );
 	config.addFilter( 'date', require("./filters/date") );
-	config.addFilter( 'absoluteUrl', require("./filters/absoluteUrl") );
-	config.addFilter( 'prependSlug', require("./filters/prependSlug") );
+	config.addFilter( 'slug', require("./filters/slug") );
 
 
 	// Shortcodes
-	config.addShortcode("figure", require("./shortcodes/figure") );
+	config.addPairedShortcode("figure", require("./shortcodes/figure") );
 	config.addShortcode("youtube", require("./shortcodes/youtube"));
 	config.addShortcode("vimeo", require("./shortcodes/vimeo"));
+	config.addShortcode("gist", require("./shortcodes/gist"));
+	config.addNunjucksAsyncShortcode("twitter", require("./shortcodes/twitter"));
+	config.addNunjucksAsyncShortcode("instagram", require("./shortcodes/instagram"));
 
 
 

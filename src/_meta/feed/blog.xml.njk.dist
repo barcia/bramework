@@ -5,7 +5,7 @@ permalink: /blog/feed.xml
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.title }} • Blog</title>
   <subtitle>{{ site.description }}</subtitle>
-  <link href="{{ permalink | absoluteUrl }}" rel="self"/>
+  <link href="{{ permalink | slug }}" rel="self"/>
   <link href="{{ site.baseURL }}"/>
   <updated>{{ collections.blog | rssLastUpdatedDate }}</updated>
   <id>{{ site.baseURL }}/blog</id>
@@ -16,9 +16,9 @@ permalink: /blog/feed.xml
   {%- for post in collections.blog %}
   <entry>
     <title>{{ post.data.title }}</title>
-    <link href="{{ post.url | absoluteUrl }}"/>
+    <link href="{{ post.url | slug }}"/>
     <updated>{{ post.date | rssDate }}</updated>
-    <id>{{ post.url | absoluteUrl }}</id>
+    <id>{{ post.url | slug }}</id>
     <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(post.url | absoluteUrl) }}</content>
   </entry>
   {%- endfor %}

@@ -5,9 +5,9 @@
 
 module.exports = function(img, figcaption) {
 	return `
-	<figure>
-		${img}
-		<figcaption>${figcaption}</figcaption>
-	</figure>
+<figure>
+${img}
+<figcaption>${figcaption}</figcaption>
+</figure>
 	`
 };

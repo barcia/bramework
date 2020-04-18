@@ -1,0 +1,20 @@
+<!-- Opengraph -->
+<meta property="og:url" content="{{ page.url | absoluteUrl }}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:image" content="{{ image }}">
+<meta property="og:description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ description }}{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{{ site.language }}">
+<meta property="article:author" content="{{ social.facebook.url }}">
+
+<!-- Twitter cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@{{ social.twitter.user }}">
+<meta name="twitter:creator" content="@{{ social.twitter.user }}">
+<meta name="twitter:url" content="{{ page.url | absoluteUrl }}">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ description }}{% endif %}">
+<meta name="twitter:image" content="{{ image }}">
+
+<meta name="twitter:widgets:theme" content="light">

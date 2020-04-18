@@ -1,23 +1,26 @@
 // https://github.com/11ty/eleventy-base-blog/blob/master/_11ty/getTagList.js
 
 module.exports = function(collection) {
-  let tagSet = new Set();
+	let tagSet = new Set();
+
+	// For each item in website (page, post, etc)
   collection.getAll().forEach(function(item) {
-    if( "tags" in item.data ) {
+
+		// If has tags metadata in frontmatter
+    if( 'tags' in item.data ) {
+
       let tags = item.data.tags;
 
-      tags = tags.filter(function(item) {
-        switch(item) {
-          // this list should match the `filter` list in tags.njk
-          case "all":
-          case "nav":
-          case "post":
-          case "posts":
-            return false;
-        }
+			// Tags list removing some words
+      // tags = tags.filter(function(item) {
+      //   switch(item) {
+      //     // this list should match the `filter` list in tags.njk
+      //     case "nav":
+      //       return false;
+      //   }
 
-        return true;
-      });
+      //   return true;
+      // });
 
       for (const tag of tags) {
         tagSet.add(tag);

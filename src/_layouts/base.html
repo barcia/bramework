@@ -12,7 +12,6 @@
 			<script src="/main.js"></script>
 
 			<link rel="manifest" href="/app.webmanifest">
-			<link rel="archives" href="{{ site.baseURL }}/arquivo/">
 			<link rel="alternate" href="{{ site.baseURL }}/feed" type="application/rss+xml" title="RSS">
 			{% if canonical %}
 			<link rel="canonical" href="{{ canonical | absoluteUrl }}" />
@@ -22,10 +21,8 @@
 			<link rel="apple-touch-icon" sizes="192x192" href="/img/logo-192w.png">
 			<link rel="mask-icon" href="/img/logo.svg" color="black">
 
-			{% include "head/googleanalytics.html" %}
-			{% include "head/opengraph.html" %}
-			{% include "head/twittercards.html" %}
-
+			{% include "head/analytics.html" %}
+			{% include "head/social.html" %}
 
 	</head>
 	<body class="l-body">
