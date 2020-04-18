@@ -1,6 +1,6 @@
 {
 	"name": "ivan.gal",
-	"version": "2020.02.1",
+	"version": "2020.04.1",
 	"description": "",
 	"license": "MIT",
 	"repository": "https://github.com/barcia/web-starter",
@@ -24,23 +24,22 @@
 	"devDependencies": {
 		"@11ty/eleventy": "^0.10.0",
 		"@11ty/eleventy-plugin-rss": "^1.0.7",
-		"@babel/core": "^7.8.7",
-		"@babel/preset-env": "^7.8.7",
+		"@babel/core": "^7.9.0",
+		"@babel/preset-env": "^7.9.5",
 		"@barcia/stylelint-config-order": "^1.0.0-alpha.3",
-		"autoprefixer": "^9.7.4",
-		"browserdom": "^3.0.0-beta.3",
+		"autoprefixer": "^9.7.6",
 		"eslint": "^6.8.0",
 		"eslint-config-airbnb-base": "^14.1.0",
-		"eslint-plugin-import": "^2.20.1",
-		"luxon": "^1.22.0",
+		"eslint-plugin-import": "^2.20.2",
+		"luxon": "^1.23.0",
 		"parcel-bundler": "^1.12.4",
 		"rimraf": "^3.0.2",
 		"sass": "^1.26.2",
 		"standarize": "^4.0.0",
-		"stylelint": "^13.2.1",
+		"stylelint": "^13.3.2",
 		"stylelint-config-recommended": "^3.0.0",
 		"stylelint-config-standard": "^20.0.0",
 		"stylelint-order": "^4.0.0",
-		"stylelint-scss": "^3.14.2"
+		"stylelint-scss": "^3.17.0"
 	}
 }
